@@ -135,8 +135,8 @@
                     </h3>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary btn-lg m-4 w-25">REGISTER</button>
-                    <button type="button" class="btn btn-secondary btn-lg m-4 w-25">LOGIN</button>
+                    <button type="button" class="btn btn-primary btn-lg m-4 w-25" onclick="window.location='{{ route('register')}}'">Register</button>
+                    <button type="button" class="btn btn-secondary btn-lg m-4 w-25" onclick="window.location='{{ route('login')}}'">LOGIN</button>
                 </div>
 
                 <hr>

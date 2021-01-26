@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top fixed-top">
 
     <div class="container-fluid">
-
+   
       <img src="{{asset('images/logo-crop.png')}}" alt="" width="50px">
 
 
@@ -29,16 +29,19 @@
             <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN / SIGNUP</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{ url('/register')}}">REGISTER</a>
+          </li>
+          <li class="nav-item">
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 SPORTS
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/footballapi')}}">Football</a></button>
+                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/basketballapi')}}">Basketball</a></button>
+                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Baseball</a></button>
                 <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/soccer')}}">Soccer</a></button>
-                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/football')}}">Football</a></button>
-                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseball')}}">Baseball</a></button>
-                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/basketball')}}">Basketball</a></button>
                 <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/tennis')}}">Tennis</a></button>
                 <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/hockey')}}">Hockey</a></button>
                 <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/boxing')}}">Boxing</a></button>

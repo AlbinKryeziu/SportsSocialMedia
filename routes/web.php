@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\SportController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +60,14 @@ Route::get('/sports/table-tennis', function () {
     return view('sports/table-tennis');
 });
 
+Route::get('/sports/footballapi', [SportController::class, 'football']);
+Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
+Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
+
+//User photo 
+Route::get('/user/photo', [UserController::class, 'showPhoto'])->name('showPhoto');
+Route::post('/user/addphoto', [UserController::class, 'addPhotoToUser']);
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+       return view('dashboard');
+})->name('dashboard'); 

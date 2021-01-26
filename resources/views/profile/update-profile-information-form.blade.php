@@ -9,7 +9,7 @@
 
     <x-slot name="form">
         <!-- Profile Photo -->
-        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+      
             <div x-data="{photoName: null, photoPreview: null}" class="col-span-6 sm:col-span-4">
                 <!-- Profile Photo File Input -->
                 <input type="file" class="hidden"
@@ -42,22 +42,35 @@
                     {{ __('Select A New Photo') }}
                 </x-jet-secondary-button>
 
-                @if ($this->user->profile_photo_path)
+              
                     <x-jet-secondary-button type="button" class="mt-2" wire:click="deleteProfilePhoto">
                         {{ __('Remove Photo') }}
                     </x-jet-secondary-button>
-                @endif
+              
 
                 <x-jet-input-error for="photo" class="mt-2" />
             </div>
-        @endif
+     
 
         <!-- Name -->
+        
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="name" value="{{ __('Name') }}" />
             <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
             <x-jet-input-error for="name" class="mt-2" />
         </div>
+
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="name" value="{{ __('Location') }}" />
+            <x-jet-input id="location" type="text" class="mt-1 block w-full" wire:model.defer="state.location" autocomplete="location" />
+            <x-jet-input-error for="location" class="mt-2" />
+        </div>
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="sport" value="{{ __('The sport you play') }}" />
+            <x-jet-input id="sport" type="text" class="mt-1 block w-full" wire:model.defer="state.sport" autocomplete="sport" />
+            <x-jet-input-error for="sport" class="mt-2" />
+        </div>
+
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">

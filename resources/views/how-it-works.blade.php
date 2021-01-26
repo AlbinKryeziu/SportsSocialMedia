@@ -27,7 +27,7 @@
 
             <div class="col-md-8 p-4">
                 <h3>Step 1 - Register</h3>
-                <p>The first step is account creation. You will need to enter your information like first name, last name, email and a password. To create a new account you cac click <a href="{{url('register')}}">HERE</a></p>
+                <p>The first step is account creation. You will need to enter your information like first name, last name, email and a password. To create a new account you cac click <a href="{{route('register')}}">HERE</a></p>
             </div>
         </div>
 
