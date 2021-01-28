@@ -19,6 +19,80 @@
             <h1 class="display-3 white">Tennis</h1>
         </div>
     </div>
+    <br>
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top  Tennis Leagues</strong></p>
+        <div class="row">
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/tennis/us.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/tennis/wimbledon.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/tennis/australia.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                     
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/tennis/women.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br/>
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top Tennis  players </strong></p>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/rogerfederer.jpg')}}" onclick="window.open('https://rogerfederer.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/refael.jpg')}}" onclick="window.open('https://rafaelnadal.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/novak.jpg')}}" onclick="window.open('https://novakdjokovic.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/serena.jpg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/peter.jpg')}}" onclick="window.open('http://www.samprasfanz.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/alexander.jpg')}}" onclick="window.open('https://www.atptour.com/en/players/alexander-zverev/z355/overview', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/matteo.jpg')}}" onclick="window.open('https://www.atptour.com/en/players/matteo-berrettini/bk40/overview', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/tennis/gael.jpg')}}" onclick="window.open('http://www.gaelmonfils.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div> 
+        </div>
+    </div>
     <div class="container">
         <div class="row my-4">
             <div class="col-12 col-md-6 p-4 text-justify">

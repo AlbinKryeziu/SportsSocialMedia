@@ -99,7 +99,7 @@
            
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/football/sevilla.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <img class="card-img-top" src="{{asset('images/sports/football/sevilla.png')}}" onclick="window.open('https://www.sevillafc.es/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
                 </div>
             </div>
             <div class="col-sm-3">
