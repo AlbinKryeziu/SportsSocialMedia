@@ -21,7 +21,7 @@
     </div>
     <br />
     <div class="container">
-        <p><strong>Statistically Ranking the World's Top Boxing Leagues</strong></p>
+        <p><strong>Statistically Ranking the World's Top Table Tennis Leagues</strong></p>
         <div class="row">
             <div class="col-sm-4">
                 <div class="card" style="width: 22rem;">
@@ -43,7 +43,7 @@
     </div>
     <br />
     <div class="container">
-        <p><strong>Statistically Ranking the World's Top 10 Boxing Players</strong></p>
+        <p><strong>Statistically Ranking the World's Top 10 Table Tennis Players</strong></p>
         <div class="row">
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
