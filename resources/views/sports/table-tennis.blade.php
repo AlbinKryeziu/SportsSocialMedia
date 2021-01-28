@@ -19,6 +19,101 @@
             <h1 class="display-3 white">Table Tennis</h1>
         </div>
     </div>
+    <br />
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top Boxing Leagues</strong></p>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/ttbl.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/itt.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 22 rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/euro.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top 10 Boxing Players</strong></p>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/simon.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Simon_Gauzy', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img
+                        class="card-img-top"
+                        src="{{asset('images/sports/table-tennis/dimitrij.jpeg')}}"
+                        onclick="window.open('https://en.wikipedia.org/wiki/Dimitrij_Ovtcharov', '_blank')"
+                        alt="Card image cap"
+                        width="200"
+                        height="200"
+                        alt="Card image cap"
+                    />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/timo.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Timo_Boll', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img
+                        class="card-img-top"
+                        src="{{asset('images/sports/table-tennis/lin.jpg')}}"
+                        onclick="window.open('https://en.wikipedia.org/wiki/Lin_Yun-ju', '_blank')"
+                        alt="Card image cap"
+                        width="200"
+                        height="200"
+                        alt="Card image cap"
+                    />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/mattlias.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Mattias_Falck', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/hugo.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Hugo_Calderano', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/xuxin.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Xu_Xin_(table_tennis)', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/malong.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Ma_Long','_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/fan..jpeg')}}" onclick="window.open('https://www.stigasports.com/eu/fan-zhendong', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/quandri.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Quadri_Aruna', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
     <div class="container">
         <div class="row my-4">
             <div class="col-12 col-md-6 p-4 text-justify">
