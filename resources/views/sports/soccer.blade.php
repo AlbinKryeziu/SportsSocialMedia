@@ -19,6 +19,96 @@
             <h1 class="display-3 white">Soccer</h1>
         </div>
     </div>
+    <br>
+
+
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top  Basketball Leagues</strong></p>
+        <div class="row">
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/Premier.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/laliga.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/bundesliga.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                     
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/serie.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+            </div>
+    </div>
+    <br/>
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top 10 Football Teams</strong></p>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/bayern7.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/man.jpg')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/barcelona3.jpeg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+           
+           
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/napoli.jpg')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+         
+           
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/sevilla.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row my-4">
             <div class="col-12 col-md-6 p-4 text-justify">

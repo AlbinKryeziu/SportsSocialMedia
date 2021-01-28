@@ -45,6 +45,63 @@
             </div>
         </div>
 
+        <br />
+        <div class="container">
+            <p><strong>Statistically Ranking the World's Top 10 Football Teams</strong></p>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/bayern7.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/mc.png')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/juventus.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/barcelona3.jpeg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/atlc3.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row my-4">
                 <table class="table">

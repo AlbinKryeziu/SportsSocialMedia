@@ -19,6 +19,92 @@
             <h1 class="display-3 white">Baseball</h1>
         </div>
     </div>
+<br>
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top  Baseball Leagues</strong></p>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/mlb.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/korea.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+                
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/mx.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+               
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/npb.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top 10 Baseball Teams</strong></p>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/dodgers.jpg')}}" onclick="window.open('https://www.mlb.com/dodgers', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/atl.jpg')}}" onclick="window.open('https://www.mlb.com/braves', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/rays.jpg')}}" onclick="window.open('https://www.mlb.com/rays', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/san.jpg')}}" onclick="window.open('https://www.mlb.com/padres', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/astros.jpg')}}" onclick="window.open('https://www.mlb.com/astros', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/ny.png')}}" onclick="window.open('https://www.mlb.com/yankees', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/oakland.jpg')}}" onclick="window.open('https://www.mlb.com/athletics', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/chicago.png')}}" onclick="window.open('https://www.mlb.com/whitesox', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/cubs.png')}}" onclick="window.open('https://www.mlb.com/cubs', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/baseball/miami.jpg')}}" onclick="window.open('https://www.mlb.com/marlins', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="row my-4">
             <div class="col-12 col-md-6 p-4 text-justify">
