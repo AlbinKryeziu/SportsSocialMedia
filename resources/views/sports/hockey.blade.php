@@ -19,7 +19,7 @@
         </div>
         <br />
         <div class="container">
-            <p><strong>Statistically Ranking the World's Top Basketball Leagues</strong></p>
+            <p><strong>Statistically Ranking the World's Top Hockey Leagues</strong></p>
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
@@ -45,7 +45,7 @@
         </div>
         <br />
         <div class="container">
-            <p><strong>Statistically Ranking the World's Top 10 Basketball Teams</strong></p>
+            <p><strong>Statistically Ranking the World's Top 10 Hockey Teams</strong></p>
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">

@@ -19,6 +19,101 @@
             <h1 class="display-3 white">Boxing</h1>
         </div>
     </div>
+    <br />
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top Boxing Leagues</strong></p>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/sbl.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 22rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/one.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="width: 22 rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/ufc.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <p><strong>Statistically Ranking the World's Top 10 Boxing Players</strong></p>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/saul.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Canelo_%C3%81lvarez', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img
+                        class="card-img-top"
+                        src="{{asset('images/sports/boxing/Vasyl.jpg')}}"
+                        onclick="window.open('https://en.wikipedia.org/wiki/Vasyl_Lomachenko', '_blank')"
+                        alt="Card image cap"
+                        width="200"
+                        height="200"
+                        alt="Card image cap"
+                    />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/Naoya.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Naoya_Inoue/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img
+                        class="card-img-top"
+                        src="{{asset('images/sports/boxing/tayson.jpg')}}"
+                        onclick="window.open('https://en.wikipedia.org/wiki/Tyson_Fury', '_blank')"
+                        alt="Card image cap"
+                        width="200"
+                        height="200"
+                        alt="Card image cap"
+                    />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/oleksandr.jpeg')}}" onclick="window.open('https://usyk.com.ua/en/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/terence.jpg')}}" onclick="window.open('https://tbudcrawford.com', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/errol.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Errol_Spence_Jr.', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/manny.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Manny_Pacquiao '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/juan.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Juan_Francisco_Estrada', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{asset('images/sports/boxing/josh.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Josh_Taylor_(boxer)', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
     <div class="container">
         <div class="row my-4">
             <div class="col-12 col-md-6 p-4 text-justify">
