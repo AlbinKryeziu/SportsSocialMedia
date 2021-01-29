@@ -12,7 +12,7 @@ class SportController extends Controller
 {
     public function football()
     {
-        $url = Http::get('https://apiv2.apifootball.com/?action=get_events&from=2021-01-01&to=2021-01-14&country_id=135&APIkey=b1b33936167ae9986dbd0c71f2950735abd868037592a685e97d371e60bfa3f7');
+        $url = Http::get('https://apiv2.apifootball.com/?action=get_events&from=2021-01-28&to=2021-01-29&country_id=135&APIkey=b1b33936167ae9986dbd0c71f2950735abd868037592a685e97d371e60bfa3f7');
         $responseBody = json_decode($url->getBody());
         return view('sports/football', compact('responseBody'));
     }

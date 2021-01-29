@@ -20,7 +20,9 @@ class UserController extends Controller
         $user->profile_photo_path = $imageName;
         $user->save();
         if ($user) {
-            return redirect()->route('showPhoto');
+            return back()->with('success','Image created successfully!');
+        } else{
+            return back()->with('errors','Image not created successfully!');
         }
     }
 

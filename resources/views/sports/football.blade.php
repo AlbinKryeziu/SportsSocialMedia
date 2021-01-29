@@ -8,7 +8,6 @@
 
         @include('includes/style')
     </head>
-
     <body>
         @include('includes/header')
 
@@ -20,88 +19,90 @@
         </div>
         <br />
         <div class="container">
-            <p><strong>Statistically Ranking the World's Top 5 Football Leagues</strong></p>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top 5 Football Leagues</h3>
+
+            <hr class="mt-2 mb-8" />
+
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/serie.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                <div class="col-sm-3 text-center">
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/serie.jpg')}}" alt="Card image cap" width="500" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card" style="width: 16rem;">
                         <img class="card-img-top" src="{{asset('images/Premier.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/laliga.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/laliga.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/bundesliga.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/bundesliga.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
             </div>
         </div>
-
         <br />
         <div class="container">
-            <p><strong>Statistically Ranking the World's Top 10 Football Teams</strong></p>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Football Teams</h3>
+            <hr class="mt-2 mb-5" />
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/bayern7.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/bc.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap" width="300" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap" width="100%" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/mc.png')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/mc.png')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap" width="100%" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/juventus.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/juventus.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/barcelona3.jpeg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/fbc.jpg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/atlc3.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/atlc3.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="width: 16rem;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
             </div>
         </div>
-
         <div class="container">
             <div class="row my-4">
                 <table class="table">
@@ -124,6 +125,264 @@
                         @endforeach
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="table">
+                        <h1 class="headin"></h1>
+                        <table>
+                            <tr class="col-sm-3">
+                                <th>#</th>
+                                <th>Team</th>
+                                <th>GP</th>
+                                <th>W</th>
+                                <th>D</th>
+                                <th>L</th>
+                                <th>GD</th>
+                                <th>PTS</th>
+                            </tr>
+                            <tr class="col-sm-3">
+                                <td>1</td>
+                                <td>Warriors FC</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>5</td>
+                                <td>6</td>
+                            </tr>
+                            <tr class="wpos">
+                                <td>2</td>
+                                <td>YOLO FC</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td>6</td>
+                            </tr>
+                            <tr class="wpos">
+                                <td>3</td>
+                                <td>Majestic A</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td>4</td>
+                            </tr>
+                            <tr class="wpos">
+                                <td>4</td>
+                                <td>Fenris</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>4</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>5</td>
+                                <td>La Masia</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>6</td>
+                                <td>Ultra Sort FC</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-1</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>7</td>
+                                <td>Wasseypur FC</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>8</td>
+                                <td>Majestic B</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>9</td>
+                                <td>Not So Hot Spurs</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>10</td>
+                                <td>Silver Hawks</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-4</td>
+                                <td>0</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>11</td>
+                                <td>Barely Legal FC</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-5</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="table">
+                        <h1 class="headin"></h1>
+                        <table>
+                            <tr class="col-sm-3">
+                                <th>#</th>
+                                <th>Team</th>
+                                <th>GP</th>
+                                <th>W</th>
+                                <th>D</th>
+                                <th>L</th>
+                                <th>GD</th>
+                                <th>PTS</th>
+                            </tr>
+                            <tr class="col-sm-3">
+                                <td>1</td>
+                                <td>Warriors FC</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>5</td>
+                                <td>6</td>
+                            </tr>
+                            <tr class="wpos">
+                                <td>2</td>
+                                <td>YOLO FC</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td>6</td>
+                            </tr>
+                            <tr class="wpos">
+                                <td>3</td>
+                                <td>Majestic A</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>4</td>
+                                <td>4</td>
+                            </tr>
+                            <tr class="wpos">
+                                <td>4</td>
+                                <td>Fenris</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>4</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>5</td>
+                                <td>La Masia</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>6</td>
+                                <td>Ultra Sort FC</td>
+                                <td>3</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-1</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>7</td>
+                                <td>Wasseypur FC</td>
+                                <td>2</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>-2</td>
+                                <td>3</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>8</td>
+                                <td>Majestic B</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>1</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>9</td>
+                                <td>Not So Hot Spurs</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>1</td>
+                                <td>1</td>
+                                <td>-1</td>
+                                <td>1</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>10</td>
+                                <td>Silver Hawks</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-4</td>
+                                <td>0</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>11</td>
+                                <td>Barely Legal FC</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-5</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 
