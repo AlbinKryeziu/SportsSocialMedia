@@ -19,7 +19,7 @@
         </div>
         <br />
         <div class="container">
-            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top 5 Football Leagues</h3>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Football Leagues</h3>
 
             <hr class="mt-2 mb-8" />
 
@@ -49,56 +49,56 @@
         <br />
         <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Football Teams</h3>
-            <hr class="mt-2 mb-5" />
+            <hr class="mt-12 mb-5" />
             <div class="row">
                 <div class="col-sm-3">
-                    <div class="card" style="width: 17rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/bc.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap" width="300" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/bc.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap" width="100%" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/mc.png')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap" width="100%" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/mc.png')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                    </div>
+                </div>
+                <div class="col-sm-3 mb-2">
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/juventus.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/juventus.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/fbc.jpg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/fbc.jpg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/atlc3.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/atlc3.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    <div class="card" style="height:160px; widh:auto; margin:5px; display:flex;justify-content:center;align-content:center;align-items:center;">
+                        <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap" style="height:auto;width:170px;margin:10px;padding:5px;" alt="Card image cap" />
                     </div>
                 </div>
             </div>
@@ -145,113 +145,203 @@
                             </tr>
                             <tr class="col-sm-3">
                                 <td>1</td>
-                                <td>Warriors FC</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td>Manchester City</td>
+                                <td>19</td>
+                                <td>12</td>
                                 <td>5</td>
-                                <td>6</td>
+                                <td>2</td>
+                                <td>+23</td>
+                                <td>41</td>
                             </tr>
                             <tr class="wpos">
                                 <td>2</td>
-                                <td>YOLO FC</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td>Manchester United</td>
+                                <td>20</td>
+                                <td>12</td>
                                 <td>4</td>
-                                <td>6</td>
+                                <td>4</td>
+                                <td>+10</td>
+                                <td>40</td>
                             </tr>
                             <tr class="wpos">
                                 <td>3</td>
-                                <td>Majestic A</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>4</td>
-                                <td>4</td>
+                                <td>Licester City</td>
+                                <td>20</td>
+                                <td>12</td>
+                                <td>3</td>
+                                <td>5</td>
+                                <td>+14</td>
+                                <td>39</td>
                             </tr>
                             <tr class="wpos">
                                 <td>4</td>
-                                <td>Fenris</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>4</td>
+                                <td>Liverpol</td>
+                                <td>20</td>
+                                <td>10</td>
+                                <td>7</td>
+                                <td>3</td>
+                                <td>+17</td>
+                                <td>37</td>
                             </tr>
                             <tr class="pos">
                                 <td>5</td>
-                                <td>La Masia</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>3</td>
+                                <td>West Ham united</td>
+                                <td>20</td>
+                                <td>10</td>
+                                <td>5</td>
+                                <td>30</td>
+                                <td>+6</td>
+                                <td>35</td>
                             </tr>
                             <tr class="pos">
                                 <td>6</td>
-                                <td>Ultra Sort FC</td>
-                                <td>3</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>2</td>
-                                <td>-1</td>
-                                <td>3</td>
+                                <td>Tottenham Hotspur</td>
+                                <td>19</td>
+                                <td>9</td>
+                                <td>6</td>
+                                <td>4</td>
+                                <td>+14</td>
+                                <td>33</td>
                             </tr>
                             <tr class="pos">
                                 <td>7</td>
-                                <td>Wasseypur FC</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>-2</td>
+                                <td>Everton</td>
+                                <td>18</td>
+                                <td>10</td>
                                 <td>3</td>
+                                <td>5</td>
+                                <td>+7</td>
+                                <td>33</td>
                             </tr>
                             <tr class="pos">
                                 <td>8</td>
-                                <td>Majestic B</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
+                                <td>Chelsea</td>
+                                <td>20</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>6</td>
+                                <td>+10</td>
+                                <td>30</td>
                             </tr>
                             <tr class="pos">
                                 <td>9</td>
-                                <td>Not So Hot Spurs</td>
+                                <td>Arsenal</td>
                                 <td>2</td>
                                 <td>0</td>
                                 <td>1</td>
                                 <td>1</td>
                                 <td>-1</td>
-                                <td>1</td>
+                                <td>30</td>
                             </tr>
                             <tr class="pos">
                                 <td>10</td>
-                                <td>Silver Hawks</td>
+                                <td>Aston Villa</td>
+                                <td>18</td>
+                                <td>9</td>
                                 <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2</td>
-                                <td>-4</td>
-                                <td>0</td>
+                                <td>12</td>
+                                <td>+12</td>
+                                <td>29</td>
                             </tr>
                             <tr class="pos">
                                 <td>11</td>
-                                <td>Barely Legal FC</td>
+                                <td>Southampton</td>
+                                <td>19</td>
+                                <td>8</td>
+                                <td>5</td>
+                                <td>6</td>
+                                <td>+3</td>
+                                <td>29</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>12</td>
+                                <td>Leeds United</td>
+                                <td>19</td>
+                                <td>8</td>
                                 <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td>9</td>
+                                <td>-3</td>
+                                <td>26</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>13</td>
+                                <td>Wolverhampton Wanderers</td>
+                                <td>20</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>9</td>
+                                <td>-8</td>
+                                <td>23</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>14</td>
+                                <td>Crystal Palace</td>
+                                <td>20</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>9</td>
+                                <td>-12</td>
+                                <td>23</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>15</td>
+                                <td>Burnley</td>
+                                <td>19</td>
+                                <td>6</td>
+                                <td>5</td>
+                                <td>9</td>
+                                <td>-11</td>
+                                <td>22</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>16</td>
+                                <td>Newcastle United</td>
+                                <td>20</td>
+                                <td>5</td>
+                                <td>4</td>
+                                <td>11</td>
+                                <td>-15</td>
+                                <td>19</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>17</td>
+                                <td>Brighton and Hove Albion</td>
+                                <td>20</td>
+                                <td>3</td>
+                                <td>9</td>
+                                <td>6</td>
+                                <td>-7</td>
+                                <td>18</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>18</td>
+                                <td>Fulham</td>
+                                <td>19</td>
                                 <td>2</td>
-                                <td>-5</td>
-                                <td>0</td>
+                                <td>5</td>
+                                <td>7</td>
+                                <td>-33</td>
+                                <td>13</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>19</td>
+                                <td>West Bromwich Albion</td>
+                                <td>20</td>
+                                <td>2</td>
+                                <td>5</td>
+                                <td>13</td>
+                                <td>-33</td>
+                                <td>11</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>20</td>
+                                <td>Sheffield United</td>
+                                <td>20</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>16</td>
+                                <td>-21</td>
+                                <td>8</td>
                             </tr>
                         </table>
                     </div>
@@ -272,113 +362,203 @@
                             </tr>
                             <tr class="col-sm-3">
                                 <td>1</td>
-                                <td>Warriors FC</td>
+                                <td>Atletico Madrid</td>
+                                <td>18</td>
+                                <td>15</td>
                                 <td>2</td>
-                                <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>5</td>
-                                <td>6</td>
+                                <td>36</td>
+                                <td>28</td>
+                                <td>47</td>
                             </tr>
                             <tr class="wpos">
                                 <td>2</td>
-                                <td>YOLO FC</td>
-                                <td>2</td>
-                                <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
+                                <td>Real Madrid</td>
+                                <td>19</td>
+                                <td>12</td>
                                 <td>4</td>
-                                <td>6</td>
+                                <td>34</td>
+                                <td>18</td>
+                                <td>40</td>
                             </tr>
                             <tr class="wpos">
                                 <td>3</td>
-                                <td>Majestic A</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
+                                <td>Barcelona</td>
+                                <td>19</td>
+                                <td>11</td>
                                 <td>4</td>
                                 <td>4</td>
+                                <td>17</td>
+                                <td>37</td>
                             </tr>
                             <tr class="wpos">
                                 <td>4</td>
-                                <td>Fenris</td>
-                                <td>2</td>
-                                <td>1</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>4</td>
+                                <td>Sevilla</td>
+                                <td>19</td>
+                                <td>11</td>
+                                <td>3</td>
+                                <td>16</td>
+                                <td>10</td>
+                                <td>36</td>
                             </tr>
                             <tr class="pos">
                                 <td>5</td>
-                                <td>La Masia</td>
+                                <td>Villarreal</td>
+                                <td>20</td>
                                 <td>2</td>
                                 <td>1</td>
-                                <td>0</td>
+                                <td>10</td>
                                 <td>1</td>
-                                <td>0</td>
-                                <td>3</td>
+                                <td>34</td>
                             </tr>
                             <tr class="pos">
                                 <td>6</td>
-                                <td>Ultra Sort FC</td>
-                                <td>3</td>
+                                <td>Real Sociedad</td>
+                                <td>20</td>
                                 <td>1</td>
-                                <td>0</td>
-                                <td>2</td>
-                                <td>-1</td>
-                                <td>3</td>
+                                <td>5</td>
+                                <td>31</td>
+                                <td>13</td>
+                                <td>31</td>
                             </tr>
                             <tr class="pos">
                                 <td>7</td>
-                                <td>Wasseypur FC</td>
-                                <td>2</td>
+                                <td>Ganade</td>
+                                <td>20</td>
+                                <td>8</td>
+                                <td>4</td>
                                 <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>-2</td>
-                                <td>3</td>
+                                <td>-10</td>
+                                <td>28</td>
                             </tr>
                             <tr class="pos">
                                 <td>8</td>
-                                <td>Majestic B</td>
+                                <td>Real Betis</td>
+                                <td>20</td>
+                                <td>8</td>
                                 <td>1</td>
-                                <td>0</td>
-                                <td>1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>1</td>
+                                <td>4</td>
+                                <td>-8</td>
+                                <td>27</td>
                             </tr>
                             <tr class="pos">
                                 <td>9</td>
-                                <td>Not So Hot Spurs</td>
-                                <td>2</td>
-                                <td>0</td>
+                                <td>Athclic Club</td>
+                                <td>19</td>
+                                <td>7</td>
+                                <td>3</td>
                                 <td>1</td>
-                                <td>1</td>
-                                <td>-1</td>
-                                <td>1</td>
+                                <td>3</td>
+                                <td>24</td>
                             </tr>
                             <tr class="pos">
                                 <td>10</td>
-                                <td>Silver Hawks</td>
+                                <td>Celta Vigo</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>24</td>
                                 <td>2</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>2</td>
-                                <td>-4</td>
-                                <td>0</td>
+                                <td>-7</td>
+                                <td>24</td>
                             </tr>
                             <tr class="pos">
                                 <td>11</td>
-                                <td>Barely Legal FC</td>
-                                <td>2</td>
+                                <td>Cadiz</td>
+                                <td>20</td>
                                 <td>0</td>
                                 <td>0</td>
                                 <td>2</td>
-                                <td>-5</td>
+                                <td>-10</td>
+                                <td>24</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>12</td>
+                                <td>Levante</td>
+                                <td>19</td>
+                                <td>5</td>
+                                <td>8</td>
+                                <td>6</td>
+                                <td>-1</td>
+                                <td>23</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>13</td>
+                                <td>Getafe</td>
+                                <td>19</td>
                                 <td>0</td>
+                                <td>2</td>
+                                <td>2</td>
+                                <td>-6</td>
+                                <td>23</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>14</td>
+                                <td>Valencia</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-3</td>
+                                <td>20</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>15</td>
+                                <td>Eibar</td>
+                                <td>20</td>
+                                <td>5</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-4</td>
+                                <td>20</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>16</td>
+                                <td>Valladolid</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-9</td>
+                                <td>20</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>17</td>
+                                <td>Osasuna</td>
+                                <td>20</td>
+                                <td>2</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-10</td>
+                                <td>19</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>18</td>
+                                <td>Alves</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-11</td>
+                                <td>18</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>19</td>
+                                <td>Eiche</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-9</td>
+                                <td>17</td>
+                            </tr>
+                            <tr class="pos">
+                                <td>20</td>
+                                <td>Huesnca</td>
+                                <td>20</td>
+                                <td>0</td>
+                                <td>0</td>
+                                <td>2</td>
+                                <td>-15</td>
+                                <td>13</td>
                             </tr>
                         </table>
                     </div>

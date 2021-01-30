@@ -18,7 +18,9 @@
         </div>
         <br>
         <div class="container">
-            <p><strong>Statistically Ranking the World's Top  Basketball Leagues</strong></p>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top  Basketball Leagues</h3>
+
+            <hr class="mt-2 mb-8" />
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
@@ -44,7 +46,8 @@
         </div>
         <br/>
         <div class="container">
-            <p><strong>Statistically Ranking the World's Top 10 Basketball Teams</strong></p>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Basketball Teams</h3>
+            <hr class="mt-2 mb-8" />
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">

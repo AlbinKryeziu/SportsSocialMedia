@@ -21,7 +21,8 @@
     </div>
     <br />
     <div class="container">
-        <p><strong>Statistically Ranking the World's Top Boxing Leagues</strong></p>
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Boxing Leagues</h3>
+        <hr class="mt-12 mb-5" />
         <div class="row">
             <div class="col-sm-4">
                 <div class="card" style="width: 22rem;">
@@ -43,7 +44,8 @@
     </div>
     <br />
     <div class="container">
-        <p><strong>Statistically Ranking the World's Top 10 Boxing Players</strong></p>
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top boxing Players</h3>
+        <hr class="mt-12 mb-5" />
         <div class="row">
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">

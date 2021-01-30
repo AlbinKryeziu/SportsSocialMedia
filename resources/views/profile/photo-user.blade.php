@@ -26,8 +26,8 @@
         <div class="row">
             @foreach($photos as $photo)
             <div class="col-sm-3">
-                <div class="card" style="width: 18rem;" style="line-break: strict;">
-                    <img class="card-img-top" src="{{asset('images/'.$photo->profile_photo_path)}}"  alt="Card image cap" width="200" height="200"  alt="Card image cap" />
+                <div class="card" style="background-color: rgba(243, 244, 246, 1);border:0px;max-height:300px; max-width:300px; margin:5px; display:flex;justify-content:center;align-content:center;align-items:center;" style="line-break: strict;">
+                    <img class="card-img-top" src="{{asset('images/'.$photo->profile_photo_path)}}"  style="height:100%;width:100%;margin:10px;padding:5px;" alt="Card image cap"   alt="Card image cap" />
                 </div>
             </div>
             @endforeach

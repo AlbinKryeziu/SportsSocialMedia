@@ -21,7 +21,8 @@
     </div>
 <br>
     <div class="container">
-        <p><strong>Statistically Ranking the World's Top  Baseball Leagues</strong></p>
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Baseball Leagues</h3>
+        <hr class="mt-12 mb-5" />
         <div class="row">
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
@@ -50,7 +51,8 @@
     </div>
     <br/>
     <div class="container">
-        <p><strong>Statistically Ranking the World's Top 10 Baseball Teams</strong></p>
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Baseball Teams</h3>
+        <hr class="mt-12 mb-5" />
         <div class="row">
             <div class="col-sm-3">
                 <div class="card" style="width: 18rem;">
