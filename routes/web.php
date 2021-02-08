@@ -65,8 +65,11 @@ Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
 Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
 
 //User photo 
-Route::get('/user/photo', [UserController::class, 'showPhoto'])->name('showPhoto');
+Route::get('/user/photo', [UserController::class, 'index'])->name('showPhoto');
 Route::post('/user/addphoto', [UserController::class, 'addPhotoToUser']);
+
+Route::get('/photos/me ', [UserController::class, 'photos'])->name('photos');
+Route::get('/friends', [UserController::class, 'friends'])->name('friends');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
        return view('dashboard');

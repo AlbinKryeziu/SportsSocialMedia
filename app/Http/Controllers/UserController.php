@@ -31,4 +31,18 @@ class UserController extends Controller
         $photos = UserPhoto::where('user_id', Auth::id())->get();
         return view('profile/photo-user', compact('photos'));
     }
+
+    public function index(){
+        return view('user/user-timeline');
+    }
+
+    public function photos(){
+
+        return view('user/timeline-photos');
+    }
+
+    public function friends(){
+
+        return view('user/timeline-friends');
+    }
 }
