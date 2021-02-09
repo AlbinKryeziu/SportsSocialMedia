@@ -20,9 +20,9 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/dashboard';
 
     /**
-     * The controller namespace for the application.
+     * The controller namespace for the application.p
      *
-     * When present, controller route declarations will automatically be prefixed with this namespace.
+     * When present, controller route declarations will automatically be prefixed with this namespace
      *
      * @var string|null
      */
@@ -33,6 +33,8 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+  
+
     public function boot()
     {
         $this->configureRateLimiting();

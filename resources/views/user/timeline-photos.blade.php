@@ -41,11 +41,11 @@
 								  <span>Group Admin</span>
 								</li>
 								<li>
-									<a class="" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
-									<a class="active" href="timeline-photos.html" title="" data-ripple="">Photos</a>
+									<a class="active" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
+									<a class="" href="{{ url('/photos/me ') }}" title="" data-ripple="" >Photos</a>
 									<a class="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
 									<a class="" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
-									<a class="" href="about.html" title="" data-ripple="">about</a>
+									<a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a>
 									<a class="" href="#" title="" data-ripple="">more</a>
 								</li>
 							</ul>

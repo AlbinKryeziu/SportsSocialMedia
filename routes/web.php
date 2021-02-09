@@ -69,8 +69,18 @@ Route::get('/user/photo', [UserController::class, 'index'])->name('showPhoto');
 Route::post('/user/addphoto', [UserController::class, 'addPhotoToUser']);
 
 Route::get('/photos/me ', [UserController::class, 'photos'])->name('photos');
+Route::get('/aboutUs', [UserController::class, 'aboutUs'])->name('aboutUs');
+Route::get('/edit/user', [UserController::class, 'editWork'])->name('editWork');
+Route::get('/edit/info', [UserController::class, 'editBasic'])->name('editBasic');
+Route::get('/edit/pswd', [UserController::class, 'changePassword'])->name('changePassword');
 Route::get('/friends', [UserController::class, 'friends'])->name('friends');
+Route::post('/addprofile', [UserController::class, 'postProfileUpdate'])->name('postProfileUpdate');
+Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
+Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-       return view('dashboard');
-})->name('dashboard'); 
+    if(Auth::user()->role == 1){
+        return view('user/timeline-friends');
+    }
+});
