@@ -1,133 +1,6 @@
-@include('user/header-timeline')
-<body>
-<!--<div class="se-pre-con"></div>-->
+@include('user/container')
+		
 
-		
-	<section>
-		<div class="feature-photo">
-			
-		
-			<figure><img src="{{ asset('socail/images/'.auth()->user()->profile_photo_path) }}" alt=""></figure>
-			<div class="add-btn">
-				<span>1205 followers</span>
-				<a href="#" title="" data-ripple="">Add Friend</a>
-			</div>
-			<form class="edit-phto">
-				<i class="fa fa-camera-retro"></i>
-				<label class="fileContainer">
-					Edit Cover Photo
-				<input type="file" id="file"/>
-				</label>
-			</form>
-		
-			<div class="container-fluid">
-				<div class="row merged">
-					<div class="col-lg-2 col-sm-3">
-						<div class="user-avatar">
-							<figure>
-								<img src="{{ asset('socail/images/'.auth()->user()->profilePath) }}" alt="">
-								<form class="edit-phto">
-									<i class="fa fa-camera-retro"></i>
-									<label class="fileContainer">
-										
-										<input type="file" name="file" id="file"/>
-									</label>
-								</form>
-							</figure>
-						</div>
-					</div>
-					<div class="col-lg-10 col-sm-9">
-						<div class="timeline-info">
-							<ul>
-								<li class="admin-name">
-								  <h5>{{ auth()->user()->name }}</h5>
-								  <span></span>
-								</li>
-								<li>
-									<a class="active" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
-									<a class="" href="{{ url('/photos/me ') }}" title="" data-ripple="" >Photos</a>
-									<a class="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
-									<a class="" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
-									<a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a>
-									<a class="" href="#" title="" data-ripple="">more</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section><!-- top area -->
-		
-	<section>
-		<div class="gap gray-bg">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="row merged20" id="page-contents">
-							<div class="col-lg-3">
-								<aside class="sidebar static">
-									<div class="widget">
-											<h4 class="widget-title">Socials</h4>
-											<ul class="socials">
-												<li class="facebook">
-													<a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins>45 likes</ins></a>
-												</li>
-												<li class="twitter">
-													<a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins>25 likes</ins></a>
-												</li>
-												<li class="google">
-													<a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins>35 likes</ins></a>
-												</li>
-											</ul>
-										</div>
-							
-									<div class="widget">
-										<h4 class="widget-title">Shortcuts</h4>
-										<ul class="naves">
-											<li>
-												<i class="ti-clipboard"></i>
-												<a href="newsfeed.html" title="">News feed</a>
-											</li>
-											<li>
-												<i class="ti-mouse-alt"></i>
-												<a href="inbox.html" title="">Inbox</a>
-											</li>
-											<li>
-												<i class="ti-files"></i>
-												<a href="fav-page.html" title="">My pages</a>
-											</li>
-											<li>
-												<i class="ti-user"></i>
-												<a href="timeline-friends.html" title="">friends</a>
-											</li>
-											<li>
-												<i class="ti-image"></i>
-												<a href="timeline-photos.html" title="">images</a>
-											</li>
-											<li>
-												<i class="ti-video-camera"></i>
-												<a href="timeline-videos.html" title="">videos</a>
-											</li>
-											<li>
-												<i class="ti-comments-smiley"></i>
-												<a href="messages.html" title="">Messages</a>
-											</li>
-											<li>
-												<i class="ti-bell"></i>
-												<a href="notifications.html" title="">Notifications</a>
-											</li>
-											
-											<li>
-												<i class="fa fa-bar-chart-o"></i>
-												<a href="insights.html" title="">insights</a>
-											</li>
-											<li>
-												<i class="ti-power-off"></i>
-												<a href="landing.html" title="">Logout</a>
-											</li>
-										</ul>
-									</div><!-- Shortcuts -->
 									<div class="widget">
 										<h4 class="widget-title">Recent Activity</h4>
 										<ul class="activitiez">
@@ -176,11 +49,7 @@
 								</aside>
 							</div>
 							
-							@if ($errors->any())
-							@foreach ($errors->all() as $error)
-							<div>{{$error}}</div>
-							@endforeach
-							@endif
+							
 						
 							<div class="col-lg-6">
 								<div class="loadMore">
@@ -461,8 +330,7 @@
 		</form>
 	</div><!-- side panel -->		
 			
-	<script src="{{ asset('social/js/main.min.js')}}"></script>
-	<script src="{{ asset('social/js/script.js')}}"></script>
+	@include('user/script')
 
 </body>	
 </html>
@@ -471,58 +339,48 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-  $('#file').on('change',function(ev){
-    console.log("here inside");
+    $("#profile").on("change", function (ev) {
+        var filedata = this.files[0];
+        var imgtype = filedata.type;
+        var match = ["image/jpeg", "image/jpg"];
 
-    var filedata=this.files[0];
-    var imgtype=filedata.type;
+        if (!(imgtype == match[0]) || imgtype == match[1]) {
+            $("#mgs_ta").html('<p style="color:red">Plz select a valid type image..only jpg jpeg allowed</p>');
+        } else {
+            $("#mgs_ta").empty();
 
+            var reader = new FileReader();
 
-    var match=['image/jpeg','image/jpg'];
+            reader.onload = function (ev) {
+                $("#profile-pic").attr("src", ev.target.result).css("width", "230px").css("height", "230px");
+            };
+            reader.readAsDataURL(this.files[0]);
+            var data = this.files[0].name;
 
-    if(!(imgtype==match[0])||(imgtype==match[1])){
-        $('#mgs_ta').html('<p style="color:red">Plz select a valid type image..only jpg jpeg allowed</p>');
+            var url = "{{ url('/addprofile') }}";
 
-    }else{
+            $.ajax({
+                headers: { "X-CSRF-Token": $("meta[name=csrf_token]").attr("content") },
+                url: url,
+                type: "POST",
+                data: data,
+                enctype: "multipart/form-data",
+                processData: false, // tell jQuery not to process the data
+                contentType: false, // tell jQuery not to set contentType
+            });
+            // $.ajax({
+            // headers:{'X-CSRF-Token':$('meta[name=csrf_token]').attr('content')},
+            // async:true,
+            // type:"post",
+            // contentType:false,
+            // url:url,
+            // data:postData,
+            // processData:false,
+            // success:function(){
+            //   console.log("success");
+            // }
 
-      $('#mgs_ta').empty();
-    
-
-    //---image preview
-
-    var reader=new FileReader();
-
-    reader.onload=function(ev){
-      $('#img_prv').attr('src',ev.target.result).css('width','150px').css('height','150px');
-    }
-    reader.readAsDataURL(this.files[0]);
-
-    /// preview end
-
-        //upload
-
-        var postData=new FormData();
-        postData.append('file',this.files[0]);
-
-        var url="{{url('/addprofile')}}";
-
-        $.ajax({
-        headers:{'X-CSRF-Token':$('meta[name=csrf_token]').attr('content')},
-        async:true,
-        type:"post",
-        contentType:false,
-        url:url,
-        data:postData,
-        processData:false,
-        success:function(){
-          console.log("success");
+            //  });
         }
-
-
-        });
-
-    }
-
-  });
-
+    });
 </script>

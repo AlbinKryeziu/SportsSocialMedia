@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +80,9 @@ Route::post('/addprofile', [UserController::class, 'postProfileUpdate'])->name('
 Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
 Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
 
+//profile controller
+Route::post('/change/profile', [ProfileController::class, 'ediProfile'])->name('changeProfile');
+Route::post('/change/education', [ProfileController::class, 'editEducation'])->name('editEducation');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if(Auth::user()->role == 1){

@@ -9,7 +9,10 @@ use App\Models\UserPhoto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Dotenv\Validator;
+use App\Models\Profile;
+use App\Models\Education;
 use phpDocumentor\Reflection\Types\Null_;
+use SebastianBergmann\Environment\Console;
 
 class UserController extends Controller
 {
@@ -29,7 +32,12 @@ class UserController extends Controller
 
     public function photos()
     {
-        return view('user/timeline-photos');
+        $post = Post::where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')->where('pathPhotos','!=', Null)
+            ->get();
+        return view('user/timeline-photos', [
+            'post' => $post,
+        ]);
     }
 
     public function friends()
@@ -39,34 +47,13 @@ class UserController extends Controller
 
     public function postProfileUpdate(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'photo' => 'required|image|mimes:png,jpg,jpeg|max:200',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json([
-                'success' => false,
-                'error' => $validation->errors()->first(),
-            ]);
-        }
-
-        $user = User::find(Auth::id());
-
-        if ($request->hasFile('file')) {
-            $imageName = time() . '.' . $request->file->extension();
-            $request->image->move(public_path('images'), $imageName);
-
-            $user->update(['profilePath' => $imageName]);
-        }
-
-        return ['success' => true, 'message' => 'Successfully updated'];
     }
 
     public function addPost(Request $request)
     {
         $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'description' => 'required|',
+            
         ]);
 
         if ($request->has('image')) {
@@ -96,22 +83,27 @@ class UserController extends Controller
         return redirect()->back();
     }
 
-    public function aboutUs(){
-
-        return view('user/about-timeline');
+    public function aboutUs()
+    {
+        $basicInfo = Profile::where('user_id', Auth::id())->get();
+        $education = Education::where('user_id', Auth::id())->get();
+        return view('user/about-timeline', [
+            'basicInfo' => $basicInfo,
+            'education' => $education,
+        ]);
     }
 
-    public function editWork(){
-
+    public function editWork()
+    {
         return view('user/edit-work-timeline');
     }
-    public function editBasic(){
-
+    public function editBasic()
+    {
         return view('user/basic-info-timerline');
     }
 
-    public function changePassword(){
-        
+    public function changePassword()
+    {
         return view('user/edit-password-timeline');
     }
 }

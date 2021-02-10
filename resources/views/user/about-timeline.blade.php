@@ -3,7 +3,7 @@
 <body>
         <section>
             <div class="feature-photo">
-                <figure><img src="images/resources/timeline-1.jpg" alt=""></figure>
+                <figure><img src="{{ asset('socail/images/'.auth()->user()->profile_photo_path) }}" alt=""></figure>
                 <div class="add-btn">
                     <span>1205 followers</span>
                     <a href="#" title="" data-ripple="">Add Friend</a>
@@ -20,7 +20,7 @@
                         <div class="col-lg-2 col-sm-3">
                             <div class="user-avatar">
                                 <figure>
-                                    <img src="images/resources/user-avatar.jpg" alt="">
+                                    <img id="profile-pic" src="{{ asset('socail/images/'.auth()->user()->profilePath) }}" alt="">
                                     <form class="edit-phto">
                                         <i class="fa fa-camera-retro"></i>
                                         <label class="fileContainer">
@@ -35,8 +35,8 @@
                             <div class="timeline-info">
                                 <ul>
                                     <li class="admin-name">
-                                      <h5>Janice Griffith</h5>
-                                      <span>Group Admin</span>
+                                      <h5>{{ auth()->user()->name }}</h5>
+                                      
                                     </li>
                                     <li>
                                      
@@ -107,9 +107,10 @@
                                     <div class="central-meta">
                                         <div class="about">
                                             <div class="personal">
+                                                @foreach($basicInfo as $key => $profile)
                                                 <h5 class="f-title"><i class="ti-info-alt"></i> Personal Info</h5>
                                                 <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                                {{ $profile->about_me }}
                                                 </p>
                                             </div>
                                             <div class="d-flex flex-row mt-2">
@@ -117,9 +118,7 @@
                                                     <li class="nav-item">
                                                         <a href="#basic" class="nav-link active" data-toggle="tab" >Basic info</a>
                                                     </li>
-                                                    <li class="nav-item">
-                                                        <a href="#location" class="nav-link" data-toggle="tab" >location</a>
-                                                    </li>
+                                                 
                                                     <li class="nav-item">
                                                         <a href="#work" class="nav-link" data-toggle="tab" >work and education</a>
                                                     </li>
@@ -133,29 +132,37 @@
                                                 <div class="tab-content">
                                                     <div class="tab-pane fade show active" id="basic" >
                                                         <ul class="basics">
-                                                            <li><i class="ti-user"></i>sarah grey</li>
-                                                            <li><i class="ti-map-alt"></i>live in Dubai</li>
-                                                            <li><i class="ti-mobile"></i>+1-234-345675</li>
-                                                            <li><i class="ti-email"></i>yourmail@email.com</li>
-                                                            <li><i class="ti-world"></i>www.yoursite.com</li>
+                                                          
+                                                                
+                                                            
+                                                            <li><i class="ti-user"></i>{{ $profile->first_name }} {{$profile->last_name }}</li>
+                                                            <li><i class="ti-map-alt"></i>{{ $profile->city }}</li>
+                                                            <li><i class="ti-mobile"></i>{{ $profile->phone }}</li>
+                                                            <li><i class="ti-pin"></i>{{ $profile->country }}</li>
+                                                            <li><i class="ti-time"></i>{{ $profile->birthday }}</li>
                                                         </ul>
+                                                        @endforeach
                                                     </div>
                                                     <div class="tab-pane fade" id="location" role="tabpanel">
                                                         <div class="location-map">
                                                             <div id="map-canvas"></div>
                                                         </div>
                                                     </div>
+                                                    @foreach($education as $key => $education)
+                                                        
+                                                 
                                                     <div class="tab-pane fade" id="work" role="tabpanel">
                                                         <div>
                                                             
-                                                            <a href="#" title="">Envato</a>
-                                                            <p>work as autohr in envato themeforest from 2013</p> 
+                                                            <a href="#" title="">{{ $education->degree }}</a>
+                                                            <p>{{ $education->description }}</p> 
                                                             <ul class="education">
-                                                                <li><i class="ti-facebook"></i> BSCS from Oxford University</li>
-                                                                <li><i class="ti-twitter"></i> MSCS from Harvard Unversity</li>
+                                                                <li><i class="ti-medall"></i> {{ $education->faculty }}</li>
+                                                               
                                                             </ul>
                                                         </div>
                                                     </div>
+                                                    @endforeach
                                                     <div class="tab-pane fade" id="interest" role="tabpanel">
                                                         <ul class="basics">
                                                             <li>Footbal</li>
@@ -451,9 +458,7 @@
                 </form>
             </div><!-- side panel -->		
         
-        <script src="{{ asset('js/main.min.js') }}"></script>
-        <script src="{{ asset('js/script.js') }}"></script>
-        <script src="{{ asset('js/map-init.js') }}"></script>
+            @include('user/script')
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8c55_YHLvDHGACkQscgbGLtLRdxBDCfI"></script>
     
     </body>	

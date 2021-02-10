@@ -1,7 +1,7 @@
 @include('user/header-timeline')
 <section>
     <div class="feature-photo">
-        <figure><img src="images/resources/timeline-1.jpg" alt=""></figure>
+        <figure><img src="{{ asset('socail/images/'.auth()->user()->profile_photo_path) }}" alt=""></figure>
         <div class="add-btn">
             <span>1205 followers</span>
             <a href="#" title="" data-ripple="">Add Friend</a>
@@ -18,7 +18,7 @@
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar">
                         <figure>
-                            <img src="images/resources/user-avatar.jpg" alt="">
+                            <img id="profile-pic" src="{{ asset('socail/images/'.auth()->user()->profilePath) }}" alt="">
                             <form class="edit-phto">
                                 <i class="fa fa-camera-retro"></i>
                                 <label class="fileContainer">
@@ -33,8 +33,7 @@
                     <div class="timeline-info">
                         <ul>
                             <li class="admin-name">
-                              <h5>Janice Griffith</h5>
-                              <span>Group Admin</span>
+                                <h5>{{ auth()->user()->name }}</h5>
                             </li>
                             <li>
                                 <a class="active" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
@@ -353,8 +352,7 @@
         </form>
     </div><!-- side panel -->	
 
-<script src="js/main.min.js"></script>
-<script src="js/script.js"></script>
+	@include('user/script')
 
 </body>	
 </html>

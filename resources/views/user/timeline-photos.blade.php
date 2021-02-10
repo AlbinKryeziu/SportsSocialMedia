@@ -1,11 +1,10 @@
 @include('user/header-timeline')
 
-<body>
 
 	
 	<section>
 		<div class="feature-photo">
-			<figure><img src="images/resources/timeline-1.jpg" alt=""></figure>
+			<figure><img src="{{ asset('socail/images/'.auth()->user()->profile_photo_path) }}" alt=""></figure>
 			<div class="add-btn">
 				<span>1205 followers</span>
 				<a href="#" title="" data-ripple="">Add Friend</a>
@@ -22,7 +21,7 @@
 					<div class="col-lg-2 col-sm-3">
 						<div class="user-avatar">
 							<figure>
-								<img src="images/resources/user-avatar.jpg" alt="">
+								<img id="profile-pic" src="{{ asset('socail/images/'.auth()->user()->profilePath) }}" alt="">
 								<form class="edit-phto">
 									<i class="fa fa-camera-retro"></i>
 									<label class="fileContainer">
@@ -75,10 +74,7 @@
 												<i class="ti-mouse-alt"></i>
 												<a href="inbox.html" title="">Inbox</a>
 											</li>
-											<li>
-												<i class="ti-files"></i>
-												<a href="fav-page.html" title="">My pages</a>
-											</li>
+											
 											<li>
 												<i class="ti-user"></i>
 												<a href="timeline-friends.html" title="">friends</a>
@@ -99,14 +95,8 @@
 												<i class="ti-bell"></i>
 												<a href="notifications.html" title="">Notifications</a>
 											</li>
-											<li>
-												<i class="ti-share"></i>
-												<a href="people-nearby.html" title="">People Nearby</a>
-											</li>
-											<li>
-												<i class="fa fa-bar-chart-o"></i>
-												<a href="insights.html" title="">insights</a>
-											</li>
+											
+											
 											<li>
 												<i class="ti-power-off"></i>
 												<a href="landing.html" title="">Logout</a>
@@ -136,69 +126,15 @@
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<ul class="photos">
-
+										@foreach($post as $key => $image)
+											
+									
 										<li>
-											<a class="strip" href="images/resources/photo-22.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo2.jpg" alt=""></a>
+											<a class="strip" href="{{ asset('images/'.$image->pathPhotos) }}" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
+										   <img src="{{ asset('images/'.$image->pathPhotos) }}" alt=""></a>
 										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-33.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo3.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-44.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo4.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-55.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo5.jpg" alt=""></a>
-										</li>
-
-										<li>
-											<a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo6.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-77.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo7.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-88.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo8.jpg" alt=""></a>
-										</li>
-
-										<li>
-											<a class="strip" href="images/resources/photo-99.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo12.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-101.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo10.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-101.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo11.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-22.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo1.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-33.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo9.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-99.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo12.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo6.jpg" alt=""></a>
-										</li>
-										<li>
-											<a class="strip" href="images/resources/photo-66.jpg" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-												<img src="images/resources/photo13.jpg" alt=""></a>
-										</li>
+										@endforeach
+										
 									</ul>
 									<div class="lodmore"><button class="btn-view btn-load-more"></button></div>
 								</div><!-- photos -->
@@ -243,7 +179,7 @@
 										<ul id="people-list" class="friendz-list">
 											<li>
 												<figure>
-													<img src="images/resources/friend-avatar.jpg" alt="">
+													<img src="{{ 'socail/images/resources/friend-avatar.jpg' }}" alt="">
 													<span class="status f-online"></span>
 												</figure>
 												<div class="friendz-meta">

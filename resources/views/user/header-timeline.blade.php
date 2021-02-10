@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ asset('socail/css/responsive.css') }}">
 
 </head>
+<body>
 <div class="theme-layout">
 	<div class="postoverlay"></div>
 	<div class="responsive-header">
@@ -432,3 +433,4 @@
 			
 		</div>
 	</div><!-- topbar -->	
+
