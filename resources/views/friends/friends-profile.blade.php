@@ -1,4 +1,76 @@
-@include('user/container')
+@include('user/header-timeline')
+
+
+<section>
+    @foreach($user as $key => $user)
+    <div class="feature-photo">
+        <figure><img src="{{ asset('storage/'.$user->profilePath) }}" alt=""></figure>
+        <div class="add-btn">
+            <span>1205 followers</span>
+            <a href="#" title="" data-ripple="">Add Friend</a>
+        </div>
+      
+        <div class="container-fluid">
+            <div class="row merged">
+                <div class="col-lg-2 col-sm-3">
+                    <div class="user-avatar">
+                        <figure>
+                            <img id="profile-pic" src="{{ asset('storage/'.$user->profilePath) }}" style="height: 200px; width: 200px;" alt="">
+                            <form class="edit-phto">
+                                <i class="fa fa-camera-retro"></i>
+                                <label class="fileContainer">
+                                    <input type="file" name="image" id="profile"/>
+                                </label>
+                            </form>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-sm-9">
+                    <div class="timeline-info">
+                        <ul>
+                            <li class="admin-name">
+                              <h5>{{ $user->name }}</h5>
+                              <span></span>
+                            </li>
+                            <li>
+                                <a class="active" href="{{ url('friends/profile/'.$user->id) }}" title="" data-ripple="">time line</a>
+                                <a class="" href="{{ url('friends/photo/'.$user->id) }}" title="" data-ripple="" >Photos</a>
+                                <a class="" href="" title="" data-ripple="">about</a>
+                                
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+<section>
+    <div class="gap gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row merged20" id="page-contents">
+                        <div class="col-lg-3">
+                            <aside class="sidebar static">
+                                <div class="widget">
+                                        <h4 class="widget-title">Socials</h4>
+                                        <ul class="socials">
+                                            <li class="facebook">
+                                                <a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins>45 likes</ins></a>
+                                            </li>
+                                            <li class="twitter">
+                                                <a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins>25 likes</ins></a>
+                                            </li>
+                                            <li class="google">
+                                                <a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins>35 likes</ins></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                        
+                            
 		
 
 									<div class="widget">
@@ -58,39 +130,18 @@
 											<figure>
 												<img src="images/resources/admin2.jpg" alt="">
 											</figure>
-											<div class="newpst-input">
-												<form method="Post"  action="{{ url('addPost') }}" enctype="multipart/form-data">
-													@csrf
-													<textarea rows="2" placeholder="write something" name="description"></textarea>
-													<div class="attachments">
-														<ul>
-															
-																<i class="fa fa-camera"></i>
-																<label class="fileContainer">
-																	<input type="file" name="image" id="image">
-																</label>
-															</li>
-															<li>
-																<button type="submit">Publish</button>
-															</li>
-														</ul>
-													</div>
-												</form>
-											</div>
+											
 										</div>
 									</div>
 								
 									<!-- add post new box -->
-									@foreach($post as $key => $post)
+                                    @forelse($user->post as $key => $post)
+                                        
+                            
 									<div class="central-meta item">
 										<div class="user-post">
 											<div class="friend-info">
-												<form method="Post" action="{{ url('/delete/post', $post->id) }}">
-													@csrf
-													<span class="views" data-toggle="tooltip" style="margin-left:500px;">
-														<button type="submit" class="fa fa-trash"></button>
-													</span>
-												</form>
+												
 												
 												<figure>
 													<img src="images/resources/friend-avatar10.jpg" alt="">
@@ -142,7 +193,10 @@
 												</div>
 											</div>
 										</div>
-									</div>
+                                    </div>
+                                    @empty
+                                      <p style="text-align: center">No Post</p>  
+                                    @endforelse
 									@endforeach
 								
 									
@@ -193,49 +247,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-<script type="text/javascript">
-    $("#profile").on("change", function (ev) {
-        var filedata = this.files[0];
-        var imgtype = filedata.type;
-        var match = ["image/jpeg", "image/jpg"];
 
-        if (!(imgtype == match[0]) || imgtype == match[1]) {
-            $("#mgs_ta").html('<p style="color:red">Plz select a valid type image..only jpg jpeg allowed</p>');
-        } else {
-            $("#mgs_ta").empty();
-
-            var reader = new FileReader();
-
-            reader.onload = function (ev) {
-                $("#profile-pic").attr("src", ev.target.result).css("width", "230px").css("height", "230px");
-            };
-            reader.readAsDataURL(this.files[0]);
-            var data = this.files[0].name;
-
-            var url = "{{ url('/addprofile') }}";
-
-            $.ajax({
-                headers: { "X-CSRF-Token": $("meta[name=csrf_token]").attr("content") },
-                url: url,
-                type: "POST",
-                data: data,
-                enctype: "multipart/form-data",
-                processData: false, // tell jQuery not to process the data
-                contentType: false, // tell jQuery not to set contentType
-            });
-            // $.ajax({
-            // headers:{'X-CSRF-Token':$('meta[name=csrf_token]').attr('content')},
-            // async:true,
-            // type:"post",
-            // contentType:false,
-            // url:url,
-            // data:postData,
-            // processData:false,
-            // success:function(){
-            //   console.log("success");
-            // }
-
-            //  });
-        }
-    });
-</script>

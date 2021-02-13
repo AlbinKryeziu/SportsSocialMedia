@@ -1,8 +1,5 @@
 @include('user/container')
 
-
-	
-	
 									<div class="widget">
 										<h4 class="widget-title">Profile intro</h4>
 										<ul class="short-profile">

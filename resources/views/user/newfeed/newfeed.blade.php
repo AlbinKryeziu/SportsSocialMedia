@@ -57,7 +57,12 @@
                                                 <img src="{{ asset('storage/'.$post->user->profilePath) }}" style="height: 40px; width: 100px;" alt="" />
                                             </figure>
                                             <div class="friend-name">
-                                                <ins><a href="" title="">{{ $post->user->name }}</a></ins>
+                                                @if(auth()->user()->id == $post->user_id)
+                                                
+                                                <ins><a href="{{ url('/user/photo') }}" title="">{{ $post->user->name }}</a></ins>
+                                                @else 
+                                                <ins><a href="{{ url('friends/profile/'.$post->user->id) }}" title="">{{ $post->user->name }}</a></ins>
+                                                @endif
                                                 <span>published: {{Carbon\Carbon::parse($post->created_at)->format('d-m-Y H:s') }}</span>
                                             </div>
                                             <div class="post-meta">
@@ -257,11 +262,13 @@
                                                 @foreach($user as $key => $user)
 
                                                 <li>
+                                                   
                                                     <figure><img src="{{ asset('storage/'.$user->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
                                                     <div class="friend-meta">
-                                                        <h4><a href="time-line.html" title="">{{ $user->name }}</a></h4>
+                                                        <h4><a href="{{ url('friends/profile/'.$user->id) }}" title="">{{ $user->name }}</a></h4>
                                                         <a href="#" title="" class="underline">Add Friend</a>
                                                     </div>
+                                                    
                                                 </li>
                                                 @endforeach
                                             </ul>
@@ -330,7 +337,7 @@
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Hidden</button>
                 </div>
             </div>
           </form>

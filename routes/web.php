@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FriendController;
 use App\Http\Controllers\NewfeedController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
@@ -96,4 +97,10 @@ Route::post('/change/education', [ProfileController::class, 'editEducation'])->n
 Route::get('newfeed', [NewfeedController::class,'index']);
 Route::post('newfeed/delete/post', [NewfeedController::class,'deletePostFeed']);
 Route::post('newfeed/hidde/post', [NewfeedController::class,'hiddePost']);
+
+//friends
+
+Route::get('friends/profile/{userId}', [FriendController::class,'friendsProfile']);
+Route::get('friends/photo/{userId}', [FriendController::class,'friendsPhoto']);
+
 
