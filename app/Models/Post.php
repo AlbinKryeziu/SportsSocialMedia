@@ -5,6 +5,7 @@ use App\Models\User;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\HidePost;
 
 class Post extends Model
 {
@@ -18,6 +19,10 @@ class Post extends Model
 
     public function user(){
 
-        return $this->hasOne(User::class, 'user_id','id') ;
+        return $this->belongsTo(User::class, 'user_id','id') ;
+    }
+    public function hidde(){
+
+        return $this->hasMany(HidePost::class);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\NewfeedController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\UserController;
@@ -20,6 +21,12 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::get('/', function () {
     return view('new-home');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    if(Auth::user()->role == 1){
+        return view('user/timeline-friends');
+    }
 });
 
 Route::get('/about-us', function () {
@@ -67,7 +74,7 @@ Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
 Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
 
 //User photo 
-Route::get('/user/photo', [UserController::class, 'index'])->name('showPhoto');
+Route::get('/user/photo', [UserController::class, 'index'])->name('userPost');
 Route::post('/user/addphoto', [UserController::class, 'addPhotoToUser']);
 
 Route::get('/photos/me ', [UserController::class, 'photos'])->name('photos');
@@ -84,8 +91,9 @@ Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->nam
 Route::post('/change/profile', [ProfileController::class, 'ediProfile'])->name('changeProfile');
 Route::post('/change/education', [ProfileController::class, 'editEducation'])->name('editEducation');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    if(Auth::user()->role == 1){
-        return view('user/timeline-friends');
-    }
-});
+//new feed 
+
+Route::get('newfeed', [NewfeedController::class,'index']);
+Route::post('newfeed/delete/post', [NewfeedController::class,'deletePostFeed']);
+Route::post('newfeed/hidde/post', [NewfeedController::class,'hiddePost']);
+

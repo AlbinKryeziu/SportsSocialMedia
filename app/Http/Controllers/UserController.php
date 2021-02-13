@@ -16,20 +16,14 @@ use SebastianBergmann\Environment\Console;
 
 class UserController extends Controller
 {
-    public function showPhoto()
-    {
-        $photos = UserPhoto::where('user_id', Auth::id())->get();
-        return view('profile/photo-user', compact('photos'));
-    }
-
     public function index()
     {
-        $post = Post::orderBy('created_at', 'desc')->get();
+        $post = Post::where('user_id',Auth::id())->orderBy('created_at', 'desc')->get();
         return view('user/user-timeline', [
             'post' => $post,
         ]);
     }
-
+    
     public function photos()
     {
         $post = Post::where('user_id', Auth::id())
@@ -51,6 +45,7 @@ class UserController extends Controller
 
     public function addPost(Request $request)
     {
+        
         $request->validate([
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             
@@ -58,7 +53,7 @@ class UserController extends Controller
 
         if ($request->has('image')) {
             $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('images'), $imageName);
+            $request->image->move(public_path('storage'), $imageName);
         } else {
             $imageName = null;
         }
@@ -67,8 +62,8 @@ class UserController extends Controller
         $post->user_id = Auth::id();
         $post->description = $request->description;
         $post->pathPhotos = $imageName;
-
         $post->save();
+        
         if ($post) {
             return back()->with('success', 'Image created successfully!');
         } else {
@@ -77,7 +72,8 @@ class UserController extends Controller
     }
 
     public function deletePost($postId)
-    {
+    { 
+        
         $post = Post::where('id', $postId)->delete();
 
         return redirect()->back();
@@ -105,5 +101,11 @@ class UserController extends Controller
     public function changePassword()
     {
         return view('user/edit-password-timeline');
+    }
+
+    public function showPhoto()
+    {
+        $photos = UserPhoto::where('user_id', Auth::id())->get();
+        return view('profile/photo-user', compact('photos'));
     }
 }

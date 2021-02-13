@@ -1,14 +1,8 @@
 
 @include('user/header-timeline')
 <section>
-
-		
-
-	
     <div class="feature-photo">
-        
-    
-        <figure><img src="{{ asset('socail/images/'.auth()->user()->profile_photo_path) }}" alt=""></figure>
+        <figure><img src="{{ asset('storage/'.auth()->user()->profilePath) }}" alt=""></figure>
         <div class="add-btn">
             <span>1205 followers</span>
             <a href="#" title="" data-ripple="">Add Friend</a>
@@ -20,13 +14,12 @@
             <input type="file" id="file"/>
             </label>
         </form>
-    
         <div class="container-fluid">
             <div class="row merged">
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar">
                         <figure>
-                            <img id="profile-pic" src="{{ asset('socail/images/'.auth()->user()->profilePath) }}" alt="">
+                            <img id="profile-pic" src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 200px; width: 200px;" alt="">
                             <form class="edit-phto">
                                 <i class="fa fa-camera-retro"></i>
                                 <label class="fileContainer">

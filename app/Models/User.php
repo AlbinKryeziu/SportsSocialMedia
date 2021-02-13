@@ -71,5 +71,9 @@ class User extends Authenticatable
     public function isUser(){
         return Auth::user()->role == 0;
    }
+
+   public function post(){
+       return $this->hasMany(Post::class);
+   }
     
 }
