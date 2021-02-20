@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Follow;
 use App\Models\HidePost;
 use App\Models\Post;
 use App\Models\PostComment;
@@ -17,13 +18,12 @@ class NewfeedController extends Controller
     {
        
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
-      $post = Post::with('user','like','comments')
+        $post = Post::with('user','like','comments')
             ->whereNotIn('id', $hidePost)
             ->inRandomOrder()
             ->get();
-        $user = User::where('id', '!=', Auth::id())
-            ->inRandomOrder()
-            ->paginate(30);
+        $follow = Follow::where('user_id',Auth::id())->pluck('friends_id');
+        $user = User::whereNotIn('id',$follow)->where('id','!=',Auth::id())->inRandomOrder()->get();
 
         return view('user/newfeed/newfeed', [
             'post' => $post,

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FollowController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\NewfeedController;
 use App\Http\Controllers\ProfileController;
@@ -103,5 +104,10 @@ Route::post('newfeed/comment/create', [NewfeedController::class,'storeComment'])
 
 Route::get('friends/profile/{userId}', [FriendController::class,'friendsProfile']);
 Route::get('friends/photo/{userId}', [FriendController::class,'friendsPhoto']);
+
+
+//follow urser
+
+Route::post('follow/user',[FollowController::class,'followUser']);
 
 

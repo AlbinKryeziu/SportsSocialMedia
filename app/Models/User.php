@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\FollowController;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -23,6 +24,8 @@ class User extends Authenticatable
     const Admin = 1;
     const User = 0;
 
+    const Required = 0;
+    const Follow = 1;
 
     /**
      * The attributes that are mass assignable.
@@ -75,5 +78,7 @@ class User extends Authenticatable
    public function post(){
        return $this->hasMany(Post::class);
    }
-    
+    public function friends(){
+        return $this->hasMany(Follow::class,'user_id','id');
+    }
 }
