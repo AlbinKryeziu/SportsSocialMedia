@@ -93,7 +93,7 @@
 												</form>
 												
 												<figure>
-													<img src="images/resources/friend-avatar10.jpg" alt="">
+													<img id="profile-pic" src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 40px; width: 50px;" alt="">
 												</figure>
 												<div class="friend-name">
 													<ins><a href="{{ asset('storage/'.auth()->user()->profilePath) }}" title="">{{ $post->user->name }}</a></ins>
@@ -114,8 +114,9 @@
 															
 															<li>
 																<span class="views" data-toggle="tooltip" title="views">
-																	<i class="fa fa-eye"></i>
-																	<ins>1.2k</ins>
+																	<i class="fa fa-thumbs-up" aria-hidden="true"></i>
+
+																	<ins>500</ins>
 																</span>
 															</li>
 															<li>
@@ -124,18 +125,8 @@
 																	<ins>52</ins>
 																</span>
 															</li>
-															<li>
-																<span class="like" data-toggle="tooltip" title="like">
-																	<i class="ti-heart"></i>
-																	<ins>2.2k</ins>
-																</span>
-															</li>
-															<li>
-																<span class="dislike" data-toggle="tooltip" title="dislike">
-																	<i class="ti-heart-broken"></i>
-																	<ins>200</ins>
-																</span>
-															</li>
+															
+															
 															
 														</ul>
 													</div>
@@ -185,13 +176,14 @@
 		</form>
 	</div><!-- side panel -->		
 			
-	@include('user/script')
+
 
 </body>	
 </html>
+@include('user/script')
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> --}}
 
 <script type="text/javascript">
     $("#profile").on("change", function (ev) {

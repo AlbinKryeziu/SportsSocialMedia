@@ -1,5 +1,9 @@
 @include('user/header-timeline')
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+
 <section>
     <div class="gap gray-bg">
         <div class="container">
@@ -17,12 +21,16 @@
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
                                     <figure>
-                                        <img src="images/resources/admin2.jpg" alt="" />
+                                        <img src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 50px; width: 50px;" alt="" />
                                     </figure>
                                     <div class="newpst-input">
+                                        @error('description')
+                                        <label class="error" style="color: red; font-size:13px;">{{ $message }}</label>
+                                        @enderror
                                         <form method="Post" action="{{ url('addPost') }}" enctype="multipart/form-data">
                                             @csrf
                                             <textarea rows="2" placeholder="write something" name="description"></textarea>
+                                           
                                             <div class="attachments">
                                                 <ul>
                                                     <i class="fa fa-camera"></i>
@@ -76,26 +84,16 @@
                                                     <ul>
                                                         <li>
                                                             <span class="views" data-toggle="tooltip" title="views">
-                                                                <i class="fa fa-eye"></i>
-                                                                <ins>1.2k</ins>
+                                                                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                                                               
+                                                                  <ins>{{$post->like->count() }}</ins>
+                                                              
                                                             </span>
                                                         </li>
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip" title="Comments">
                                                                 <i class="fa fa-comments-o"></i>
-                                                                <ins>52</ins>
-                                                            </span>
-                                                        </li>
-                                                        <li>
-                                                            <span class="like" data-toggle="tooltip" title="like">
-                                                                <i class="ti-heart"></i>
-                                                                <ins>2.2k</ins>
-                                                            </span>
-                                                        </li>
-                                                        <li>
-                                                            <span class="dislike" data-toggle="tooltip" title="dislike">
-                                                                <i class="ti-heart-broken"></i>
-                                                                <ins>200</ins>
+                                                                <ins>{{$post->comments->count()}}</ins> 
                                                             </span>
                                                         </li>
                                                     </ul>
@@ -104,48 +102,49 @@
                                         </div>
                                         <div class="coment-area">
                                             <ul class="we-comet">
+                                                @foreach($post->comments as $key => $comments)
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/comet-1.jpg" alt="" />
+                                                        <img src="{{ asset('storage/'.$comments->user->profilePath) }}" style="height: 40px; width: 70px;" alt="" />
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
-                                                            <h5><a href="time-line.html" title="">Jason borne</a></h5>
-                                                            <span>1 year ago</span>
+                                                            <h5><a href="time-line.html" title="">{{ $comments->user->name }}</a></h5>
+                                                            <span>{{ Carbon\Carbon::parse($comments->created_at)->format('d-m-Y H:i')}}</span>
                                                         </div>
-                                                        <p>{{ $post->description }}</p>
+                                                        <p style="width: 340px;">{{ $comments->comment }}</p>
                                                     </div>
                                                 </li>
+                                                @endforeach
                                                 <li>
                                                     <a href="#" title="" class="showmore underline">more comments</a>
                                                 </li>
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
-                                                        <img src="images/resources/comet-1.jpg" alt="" />
+                                                        <img src="{{ asset('storage/'.$post->user->profilePath) }}"style="height: 30px; width: 60px;" alt="" />
                                                     </div>
                                                     <div class="post-comt-box">
-                                                        <form method="post">
-                                                            <textarea placeholder="Post your comment"></textarea>
+                                                        <form>
+                                                            @csrf
+                                                            <textarea placeholder="Post your" name="comment" id="comment"></textarea>
+                                                            
+                                                            <input type="hidden" value="{{ $post->id }}" name="postId" id="postId">
                                                             <div class="add-smiles">
                                                                 <i class="fa fa-paper-plane" aria-hidden="true"></i>
                                                             </div>
-                                                            <div class="smiles-bunch">
-                                                                <i class="em em---1"></i>
-                                                                <i class="em em-smiley"></i>
-                                                                <i class="em em-anguished"></i>
-                                                                <i class="em em-laughing"></i>
-                                                                <i class="em em-angry"></i>
-                                                                <i class="em em-astonished"></i>
-                                                                <i class="em em-blush"></i>
-                                                                <i class="em em-disappointed"></i>
-                                                                <i class="em em-worried"></i>
-                                                                <i class="em em-kissing_heart"></i>
-                                                                <i class="em em-rage"></i>
-                                                                <i class="em em-stuck_out_tongue"></i>
-                                                            </div>
-                                                            <button type="submit"></button>
+                                                            <button type="submit" class="btn-submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                                         </form>
                                                     </div>
+                                                    {{-- <form>
+                                                        @csrf
+                                                        <div class="form-group">
+                                                            <label for="Comment">Comment:</label>
+                                                            <input type="text" class="form-control" id="comment" placeholder="Enter email" name="comment">
+                                                            <span class="text-danger error-text comment"></span>
+                                                        </div>
+                                                        
+                                                        <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+                                                    </form> --}}
                                                 </li>
                                             </ul>
                                         </div>
@@ -156,105 +155,8 @@
                         </div>
                         <div class="col-lg-3">
                             <aside class="sidebar static">
-                                <div class="widget">
-                                    <h4 class="widget-title">Your page</h4>
-                                    <div class="your-page">
-                                        <figure>
-                                            <a href="#" title=""><img src="images/resources/friend-avatar9.jpg" alt="" /></a>
-                                        </figure>
-                                        <div class="page-meta">
-                                            <a href="#" title="" class="underline">My page</a>
-                                            <span>
-                                                <i class="ti-comment"></i><a href="insight.html" title="">Messages <em>9</em></a>
-                                            </span>
-                                            <span>
-                                                <i class="ti-bell"></i><a href="insight.html" title="">Notifications <em>2</em></a>
-                                            </span>
-                                        </div>
-                                        <div class="page-likes">
-                                            <ul class="nav nav-tabs likes-btn">
-                                                <li class="nav-item"><a class="active" href="#link1" data-toggle="tab">likes</a></li>
-                                                <li class="nav-item"><a class="" href="#link2" data-toggle="tab">views</a></li>
-                                            </ul>
-                                            <!-- Tab panes -->
-                                            <div class="tab-content">
-                                                <div class="tab-pane active fade show" id="link1">
-                                                    <span><i class="ti-heart"></i>884</span>
-                                                    <a href="#" title="weekly-likes">35 new likes this week</a>
-                                                    <div class="users-thumb-list">
-                                                        <a href="#" title="Anderw" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-1.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="frank" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-2.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Sara" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-3.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Amy" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-4.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Ema" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-5.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Sophie" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-6.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Maria" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-7.jpg" alt="" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="link2">
-                                                    <span><i class="ti-eye"></i>440</span>
-                                                    <a href="#" title="weekly-likes">440 new views this week</a>
-                                                    <div class="users-thumb-list">
-                                                        <a href="#" title="Anderw" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-1.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="frank" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-2.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Sara" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-3.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Amy" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-4.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Ema" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-5.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Sophie" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-6.jpg" alt="" />
-                                                        </a>
-                                                        <a href="#" title="Maria" data-toggle="tooltip">
-                                                            <img src="images/resources/userlist-7.jpg" alt="" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- page like widget -->
-                                <div class="widget">
-                                    <div class="banner medium-opacity bluesh">
-                                        <div class="bg-image" style="background-image: url(images/resources/baner-widgetbg.jpg);"></div>
-                                        <div class="baner-top">
-                                            <span><img alt="" src="images/book-icon.png" /></span>
-                                            <i class="fa fa-ellipsis-h"></i>
-                                        </div>
-                                        <div class="banermeta">
-                                            <p>
-                                                create your own favourit page.
-                                            </p>
-                                            <span>like them all</span>
-                                            <a data-ripple="" title="" href="#">start now!</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="">
+                            
+                             
                                     <aside class="sidebar static">
                                         <div class="widget">
                                             <h4 class="widget-title">New Friends</h4>
@@ -262,7 +164,7 @@
                                                 @foreach($user as $key => $user)
 
                                                 <li>
-                                                   
+        
                                                     <figure><img src="{{ asset('storage/'.$user->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
                                                     <div class="friend-meta">
                                                         <h4><a href="{{ url('friends/profile/'.$user->id) }}" title="">{{ $user->name }}</a></h4>
@@ -344,7 +246,45 @@
         </div>
     </div>     
 </div>
-    @include('user/script')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".btn-submit").click(function(e){
+            e.preventDefault();
+
+            var _token = $("input[name='_token']").val();
+            var comment = $("#comment").val();
+             var postId =  $("#postId").val(); 
+           
+
+            $.ajax({
+                url: "{{ route('storePost') }}",
+                type:'POST',
+                data: {_token:_token, comment:comment , postId:postId},
+                success: function(data) {
+                    $('textarea').val('');
+                  printMsg(data);
+                 
+                }
+            });
+        }); 
+
+        function printMsg (msg) {
+          if($.isEmptyObject(msg.error)){
+              console.log(msg.success);
+              $('.alert-block').css('display','block').append('<strong>'+msg.success+'</strong>');
+             
+          }else{
+            $.each( msg.error, function( key, value ) {
+              $('.'+key+'_err').text(value);
+              
+            });
+          }
+        }
+    });
+</script>
+
+</section>
+     @include('user/script')
 </section>
 <script>
     $(document).on('click','.deleteUser',function(){
@@ -358,5 +298,5 @@
         $('#post').val(userID); 
         $('#hiddePost').modal('show'); 
     });
-    </script>
+    </script> 
 

@@ -39,10 +39,9 @@
                             <li>
                                 <a class="active" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
                                 <a class="" href="{{ url('/photos/me ') }}" title="" data-ripple="" >Photos</a>
-                                <a class="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
                                 <a class="" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
-                                <a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a>
-                                <a class="" href="#" title="" data-ripple="">more</a>
+                                {{-- <a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a> --}}
+                                {{-- <a class="" href="#" title="" data-ripple="">more</a> --}}
                             </li>
                         </ul>
                     </div>
@@ -76,59 +75,4 @@
                                         </ul>
                                     </div>
                         
-                                <div class="widget">
-                                    <h4 class="widget-title">Shortcuts</h4>
-                                    <ul class="naves">
-                                        <li>
-                                            <i class="ti-clipboard"></i>
-                                            <a href="newsfeed.html" title="">News feed</a>
-                                        </li>
-                                        <li>
-                                            <i class="ti-mouse-alt"></i>
-                                            <a href="inbox.html" title="">Inbox</a>
-                                        </li>
-                                        
-                                        <li>
-                                            <i class="ti-user"></i>
-                                            <a href="timeline-friends.html" title="">friends</a>
-                                        </li>
-                                        <li>
-                                            <i class="ti-image"></i>
-                                            <a href="timeline-photos.html" title="">images</a>
-                                        </li>
-                                        <li>
-                                            <i class="ti-video-camera"></i>
-                                            <a href="timeline-videos.html" title="">videos</a>
-                                        </li>
-                                        <li>
-                                            <i class="ti-comments-smiley"></i>
-                                            <a href="messages.html" title="">Messages</a>
-                                        </li>
-                                        <li>
-                                            <i class="ti-bell"></i>
-                                            <a href="notifications.html" title="">Notifications</a>
-                                        </li>
-                                       
-                                        
-                                        <li>
-                                            <i class="ti-power-off"></i>
-                                            <a href="landing.html" title="">Logout</a>
-                                        </li>
-                                        <li>
-                                            <a class="ti-power-off"
-                                            
-                                            href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                                 document.getElementById('logout-form').submit();"
-                                        >
-                                        {{ __('Logout') }}
-                                        </a>
-                                            
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                logaut @csrf
-                                            
-                                            
-                                        </form>
-                                        </li>
-                                    </ul>
-                                </div><!-- Sh
+                                    @include('user/assets/shortcuts')

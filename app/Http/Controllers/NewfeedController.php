@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\HidePost;
 use App\Models\Post;
+use App\Models\PostComment;
 use App\Models\User;
+use Egulias\EmailValidator\Warning\Comment;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,8 +15,9 @@ class NewfeedController extends Controller
 {
     public function index()
     {
+       
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
-        $post = Post::with('user')
+      $post = Post::with('user','like','comments')
             ->whereNotIn('id', $hidePost)
             ->inRandomOrder()
             ->get();
@@ -46,5 +50,23 @@ class NewfeedController extends Controller
         ]);
 
         return redirect()->back();
+    }
+
+    public function storeComment(Request $request){
+
+       
+       $data = PostComment::create([
+           'user_id'=> Auth::id(),
+           'post_id' => $request->postId,
+           'comment' =>$request->comment,
+       ]);
+     
+
+        // Store Data in DATABASE from HERE 
+
+        return response()->json(['success'=>' Added new records.']);
+        
+   
+    
     }
 }

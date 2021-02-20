@@ -102,7 +102,7 @@
             </div>
         </div>
 
-        <div class="container">
+        {{-- <div class="container">
             <div class="row my-4">
                 <table class="table">
                     <thead>
@@ -123,7 +123,7 @@
                     </tbody>
                 </table>
             </div>
-        </div>
+        </div> --}}
         <div class="container">
             <div class="row my-4">
                 <div class="col-12 col-md-6 p-4 text-justify">

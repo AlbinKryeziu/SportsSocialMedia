@@ -97,6 +97,7 @@ Route::post('/change/education', [ProfileController::class, 'editEducation'])->n
 Route::get('newfeed', [NewfeedController::class,'index']);
 Route::post('newfeed/delete/post', [NewfeedController::class,'deletePostFeed']);
 Route::post('newfeed/hidde/post', [NewfeedController::class,'hiddePost']);
+Route::post('newfeed/comment/create', [NewfeedController::class,'storeComment'])->name('storePost');
 
 //friends
 

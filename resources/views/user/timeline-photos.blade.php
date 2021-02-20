@@ -1,24 +1,8 @@
 @include('user/container')
 
-									<div class="widget">
-										<h4 class="widget-title">Profile intro</h4>
-										<ul class="short-profile">
-											<li>
-												<span>about</span>
-												<p>Hi, i am jhon kates, i am 32 years old and worked as a web developer in microsoft company. </p>
-											</li>
-											<li>
-												<span>fav tv show</span>
-												<p>Sacred Games, Spartcus Blood, Games of theron</p>
-											</li>
-											<li>
-												<span>favourit music</span>
-												<p>Justin Biber, Nati Natsha, Shakira</p>
-											</li>
-										</ul>
-									</div><!-- profile intro widget -->
+								
 
-								</aside>
+						   </aside>
 							</div><!-- sidebar -->
 							<div class="col-lg-6">
 								<div class="central-meta">
@@ -38,38 +22,7 @@
 							</div><!-- centerl meta -->
 							<div class="col-lg-3">
 								<aside class="sidebar static">
-									<div class="widget">
-										<h4 class="widget-title">Twitter feed</h4>
-										<ul class="twiter-feed">
-											<li>
-												<i class="fa fa-twitter"></i>
-												<span>
-													<i>jhon william</i>
-													@jhonwilliam
-												</span>
-												<p>tomorrow with the company we were working and 5 child run away from the working place. <a href="#" title="">#daydream5k</a> </p>
-												<em>2 hours ago</em>
-											</li>
-											<li>
-												<i class="fa fa-twitter"></i>
-												<span>
-													<i>Kelly watson</i>
-													@kelly
-												</span>
-												<p>tomorrow with the company we were working and 5 child run away from the working place. <a href="#" title="">#daydream5k</a> </p>
-												<em>2 hours ago</em>
-											</li>
-											<li>
-												<i class="fa fa-twitter"></i>
-												<span>
-													<i>Jony bravo</i>
-													@jonibravo
-												</span>
-												<p>tomorrow with the company we were working and 5 child run away from the working place. <a href="#" title="">#daydream5k</a> </p>
-												<em>2 hours ago</em>
-											</li>
-										</ul>
-									</div><!-- twitter feed-->
+									
 									<div class="widget friend-list stick-widget">
 										<h4 class="widget-title">Friends</h4>
 										<div id="searchDir"></div>

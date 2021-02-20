@@ -25,4 +25,13 @@ class Post extends Model
 
         return $this->hasMany(HidePost::class);
     }
+
+    public function comments(){
+        return $this->hasMany(PostComment::class,'post_id','id');
+    }
+
+    public function like(){
+        return $this->hasMany(LikePost::class,'post_id','id');
+    }
+  
 }

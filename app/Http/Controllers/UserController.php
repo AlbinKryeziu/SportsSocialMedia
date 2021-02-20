@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PhotoStoreRequest;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\UserPhoto;
@@ -43,14 +44,9 @@ class UserController extends Controller
     {
     }
 
-    public function addPost(Request $request)
+    public function addPost(PostRequest $request)
     {
         
-        $request->validate([
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            
-        ]);
-
         if ($request->has('image')) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('storage'), $imageName);
@@ -73,7 +69,7 @@ class UserController extends Controller
 
     public function deletePost($postId)
     { 
-        
+
         $post = Post::where('id', $postId)->delete();
 
         return redirect()->back();

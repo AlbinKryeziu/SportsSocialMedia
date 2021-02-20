@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
+        {{-- <div class="container">
             <div class="row my-4">
                 <table class="table">
                     <thead>
@@ -125,8 +125,8 @@
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-        </div>
+            </div>ea
+        </div> --}}
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">

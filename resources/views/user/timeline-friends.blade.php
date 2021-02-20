@@ -531,7 +531,7 @@
             <label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
         </div>
     </form>
-</div><!-- side 
+</div>
 
 
 

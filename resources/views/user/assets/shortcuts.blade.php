@@ -11,35 +11,43 @@
         </ul>
         <li>
             <i class="ti-mouse-alt"></i>
-            <a href="inbox.html" title="">Inbox</a>
-        </li>
-        <li>
-            <i class="ti-files"></i>
-            <a href="fav-page.html" title="">My pages</a>
+            <a href="" title="">Inbox</a>
         </li>
         <li>
             <i class="ti-user"></i>
-            <a href="timeline-friends.html" title="">friends</a>
+            <a href="" title="">friends</a>
         </li>
         <li>
             <i class="ti-image"></i>
-            <a href="timeline-photos.html" title="">images</a>
+            <a href="" title="">images</a>
         </li>
         <li>
             <i class="ti-video-camera"></i>
-            <a href="timeline-videos.html" title="">videos</a>
+            <a href="" title="">videos</a>
         </li>
         <li>
             <i class="ti-comments-smiley"></i>
-            <a href="messages.html" title="">Messages</a>
+            <a href="" title="">Messages</a>
         </li>
         <li>
             <i class="ti-bell"></i>
-            <a href="notifications.html" title="">Notifications</a>
+            <a href="" title="">Notifications</a>
         </li>
         <li>
-            <i class="ti-power-off"></i>
-            <a href="landing.html" title="">Logout</a>
-        </li>
+            <a class="ti-power-off"
+            
+            href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                                 document.getElementById('logout-form').submit();"
+        >
+        {{ __('Logout') }}
+        </a>
+            
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                Logout @csrf
+            
+            
+        </form>
+        
     </ul>
 </div>
