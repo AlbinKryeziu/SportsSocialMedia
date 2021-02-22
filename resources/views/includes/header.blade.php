@@ -26,11 +26,19 @@
             <a class="nav-link" href="{{ url('/how-it-works')}}">HOW IT WORKS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN / SIGNUP</a>
+            <a class="nav-link" href="{{ url('/contact')}}">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/register')}}">REGISTER</a>
+            <a class="nav-link" href="{{ url('/blog')}}">BLOG</a>
           </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN / SIGNUP</a>
+          </li>
+          
+          {{-- <li class="nav-item">
+            <a class="nav-link" href="{{ url('/register')}}">REGISTER</a>
+          </li> --}}
           <li class="nav-item">
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"

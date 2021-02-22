@@ -24,6 +24,12 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 Route::get('/', function () {
     return view('new-home');
 });
+Route::get('/contact', function () {
+    return view('contact-us');
+});
+Route::get('/blog', function () {
+    return view('blog');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if(Auth::user()->role == 1){
@@ -34,6 +40,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/about-us', function () {
     return view('about-us');
 });
+
 
 Route::get('/how-it-works', function () {
     return view('how-it-works');

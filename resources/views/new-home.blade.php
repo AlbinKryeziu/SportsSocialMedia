@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="{{ url('images/logo-crop.png') }}">
     <title>New Home</title>
 
     @include('includes/style')
@@ -135,7 +136,7 @@
                     </h3>
                 </div>
                 <div class="row d-flex justify-content-center">
-                    <button type="button" class="btn btn-primary btn-lg m-4 w-25" onclick="window.location='{{ route('register')}}'">Register</button>
+                    {{-- <button type="button" class="btn btn-primary btn-lg m-4 w-25" onclick="window.location='{{ route('register')}}'">Register</button> --}}
                     <button type="button" class="btn btn-secondary btn-lg m-4 w-25" onclick="window.location='{{ route('login')}}'">LOGIN</button>
                 </div>
 
