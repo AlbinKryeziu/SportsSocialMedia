@@ -316,9 +316,9 @@
 								 
 								</li>
 								<li>
-									<a class="active" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
-									<a class="" href="{{ url('/photos/me ') }}" title="" data-ripple="" >Photos</a>
-									<a class="" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
+									<a class="{!! Request::is('user/photo') ? 'active' : '' !!}" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
+									<a class="{!! Request::is('photos/me') ? 'active' : '' !!}" href="{{ url('/photos/me') }}" title="" data-ripple="" >Photos</a>
+									<a class="{!! Request::is('friends') ? 'active' : '' !!}" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
 									{{-- <a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a> --}}
 									{{-- <a class="" href="#" title="" data-ripple="">more</a> --}}
 								</li>
