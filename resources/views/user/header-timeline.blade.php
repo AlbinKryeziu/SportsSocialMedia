@@ -14,9 +14,9 @@
     </head>
     <style>
         body {
-            font-family: 'Varela Round', sans-serif;
+            font-family: "Varela Round", sans-serif;
         }
-        .modal-confirm {		
+        .modal-confirm {
             color: #636363;
             width: 400px;
         }
@@ -28,7 +28,7 @@
             font-size: 14px;
         }
         .modal-confirm .modal-header {
-            border-bottom: none;   
+            border-bottom: none;
             position: relative;
         }
         .modal-confirm h4 {
@@ -46,14 +46,14 @@
         }
         .modal-confirm .modal-footer {
             border: none;
-            text-align: center;		
+            text-align: center;
             border-radius: 5px;
             font-size: 13px;
             padding: 10px 15px 25px;
         }
         .modal-confirm .modal-footer a {
             color: #999;
-        }		
+        }
         .modal-confirm .icon-box {
             width: 80px;
             height: 80px;
@@ -69,7 +69,8 @@
             display: inline-block;
             margin-top: 13px;
         }
-        .modal-confirm .btn, .modal-confirm .btn:active {
+        .modal-confirm .btn,
+        .modal-confirm .btn:active {
             color: #fff;
             border-radius: 4px;
             background: #60c7c1;
@@ -85,20 +86,22 @@
         .modal-confirm .btn-secondary {
             background: #c1c1c1;
         }
-        .modal-confirm .btn-secondary:hover, .modal-confirm .btn-secondary:focus {
+        .modal-confirm .btn-secondary:hover,
+        .modal-confirm .btn-secondary:focus {
             background: #a8a8a8;
         }
         .modal-confirm .btn-danger {
             background: #f15e5e;
         }
-        .modal-confirm .btn-danger:hover, .modal-confirm .btn-danger:focus {
+        .modal-confirm .btn-danger:hover,
+        .modal-confirm .btn-danger:focus {
             background: #ee3535;
         }
         .trigger-btn {
             display: inline-block;
             margin: 100px auto;
         }
-        </style>
+    </style>
     <body>
         <div class="theme-layout">
             <div class="postoverlay"></div>
@@ -125,24 +128,17 @@
                     <ul>
                         <li>
                             <a href="{{ url('newfeed') }}" title=""><i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
-                            <ul>
-                                
-                            </ul>
+                            <ul></ul>
                         </li>
                     </ul>
                 </nav>
-                
             </div>
-            <!-- responsive header -->
 
             <div class="topbar stick">
                 <div class="logo">
                     <a title="" href="newsfeed.html"><img src="{{ asset('images/logo.png') }}" style="width: 145px;" alt="" /></a>
                 </div>
                 <div class="top-area">
-                    <ul class="main-menu">
-                        <a href="{{ url('newfeed') }}" title=""><i class="fa fa-home fa-2x" aria-hidden="true"></i> </a>
-                    </ul>
                     <ul class="setting-area">
                         <li>
                             <a href="" title="Home" data-ripple=""><i class="ti-search"></i></a>
@@ -154,7 +150,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="newsfeed.html" title="Home" data-ripple=""><i class="ti-home"></i></a>
+                            <a href="" onclick="window.location='{{ url('newfeed') }}'" title=""><i class="ti-home" aria-hidden="true"></i> </a>
                         </li>
                         <li>
                             <a href="#" title="Notification" data-ripple=""> <i class="ti-bell"></i><span>20</span> </a>

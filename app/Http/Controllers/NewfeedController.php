@@ -16,14 +16,16 @@ class NewfeedController extends Controller
 {
     public function index()
     {
-       
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
-        $post = Post::with('user','like','comments')
+        $post = Post::with('user', 'like', 'comments')
             ->whereNotIn('id', $hidePost)
             ->inRandomOrder()
             ->get();
-        $follow = Follow::where('user_id',Auth::id())->pluck('friends_id');
-        $user = User::whereNotIn('id',$follow)->where('id','!=',Auth::id())->inRandomOrder()->get();
+        $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
+        $user = User::whereNotIn('id', $follow)
+            ->where('id', '!=', Auth::id())
+            ->inRandomOrder()
+            ->get();
 
         return view('user/newfeed/newfeed', [
             'post' => $post,
@@ -52,21 +54,14 @@ class NewfeedController extends Controller
         return redirect()->back();
     }
 
-    public function storeComment(Request $request){
+    public function storeComment(Request $request)
+    {
+        $data = PostComment::create([
+            'user_id' => Auth::id(),
+            'post_id' => $request->postId,
+            'comment' => $request->comment,
+        ]);
 
-       
-       $data = PostComment::create([
-           'user_id'=> Auth::id(),
-           'post_id' => $request->postId,
-           'comment' =>$request->comment,
-       ]);
-     
-
-        // Store Data in DATABASE from HERE 
-
-        return response()->json(['success'=>' Added new records.']);
-        
-   
-    
+        return response()->json(['success' => ' Added new records.']);
     }
 }
