@@ -13,7 +13,7 @@
 
     <body>
         @include('includes/header')
-        <div class="container-fluid p- banner d-flex align-items-center justify-content-center" style="background-image: url('images/image-ads.jpg'); height: 450px;">
+        <div class="container-fluid p- banner d-flex align-items-center justify-content-center" style="background-image: url('images/sport-event-6.jpg'); height: 450px;">
             <div class="container">
                 <h1 class="display-3 text-center white">Sport Events</h1>
             </div>

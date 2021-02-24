@@ -22,7 +22,7 @@
         <div class="container p-4 col-6">
             <div class="row p-4 shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center text-center">
                 <div class="col-12">
-                    <form class="form-horizontal p-4" method="POST" action="{{ url('/pacient/add/doctor') }}">
+                    <form class="form-horizontal p-4">
                         @csrf
                         <fieldset>
                             <legend style="text-align: center;">Apply for Ads</legend>
