@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-	<title>Winku Social Network Toolkit</title>
-    <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> 
+	<title>Sports</title>
+	<link rel="icon" href="{{ url('images/logo-crop.png') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/main.min.css') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/style.css') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/color.css') }}" />
@@ -122,7 +122,7 @@
 						</form>
 					</div>
 				</li>
-				<li><a href="newsfeed.html" title="Home" data-ripple=""><i class="ti-home"></i></a></li>
+				<li><a href=""  onclick="window.location.href = '{{  url('newfeed') }}' " title="Home" data-ripple=""><i class="ti-home"></i></a></li>
 				<li>
 					<a href="#" title="Notification" data-ripple="">
 						<i class="ti-bell"></i><span>20</span>
