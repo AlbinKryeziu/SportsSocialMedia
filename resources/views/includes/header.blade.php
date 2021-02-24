@@ -26,14 +26,25 @@
             <a class="nav-link" href="{{ url('/how-it-works')}}">HOW IT WORKS</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/contact')}}">Contact Us</a>
+            <a class="nav-link" href="{{ url('/contact')}}">CONTACT US</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/blog')}}">BLOG</a>
+            <div class="dropdown">
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Pages
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/blog')}}">Blog</a></button>
+                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/ads')}}">ADS</a></button>
+                <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/evnts')}}">Sport events</a></button>
+                
+              </div>
+            </div>
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN / SIGNUP</a>
+            <a class="nav-link" href=""> </a>
           </li>
           
           {{-- <li class="nav-item">
@@ -57,6 +68,9 @@
               </div>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN</a>
+          </li>
         </ul>
 
         <div class="input-group md-form form-sm form-2 pl-0 w-50 shadow-sm bg-white rounded">
@@ -66,22 +80,11 @@
                 aria-hidden="true"></i></span>
           </div>
         </div>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="navbarDropdownMenuLink"
-              role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-              <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
-                alt="" loading="lazy" />
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="#">My profile</a></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
-              <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-          </li>
-        </ul>
+        
 
       </div>
     </div>
   </nav>
 </header>
+
+

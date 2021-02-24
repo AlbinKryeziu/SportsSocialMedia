@@ -77,6 +77,12 @@ Route::get('/sports/boxing', function () {
 Route::get('/sports/table-tennis', function () {
     return view('sports/table-tennis');
 });
+Route::get('/ads', function () {
+    return view('ads');
+});
+Route::get('/evnts', function () {
+    return view('events');
+});
 
 Route::get('/sports/footballapi', [SportController::class, 'football']);
 Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
