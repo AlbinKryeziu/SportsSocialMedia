@@ -30,9 +30,9 @@
 			</span>
 		</div>
 		<div class="mh-head second">
-			<form class="mh-form">
-				<input placeholder="search" />
-				<a href="#/" class="fa fa-search"></a>
+			<form class="mh-form" >
+				<input placeholder="search" name="q" />
+				<a href="#/" class="fa fa-search" ></a>
 			</form>
 		</div>
 		<nav id="menu" class="res-menu">
@@ -277,13 +277,15 @@
 				<span>1205 followers</span>
 				<a href="#" title="" data-ripple="">Add Friend</a>
 			</div>
-			{{-- <form class="edit-phto">
-				{{-- <i class="fa fa-camera-retro"></i> --}}
-				 {{-- <label class="fileContainer">
-					Edit Cover Photo
-				<input type="file"/>
+			<form class="edit-phto" action="{{ url('/photo/profile/user') }}" method="POST" enctype="multipart/form-data">
+				@csrf
+				<i class="fa fa-camera-retro"></i> 
+				  <label class="fileContainer">
+					Edit profile 
+				<input type="file" name="image"/>
 				</label>  
-			</form> --}}
+				<button type="submit"><i class="fa fa-check" aria-hidden="true"></i></button>
+			</form> 
 			<div class="container-fluid">
 				<div class="row merged">
 					<div class="col-lg-2 col-sm-3">
@@ -299,10 +301,15 @@
 							</figure>
 						</div>
 					</div>
+					
 					<div class="col-lg-10 col-sm-9">
+						
+						
 						<div class="timeline-info">
+							
 							<ul>
 								<li class="admin-name">
+									
 								  <h5>{{ auth()->user()->name }}</h5>
 								 
 								</li>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PhotoRequest;
 use App\Http\Requests\PhotoStoreRequest;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
@@ -118,5 +119,19 @@ class UserController extends Controller
        if($friends){
            return redirect()->back();
        }
+    }
+    public function changeProfile(PhotoRequest $request){
+       
+        if ($request->has('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('store'), $imageName);
+        } 
+        $user = User::where('id',Auth::id())->update([
+            'profilePath' => $imageName
+        ]);
+        
+        if ($user){
+            return redirect()->back();
+        }
     }
 }

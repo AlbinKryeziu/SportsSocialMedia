@@ -108,6 +108,8 @@ Route::post('/addprofile', [UserController::class, 'postProfileUpdate'])->name('
 Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
 Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
 Route::post('/unfollo/friends/{friendsId}', [UserController::class, 'unfollow'])->name('unfollow');
+Route::post('/photo/profile/user', [UserController::class, 'changeProfile'])->name('changeProfile');
+
 
 //profile controller
 Route::post('/change/profile', [ProfileController::class, 'ediProfile'])->name('changeProfile');
