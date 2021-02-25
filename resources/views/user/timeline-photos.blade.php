@@ -18,8 +18,8 @@
                                     @foreach($post as $key => $image)
 
                                     <li>
-                                        <a class="strip" href="{{ asset('storage/'.$image->pathPhotos) }}" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
-                                            <img src="{{ asset('storage/'.$image->pathPhotos) }}" alt="" style="width: 100%; height: 100%;" />
+                                        <a class="strip" href="{{ asset('store/'.$image->pathPhotos) }}" title="" data-strip-group="mygroup" data-strip-group-options="loop: false">
+                                            <img src="{{ asset('store/'.$image->pathPhotos) }}" alt="" style="width: 100%; height: 100%;" />
                                         </a>
                                     </li>
                                     @endforeach

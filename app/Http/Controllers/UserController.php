@@ -49,7 +49,7 @@ class UserController extends Controller
         
         if ($request->has('image')) {
             $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('storage'), $imageName);
+            $request->image->move(public_path('store'), $imageName);
         } else {
             $imageName = null;
         }
