@@ -6,6 +6,7 @@ use App\Http\Controllers\NewfeedController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\UserController;
+use App\Models\Follow;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\HttpKernel\Profiler\Profile;
@@ -33,7 +34,12 @@ Route::get('/blog', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     if(Auth::user()->role == 1){
-        return view('user/timeline-friends');
+        $myfriends = Follow::where('user_id',Auth::id())->get();
+        $count = Follow::where('user_id',Auth::id())->count();
+        return view('user/timeline-friends',[
+            'myfriends'=> $myfriends,
+            'cont' =>$count
+        ]);
     }
 });
 
@@ -101,6 +107,7 @@ Route::get('/friends', [UserController::class, 'friends'])->name('friends');
 Route::post('/addprofile', [UserController::class, 'postProfileUpdate'])->name('postProfileUpdate');
 Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
 Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
+Route::post('/unfollo/friends/{friendsId}', [UserController::class, 'unfollow'])->name('unfollow');
 
 //profile controller
 Route::post('/change/profile', [ProfileController::class, 'ediProfile'])->name('changeProfile');
@@ -123,5 +130,6 @@ Route::get('friends/photo/{userId}', [FriendController::class,'friendsPhoto']);
 
 
 Route::post('follow/user',[FollowController::class,'followUser']);
+
 
 

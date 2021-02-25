@@ -31,7 +31,7 @@
                                 <div class="central-meta new-pst item">
                                     <div class="new-postbox">
                                         <figure>
-                                            <img src="images/resources/admin2.jpg" alt="" />
+                                            <img src="{{ asset('store/'.auth()->user()->profilePath) }}"style="height: 30px; width: 40px;" alt="" />
                                         </figure>
                                         <div class="newpst-input">
                                             <form method="Post" action="{{ url('addPost') }}" enctype="multipart/form-data">
@@ -85,14 +85,15 @@
                                                         <li>
                                                             <span class="views" data-toggle="tooltip" title="views">
                                                                 <i class="fa fa-thumbs-up" aria-hidden="true"></i>
-
-                                                                <ins>500</ins>
+                                                               
+                                                                  <ins>{{$post->like->count() }}</ins>
+                                                              
                                                             </span>
                                                         </li>
                                                         <li>
                                                             <span class="comment" data-toggle="tooltip" title="Comments">
                                                                 <i class="fa fa-comments-o"></i>
-                                                                <ins>52</ins>
+                                                                <ins>{{$post->comments->count()}}</ins> 
                                                             </span>
                                                         </li>
                                                     </ul>

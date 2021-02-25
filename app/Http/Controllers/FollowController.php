@@ -18,4 +18,6 @@ class FollowController extends Controller
         return redirect()->back();
 
     }
+   
+  
 }

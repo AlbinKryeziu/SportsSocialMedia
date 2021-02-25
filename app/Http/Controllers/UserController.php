@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Dotenv\Validator;
 use App\Models\Profile;
 use App\Models\Education;
+use App\Models\Follow;
 use phpDocumentor\Reflection\Types\Null_;
 use SebastianBergmann\Environment\Console;
 
@@ -19,7 +20,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $post = Post::where('user_id',Auth::id())->orderBy('created_at', 'desc')->get();
+        $post = Post::with('user', 'like', 'comments')->where('user_id',Auth::id())->orderBy('created_at', 'desc')->get();
         return view('user/user-timeline', [
             'post' => $post,
         ]);
@@ -37,7 +38,13 @@ class UserController extends Controller
 
     public function friends()
     {
-        return view('user/timeline-friends');
+        $myfriends = Follow::where('user_id',Auth::id())->get();
+        $count = Follow::where('user_id',Auth::id())->count();
+        return view('user/timeline-friends',[
+            'myfriends' =>$myfriends,
+            'count' => $count,
+        ]);
+        
     }
 
     public function postProfileUpdate(Request $request)
@@ -103,5 +110,13 @@ class UserController extends Controller
     {
         $photos = UserPhoto::where('user_id', Auth::id())->get();
         return view('profile/photo-user', compact('photos'));
+    }
+
+    public function unfollow($friendId){
+        
+        $friends = Follow::where('friends_id',$friendId)->delete();
+       if($friends){
+           return redirect()->back();
+       }
     }
 }

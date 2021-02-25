@@ -17,6 +17,10 @@ class Follow extends Model
          'friends_id',
          'status',
      ];
+
+     public function friend(){
+         return $this->belongsTo(User::class,'friends_id','id');
+     }
     
 
     

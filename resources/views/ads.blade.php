@@ -20,7 +20,7 @@
         </div>
         <div class="container my-4 p-4 col-md-6">
             <div class="row shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center">
-                <legend style="text-align: center;">Apply for Ads</legend>
+                <legend style="text-align: center;">Fill out the application form</legend>
                 <div class="col-md-8 p-4">
                     <div class="form-group">
                         <label class="control-label" for="name"></label>

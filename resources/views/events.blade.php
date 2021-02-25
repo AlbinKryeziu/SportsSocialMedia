@@ -108,36 +108,7 @@ body {
         </div>
 
        
-        <div class="container-fluid p-0 bg-light p-4">
-            <div class="container p-4">
-                <div class="my-4">
-                    <div class="py-4">
-                        <h3>Awards</h3>
-                    </div>
-                    <div class="row align-items-end justify-content-end">
-                        <div class="col-md-3 text-center">
-                            <img src="images/about-us/cup-1.png" alt="" />
-                            <h5 class="font-weight-bold">2015</h5>
-                            <p>CHAMPIONS LEAGUE</p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <img src="images/about-us/cup-2.png" alt="" />
-                            <h5 class="font-weight-bold">2016</h5>
-                            <p>NATIONS LEAGUE</p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <img src="images/about-us/cup-3.png" alt="" />
-                            <h5 class="font-weight-bold">2017</h5>
-                            <p>AMERICAN LEAGUE</p>
-                        </div>
-                        <div class="col-md-3 text-center">
-                            <img src="images/about-us/cup-1.png" alt="" />
-                            <h5 class="font-weight-bold">2018</h5>
-                            <p>CHAMPIONS LEAGUE</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+       
         </div>
         <br />
         <br />
