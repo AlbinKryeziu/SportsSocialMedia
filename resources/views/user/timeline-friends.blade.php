@@ -48,10 +48,10 @@
                                                 <li>
                                                     <div class="nearly-pepls">
                                                         <figure  width="1450px;" height="45px"> 
-                                                            <a href="" title=""><img style="width:40px; height:40px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                                            <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:40px; height:40px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
                                                         </figure>
                                                         <div class="pepl-info">
-                                                            <h4><a href="" title="">{{ $friends->friend->name }}</a></h4>
+                                                            <h4><a href="{{ url('friends/profile/'.$friends->friend->id) }}" title="">{{ $friends->friend->name }}</a></h4>
                                                             <span></span>
                                                             <form method="Post" action="{{ url('/unfollo/friends/'.$friends->friend->id) }}">
                                                                 @csrf

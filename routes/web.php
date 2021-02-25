@@ -38,7 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
         $count = Follow::where('user_id',Auth::id())->count();
         return view('user/timeline-friends',[
             'myfriends'=> $myfriends,
-            'cont' =>$count,
+            'count' =>$count,
         ]);
     }
 });

@@ -274,7 +274,7 @@
 		<div class="feature-photo">
 			<figure><img src="{{ asset('store/'.auth()->user()->profilePath) }}" alt=""></figure>
 			<div class="add-btn">
-				<span>1205 followers</span>
+				<span>{{ App\Models\Follow::where('user_id',Auth::id())->count() }}</span>
 				<a href="#" title="" data-ripple="">Add Friend</a>
 			</div>
 			<form class="edit-phto" action="{{ url('/photo/profile/user') }}" method="POST" enctype="multipart/form-data">

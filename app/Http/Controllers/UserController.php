@@ -22,8 +22,10 @@ class UserController extends Controller
     public function index()
     {
         $post = Post::with('user', 'like', 'comments')->where('user_id',Auth::id())->orderBy('created_at', 'desc')->get();
+        $followCount =Follow::where('user_id',Auth::id())->count();
         return view('user/user-timeline', [
             'post' => $post,
+            'followCount' => $followCount,
         ]);
     }
     
