@@ -21,7 +21,7 @@
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
                                     <figure>
-                                        <img src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 50px; width: 50px;" alt="" />
+                                        <img src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 50px; width: 50px;" alt="" />
                                     </figure>
                                     <div class="newpst-input">
                                         @error('description')
@@ -62,7 +62,7 @@
                                         </span>
                                         <div class="friend-info">
                                             <figure>
-                                                <img src="{{ asset('storage/'.$post->user->profilePath) }}" style="height: 40px; width: 100px;" alt="" />
+                                                <img src="{{ asset('store/'.$post->user->profilePath) }}" style="height: 40px; width: 100px;" alt="" />
                                             </figure>
                                             <div class="friend-name">
                                                 @if(auth()->user()->id == $post->user_id)
@@ -79,7 +79,7 @@
                                                         {{ $post->description }}
                                                     </p>
                                                 </div>
-                                                <img src="{{ asset('storage/'.$post->pathPhotos) }}" alt="" />
+                                                <img src="{{ asset('store/'.$post->pathPhotos) }}" alt="" />
                                                 <div class="we-video-info">
                                                     <ul>
                                                         <li>
@@ -105,7 +105,7 @@
                                                 @foreach($post->comments as $key => $comments)
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="{{ asset('storage/'.$comments->user->profilePath) }}" style="height: 40px; width: 70px;" alt="" />
+                                                        <img src="{{ asset('store/'.$comments->user->profilePath) }}" style="height: 40px; width: 70px;" alt="" />
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
@@ -121,7 +121,7 @@
                                                 </li>
                                                 <li class="post-comment">
                                                     <div class="comet-avatar">
-                                                        <img src="{{ asset('storage/'.$post->user->profilePath) }}"style="height: 30px; width: 60px;" alt="" />
+                                                        <img src="{{ asset('store/'.$post->user->profilePath) }}"style="height: 30px; width: 60px;" alt="" />
                                                     </div>
                                                     <div class="post-comt-box">
                                                         <form>
@@ -165,7 +165,7 @@
 
                                                 <li>
         
-                                                    <figure><img src="{{ asset('storage/'.$user->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
+                                                    <figure><img src="{{ asset('store/'.$user->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
                                                     <div class="friend-meta">
                                                         <h4><a href="{{ url('friends/profile/'.$user->id) }}" title="">{{ $user->name }}</a></h4>
                                                         <form method="POST" action="{{ url('follow/user') }}">

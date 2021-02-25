@@ -3,7 +3,7 @@
     <ul class="naves">
         <ul class="followers" style="margin-left: -30px; bottom: 10px;">
             <li>
-                <figure><img src="{{ asset('storage/'.auth()->user()->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
+                <figure><img src="{{ asset('storev/'.auth()->user()->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
                 <div class="friend-meta">
                     <h4><a href="{{ url('/user/photo') }}" title="">{{ auth()->user()->name }}</a></h4>
                 </div>

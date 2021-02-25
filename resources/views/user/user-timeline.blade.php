@@ -65,10 +65,10 @@
                                             </form>
 
                                             <figure>
-                                                <img id="profile-pic" src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 40px; width: 50px;" alt="" />
+                                                <img id="profile-pic" src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 40px; width: 50px;" alt="" />
                                             </figure>
                                             <div class="friend-name">
-                                                <ins><a href="{{ asset('storage/'.auth()->user()->profilePath) }}" title="">{{ $post->user->name }}</a></ins>
+                                                <ins><a href="{{ asset('store/'.auth()->user()->profilePath) }}" title="">{{ $post->user->name }}</a></ins>
                                                 <span>published: {{ Carbon\Carbon::parse($post->created_at)->format('d-m-Y H:s') }}</span>
                                             </div>
                                             <div class="description">
@@ -78,7 +78,7 @@
                                             </div>
                                             <div class="post-meta">
                                                 <div class="linked-image align-left">
-                                                    <a href="#" title=""><img src="{{ asset('storage/'.$post->pathPhotos) }}" alt="" /></a>
+                                                    <a href="#" title=""><img src="{{ asset('store/'.$post->pathPhotos) }}" alt="" /></a>
                                                 </div>
                                                 <div class="we-video-info">
                                                     <ul>
