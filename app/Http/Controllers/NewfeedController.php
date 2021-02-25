@@ -16,10 +16,20 @@ class NewfeedController extends Controller
 {
     public function index()
     {
+        if (request()->has('q')) {
+            $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
+            $post = Post::with('user', 'like', 'comments')
+                ->whereNotIn('id', $hidePost)
+                ->inRandomOrder()
+                ->where('description', 'LIKE', '%' . request()->get('q') . '%')
+                ->get();
+        }
+
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $post = Post::with('user', 'like', 'comments')
             ->whereNotIn('id', $hidePost)
             ->inRandomOrder()
+            ->where('description', 'LIKE', '%' . request()->get('q') . '%')
             ->get();
         $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
         $user = User::whereNotIn('id', $follow)

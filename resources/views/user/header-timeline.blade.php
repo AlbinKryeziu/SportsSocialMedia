@@ -120,12 +120,7 @@
                         <a class="fa fa-sliders" href="#shoppingbag"></a>
                     </span>
                 </div>
-                <div class="mh-head second">
-                    <form class="mh-form">
-                        <input placeholder="search" />
-                        <a href="#/" class="fa fa-search"></a>
-                    </form>
-                </div>
+               
                 <nav id="menu" class="res-menu">
                     <ul>
                         <li>
@@ -145,8 +140,9 @@
                         <li>
                             <a href="" title="Home" data-ripple=""><i class="ti-search"></i></a>
                             <div class="searched">
-                                <form method="post" class="form-search">
-                                    <input type="text" placeholder="Search Friend" />
+                                <form  class="form-search">
+                                    @csrf
+                                    <input type="text" placeholder="Search Friend" name="q" />
                                     <button data-ripple><i class="ti-search"></i></button>
                                 </form>
                             </div>
