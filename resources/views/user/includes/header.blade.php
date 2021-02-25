@@ -36,7 +36,11 @@
 			</form>
 		</div>
 		<nav id="menu" class="res-menu">
-			
+			<ul>
+				<li><span onclick="window.location.href = '{{  url('newfeed') }}' ">Timeline</span>
+					
+				</li>
+			</ul>
 		</nav>
 		<nav id="shoppingbag">
 		<div>

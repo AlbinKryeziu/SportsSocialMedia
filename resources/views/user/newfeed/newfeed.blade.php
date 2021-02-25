@@ -34,7 +34,7 @@
                                             <div class="attachments">
                                                 <ul>
                                                     <i class="fa fa-camera"></i>
-                                                    <label class="fileContainer">
+                                                    <label class="fileContainer ">
                                                         <input type="file" name="image" id="image" />
                                                     </label>
 
