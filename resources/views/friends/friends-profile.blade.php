@@ -16,12 +16,7 @@
                     <div class="user-avatar">
                         <figure>
                             <img id="profile-pic" src="{{ asset('storage/'.$user->profilePath) }}" style="height: 200px; width: 200px;" alt="">
-                            <form class="edit-phto">
-                                <i class="fa fa-camera-retro"></i>
-                                <label class="fileContainer">
-                                    <input type="file" name="image" id="profile"/>
-                                </label>
-                            </form>
+                            
                         </figure>
                     </div>
                 </div>

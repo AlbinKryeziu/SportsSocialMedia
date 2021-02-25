@@ -1,15 +1,15 @@
 <header>
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top fixed-top">
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+   
     <div class="container-fluid">
    
       <img src="{{asset('images/logo-crop.png')}}" alt="" width="50px">
 
 
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars"></i>
+      <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
 
 
@@ -73,8 +73,8 @@
           </li>
         </ul>
 
-        <div class="input-group md-form form-sm form-2 pl-0 w-50 shadow-sm bg-white rounded">
-          <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+        <div class="input-group  my-2 my-lg-0  w-50 rounded">
+          <input class="form-control " type="text" placeholder="Search" aria-label="Search">
           <div class="input-group-append ">
             <span class="input-group-text red lighten-3" id="basic-text1"><i class="fa fa-search"
                 aria-hidden="true"></i></span>

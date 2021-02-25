@@ -59,7 +59,7 @@ body {
                 <div class="card shadow-sm border-1 rounded "  onclick="window.open('https://www.roadtrips.com/blog/the-best-usa-sporting-events-for-2021/', '_blank')">
                     <div class="card-body p-0"><img src="{{asset('images/events/usa.jpg')}}"  alt="" class="w-100 card-img-top">
                         <div class="p-4">
-                            <h4 class="mb-0">Usa</h4>
+                            <h4 class="mb-0">America</h4>
                             <p class="small text-muted"></p>
                            
                         </div>
