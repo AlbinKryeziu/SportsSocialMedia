@@ -253,29 +253,16 @@
 						<a href="messages.html" title="" class="more-mesg">view more</a>
 					</div>
 				</li>
-				<li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
+				{{-- <li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
 					<div class="dropdowns languages">
 						<a href="#" title=""><i class="ti-check"></i>English</a>
 						<a href="#" title="">Arabic</a>
 						<a href="#" title="">Dutch</a>
 						<a href="#" title="">French</a>
 					</div>
-				</li>
+				</li> --}}
 			</ul>
-			<div class="user-img">
-				<img src="images/resources/admin.jpg" alt="">
-				<span class="status f-online"></span>
-				<div class="user-setting">
-					<a href="#" title=""><span class="status f-online"></span>online</a>
-					<a href="#" title=""><span class="status f-away"></span>away</a>
-					<a href="#" title=""><span class="status f-off"></span>offline</a>
-					<a href="#" title=""><i class="ti-user"></i> view profile</a>
-					<a href="#" title=""><i class="ti-pencil-alt"></i>edit profile</a>
-					<a href="#" title=""><i class="ti-target"></i>activity log</a>
-					<a href="#" title=""><i class="ti-settings"></i>account setting</a>
-					<a href="#" title=""><i class="ti-power-off"></i>log out</a>
-				</div>
-			</div>
+			
 			
 		</div>
 	</div><!-- topbar -->	
@@ -286,25 +273,25 @@
 				<span>1205 followers</span>
 				<a href="#" title="" data-ripple="">Add Friend</a>
 			</div>
-			<form class="edit-phto">
-				<i class="fa fa-camera-retro"></i>
-				<label class="fileContainer">
+			{{-- <form class="edit-phto">
+				{{-- <i class="fa fa-camera-retro"></i> --}}
+				 {{-- <label class="fileContainer">
 					Edit Cover Photo
 				<input type="file"/>
-				</label>
-			</form>
+				</label>  
+			</form> --}}
 			<div class="container-fluid">
 				<div class="row merged">
 					<div class="col-lg-2 col-sm-3">
 						<div class="user-avatar">
 							<figure>
 								<img id="profile-pic" src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 200px; width: 200px;" alt="">
-								<form class="edit-phto">
+								{{-- <form class="edit-phto">
 									<i class="fa fa-camera-retro"></i>
 									<label class="fileContainer">
 										<input type="file" name="image" id="profile"/>
 									</label>
-								</form>
+								</form> --}}
 							</figure>
 						</div>
 					</div>

@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="{{ asset('socail/css/style.css') }}" />
         <link rel="stylesheet" href="{{ asset('socail/css/color.css') }}" />
         <link rel="stylesheet" href="{{ asset('socail/css/responsive.css') }}" />
+        
     </head>
     <style>
         body {
@@ -151,7 +152,7 @@
                             </div>
                         </li>
                         <li>
-                            <a href="" onclick="window.location='{{ url('newfeed') }}'" title=""><i class="ti-home" aria-hidden="true"></i> </a>
+                            <a href="{{ url('newfeed') }}" title=""><i class="ti-home" aria-hidden="true"></i> </a>
                         </li>
                         <li>
                             <a href="#" title="Notification" data-ripple=""> <i class="ti-bell"></i><span>20</span> </a>
@@ -278,12 +279,10 @@
                                         <span class="tag">New</span>
                                     </li>
                                 </ul>
-                                <a href="messages.html" title="" class="more-mesg">view more</a>
+                                
                             </div>
                         </li>
                     </ul>
-
-                    <span class="ti-menu main-menu" data-ripple=""></span>
                 </div>
             </div>
             <!-- topbar -->
