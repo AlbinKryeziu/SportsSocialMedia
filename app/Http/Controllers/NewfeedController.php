@@ -20,7 +20,7 @@ class NewfeedController extends Controller
             $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
             $post = Post::with('user', 'like', 'comments')
                 ->whereNotIn('id', $hidePost)
-                ->inRandomOrder()
+                ->orderBy('created_at', 'DESC')
                 ->where('description', 'LIKE', '%' . request()->get('q') . '%')
                 ->get();
         }
@@ -28,7 +28,7 @@ class NewfeedController extends Controller
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $post = Post::with('user', 'like', 'comments')
             ->whereNotIn('id', $hidePost)
-            ->inRandomOrder()
+            ->orderBy('created_at', 'DESC')
             ->where('description', 'LIKE', '%' . request()->get('q') . '%')
             ->get();
         $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
@@ -72,6 +72,6 @@ class NewfeedController extends Controller
             'comment' => $request->comment,
         ]);
 
-        return response()->json(['success' => ' Added new records.']);
+        return  redirect()->back();
     }
 }

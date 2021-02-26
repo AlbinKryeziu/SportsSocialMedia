@@ -29,7 +29,7 @@
                                         @enderror
                                         <form method="Post" action="{{ url('addPost') }}" enctype="multipart/form-data">
                                             @csrf
-                                            <textarea rows="2" placeholder="write something" name="description"></textarea>
+                                            <textarea rows="2" placeholder="Write something" name="description"></textarea>
                                            
                                             <div class="attachments">
                                                 <ul>
@@ -124,7 +124,7 @@
                                                         <img src="{{ asset('store/'.$post->user->profilePath) }}"style="height: 30px; width: 60px;" alt="" />
                                                     </div>
                                                     <div class="post-comt-box">
-                                                        <form>
+                                                        <form method="POST" action="{{ url('newfeed/comment/create') }}">
                                                             @csrf
                                                             <textarea placeholder="Post your" name="comment" id="comment"></textarea>
                                                             
@@ -251,7 +251,7 @@
         </div>
     </div>     
 </div>
-<script type="text/javascript">
+{{-- <script type="text/javascript">
     $(document).ready(function() {
         $(".btn-submit").click(function(e){
             e.preventDefault();
@@ -286,10 +286,10 @@
           }
         }
     });
-</script>
+</script> --}}
 
 </section>
-     @include('user/script')
+  
 </section>
 <script>
     $(document).on('click','.deleteUser',function(){

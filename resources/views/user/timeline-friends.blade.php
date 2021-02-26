@@ -34,8 +34,8 @@
                             <div class="central-meta">
                                 <div class="frnds">
                                     <ul class="nav nav-tabs">
-                                        <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">My Friends</a> <span>{{ $count }}</span></li>
-                                        <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Friend Requests</a><span>0</span></li>
+                                        <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">Following</a> <span>{{ $count }}</span></li>
+                                        <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Followers</a><span>0</span></li>
                                     </ul>
 
                                     <!-- Tab panes -->
@@ -56,7 +56,7 @@
                                                             <form method="Post" action="{{ url('/unfollo/friends/'.$friends->friend->id) }}">
                                                                 @csrf
                                                                
-                                                             <button type="submit" class="add-butn more-action float-right"> unfriend</button> 
+                                                             <button type="submit" class="add-butn more-action float-right">Unfollow</button> 
                                                                
                                                             </form>
                 
@@ -72,6 +72,7 @@
                                         </div>
                                         <div class="tab-pane fade" id="frends-req">
                                             <ul class="nearby-contct">
+                                                <p style="text-align: center">No  followers</p>
                                             </ul>
                                             <button class="btn-view btn-load-more"></button>
                                         </div>
@@ -83,14 +84,16 @@
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget">
-                                    <h4 class="widget-title">Who's follownig</h4>
+                                    <h4 class="widget-title">Who's following</h4>
                                     <ul class="followers">
+                                        @foreach($myfriends as $key => $friends)
                                         <li>
-                                            <figure><img src="images/resources/friend-avatar2.jpg" alt="" /></figure>
+                                            <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px; border-radius: 50%;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
                                             <div class="friend-meta">
-                                               <p >No results so far</p>
+                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
                                             </div>
                                         </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <!-- who's following -->
@@ -98,8 +101,8 @@
                                     <h4 class="widget-title">Friends</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
-                                        @foreach($myfriends as $key => $friends)
-                                        <li>
+                                       
+                                        {{-- <li>
                                             <figure>
                                                 <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
                                               
@@ -108,8 +111,8 @@
                                                 <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
                                                 <i></i>
                                             </div>
-                                        </li>
-                                        @endforeach
+                                        </li> --}}
+                                      
                                        
                                     </ul>
                                   
