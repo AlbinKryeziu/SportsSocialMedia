@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="{{ url('images/logo-crop.png') }}">
+    <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
     <title>New Home</title>
 
     @include('includes/style')
@@ -127,7 +127,7 @@
             <div class="container" style="margin-bottom: 172px;">
                 <div class="col-12 text-center p-4">
                     <h1 class="display-3">WELCOME</h1>
-                    <img class="mb-4" src="images/logo-crop.png" alt="" width="200px">
+                    <img class="mb-4" src ="{{ asset('images/logo/final-logo.png') }}" alt="" width="300px">
                     <h3 class="">
                         Sports Social
                     </h3>

@@ -6,7 +6,7 @@
         <link rel="icon" href="{{ url('images/logo-crop.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>About Us</title>
-        <link href="{{ asset('css/blog/css/style.css') }}" rel="stylesheet" />
+        <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
         @include('includes/style')
     </head>
     

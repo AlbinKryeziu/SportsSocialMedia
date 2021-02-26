@@ -6,7 +6,7 @@
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <title>Sports</title>
-        <link rel="icon" href="{{ url('images/logo-crop.png') }}" />
+        <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
 
         <link rel="stylesheet" href="{{ asset('socail/css/main.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('socail/css/style.css') }}" />
@@ -119,7 +119,6 @@
                         <a class="fa fa-sliders" href="#shoppingbag"></a>
                     </span>
                 </div>
-
                 <nav id="menu" class="res-menu">
                     <ul>
                         <li>
@@ -129,10 +128,9 @@
                     </ul>
                 </nav>
             </div>
-
             <div class="topbar stick">
                 <div class="logo">
-                    <a title="" href=""><img src="{{ asset('images/logo.png') }}" style="width: 145px;" alt="" /></a>
+                    <a title="" href=""><img src="{{ asset('images/logo/final-logo.png') }}" style="height:60px;" alt="" /></a>
                 </div>
                 <div class="top-area">
                     <ul class="setting-area">

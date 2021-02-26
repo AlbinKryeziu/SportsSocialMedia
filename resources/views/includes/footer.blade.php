@@ -5,7 +5,7 @@
     <div class="container pt-4 pb-4">
         <div class="row ny-auto">
             <div class="col-md-6 col-xs-12 ">
-                <img src="{{asset('images/logo.png')}}" alt="" width="300px">
+                <img src="{{ asset('images/logo/final-logo.png') }}" alt="" width="150px">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
                     et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation</p>
             </div>
