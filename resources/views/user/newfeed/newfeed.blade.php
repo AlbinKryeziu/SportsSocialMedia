@@ -239,7 +239,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <p>Do you really want to hidde these records ?</p>
+                    <p>Do you really want to hide these records  ?</p>
                     <input type="hidden", name="postId" id="post">
                 </div>
                 <div class="modal-footer justify-content-center">
