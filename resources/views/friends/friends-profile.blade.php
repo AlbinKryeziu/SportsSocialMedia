@@ -16,7 +16,7 @@
                 <div class="col-lg-2 col-sm-3">
                     <div class="user-avatar">
                         <figure>
-                            <img id="profile-pic" src="{{ asset('store/'.$user->profilePath) }}" style="height: 200px; width: 200px;" alt="">
+                            <img id="profile-pic" src="{{ asset('store/'.$user->profilePath) }}" style="height: 200px; width: 200px; object-fit:cover;" alt="">
                             
                         </figure>
                     </div>

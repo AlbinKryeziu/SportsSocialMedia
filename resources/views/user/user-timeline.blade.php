@@ -276,17 +276,8 @@
         </div>
     </div>
 </section>
+@include('user/includes/footer')
 
-<div class="bottombar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <span class="copyright">© Winku 2018. All rights reserved.</span>
-                <i><img src="images/credit-cards.png" alt="" /></i>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script src="{{ asset('socail/js/main.min.js') }}"></script>
 <script src="{{ asset('socail/js/script.js') }}"></script>

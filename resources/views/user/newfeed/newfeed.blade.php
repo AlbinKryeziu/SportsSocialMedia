@@ -198,6 +198,7 @@
                 </div>
             </div>
         </div>
+      
 
         <div id="applicantDeleteModal" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
             <form action="{{ url('newfeed/delete/post') }}" method="POST" class="remove-record-model">

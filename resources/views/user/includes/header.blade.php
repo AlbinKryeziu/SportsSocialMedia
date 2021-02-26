@@ -112,7 +112,7 @@
 	
 	<div class="topbar stick">
 		<div class="logo">
-			{{-- <a title="" href="newsfeed.html"><img src="images/logo.png" alt=""></a> --}}
+			<a title="" href="newsfeed.html"><img src="{{ asset('images/logo.png') }}" style="width: 145px;" alt="" /></a>
 		</div>
 		<div class="top-area">
 			
@@ -292,7 +292,7 @@
 					<div class="col-lg-2 col-sm-3">
 						<div class="user-avatar">
 							<figure>
-								<img id="profile-pic" src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 200px; width: 200px;" alt="">
+								<img id="profile-pic" src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 200px; width: 200px; object-fit:cover;" alt="">
 								{{-- <form class="edit-phto">
 									<i class="fa fa-camera-retro"></i>
 									<label class="fileContainer">

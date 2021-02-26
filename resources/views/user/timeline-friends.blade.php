@@ -88,36 +88,7 @@
                                         <li>
                                             <figure><img src="images/resources/friend-avatar2.jpg" alt="" /></figure>
                                             <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="images/resources/friend-avatar4.jpg" alt="" /></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Issabel</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="images/resources/friend-avatar6.jpg" alt="" /></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Andrew</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="images/resources/friend-avatar8.jpg" alt="" /></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Sophia</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure><img src="images/resources/friend-avatar3.jpg" alt="" /></figure>
-                                            <div class="friend-meta">
-                                                <h4><a href="time-line.html" title="">Allen</a></h4>
-                                                <a href="#" title="" class="underline">Add Friend</a>
+                                               <p >Empty</p>
                                             </div>
                                         </li>
                                     </ul>
@@ -127,96 +98,19 @@
                                     <h4 class="widget-title">Friends</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
+                                        @foreach($myfriends as $key => $friends)
                                         <li>
                                             <figure>
-                                                <img src="images/resources/friend-avatar.jpg" alt="" />
-                                                <span class="status f-online"></span>
+                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:40px; height:40px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                              
                                             </figure>
                                             <div class="friendz-meta">
-                                                <a href="time-line.html">bucky barnes</a>
-                                                <i>wintersolder@gmail.com</i>
+                                                <a href="time-line.html">{{ $friends->friend->name }}</a>
+                                                <i></i>
                                             </div>
                                         </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar2.jpg" alt="" />
-                                                <span class="status f-away"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">Sarah Loren</a>
-                                                <i>barnes@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar3.jpg" alt="" />
-                                                <span class="status f-off"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">jason borne</a>
-                                                <i>jasonb@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar4.jpg" alt="" />
-                                                <span class="status f-off"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">Cameron diaz</a>
-                                                <i>jasonb@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar5.jpg" alt="" />
-                                                <span class="status f-online"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">daniel warber</a>
-                                                <i>jasonb@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar6.jpg" alt="" />
-                                                <span class="status f-away"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">andrew</a>
-                                                <i>jasonb@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar7.jpg" alt="" />
-                                                <span class="status f-off"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">amy watson</a>
-                                                <i>jasonb@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar5.jpg" alt="" />
-                                                <span class="status f-online"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">daniel warber</a>
-                                                <i>jasonb@gmail.com</i>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <figure>
-                                                <img src="images/resources/friend-avatar2.jpg" alt="" />
-                                                <span class="status f-away"></span>
-                                            </figure>
-                                            <div class="friendz-meta">
-                                                <a href="time-line.html">Sarah Loren</a>
-                                                <i>barnes@gmail.com</i>
-                                            </div>
-                                        </li>
+                                        @endforeach
+                                       
                                     </ul>
                                     <div class="chat-box">
                                         <div class="chat-head">
@@ -292,16 +186,7 @@
     </div>
 </section>
 
-<div class="bottombar">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <span class="copyright">© Winku 2018. All rights reserved.</span>
-                <i><img src="images/credit-cards.png" alt="" /></i>
-            </div>
-        </div>
-    </div>
-</div>
+@include('user/includes/footer')
 
 <script src="{{ asset('socail/js/main.min.js') }}"></script>
 <script src="{{ asset('socail/js/script.js') }}"></script>
