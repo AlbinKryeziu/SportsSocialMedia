@@ -276,7 +276,7 @@
 				height: 60vh;" alt=""></figure>
 			<div class="add-btn">
 				<span>{{ App\Models\Follow::where('user_id',Auth::id())->count() }}</span>
-				<a  title="" data-ripple="" style="color:white">Friends</a>
+				<a  title="" data-ripple="" style="color:white">Followers</a>
 			</div>
 			<form class="edit-phto" action="{{ url('/photo/profile/user') }}" method="POST" enctype="multipart/form-data">
 				@csrf
@@ -317,7 +317,7 @@
 								<li>
 									<a class="{!! Request::is('user/photo') ? 'active' : '' !!}" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
 									<a class="{!! Request::is('photos/me') ? 'active' : '' !!}" href="{{ url('/photos/me') }}" title="" data-ripple="" >Photos</a>
-									<a class="{!! Request::is('friends') ? 'active' : '' !!}" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
+									<a class="{!! Request::is('friends') ? 'active' : '' !!}" href="{{ url('/friends') }}" title="" data-ripple="">Followers</a>
 									{{-- <a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a> --}}
 									{{-- <a class="" href="#" title="" data-ripple="">more</a> --}}
 								</li>

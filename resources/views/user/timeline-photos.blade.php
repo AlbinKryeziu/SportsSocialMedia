@@ -32,7 +32,7 @@
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget friend-list stick-widget">
-                                    <h4 class="widget-title">Friends</h4>
+                                    <h4 class="widget-title">Following</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
                                         @foreach($myfriends as $key => $friends)

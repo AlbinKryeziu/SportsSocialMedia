@@ -15,11 +15,11 @@
         </li>
         <li>
             <i class="ti-user"></i>
-            <a href="{{ url('/friends') }}" title="">friends</a>
+            <a href="{{ url('/friends') }}" title="">Followers</a>
         </li>
         <li>
             <i class="ti-image"></i>
-            <a href="{{ url('/photos/me') }}" title="">images</a>
+            <a href="{{ url('/photos/me') }}" title="">Images</a>
         </li>
         <li>
             <i class="ti-comments-smiley"></i>
@@ -27,7 +27,7 @@
         </li>
         <li>
             <i class="ti-video-camera"></i>
-            <a href="" title="">videos</a>
+            <a href="" title="">Videos</a>
         </li>
         <li>
             <i class="ti-comments-smiley"></i>

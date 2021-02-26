@@ -83,27 +83,14 @@
                         <!-- centerl meta -->
                         <div class="col-lg-3">
                             <aside class="sidebar static">
-                                <div class="widget">
+                                
+                                <!-- who's following -->
+                                 <div class="widget friend-list stick-widget">
                                     <h4 class="widget-title">Following</h4>
                                     <div id="searchDir"></div>
-                                    <ul class="followers">
+                                    <ul id="people-list" class="friendz-list">
                                         @foreach($myfriends as $key => $friends)
                                         <li>
-                                            <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px; border-radius: 50%;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
-                                            <div class="friend-meta">
-                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
-                                            </div>
-                                        </li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                                <!-- who's following -->
-                                <div class="widget friend-list stick-widget">
-                                    <h4 class="widget-title">Friends</h4>
-                                    <div id="searchDir"></div>
-                                    <ul id="people-list" class="friendz-list">
-                                       
-                                        {{-- <li>
                                             <figure>
                                                 <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
                                               
@@ -112,13 +99,28 @@
                                                 <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
                                                 <i></i>
                                             </div>
-                                        </li> --}}
-                                      
+                                        </li> 
+                                        @endforeach
                                        
                                     </ul>
                                   
                                        
                                     </div>
+                                  <div class="widget">
+                                    <div class="widget friend-list stick-widget">
+                                        <h4 class="widget-title">Followers</h4>
+                                    <ul class="followers">
+                                        
+                                        {{-- <li>
+                                            <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px; border-radius: 50%;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                            <div class="friend-meta">
+                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
+                                            </div>
+                                        </li> --}}
+                                       
+                                    </ul>
+                                </div>
+
                                 </div>
                                 <!-- friends list sidebar -->
                             </aside>

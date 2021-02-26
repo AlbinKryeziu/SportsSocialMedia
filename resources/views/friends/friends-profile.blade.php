@@ -7,7 +7,7 @@
 
         <div class="add-btn">
             <span>1205 followers</span>
-            <a href="#" title="" data-ripple="">Add Friend</a>
+            <a href="#" title="" data-ripple="">Follow</a>
         </div>
 
         <div class="container-fluid">
