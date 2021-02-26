@@ -22,6 +22,10 @@
             <a href="{{ url('/photos/me') }}" title="">images</a>
         </li>
         <li>
+            <i class="ti-comments-smiley"></i>
+            <a href="{{ url('newfeed/hide/post') }}" title="">Hide post</a>
+        </li>
+        <li>
             <i class="ti-video-camera"></i>
             <a href="" title="">videos</a>
         </li>

@@ -121,6 +121,8 @@ Route::get('newfeed', [NewfeedController::class,'index']);
 Route::post('newfeed/delete/post', [NewfeedController::class,'deletePostFeed']);
 Route::post('newfeed/hidde/post', [NewfeedController::class,'hiddePost']);
 Route::post('newfeed/comment/create', [NewfeedController::class,'storeComment'])->name('storePost');
+Route::get('newfeed/hide/post', [NewfeedController::class,'showHidePost'])->name('showHidePost');
+Route::post('newfeed/unhide/post', [NewfeedController::class,'unhide'])->name('unhide');
 
 //friends
 

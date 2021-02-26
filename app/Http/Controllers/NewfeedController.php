@@ -74,4 +74,30 @@ class NewfeedController extends Controller
 
         return  redirect()->back();
     }
+
+    public function showHidePost(){
+        $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
+        $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
+        $user = User::whereNotIn('id', $follow)
+        ->where('id', '!=', Auth::id())
+        ->inRandomOrder()
+        ->get();
+        
+          $post = Post::with('user', 'like', 'comments')
+        ->whereIn('id', $hidePost)
+        ->orderBy('created_at', 'DESC')
+        ->where('description', 'LIKE', '%' . request()->get('q') . '%')
+        ->get();
+       return view('user/hide',[
+           'post' =>$post,
+           'user' =>$user,
+       ]);
+    }
+
+    public function unhide(Request $request){
+        $postId = $request->input('postId');
+        HidePost::where('post_id',$postId)->delete();
+
+        return redirect()->back();
+    }
 }

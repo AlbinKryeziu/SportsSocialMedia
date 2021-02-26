@@ -15,11 +15,15 @@
         </li>
         <li>
             <i class="ti-user"></i>
-            <a href="" title="">friends</a>
+            <a href="{{ url('/friends') }}" title="">friends</a>
         </li>
         <li>
             <i class="ti-image"></i>
-            <a href="" title="">images</a>
+            <a href="{{ url('/photos/me') }}" title="">images</a>
+        </li>
+        <li>
+            <i class="ti-comments-smiley"></i>
+            <a href="{{ url('newfeed/hide/post') }}" title="">Hide post</a>
         </li>
         <li>
             <i class="ti-video-camera"></i>
