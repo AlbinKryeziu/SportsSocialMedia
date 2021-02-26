@@ -84,7 +84,8 @@
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 <div class="widget">
-                                    <h4 class="widget-title">Who's following</h4>
+                                    <h4 class="widget-title">Following</h4>
+                                    <div id="searchDir"></div>
                                     <ul class="followers">
                                         @foreach($myfriends as $key => $friends)
                                         <li>

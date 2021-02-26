@@ -23,7 +23,7 @@
         </li>
         <li>
             <i class="ti-comments-smiley"></i>
-            <a href="{{ url('newfeed/hide/post') }}" title="">Hide post</a>
+            <a href="{{ url('newfeed/hide/post') }}" title="">Hidden Posts</a>
         </li>
         <li>
             <i class="ti-video-camera"></i>
