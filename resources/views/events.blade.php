@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
 
-        <title>Contact Us</title>
+        <title>Events</title>
         <style>
 body {
     min-height: 100vh;

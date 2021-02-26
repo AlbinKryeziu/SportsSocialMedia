@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
 
-        <title>Contact Us</title>
+        <title>Ads</title>
 
         @include('includes/style')
     </head>
