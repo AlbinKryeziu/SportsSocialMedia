@@ -272,10 +272,11 @@
 	</div><!-- topbar -->	
 	<section>
 		<div class="feature-photo">
-			<figure><img src="{{ asset('store/'.auth()->user()->profilePath) }}" alt=""></figure>
+			<figure ><img src="{{ asset('store/'.auth()->user()->profilePath) }}" style="object-fit: cover;
+				height: 60vh;" alt=""></figure>
 			<div class="add-btn">
 				<span>{{ App\Models\Follow::where('user_id',Auth::id())->count() }}</span>
-				<a href="#" title="" data-ripple="">Add Friend</a>
+				<a  title="" data-ripple="" style="color:white">Friends</a>
 			</div>
 			<form class="edit-phto" action="{{ url('/photo/profile/user') }}" method="POST" enctype="multipart/form-data">
 				@csrf

@@ -4,7 +4,8 @@
 <section>
     @foreach($user as $key => $user)
     <div class="feature-photo">
-        <figure><img src="{{ asset('store/'.$user->profilePath) }}" alt=""></figure>
+        <figure><img src="{{ asset('store/'.$user->profilePath) }}" style="object-fit: cover;
+			height: 60vh;" alt=""></figure>
         <div class="add-btn">
             <span>1205 followers</span>
             <a href="#" title="" data-ripple="">Add Friend</a>
@@ -28,8 +29,8 @@
                               <span></span>
                             </li>
                             <li>
-                                <a class="active" href="{{ url('friends/profile/'.$user->id) }}" title="" data-ripple="">time line</a>
-                                <a class="" href="{{ url('friends/photo/'.$user->id) }}" title="" data-ripple="" >Photos</a>
+                                <a class="{!! Request::is('friends/profile/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/profile/'.$user->id) }}" title="" data-ripple="">time line</a>
+                                <a class="{!! Request::is('friends/photo/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/photo/'.$user->id) }}" title="" data-ripple="" >Photos</a>
                                 <a class="" href="" title="" data-ripple="">about</a>
                                 
                             </li>
