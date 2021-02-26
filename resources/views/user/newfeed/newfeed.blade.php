@@ -244,7 +244,7 @@
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger">Hidden</button>
+                    <button type="submit" class="btn btn-danger">Hide</button>
                 </div>
             </div>
           </form>
