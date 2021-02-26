@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="{{ asset('socail/css/style.css') }}" />
         <link rel="stylesheet" href="{{ asset('socail/css/color.css') }}" />
         <link rel="stylesheet" href="{{ asset('socail/css/responsive.css') }}" />
-        
     </head>
     <style>
         body {
@@ -120,7 +119,7 @@
                         <a class="fa fa-sliders" href="#shoppingbag"></a>
                     </span>
                 </div>
-               
+
                 <nav id="menu" class="res-menu">
                     <ul>
                         <li>
@@ -133,14 +132,14 @@
 
             <div class="topbar stick">
                 <div class="logo">
-                    <a title="" href="newsfeed.html"><img src="{{ asset('images/logo.png') }}" style="width: 145px;" alt="" /></a>
+                    <a title="" href=""><img src="{{ asset('images/logo.png') }}" style="width: 145px;" alt="" /></a>
                 </div>
                 <div class="top-area">
                     <ul class="setting-area">
                         <li>
                             <a href="" title="Home" data-ripple=""><i class="ti-search"></i></a>
                             <div class="searched">
-                                <form  class="form-search">
+                                <form class="form-search">
                                     @csrf
                                     <input type="text" placeholder="Search Friend" name="q" />
                                     <button data-ripple><i class="ti-search"></i></button>
@@ -154,63 +153,7 @@
                             <a href="#" title="Notification" data-ripple=""> <i class="ti-bell"></i><span>20</span> </a>
                             <div class="dropdowns">
                                 <span>4 New Notifications</span>
-                                <ul class="drops-menu">
-                                    <li>
-                                        <a href="notifications.html" title="">
-                                            <img src="images/resources/thumb-1.jpg" alt="" />
-                                            <div class="mesg-meta">
-                                                <h6>sarah Loren</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span class="tag green">New</span>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html" title="">
-                                            <img src="images/resources/thumb-2.jpg" alt="" />
-                                            <div class="mesg-meta">
-                                                <h6>Jhon doe</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span class="tag red">Reply</span>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html" title="">
-                                            <img src="images/resources/thumb-3.jpg" alt="" />
-                                            <div class="mesg-meta">
-                                                <h6>Andrew</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span class="tag blue">Unseen</span>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html" title="">
-                                            <img src="images/resources/thumb-4.jpg" alt="" />
-                                            <div class="mesg-meta">
-                                                <h6>Tom cruse</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span class="tag">New</span>
-                                    </li>
-                                    <li>
-                                        <a href="notifications.html" title="">
-                                            <img src="images/resources/thumb-5.jpg" alt="" />
-                                            <div class="mesg-meta">
-                                                <h6>Amy</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span class="tag">New</span>
-                                    </li>
-                                </ul>
+                                <ul class="drops-menu"></ul>
                                 <a href="notifications.html" title="" class="more-mesg">view more</a>
                             </div>
                         </li>
@@ -275,7 +218,6 @@
                                         <span class="tag">New</span>
                                     </li>
                                 </ul>
-                                
                             </div>
                         </li>
                     </ul>

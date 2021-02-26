@@ -21,7 +21,7 @@
                             <div class="central-meta new-pst">
                                 <div class="new-postbox">
                                     <figure>
-                                        <img src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 50px; width: 50px;" alt="" />
+                                        <img src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 40px; width: 40px; object-fit:cover;" alt="" />
                                     </figure>
                                     <div class="newpst-input">
                                         @error('description')
@@ -62,7 +62,7 @@
                                         </span>
                                         <div class="friend-info">
                                             <figure>
-                                                <img src="{{ asset('store/'.$post->user->profilePath) }}" style="height: 40px; width: 100px;" alt="" />
+                                                <img src="{{ asset('store/'.$post->user->profilePath) }}" style="height: 40px; width: 40px; object-fit:cover;" alt="" />
                                             </figure>
                                             <div class="friend-name">
                                                 @if(auth()->user()->id == $post->user_id)
@@ -105,11 +105,11 @@
                                                 @foreach($post->comments as $key => $comments)
                                                 <li>
                                                     <div class="comet-avatar">
-                                                        <img src="{{ asset('store/'.$comments->user->profilePath) }}" style="height: 40px; width: 70px;" alt="" />
+                                                        <img src="{{ asset('store/'.$comments->user->profilePath) }}" style="height: 40px; width: 40px; object-fit:cover;" alt="" />
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
-                                                            <h5><a href="time-line.html" title="">{{ $comments->user->name }}</a></h5>
+                                                            <h5><a href="" title="">{{ $comments->user->name }}</a></h5>
                                                             <span>{{ Carbon\Carbon::parse($comments->created_at)->format('d-m-Y H:i')}}</span>
                                                         </div>
                                                         <p style="width: 340px;">{{ $comments->comment }}</p>
@@ -165,7 +165,7 @@
 
                                                 <li>
         
-                                                    <figure><img src="{{ asset('store/'.$user->profilePath) }}" alt="" style="height: 40px; width: 100px;" /></figure>
+                                                    <figure> <a href="{{ url('friends/profile/'.$user->id) }}"><img src="{{ asset('store/'.$user->profilePath) }}" alt="" style="height: 40px; width: 40px; object-fit:cover;" /></a></figure>
                                                     <div class="friend-meta">
                                                         <h4><a href="{{ url('friends/profile/'.$user->id) }}" title="">{{ $user->name }}</a></h4>
                                                         <form method="POST" action="{{ url('follow/user') }}">

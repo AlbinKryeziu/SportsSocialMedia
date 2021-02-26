@@ -21,21 +21,25 @@ class UserController extends Controller
 {
     public function index()
     {
+        $myfriends = Follow::where('user_id',Auth::id())->get();
         $post = Post::with('user', 'like', 'comments')->where('user_id',Auth::id())->orderBy('created_at', 'desc')->get();
         $followCount =Follow::where('user_id',Auth::id())->count();
         return view('user/user-timeline', [
             'post' => $post,
             'followCount' => $followCount,
+            'myfriends' => $myfriends,
         ]);
     }
     
     public function photos()
     {
+        $myfriends = Follow::where('user_id',Auth::id())->get();
         $post = Post::where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')->where('pathPhotos','!=', Null)
             ->get();
         return view('user/timeline-photos', [
             'post' => $post,
+            'myfriends' =>$myfriends,
         ]);
     }
 
