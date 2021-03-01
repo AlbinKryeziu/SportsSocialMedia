@@ -85,8 +85,11 @@
                                                             <span></span>
                                                             <form method="Post" action="{{ url('/unfollo/friends/'.$followers->followers->id) }}">
                                                                 @csrf
-                                                               
-                                                             <button type="submit" class="add-butn more-action float-right">jo</button> 
+                                                                @if (Auth::User()->isFollowing($followers->followers->id)) 
+                                                             <button type="submit" class="add-butn more-action float-right">Unfollow</button> 
+                                                             @else
+                                                             <button type="submit" class="add-butn more-action float-right">Follow</button> 
+                                                             @endif
                                                                
                                                             </form>
                 
