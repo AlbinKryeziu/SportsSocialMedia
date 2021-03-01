@@ -134,7 +134,8 @@ Route::get('friends/photo/{userId}', [FriendController::class,'friendsPhoto']);
 //follow urser
 
 
-Route::post('follow/user',[FollowController::class,'followUser']);
+
+Route::post('follow/{user}',[FollowController::class,'follow']);
 
 
 

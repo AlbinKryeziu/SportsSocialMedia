@@ -31,11 +31,15 @@ class NewfeedController extends Controller
             ->orderBy('created_at', 'DESC')
             ->where('description', 'LIKE', '%' . request()->get('q') . '%')
             ->get();
-        $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
-        $user = User::whereNotIn('id', $follow)
-            ->where('id', '!=', Auth::id())
-            ->inRandomOrder()
-            ->get();
+
+        $following = Follow::where('user_id', Auth::id())->pluck('target_id');
+        if ($following) {
+            $user = User::whereNotIn('id', $following)
+                ->whereNotIn('id', [Auth::id()])
+                ->get();
+        } else {
+            $user = User::where('id', '!=', Auth::id())->get();
+        }
 
         return view('user/newfeed/newfeed', [
             'post' => $post,
@@ -72,38 +76,41 @@ class NewfeedController extends Controller
             'comment' => $request->comment,
         ]);
 
-        return  redirect()->back();
+        return redirect()->back();
     }
 
-    public function showHidePost(){
+    public function showHidePost()
+    {
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
         $user = User::whereNotIn('id', $follow)
-        ->where('id', '!=', Auth::id())
-        ->inRandomOrder()
-        ->get();
-        
-          $post = Post::with('user', 'like', 'comments')
-        ->whereIn('id', $hidePost)
-        ->orderBy('created_at', 'DESC')
-        ->where('description', 'LIKE', '%' . request()->get('q') . '%')
-        ->get();
-       return view('user/hide',[
-           'post' =>$post,
-           'user' =>$user,
-       ]);
+            ->where('id', '!=', Auth::id())
+            ->inRandomOrder()
+            ->get();
+
+        $post = Post::with('user', 'like', 'comments')
+            ->whereIn('id', $hidePost)
+            ->orderBy('created_at', 'DESC')
+            ->where('description', 'LIKE', '%' . request()->get('q') . '%')
+            ->get();
+        return view('user/hide', [
+            'post' => $post,
+            'user' => $user,
+        ]);
     }
 
-    public function unhide(Request $request){
+    public function unhide(Request $request)
+    {
         $postId = $request->input('postId');
-        HidePost::where('post_id',$postId)->delete();
+        HidePost::where('post_id', $postId)->delete();
 
         return redirect()->back();
     }
 
-    public function deleteComent(Request $request){
+    public function deleteComent(Request $request)
+    {
         $commentId = $request->commentId;
-        $comment = PostComment::where('id',$commentId)->delete();
+        $comment = PostComment::where('id', $commentId)->delete();
         return redirect()->back();
     }
 }

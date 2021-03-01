@@ -171,8 +171,8 @@
                                                     <figure> <a href="{{ url('friends/profile/'.$user->id) }}"><img src="{{ asset('store/'.$user->profilePath) }}" alt="" style="height: 40px; width: 40px; object-fit:cover;" /></a></figure>
                                                     <div class="friend-meta">
                                                         <h4><a href="{{ url('friends/profile/'.$user->id) }}" title="">{{ $user->name }}</a></h4>
-                                                        <form method="POST" action="{{ url('follow/user') }}">
-                                                            <input type="hidden" name="friendsId" value="{{ $user->id }}">
+                                                        <form method="POST" action="{{ url('follow/'.$user->id) }}">
+                                                            
                                                             @csrf
                                                         <button type="submit">Follow</button>
                                                         </form>

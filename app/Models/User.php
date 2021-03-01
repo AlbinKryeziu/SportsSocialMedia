@@ -81,4 +81,15 @@ class User extends Authenticatable
     public function friends(){
         return $this->hasMany(Follow::class,'user_id','id');
     }
+
+    public function follows() {
+        return $this->hasMany(Follow::class);
+    }
+
+    public function isFollowing($target_id)
+    {
+        return (bool)$this->follows()->where('target_id', $target_id)->first(['id']);
+    }
+    
+
 }

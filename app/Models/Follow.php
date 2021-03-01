@@ -6,22 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Follow extends Model
-{   
-    
-    const Required = 0;
-    const Follow = 1;
+{
     use HasFactory;
 
-     protected $fillable =[
-         'user_id',
-         'friends_id',
-         'status',
-     ];
+    protected $fillable = ['target_id','user_id'];
 
-     public function friend(){
-         return $this->belongsTo(User::class,'friends_id','id');
-     }
-    
-
-    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
