@@ -38,8 +38,18 @@ class FollowController extends Controller
         }
     }
 
-    public function unfollowFortBoth(Request $request){
+    public function unfollowFortBoth(Request $request)
+    {
+        $followersId = $request->followersId;
 
-        return $followersId =$request->followersId;
+        $unfollow = Follow::where('user_id', Auth::id())
+            ->where('target_id', $followersId)
+            ->delete();
+        if ($unfollow) {
+            Follow::where('user_id', $followersId)
+                ->where('target_id', Auth::id())
+                ->delete();
+        }
+        return redirect()->back();
     }
 }
