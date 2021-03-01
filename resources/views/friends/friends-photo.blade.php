@@ -1,5 +1,5 @@
 
-	@include('user/header-timeline')
+@include('user/includes/header')
 	<section>
         @foreach($user as $key => $user)
         <div class="feature-photo">
@@ -176,8 +176,7 @@
 			</form>
 		</div><!-- side panel -->	
 	
-	<script src="js/main.min.js"></script>
-	<script src="js/script.js"></script>
+	@include('user/includes/script')
 
 </body>	
 </html>

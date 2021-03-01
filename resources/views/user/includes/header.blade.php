@@ -11,10 +11,8 @@
 	<link rel="stylesheet" href="{{ asset('socail/css/style.css') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/color.css') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/responsive.css') }}" />
-
 </head>
 <body>
-<!--<div class="se-pre-con"></div>-->
 <div class="theme-layout">
 	<div class="postoverlay"></div>
 	<div class="responsive-header">
@@ -23,7 +21,6 @@
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				{{-- <a href="newsfeed.html" title=""><img src="images/logo2.png" alt=""></a> --}}
 			</span>
 			<span class="mh-btns-right">
 				<a class="fa fa-sliders" href="#shoppingbag"></a>
@@ -257,74 +254,6 @@
 						<a href="messages.html" title="" class="more-mesg">view more</a>
 					</div>
 				</li>
-				{{-- <li><a href="#" title="Languages" data-ripple=""><i class="fa fa-globe"></i></a>
-					<div class="dropdowns languages">
-						<a href="#" title=""><i class="ti-check"></i>English</a>
-						<a href="#" title="">Arabic</a>
-						<a href="#" title="">Dutch</a>
-						<a href="#" title="">French</a>
-					</div>
-				</li> --}}
 			</ul>
-			
-			
 		</div>
-	</div><!-- topbar -->	
-	<section>
-		<div class="feature-photo">
-			<figure ><img src="{{ asset('store/'.auth()->user()->profilePath) }}" style="object-fit: cover;
-				height: 60vh;" alt=""></figure>
-			<div class="add-btn">
-				<span>{{ App\Models\Follow::where('user_id',Auth::id())->count() }}</span>
-				<a  title="" data-ripple="" style="color:white">Followers</a>
-			</div>
-			<form class="edit-phto" action="{{ url('/photo/profile/user') }}" method="POST" enctype="multipart/form-data">
-				@csrf
-				<i class="fa fa-camera-retro"></i> 
-				  <label class="fileContainer">
-					Edit profile 
-				<input type="file" name="image"/>
-				</label>  
-				<button type="submit"><i class="fa fa-check" aria-hidden="true"></i></button>
-			</form> 
-			<div class="container-fluid">
-				<div class="row merged">
-					<div class="col-lg-2 col-sm-3">
-						<div class="user-avatar">
-							<figure>
-								<img id="profile-pic" src="{{ asset('store/'.auth()->user()->profilePath) }}" style="height: 200px; width: 200px; object-fit:cover;" alt="">
-								{{-- <form class="edit-phto">
-									<i class="fa fa-camera-retro"></i>
-									<label class="fileContainer">
-										<input type="file" name="image" id="profile"/>
-									</label>
-								</form> --}}
-							</figure>
-						</div>
-					</div>
-					
-					<div class="col-lg-10 col-sm-9">
-						
-						
-						<div class="timeline-info">
-							
-							<ul>
-								<li class="admin-name">
-									
-								  <h5>{{ auth()->user()->name }}</h5>
-								 
-								</li>
-								<li>
-									<a class="{!! Request::is('user/photo') ? 'active' : '' !!}" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
-									<a class="{!! Request::is('photos/me') ? 'active' : '' !!}" href="{{ url('/photos/me') }}" title="" data-ripple="" >Photos</a>
-									<a class="{!! Request::is('friends') ? 'active' : '' !!}" href="{{ url('/friends') }}" title="" data-ripple="">Followers</a>
-									{{-- <a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a> --}}
-									{{-- <a class="" href="#" title="" data-ripple="">more</a> --}}
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	</div>

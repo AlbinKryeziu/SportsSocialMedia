@@ -1,4 +1,4 @@
-@include('user/header-timeline')
+@include('user/includes/header')
 
 <section>
     @foreach($user as $key => $user)
@@ -223,3 +223,6 @@
         </div>
     </div>
 </section>
+@include('user/includes/script')
+</body>
+</html>

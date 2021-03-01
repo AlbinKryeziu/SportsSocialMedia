@@ -1,4 +1,5 @@
 @include('user/includes/header')
+@include('user/includes/section')
 <section>
     <div class="gap gray-bg">
         <div class="container">
