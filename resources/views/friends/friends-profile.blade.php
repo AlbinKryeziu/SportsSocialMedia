@@ -7,7 +7,12 @@
 
         <div class="add-btn">
             <span>1205 followers</span>
+            @if (Auth::User()->isFollowing($user->id)) 
+            <a href="#" title="" data-ripple="">Unfollow</a>
+            @else
             <a href="#" title="" data-ripple="">Follow</a>
+            @endif
+
         </div>
 
         <div class="container-fluid">
