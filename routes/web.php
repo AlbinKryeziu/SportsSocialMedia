@@ -107,7 +107,6 @@ Route::get('/friends', [UserController::class, 'friends'])->name('friends');
 Route::post('/addprofile', [UserController::class, 'postProfileUpdate'])->name('postProfileUpdate');
 Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
 Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
-Route::post('/unfollo/friends/{friendsId}', [UserController::class, 'unfollow'])->name('unfollow');
 Route::post('/photo/profile/user', [UserController::class, 'changeProfile'])->name('changeProfile');
 
 
@@ -136,6 +135,8 @@ Route::get('friends/photo/{userId}', [FriendController::class,'friendsPhoto']);
 
 
 Route::post('follow/{user}',[FollowController::class,'follow']);
+Route::post('unfollow/{user}',[FollowController::class,'unfollow']);
+Route::post('unfollow/user/all',[FollowController::class,'unfollowFortBoth']);
 
 
 

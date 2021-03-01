@@ -54,10 +54,10 @@
                                                         <div class="pepl-info">
                                                             <h4><a href="{{ url('friends/profile/'.$following->following->id) }}" title="">{{ $following->following->name }}</a></h4>
                                                             <span></span>
-                                                            <form method="Post" action="{{ url('/unfollo/friends/'.$following->following->id) }}">
+                                                            <form method="POST" action="{{ url('unfollow/'.$following->following->id) }}">
                                                                 @csrf
                                                                
-                                                             <button type="submit" class="add-butn more-action float-right">Unfollow</button> 
+                                                              <button type="submit" class="add-butn more-action float-right">Unfollow</button> 
                                                                
                                                             </form>
                 
@@ -83,16 +83,27 @@
                                                         <div class="pepl-info">
                                                             <h4><a href="{{ url('friends/profile/'.$followers->followers->id) }}" title="">{{ $followers->followers->name }}</a></h4>
                                                             <span></span>
-                                                            <form method="Post" action="{{ url('/unfollo/friends/'.$followers->followers->id) }}">
-                                                                @csrf
-                                                                @if (Auth::User()->isFollowing($followers->followers->id)) 
-                                                             <button type="submit" class="add-butn more-action float-right">Unfollow</button> 
-                                                             @else
-                                                             <button type="submit" class="add-butn more-action float-right">Follow</button> 
-                                                             @endif
-                                                               
+                                                            @if (!Auth::User()->isFollowing($followers->followers->id)) 
+                                                             
+                                                            <form method="Post" action="{{ url('follow/'.$followers->followers->id) }}">
+                                                              @csrf
+                                                              <div class="btn-group mr-2 float-right" role="group" aria-label="First group">
+                                                                <button type="button" style="background-color:red ">Delete</button>
+                                                                
+                                                              </div>
+                                                              <div class="btn-group mr-2 float-right" role="group" aria-label="First group">
+                                                                <button type="submit"  style="background-color:#088dcd ">Follow</button>
+                                                                
+                                                              </div>
+                                                          
                                                             </form>
-                
+                                                            @else
+                                                            <form method="Post" action="{{ url('unfollow/user/all') }}">
+                                                                @csrf
+                                                                <input type="hidden" name="followersId" value="{{ $followers->followers->id }}">
+                                                               <button type="submit" class="add-butn more-action float-right ">Unfollow</button>  
+                                                              </form>
+                                                              @endif
                                                             {{-- <form method="Post" >
                                                             <a href="" title="" class="add-butn more-action" data-ripple="">unfriend</a>
                                                             </form> --}}
@@ -107,7 +118,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- centerl meta -->
+                      
                         <div class="col-lg-3">
                             <aside class="sidebar static">
                                 
