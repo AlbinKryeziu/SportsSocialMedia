@@ -100,4 +100,10 @@ class NewfeedController extends Controller
 
         return redirect()->back();
     }
+
+    public function deleteComent(Request $request){
+        $commentId = $request->commentId;
+        $comment = PostComment::where('id',$commentId)->delete();
+        return redirect()->back();
+    }
 }

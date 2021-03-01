@@ -1,4 +1,4 @@
-@include('user/header-timeline')
+@include('user/includes/header')
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -109,10 +109,15 @@
                                                     </div>
                                                     <div class="we-comment">
                                                         <div class="coment-head">
+                                                            @if($comments->user_id == auth()->user()->id || $comments->post->user_id == auth()->user()->id)
+                                                          
+                                                            <a  class="fa fa-trash commentDelete" data-commentId="{{$comments->id}}"  style="float: right; font-size:13px;"></a>
+                                                            @endif
                                                             <h5><a href="" title="">{{ $comments->user->name }}</a></h5>
                                                             <span>{{ Carbon\Carbon::parse($comments->created_at)->format('d-m-Y H:i')}}</span>
                                                         </div>
-                                                        <p style="width: 340px;">{{ $comments->comment }}</p>
+                                                        <p style="width: 340px;">{{ $comments->comment }} </p>
+                                                       
                                                     </div>
                                                 </li>
                                                 @endforeach
@@ -162,9 +167,7 @@
                                             <h4 class="widget-title">New Friends</h4>
                                             <ul class="followers">
                                                 @foreach($user as $key => $user)
-
                                                 <li>
-        
                                                     <figure> <a href="{{ url('friends/profile/'.$user->id) }}"><img src="{{ asset('store/'.$user->profilePath) }}" alt="" style="height: 40px; width: 40px; object-fit:cover;" /></a></figure>
                                                     <div class="friend-meta">
                                                         <h4><a href="{{ url('friends/profile/'.$user->id) }}" title="">{{ $user->name }}</a></h4>
@@ -251,6 +254,31 @@
         </div>
     </div>     
 </div>
+<div id="deleteComment" class="modal modal-danger fade" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+    <form action="{{ url('delete/comment') }}" method="POST" class="remove-record-model">
+        @csrf
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header flex-column">
+                <div class="icon-box">
+                    <i class="fa fa-trash"></i>
+                </div>						
+                <h4 class="modal-title w-100">Are you sure?</h4>	
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to delete this comment ?</p>
+                <input type="hidden", name="commentId" id="commentId">
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+      </form>
+    </div>
+</div>     
+</div>
 {{-- <script type="text/javascript">
     $(document).ready(function() {
         $(".btn-submit").click(function(e){
@@ -302,6 +330,11 @@
         var userID=$(this).attr('data-postId');
         $('#post').val(userID); 
         $('#hiddePost').modal('show'); 
+    });
+    $(document).on('click','.commentDelete',function(){
+        var userID=$(this).attr('data-commentId');
+        $('#commentId').val(userID); 
+        $('#deleteComment').modal('show'); 
     });
     </script> 
 
