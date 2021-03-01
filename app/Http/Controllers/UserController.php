@@ -45,11 +45,17 @@ class UserController extends Controller
 
     public function friends()
     {
-        $myfriends = Follow::where('user_id',Auth::id())->get();
-        $count = Follow::where('user_id',Auth::id())->count();
+        $following = Follow::with('following')->where('user_id',Auth::id())->get();
+        $followers = Follow::with('followers')->whereIn('target_id',[Auth::id()])->get();
+
+        $sectionfollowing = Follow::with('following')->where('user_id',Auth::id())->get();
+        $sectionfollowers = Follow::with('followers')->whereIn('target_id',[Auth::id()])->get();
         return view('user/timeline-friends',[
-            'myfriends' =>$myfriends,
-            'count' => $count,
+            'following' =>$following,
+            'followers' =>$followers,
+            'sectionfollowing' => $sectionfollowing,
+            'sectionfollowers' =>$sectionfollowers,
+           
         ]);
         
     }

@@ -35,26 +35,26 @@
                             <div class="central-meta">
                                 <div class="frnds">
                                     <ul class="nav nav-tabs">
-                                        <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">Following</a> <span>{{ $count }}</span></li>
-                                        <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Followers</a><span>0</span></li>
+                                        <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">Following</a> <span>{{ $following->count() }}</span></li>
+                                        <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Followers</a><span>{{ $followers->count() }}</span></li>
                                     </ul>
 
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         <div class="tab-pane active fade show" id="frends">
                                             <ul class="nearby-contct">
-                                                @foreach($myfriends as $key => $friends)
+                                                @foreach($following as $key => $following)
                                                     
                                               
                                                 <li>
                                                     <div class="nearly-pepls">
                                                         <figure  width="1450px;" height="45px"> 
-                                                            <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:40px; height:40px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                                            <a href="{{ url('friends/profile/'.$following->following->id) }}" title=""><img style="width:40px; height:40px;" src="{{ asset('store/'.$following->following->profilePath) }}" alt=""   /></a>
                                                         </figure>
                                                         <div class="pepl-info">
-                                                            <h4><a href="{{ url('friends/profile/'.$friends->friend->id) }}" title="">{{ $friends->friend->name }}</a></h4>
+                                                            <h4><a href="{{ url('friends/profile/'.$following->following->id) }}" title="">{{ $following->following->name }}</a></h4>
                                                             <span></span>
-                                                            <form method="Post" action="{{ url('/unfollo/friends/'.$friends->friend->id) }}">
+                                                            <form method="Post" action="{{ url('/unfollo/friends/'.$following->following->id) }}">
                                                                 @csrf
                                                                
                                                              <button type="submit" class="add-butn more-action float-right">Unfollow</button> 
@@ -73,7 +73,30 @@
                                         </div>
                                         <div class="tab-pane fade" id="frends-req">
                                             <ul class="nearby-contct">
-                                                <p style="text-align: center">No  followers</p>
+                                                @foreach($followers as $key => $followers)
+                                                    
+                                                <li>
+                                                    <div class="nearly-pepls">
+                                                        <figure  width="1450px;" height="45px"> 
+                                                            <a href="{{ url('friends/profile/'.$followers->followers->id) }}" title=""><img style="width:40px; height:40px;" src="{{ asset('store/'.$followers->followers->profilePath) }}" alt=""   /></a>
+                                                        </figure>
+                                                        <div class="pepl-info">
+                                                            <h4><a href="{{ url('friends/profile/'.$followers->followers->id) }}" title="">{{ $followers->followers->name }}</a></h4>
+                                                            <span></span>
+                                                            <form method="Post" action="{{ url('/unfollo/friends/'.$followers->followers->id) }}">
+                                                                @csrf
+                                                               
+                                                             <button type="submit" class="add-butn more-action float-right">jo</button> 
+                                                               
+                                                            </form>
+                
+                                                            {{-- <form method="Post" >
+                                                            <a href="" title="" class="add-butn more-action" data-ripple="">unfriend</a>
+                                                            </form> --}}
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                @endforeach
                                             </ul>
                                             <button class="btn-view btn-load-more"></button>
                                         </div>
@@ -90,14 +113,14 @@
                                     <h4 class="widget-title">Following</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
-                                        @foreach($myfriends as $key => $friends)
+                                        @foreach($sectionfollowing as $key => $following)
                                         <li>
                                             <figure>
-                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                                <a href="{{ url('friends/profile/'.$following->following->id) }}" title=""><img style="width:30px; height:30px;" src="{{ asset('store/'.$following->following->profilePath) }}" alt=""   /></a>
                                               
                                             </figure>
                                             <div class="friendz-meta">
-                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
+                                                <a href="{{ url('friends/profile/'.$following->following->id) }}">{{ $following->following->name }}</a>
                                                 <i></i>
                                             </div>
                                         </li> 
@@ -111,13 +134,14 @@
                                     <div class="widget friend-list stick-widget">
                                         <h4 class="widget-title">Followers</h4>
                                     <ul class="followers">
-                                        
-                                        {{-- <li>
-                                            <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px; border-radius: 50%;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                        @foreach($sectionfollowers as $key => $followers)
+                                        <li>
+                                            <a href="{{ url('friends/profile/'.$followers->followers->id) }}" title=""><img style="width:30px; height:30px; border-radius: 50%;" src="{{ asset('store/'.$followers->followers->profilePath) }}" alt=""   /></a>
                                             <div class="friend-meta">
-                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
+                                                <a href="{{ url('friends/profile/'.$followers->followers->id) }}">{{ $followers->followers->name }}</a>
                                             </div>
-                                        </li> --}}
+                                        </li>
+                                        @endforeach
                                        
                                     </ul>
                                 </div>

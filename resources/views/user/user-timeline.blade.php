@@ -135,7 +135,7 @@
                                     <h4 class="widget-title">Following</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
-                                        @foreach($myfriends as $key => $friends)
+                                        {{-- @foreach($myfriends as $key => $friends)
                                         
                                         <li>
                                             <figure>
@@ -147,7 +147,7 @@
                                                 <i></i>
                                             </div>
                                         </li>
-                                        @endforeach
+                                        @endforeach --}}
                                     </ul>
                                     
                                      
