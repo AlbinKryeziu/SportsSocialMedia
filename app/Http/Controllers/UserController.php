@@ -21,43 +21,55 @@ class UserController extends Controller
 {
     public function index()
     {
-        $myfriends = Follow::where('user_id',Auth::id())->get();
-        $post = Post::with('user', 'like', 'comments')->where('user_id',Auth::id())->orderBy('created_at', 'desc')->get();
-        $followCount =Follow::where('user_id',Auth::id())->count();
+        $myfriends = Follow::where('user_id', Auth::id())->get();
+        $post = Post::with('user', 'like', 'comments')
+            ->where('user_id', Auth::id())
+            ->orderBy('created_at', 'desc')
+            ->get();
+        $followCount = Follow::where('user_id', Auth::id())->count();
         return view('user/user-timeline', [
             'post' => $post,
             'followCount' => $followCount,
             'myfriends' => $myfriends,
         ]);
     }
-    
+
     public function photos()
     {
-        $following = Follow::with('following')->where('user_id',Auth::id())->get();
+        $following = Follow::with('following')
+            ->where('user_id', Auth::id())
+            ->get();
         $post = Post::where('user_id', Auth::id())
-            ->orderBy('created_at', 'desc')->where('pathPhotos','!=', Null)
+            ->orderBy('created_at', 'desc')
+            ->where('pathPhotos', '!=', null)
             ->get();
         return view('user/timeline-photos', [
             'post' => $post,
-            'following' =>$following,
+            'following' => $following,
         ]);
     }
 
     public function friends()
     {
-        $following = Follow::with('following')->where('user_id',Auth::id())->get();
-        $followers = Follow::with('followers')->whereIn('target_id',[Auth::id()])->get();
+        $following = Follow::with('following')
+            ->where('user_id', Auth::id())
+            ->get();
+        $followers = Follow::with('followers')
+            ->whereIn('target_id', [Auth::id()])
+            ->get();
 
-        $sectionfollowing = Follow::with('following')->where('user_id',Auth::id())->get();
-        $sectionfollowers = Follow::with('followers')->whereIn('target_id',[Auth::id()])->get();
-        return view('user/timeline-friends',[
-            'following' =>$following,
-            'followers' =>$followers,
+        $sectionfollowing = Follow::with('following')
+            ->where('user_id', Auth::id())
+            ->get();
+        $sectionfollowers = Follow::with('followers')
+            ->whereIn('target_id', [Auth::id()])
+            ->get();
+        return view('user/timeline-friends', [
+            'following' => $following,
+            'followers' => $followers,
             'sectionfollowing' => $sectionfollowing,
-            'sectionfollowers' =>$sectionfollowers,
-           
+            'sectionfollowers' => $sectionfollowers,
         ]);
-        
     }
 
     public function postProfileUpdate(Request $request)
@@ -66,7 +78,6 @@ class UserController extends Controller
 
     public function addPost(PostRequest $request)
     {
-        
         if ($request->has('image')) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('store'), $imageName);
@@ -79,7 +90,7 @@ class UserController extends Controller
         $post->description = $request->description;
         $post->pathPhotos = $imageName;
         $post->save();
-        
+
         if ($post) {
             return back()->with('success', 'Image created successfully!');
         } else {
@@ -88,8 +99,7 @@ class UserController extends Controller
     }
 
     public function deletePost($postId)
-    { 
-
+    {
         $post = Post::where('id', $postId)->delete();
 
         return redirect()->back();
@@ -125,37 +135,47 @@ class UserController extends Controller
         return view('profile/photo-user', compact('photos'));
     }
 
-    public function unfollow($friendId){
-        
-        $friends = Follow::where('friends_id',$friendId)->delete();
-       if($friends){
-           return redirect()->back();
-       }
-    }
-    public function changeProfile(PhotoRequest $request){
-       
-        if ($request->has('image')) {
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('store'), $imageName);
-        } 
-        $user = User::where('id',Auth::id())->update([
-            'profilePath' => $imageName
-        ]);
-        
-        if ($user){
+    public function unfollow($friendId)
+    {
+        $friends = Follow::where('friends_id', $friendId)->delete();
+        if ($friends) {
             return redirect()->back();
         }
     }
-    public function changeCoverPhoto(PhotoRequest $request){
+    public function changeProfile(PhotoRequest $request)
+    {
         if ($request->has('image')) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->move(public_path('store'), $imageName);
-        } 
-        $user = User::where('id',Auth::id())->update([
-            'coverPath' => $imageName
+        }
+        $profile = User::where('id', Auth::id())->first();
+        if (file_exists(public_path('store/' . $profile->profilePath))) {
+            unlink(public_path('store/' . $profile->profilePath));
+        }
+        $user = User::where('id', Auth::id())->update([
+            'profilePath' => $imageName,
         ]);
-        
-        if ($user){
+
+        if ($user) {
+            return redirect()->back();
+        }
+    }
+    public function changeCoverPhoto(PhotoRequest $request)
+    {
+        if ($request->has('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('store'), $imageName);
+        }
+        $cover = User::where('id', Auth::id())->first();
+        if (file_exists(public_path('store/' . $cover->coverPath))) {
+            unlink(public_path('store/' . $cover->coverPath));
+        }
+
+        $user = User::where('id', Auth::id())->update([
+            'coverPath' => $imageName,
+        ]);
+
+        if ($user) {
             return redirect()->back();
         }
     }
