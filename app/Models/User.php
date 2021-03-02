@@ -90,6 +90,10 @@ class User extends Authenticatable
     {
         return (bool)$this->follows()->where('target_id', $target_id)->first(['id']);
     }
+
+    public function profile(){
+        return $this->hasOne(Profile::class,'user_id','id');
+    }
     
 
 }

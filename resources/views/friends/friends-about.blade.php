@@ -1,5 +1,5 @@
-
 @include('user/includes/header')
+
 <section>
     @foreach($user as $key => $user)
     <div class="feature-photo">
@@ -35,7 +35,7 @@
                             <li>
                                 <a class="{!! Request::is('friends/profile/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/profile/'.$user->id) }}" title="" data-ripple="">time line</a>
                             <a class="{!! Request::is('friends/photo/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/photo/'.$user->id) }}" title="" data-ripple="" >Photos</a>
-                                <a class="" href="" title="" data-ripple="">about</a>
+                                <a class="{!! Request::is('friends/about/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/about/'.$user->id) }}" title="" data-ripple="">about</a>
                                 
                             </li>
                         </ul>
@@ -46,7 +46,6 @@
     </div>
     @endforeach
 </section>
-
 <section>
     <div class="gap gray-bg">
         <div class="container">
@@ -56,28 +55,7 @@
                         <div class="col-lg-3">
                             
                             <aside class="sidebar static">
-                                <div class="widget">
-                                <h4 class="widget-title">Edit info</h4>
-                                <ul class="naves">
-                                    <li>
-                                        <i class="ti-info-alt"></i>
-                                        <a title="" href="{{ url('/edit/info') }}">Basic info</a>
-                                    </li>
-                                    <li>
-                                        <i class="ti-mouse-alt"></i>
-                                        <a title="" href="{{ url('/edit/user') }}">Education </a>
-                                    </li>
-                                   
-                                    <li>
-                                        <i class="ti-lock"></i>
-                                        <a title="" href="{{ url('/edit/pswd') }}">change password</a>
-                                    </li>
-                                    <li>
-                                        <i class="ti-link"></i>
-                                        <a title="" href="edit-password.html">Social</a>
-                                    </li>
-                                </ul>
-                            </div>
+                               
                                 <div class="widget">
                                         <h4 class="widget-title">Socials</h4>
                                         <ul class="socials">
@@ -98,10 +76,10 @@
                             <div class="central-meta">
                                 <div class="about">
                                     <div class="personal">
-                                        {{-- @foreach($basicInfo as $key => $profile) --}}
+                                        
                                         <h5 class="f-title"><i class="ti-info-alt"></i> Personal Info</h5>
                                         <p>
-                                        {{-- {{ $profile->about_me }} --}}
+                                       {{ $profile->about }}
                                         </p>
                                     </div>
                                     <div class="d-flex flex-row mt-2">
@@ -124,15 +102,17 @@
                                             <div class="tab-pane fade show active" id="basic" >
                                                 <ul class="basics">
                                                   
-                                                        
-{{--                                                     
+                                                   
+                                                
                                                     <li><i class="ti-user"></i>{{ $profile->first_name }} {{$profile->last_name }}</li>
                                                     <li><i class="ti-map-alt"></i>{{ $profile->city }}</li>
                                                     <li><i class="ti-mobile"></i>{{ $profile->phone }}</li>
                                                     <li><i class="ti-pin"></i>{{ $profile->country }}</li>
                                                     <li><i class="ti-time"></i>{{ $profile->birthday }}</li>
+                                                   
                                                 </ul>
-                                                @endforeach --}}
+                                               
+                                                
                                             </div>
                                             <div class="tab-pane fade" id="location" role="tabpanel">
                                                 <div class="location-map">
@@ -184,3 +164,7 @@
         </div>
     </div>	
 </section>
+
+@include('user/script')
+</body>
+</html>

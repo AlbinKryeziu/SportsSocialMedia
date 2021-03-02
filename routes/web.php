@@ -135,6 +135,7 @@ Route::post('delete/comment', [NewfeedController::class,'deleteComent']);
 
 Route::get('friends/profile/{userId}', [FriendController::class,'friendsProfile']);
 Route::get('friends/photo/{userId}', [FriendController::class,'friendsPhoto']);
+Route::get('friends/about/{userId}', [FriendController::class,'aboutFriends']);
 
 
 //follow urser

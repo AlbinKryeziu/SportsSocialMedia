@@ -10,31 +10,7 @@
                         <div class="row merged20" id="page-contents">
                             <div class="col-lg-3">
                                 <aside class="sidebar static">
-                                    <div class="widget">
-                                        <h4 class="widget-title">Recent Activity</h4>
-                                        <ul class="activitiez">
-                                            <li>
-                                                <div class="activity-meta">
-                                                    <i>10 hours Ago</i>
-                                                    <span><a title="" href="#">Commented on Video posted </a></span>
-                                                    <h6>by <a href="time-line.html">black demon.</a></h6>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="activity-meta">
-                                                    <i>30 Days Ago</i>
-                                                    <span><a title="" href="#">Posted your status. “Hello guys, how are you?”</a></span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="activity-meta">
-                                                    <i>2 Years Ago</i>
-                                                    <span><a title="" href="#">Share a video on her timeline.</a></span>
-                                                    <h6>"<a href="#">you are so funny mr.been.</a>"</h6>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                    
                                     <div class="widget stick-widget">
                                         <h4 class="widget-title">Edit info</h4>
                                         <ul class="naves">
@@ -87,64 +63,7 @@
                                     </div>
                                 </div>	
                             </div><!-- centerl meta -->
-                            <div class="col-lg-3">
-                                <aside class="sidebar static">
-                                    <div class="widget">
-                                        <div class="banner medium-opacity bluesh">
-                                        <div style="background-image: url(images/resources/baner-widgetbg.jpg)" class="bg-image"></div>
-                                        <div class="baner-top">
-                                            <span><img src="images/book-icon.png" alt=""></span>
-                                            <i class="fa fa-ellipsis-h"></i>
-                                        </div>
-                                        <div class="banermeta">
-                                            <p>
-                                                create your own favourit page.
-                                            </p>
-                                            <span>like them all</span>
-                                            <a href="#" title="" data-ripple="">start now!</a>
-                                        </div>
-                                    </div>											
-                                    </div>
-                                    <div class="widget stick-widget">
-                                        <h4 class="widget-title">Who's follownig</h4>
-                                        <ul class="followers">
-                                            <li>
-                                                <figure><img src="images/resources/friend-avatar2.jpg" alt=""></figure>
-                                                <div class="friend-meta">
-                                                    <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
-                                                    <a href="#" title="" class="underline">Add Friend</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure><img src="images/resources/friend-avatar4.jpg" alt=""></figure>
-                                                <div class="friend-meta">
-                                                    <h4><a href="time-line.html" title="">Issabel</a></h4>
-                                                    <a href="#" title="" class="underline">Add Friend</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure><img src="images/resources/friend-avatar6.jpg" alt=""></figure>
-                                                <div class="friend-meta">
-                                                    <h4><a href="time-line.html" title="">Andrew</a></h4>
-                                                    <a href="#" title="" class="underline">Add Friend</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure><img src="images/resources/friend-avatar8.jpg" alt=""></figure>
-                                                <div class="friend-meta">
-                                                    <h4><a href="time-line.html" title="">Sophia</a></h4>
-                                                    <a href="#" title="" class="underline">Add Friend</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <figure><img src="images/resources/friend-avatar3.jpg" alt=""></figure>
-                                                <div class="friend-meta">
-                                                    <h4><a href="time-line.html" title="">Allen</a></h4>
-                                                    <a href="#" title="" class="underline">Add Friend</a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div><!-- who's following -->
+                            
                                 </aside>
                             </div><!-- sidebar -->
                         </div>	
@@ -155,69 +74,7 @@
     </section>
 
    
-<div class="side-panel">
-        <h4 class="panel-title">General Setting</h4>
-        <form method="post">
-            <div class="setting-row">
-                <span>use night mode</span>
-                <input type="checkbox" id="nightmode1"/> 
-                <label for="nightmode1" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Notifications</span>
-                <input type="checkbox" id="switch22" /> 
-                <label for="switch22" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Notification sound</span>
-                <input type="checkbox" id="switch33" /> 
-                <label for="switch33" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>My profile</span>
-                <input type="checkbox" id="switch44" /> 
-                <label for="switch44" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Show profile</span>
-                <input type="checkbox" id="switch55" /> 
-                <label for="switch55" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-        </form>
-        <h4 class="panel-title">Account Setting</h4>
-        <form method="post">
-            <div class="setting-row">
-                <span>Sub users</span>
-                <input type="checkbox" id="switch66" /> 
-                <label for="switch66" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>personal account</span>
-                <input type="checkbox" id="switch77" /> 
-                <label for="switch77" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Business account</span>
-                <input type="checkbox" id="switch88" /> 
-                <label for="switch88" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Show me online</span>
-                <input type="checkbox" id="switch99" /> 
-                <label for="switch99" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Delete history</span>
-                <input type="checkbox" id="switch101" /> 
-                <label for="switch101" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-            <div class="setting-row">
-                <span>Expose author name</span>
-                <input type="checkbox" id="switch111" /> 
-                <label for="switch111" data-on-label="ON" data-off-label="OFF"></label>
-            </div>
-        </form>
-    </div><!-- side panel -->	
+
 
 	@include('user/script')
 

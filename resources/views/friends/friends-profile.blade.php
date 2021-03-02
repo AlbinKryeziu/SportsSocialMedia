@@ -34,7 +34,7 @@
                             <li>
                                 <a class="{!! Request::is('friends/profile/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/profile/'.$user->id) }}" title="" data-ripple="">time line</a>
                                 <a class="{!! Request::is('friends/photo/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/photo/'.$user->id) }}" title="" data-ripple="">Photos</a>
-                                <a class="" href="" title="" data-ripple="">about</a>
+                                <a class="{!! Request::is('friends/about/'.$user->id) ? 'active' : '' !!}" href="{{ url('friends/about/'.$user->id) }}" title="" data-ripple="">about</a>
                             </li>
                         </ul>
                     </div>
