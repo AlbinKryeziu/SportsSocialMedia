@@ -317,8 +317,8 @@
 </script> --}}
 
 </section>
-  
-</section>
+</body>
+</html>
 <script>
     $(document).on('click','.deleteUser',function(){
         var userID=$(this).attr('data-postId');

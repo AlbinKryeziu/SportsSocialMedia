@@ -14,18 +14,16 @@ class ProfileController extends Controller
 
     public function ediProfile(Request $request)
     {
-       
-        $profile = new Profile();
-        $profile->first_name = $request->name;
-        $profile->last_name = $request->surname;
-        $profile->country = $request->country;
-        $profile->city = $request->city;
-        $profile->about_me = $request->about;
-        $profile->phone = $request->phone;
-        $profile->birthday = $request->birthday;
-        $profile->gender = $request->gender;
-        $profile->user_id = Auth::id();
-        $profile->save();
+        $profile = Profile::where('user_id',Auth::id())->update([
+            'first_name' =>$request->name,
+            'last_name' =>$request->surname,
+            'country' =>$request->country,
+            'city' =>$request->city,
+            'about' =>$request->about,
+            'phone' =>$request->phone,
+            'birthday' =>$request->birthday,
+            'gender' => $request->gender,
+        ]);
 
         if ($profile){
            $user= User::where('id' ,Auth::id())->update([
@@ -37,7 +35,6 @@ class ProfileController extends Controller
 
     public function editEducation(Request $request){
 
-       
          $education = new Education();
          $education->degree = $request->deegre;
          $education->faculty = $request->faculty;

@@ -1,56 +1,5 @@
-@include('user/header-timeline')
-<section>
-    <div class="feature-photo">
-        <figure><img src="{{ asset('storage/'.auth()->user()->profilePath) }}" alt=""></figure>
-        <div class="add-btn">
-            <span>1205 followers</span>
-            <a href="#" title="" data-ripple="">Add Friend</a>
-        </div>
-        <form class="edit-phto">
-            <i class="fa fa-camera-retro"></i>
-            <label class="fileContainer">
-                Edit Cover Photo
-            <input type="file"/>
-            </label>
-        </form>
-        <div class="container-fluid">
-            <div class="row merged">
-                <div class="col-lg-2 col-sm-3">
-                    <div class="user-avatar">
-                        <figure>
-                            <img id="profile-pic" src="{{ asset('storage/'.auth()->user()->profilePath) }}" style="height: 200px; width: 200px;" alt="">
-                            <form class="edit-phto">
-                                <i class="fa fa-camera-retro"></i>
-                                <label class="fileContainer">
-                                    Edit Display Photo
-                                    <input type="file"/>
-                                </label>
-                            </form>
-                        </figure>
-                    </div>
-                </div>
-                <div class="col-lg-10 col-sm-9">
-                    <div class="timeline-info">
-                        <ul>
-                            <li class="admin-name">
-                              <h5>Janice Griffith</h5>
-                              <span>Group Admin</span>
-                            </li>
-                            <li>
-                                <a class="active" href="{{ url('/user/photo') }}" title="" data-ripple="">time line</a>
-									<a class="" href="{{ url('/photos/me ') }}" title="" data-ripple="" >Photos</a>
-								
-									<a class="" href="{{ url('/friends') }}" title="" data-ripple="">Friends</a>
-									<a class="" href="{{ url('/aboutUs') }}" title="" data-ripple="">about</a>
-									{{-- <a class="" href="#" title="" data-ripple="">more</a> --}}
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section><!-- top area -->
+@include('user/includes/header')
+@include('user/includes/section')
 
 <section>
     <div class="gap gray-bg">
@@ -93,22 +42,22 @@
 
                                     <form method="Post" action="{{ url('/change/profile') }}">
                                         @csrf
-                                        <div class="form-group half">	
-                                          <input type="text" id="input" name="name" />
+                                        <div class="form-group half">
+                                          <input type="text" id="input" name="name" value="{{ $profile->first_name }}"/>
                                           <label class="control-label" for="input">First Name</label><i class="mtrl-select"></i>
                                         </div>
                                         <div class="form-group half">	
-                                          <input type="text" name="surname"/>
+                                          <input type="text" name="surname" value="{{ $profile->last_name }}"/>
                                           <label class="control-label" for="input">Last Name</label><i class="mtrl-select"></i>
                                         </div>
                                         
                                         <div class="form-group">	
-                                          <input type="text" name="phone"/>
+                                          <input type="text" name="phone" value="{{ $profile->phone }}" />
                                           <label class="control-label" for="input">Phone No.</label><i class="mtrl-select"></i>
                                         </div>
                                         <div class="dob">
                                             <div class="form-group">
-                                                <input type="date" id="birthday" name="birthday">
+                                                <input type="date" id="birthday" name="birthday" value="{{ $profile->birthday }}">
                                                 <label class="control-label" for="input">Birthday.</label><i class="mtrl-select"></i>
                                             </div>
                                          
@@ -117,25 +66,25 @@
                                         <div class="form-radio">
                                           <div class="radio">
                                             <label>
-                                              <input type="radio" checked="checked" name="gender" value="1"><i class="check-box"></i>Male
+                                              <input type="radio" @if($profile->gender ==1) checked="checked"@endif name="gender" value="1"><i class="check-box"></i>Male
                                             </label>
                                           </div>
                                           <div class="radio">
                                             <label>
-                                              <input type="radio" name="gender" value="2"><i class="check-box"></i>Female
+                                              <input type="radio" @if($profile->gender ==2) checked="checked"@endif name="gender" value="2"><i class="check-box"></i>Female
                                             </label>
                                           </div>
                                         </div>
                                         <div class="form-group">	
-                                          <input type="text" name="city"/>
+                                          <input type="text" name="city"  value="{{ $profile->city }}" />
                                           <label class="control-label" for="input">City</label><i class="mtrl-select"></i>
                                         </div>
                                         <div class="form-group">	
-                                            <input type="text" name="country"/>
+                                            <input type="text" name="country"  value="{{ $profile->country }}" />
                                             <label class="control-label" for="input">Country</label><i class="mtrl-select"></i>
                                         </div>
                                         <div class="form-group">	
-                                          <textarea rows="4" id="textarea" name="about"></textarea>
+                                          <textarea rows="4" id="textarea" name="about">{{ $profile->about }}</textarea>
                                           <label class="control-label" for="textarea">About Me</label><i class="mtrl-select"></i>
                                         </div>
                                         <div class="submit-btns">

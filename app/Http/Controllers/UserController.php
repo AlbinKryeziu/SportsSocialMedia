@@ -108,7 +108,7 @@ class UserController extends Controller
     {
         $basicInfo = Profile::where('user_id', Auth::id())->get();
         $education = Education::where('user_id', Auth::id())->get();
-        return view('user/about-timeline', [
+        return view('user/about/about-timeline', [
             'basicInfo' => $basicInfo,
             'education' => $education,
         ]);
@@ -116,16 +116,21 @@ class UserController extends Controller
 
     public function editWork()
     {
-        return view('user/edit-work-timeline');
+        return view('user/about/edit-work-timeline');
     }
     public function editBasic()
     {
-        return view('user/basic-info-timerline');
+         $user = User::findOrFail(Auth::id());
+         $profile =Profile::where('user_id',Auth::id())->first();
+        return view('user/about/basic-info-timerline',[
+            'user'=>$user,
+            'profile'=>$profile
+        ]);
     }
 
     public function changePassword()
     {
-        return view('user/edit-password-timeline');
+        return view('user/about/edit-password-timeline');
     }
 
     public function showPhoto()
