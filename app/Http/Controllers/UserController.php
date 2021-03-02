@@ -116,7 +116,10 @@ class UserController extends Controller
 
     public function editWork()
     {
-        return view('user/about/edit-work-timeline');
+        $education = Education::where('user_id',Auth::id())->get();
+        return view('user/about/edit-work-timeline',[
+            'education' =>$education,
+        ]);
     }
     public function editBasic()
     {

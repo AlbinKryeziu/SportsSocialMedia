@@ -19,7 +19,7 @@
                                         </li>
                                         <li>
                                             <i class="ti-mouse-alt"></i>
-                                            <a title="" href="{{ url('/edit/user') }}">Education &amp; Work</a>
+                                            <a title="" href="{{ url('/edit/user') }}">Education </a>
                                         </li>
                                        
                                         <li>

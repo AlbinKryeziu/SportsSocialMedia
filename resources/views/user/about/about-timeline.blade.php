@@ -21,7 +21,7 @@
                                             </li>
                                             <li>
                                                 <i class="ti-mouse-alt"></i>
-                                                <a title="" href="{{ url('/edit/user') }}">Education &amp; Work</a>
+                                                <a title="" href="{{ url('/edit/user') }}">Education </a>
                                             </li>
                                            
                                             <li>
@@ -67,7 +67,7 @@
                                                     </li>
                                                  
                                                     <li class="nav-item">
-                                                        <a href="#work" class="nav-link" data-toggle="tab" >work and education</a>
+                                                        <a href="#work" class="nav-link" data-toggle="tab">Education</a>
                                                     </li>
                                                     <li class="nav-item">
                                                         <a href="#interest" class="nav-link" data-toggle="tab"  >interests</a>
@@ -95,21 +95,25 @@
                                                             <div id="map-canvas"></div>
                                                         </div>
                                                     </div>
-                                                    @foreach($education as $key => $education)
+                                                    
                                                         
-                                                 
+                                               
                                                     <div class="tab-pane fade" id="work" role="tabpanel">
                                                         <div>
-                                                            
-                                                            <a href="#" title="">{{ $education->degree }}</a>
-                                                            <p>{{ $education->description }}</p> 
+                                                            @foreach($education as $key => $education)
                                                             <ul class="education">
-                                                                <li><i class="ti-medall"></i> {{ $education->faculty }}</li>
-                                                               
+                                                                <li><i class="ti-medall"></i> {{ $education->degree }}</li>
+                                                                <li><i class="ti-book"></i> {{ $education->faculty }}</li>
+                                                                <li><i class="ti-time"></i> {{ $education->from }}</li>
+                                                                <li><i class="ti-time"></i> {{ $education->to }}</li>
+                                                                <li><i class="ti-map-alt"></i> {{ $education->city }}</li>
+                                                                <li><i class="ti-time"></i> {{ $education->country }}</li>
+                                                                
                                                             </ul>
+                                                            @endforeach
                                                         </div>
                                                     </div>
-                                                    @endforeach
+                                                   
                                                     <div class="tab-pane fade" id="interest" role="tabpanel">
                                                         <ul class="basics">
                                                             <li>Footbal</li>
