@@ -114,6 +114,7 @@ Route::post('/addprofile', [UserController::class, 'postProfileUpdate'])->name('
 Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
 Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
 Route::post('/photo/profile/user', [UserController::class, 'changeProfile'])->name('changeProfile');
+Route::post('/cover/profile/user', [UserController::class, 'changeCoverPhoto'])->name('changeProfile');
 
 
 //profile controller

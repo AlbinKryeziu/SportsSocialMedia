@@ -939,6 +939,23 @@ header.sticky {
     border: 1px solid;
     color: #fff;
 }
+.edit-cover {
+    background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+    bottom: 150px;
+    color: #fff;
+    left: 369px;
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 9;
+    border-radius: 3px;
+    border: 1px solid transparent;
+}
+
+.edit-cover:hover {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid;
+    color: #fff;
+}
 
 .fileContainer {
     color: #d8d8d8;
@@ -2758,6 +2775,14 @@ li.google {
 /*--- svg play button ---*/
 
 .edit-phto,
+.add-btn > a {
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+.edit-cover,
 .add-btn > a {
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;

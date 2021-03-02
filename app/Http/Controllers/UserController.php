@@ -146,4 +146,17 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+    public function changeCoverPhoto(PhotoRequest $request){
+        if ($request->has('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('store'), $imageName);
+        } 
+        $user = User::where('id',Auth::id())->update([
+            'coverPath' => $imageName
+        ]);
+        
+        if ($user){
+            return redirect()->back();
+        }
+    }
 }

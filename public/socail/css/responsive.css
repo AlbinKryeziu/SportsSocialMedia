@@ -4,6 +4,9 @@
     .edit-phto {
         left: 369px;
     }
+    .edit-cover {
+        left: 369px;
+    }
     .user-avatar {
         margin-top: -135px;
     }
@@ -65,6 +68,11 @@
         right: 294px;
     }
     .edit-phto {
+        left: 315px;
+        bottom: 125px;
+    }
+
+    .edit-cover{
         left: 315px;
         bottom: 125px;
     }
@@ -150,6 +158,10 @@
     .edit-phto {
         bottom: 148px;
     }
+    .edit-cover{
+        bottom: 148px;
+    }
+
     .pepl-info {
         width: 88.4%;
         padding-left: 5px;
@@ -250,6 +262,11 @@
         width: 31.9%;
     }
     .edit-phto {
+        
+        left: 218px !important;
+    }
+    .edit-cover
+    {
         left: 218px !important;
     }
     .user-avatar {
@@ -363,7 +380,14 @@
     .edit-phto {
         padding: 5px 10px;
     }
+    .edit-cover {
+        padding: 5px 10px;
+    }
     .edit-phto {
+        left: 278px !important;
+        bottom: 140px;
+    }
+    .edit-cover {
         left: 278px !important;
         bottom: 140px;
     }
@@ -615,6 +639,11 @@
         bottom: auto;
         left: 20px !important;
         top: 20px;
+    }
+    .edit-cover {
+        bottom: auto;
+        left: 20px !important;
+        top: 60px;
     }
     .add-btn {
         bottom: 90px;
