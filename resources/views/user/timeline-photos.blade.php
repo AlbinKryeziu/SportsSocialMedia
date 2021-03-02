@@ -36,15 +36,15 @@
                                     <h4 class="widget-title">Following</h4>
                                     <div id="searchDir"></div>
                                     <ul id="people-list" class="friendz-list">
-                                        @foreach($myfriends as $key => $friends)
+                                        @foreach($following as $key => $following)
                                         
                                         <li>
                                             <figure>
-                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}" title=""><img style="width:30px; height:30px; object-fit:cover;" src="{{ asset('store/'.$friends->friend->profilePath) }}" alt=""   /></a>
+                                                <a href="{{ url('friends/profile/'.$following->following->id) }}" title=""><img style="width:30px; height:30px; object-fit:cover;" src="{{ asset('store/'.$following->following->profilePath) }}" alt=""   /></a>
                                              
                                             </figure>
                                             <div class="friendz-meta">
-                                                <a href="{{ url('friends/profile/'.$friends->friend->id) }}">{{ $friends->friend->name }}</a>
+                                                <a href="{{ url('friends/profile/'.$following->following->id) }}">{{ $following->following->name }}</a>
                                                 <i></i>
                                             </div>
                                         </li>

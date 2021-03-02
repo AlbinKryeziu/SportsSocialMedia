@@ -33,13 +33,13 @@ class UserController extends Controller
     
     public function photos()
     {
-        $myfriends = Follow::where('user_id',Auth::id())->get();
+        $following = Follow::with('following')->where('user_id',Auth::id())->get();
         $post = Post::where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')->where('pathPhotos','!=', Null)
             ->get();
         return view('user/timeline-photos', [
             'post' => $post,
-            'myfriends' =>$myfriends,
+            'following' =>$following,
         ]);
     }
 
