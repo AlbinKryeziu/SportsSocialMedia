@@ -14,7 +14,13 @@ class CreateWorksTable extends Migration
     public function up()
     {
         Schema::create('works', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('company');
+            $table->string('position');
+            $table->date('start');
+            $table->date('end');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -14,7 +14,12 @@ class CreateSocialMediaTable extends Migration
     public function up()
     {
         Schema::create('social_media', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->text('facebook');
+            $table->text('instagram');
+            $table->text('twiitter');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
