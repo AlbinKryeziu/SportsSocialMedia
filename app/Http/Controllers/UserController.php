@@ -21,16 +21,15 @@ class UserController extends Controller
 {
     public function index()
     {
-        $myfriends = Follow::where('user_id', Auth::id())->get();
+        $following = Follow::where('user_id', Auth::id())->get();
         $post = Post::with('user', 'like', 'comments')
             ->where('user_id', Auth::id())
             ->orderBy('created_at', 'desc')
             ->get();
-        $followCount = Follow::where('user_id', Auth::id())->count();
+       
         return view('user/user-timeline', [
             'post' => $post,
-            'followCount' => $followCount,
-            'myfriends' => $myfriends,
+            'following' => $following,
         ]);
     }
 
@@ -149,9 +148,11 @@ class UserController extends Controller
             $request->image->move(public_path('store'), $imageName);
         }
         $profile = User::where('id', Auth::id())->first();
+       
         if (file_exists(public_path('store/' . $profile->profilePath))) {
             unlink(public_path('store/' . $profile->profilePath));
         }
+   
         $user = User::where('id', Auth::id())->update([
             'profilePath' => $imageName,
         ]);
@@ -167,6 +168,7 @@ class UserController extends Controller
             $request->image->move(public_path('store'), $imageName);
         }
         $cover = User::where('id', Auth::id())->first();
+        
         if (file_exists(public_path('store/' . $cover->coverPath))) {
             unlink(public_path('store/' . $cover->coverPath));
         }
