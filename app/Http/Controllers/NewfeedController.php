@@ -37,9 +37,9 @@ class NewfeedController extends Controller
         if ($following) {
             $user = User::whereNotIn('id', $following)
                 ->whereNotIn('id', [Auth::id()])
-                ->get();
+                ->where('role',1)->get();
         } else {
-            $user = User::where('id', '!=', Auth::id())->get();
+            $user = User::where('id', '!=', Auth::id())->where('role',1)->get();
         }
 
         return view('user/newfeed/newfeed', [

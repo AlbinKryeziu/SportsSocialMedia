@@ -25,7 +25,7 @@ class PhotoStoreRequest extends FormRequest
     {
         return [
 
-            'image' => 'required|image|mimes:png,jpg,jpeg|max:20000',
+            'image' => 'required|image|',
 
         ];
     }

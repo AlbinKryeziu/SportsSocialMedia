@@ -9,8 +9,10 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\UserController;
 use App\Models\Follow;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 /*
@@ -49,7 +51,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
            
         ]);
     } elseif(Auth::user()->role == 2){
-        return view('admin/user');
+        $users =User::where('role',1)->get();
+        return view('admin/user',[
+            'users' =>$users,
+        ]);
     }
 });
 

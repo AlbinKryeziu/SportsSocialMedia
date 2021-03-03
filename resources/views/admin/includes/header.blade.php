@@ -1,12 +1,9 @@
 <!doctype html>
 <html lang="en">
-<!--<![endif]-->
 <head>
-
-<!-- Meta-Information -->
-<title>Winku Social Admin Panel Html5</title>
+<title>Sport</title>
 <meta charset="utf-8">
-<meta name="description" content="">
+<link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Vendor: Bootstrap Stylesheets http://getbootstrap.com -->
