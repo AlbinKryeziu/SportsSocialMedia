@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Follow;
 use App\Models\HidePost;
+use App\Models\Notification;
 use App\Models\Post;
 use App\Models\PostComment;
 use App\Models\User;
@@ -75,6 +76,15 @@ class NewfeedController extends Controller
             'post_id' => $request->postId,
             'comment' => $request->comment,
         ]);
+        if($data){
+            $notification = Notification::create([
+                'user_id' =>$request->user_id,
+                'target_id' =>Auth::id(),
+                'type'=>Notification::COMMENT,
+                'body'=>'Comment on your post',
+                'post_id' => $request->postId,
+            ]);
+        }
 
         return redirect()->back();
     }

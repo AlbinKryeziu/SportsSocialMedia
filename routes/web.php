@@ -150,6 +150,8 @@ Route::post('unfollow/{user}',[FollowController::class,'unfollow']);
 Route::post('unfollow/user/all',[FollowController::class,'unfollowFortBoth']);
 
 Route::post('/notification/delete/{notifyId}', [NotificationController::class, 'deleteNotification']);
+Route::get('/follow/profile/{followId}/{notifyId}', [NotificationController::class, 'followProfile']);
+Route::get('/post/comment/{postId}/{userId}/{notifyId}', [NotificationController::class, 'commentPost']);
 
 
 

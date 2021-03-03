@@ -134,6 +134,7 @@
                                                             <textarea placeholder="Post your" name="comment" id="comment"></textarea>
                                                             
                                                             <input type="hidden" value="{{ $post->id }}" name="postId" id="postId">
+                                                            <input type="hidden" value="{{ $post->user_id }}" name="user_id" id="postId">
                                                             <div class="add-smiles">
                                                                 <i class="fa fa-paper-plane" aria-hidden="true"></i>
                                                             </div>

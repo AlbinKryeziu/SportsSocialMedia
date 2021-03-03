@@ -23,7 +23,8 @@
                 
                                            
                                             <li>
-                                                <figure><img src="images/resources/friend-avatar.jpg" alt=""></figure>
+                                                <a href="{{ url('/follow/profile/'.$notify->target_id.'/'.$notify->id) }}" title="">
+                                                <figure><img src="{{ asset('store/'.$notify->target->profilePath) }}" alt="" style="width: 30px; height:30px;"></figure>
                                                 
                                                 <div class="notifi-meta">
                                                     <form method="POST" action="{{ url('/notification/delete/'.$notify->id) }}">
@@ -33,6 +34,7 @@
                                                     @if($notify->read == 0)<p style="font-weight: bold;">{{ $notify->target->name }} {{ $notify->body }}</p>@else<p>{{ $notify->target->name }} {{ $notify->body }}</p> @endif
                                                     <span>{{ $notify->created_at }}</span>
                                                 </div>
+                                                </a>
                                             
                                             </li>
                                             @endforeach

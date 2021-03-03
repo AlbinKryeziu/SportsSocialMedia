@@ -8,12 +8,24 @@ use Illuminate\Database\Eloquent\Model;
 class Notification extends Model
 {
     use HasFactory;
+     
+    const UNREAD = 0;
+    const READ = 1;
+
+    const FOLLOW = 1;
+    const COMMENT = 2;
+    const LIKE = 2;
+
+
+    
+
     protected $table = 'notifications';
     protected $fillable = [
          'target_id',
          'user_id',
          'body',
          'type',
+         'post_id',
     ];
 
     public function user(){

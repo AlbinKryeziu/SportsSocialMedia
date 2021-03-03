@@ -38,5 +38,7 @@ class FriendController extends Controller
         'profile' =>$profile,
        ]);
     }
+
+    
     
 }

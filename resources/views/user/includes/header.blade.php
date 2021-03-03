@@ -226,15 +226,19 @@
 						@endif
 						
 					</a>
+				
 					<div class="dropdowns">
-						<span></span>
+						<span>Notifications</span>
 						<ul class="drops-menu">
 							@foreach($notifaction as $key => $value)
-							<li>
-								<a href="notifications.html" title="">
+							<li>@if($value->type == 1)
+								<a href="{{ url('/follow/profile/'.$value->target_id.'/'.$value->id) }}" title="">
+									@elseif($value->type == 2)
+									<a href="{{ url('/post/comment/'.$value->post_id.'/'.$value->user_id.'/'.$value->id) }}" title="">
+									@endif
 									<div class="mesg-meta">
-										<h6><strong>{{ $value->target->name }} </strong><span>{{ $value->body}}</span></h6>
-										<i>{{ $value->created_at }}</i>
+								     <h6 href=""><strong>{{ $value->target->name }} </strong><span>{{ $value->body}}</span></h6>
+								     <i>{{ $value->created_at }}</i>
 									</div>
 								</a>
 							</li>
