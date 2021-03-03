@@ -244,7 +244,7 @@
 							</li>
 							@endforeach
 						</ul>
-						<a href="notifications.html" title="" class="more-mesg">view more</a>
+						<a href="{{ url('/notification') }}" title="" class="more-mesg">view more</a>
 					</div>
 				</li>
 				<li>

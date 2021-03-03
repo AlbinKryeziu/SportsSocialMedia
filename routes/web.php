@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\NewfeedController;
@@ -47,6 +48,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
             'sectionfollowers' =>$sectionfollowers,
            
         ]);
+    } elseif(Auth::user()->role == 2){
+        return view('admin/user');
     }
 });
 
@@ -153,5 +156,7 @@ Route::post('/notification/delete/{notifyId}', [NotificationController::class, '
 Route::get('/follow/profile/{followId}/{notifyId}', [NotificationController::class, 'followProfile']);
 Route::get('/post/comment/{postId}/{userId}/{notifyId}', [NotificationController::class, 'commentPost']);
 
+
+Route::get('/admin/user/all', [AdminUserController::class, 'index']);
 
 
