@@ -3,6 +3,7 @@
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\NewfeedController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
 use App\Http\Controllers\UserController;
@@ -116,6 +117,7 @@ Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->nam
 Route::post('/photo/profile/user', [UserController::class, 'changeProfile'])->name('changeProfile');
 Route::post('/cover/profile/user', [UserController::class, 'changeCoverPhoto'])->name('changeProfile');
 Route::get('/notification', [UserController::class, 'allNotification'])->name('allNotification');
+Route::get('/notification/delete/{notifyId}', [UserController::class, 'allNotification']);
 
 
 //profile controller
@@ -146,6 +148,8 @@ Route::get('friends/about/{userId}', [FriendController::class,'aboutFriends']);
 Route::post('follow/{user}',[FollowController::class,'follow']);
 Route::post('unfollow/{user}',[FollowController::class,'unfollow']);
 Route::post('unfollow/user/all',[FollowController::class,'unfollowFortBoth']);
+
+Route::post('/notification/delete/{notifyId}', [NotificationController::class, 'deleteNotification']);
 
 
 

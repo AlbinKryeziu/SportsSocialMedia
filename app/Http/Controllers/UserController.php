@@ -14,6 +14,7 @@ use Dotenv\Validator;
 use App\Models\Profile;
 use App\Models\Education;
 use App\Models\Follow;
+use App\Models\Notification;
 use phpDocumentor\Reflection\Types\Null_;
 use SebastianBergmann\Environment\Console;
 
@@ -72,8 +73,13 @@ class UserController extends Controller
     }
 
     public function allNotification(){
-        return view('user/notification/all-notifications');
+
+        $notifications = Notification::with('user','target')->where('user_id',Auth::id())->latest()->get();
+        return view('user/notification/all-notifications',[
+             'notifications' =>$notifications
+        ]);
     }
+    
 
     public function postProfileUpdate(Request $request)
     {

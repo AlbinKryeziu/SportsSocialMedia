@@ -24,6 +24,8 @@ class FollowController extends Controller
                     'type' => 1,
     
                 ]);
+
+                return redirect()->back();
            
         }
     }

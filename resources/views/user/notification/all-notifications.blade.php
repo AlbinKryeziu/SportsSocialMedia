@@ -19,14 +19,23 @@
                                     <h5 class="f-title"><i class="ti-bell"></i>All Notifications </h5>
                                     <div class="notification-box">
                                         <ul>
+                                            @foreach($notifications as $key => $notify)
+                
+                                           
                                             <li>
                                                 <figure><img src="images/resources/friend-avatar.jpg" alt=""></figure>
+                                                
                                                 <div class="notifi-meta">
-                                                    <p>bob frank like your post</p>
-                                                    <span>30 mints ago</span>
+                                                    <form method="POST" action="{{ url('/notification/delete/'.$notify->id) }}">
+                                                        @csrf
+                                                        <button type="submit" class="del fa fa-close" style="background-color:white; border:none; color:red; float:right"></button>
+                                                     </form>
+                                                    @if($notify->read == 0)<p style="font-weight: bold;">{{ $notify->target->name }} {{ $notify->body }}</p>@else<p>{{ $notify->target->name }} {{ $notify->body }}</p> @endif
+                                                    <span>{{ $notify->created_at }}</span>
                                                 </div>
-                                                <i class="del fa fa-close"></i>
+                                            
                                             </li>
+                                            @endforeach
                                            
                                         </ul>
                                     </div>
