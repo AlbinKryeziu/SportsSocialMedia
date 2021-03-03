@@ -35,7 +35,7 @@
         </li>
         <li>
             <i class="ti-bell"></i>
-            <a href="" title="">Notifications</a>
+            <a href="{{ url('/notification') }}" title="">Notifications</a>
         </li>
         <li>
             <a class="ti-power-off"

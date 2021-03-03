@@ -71,6 +71,10 @@ class UserController extends Controller
         ]);
     }
 
+    public function allNotification(){
+        return view('user/notification/all-notifications');
+    }
+
     public function postProfileUpdate(Request $request)
     {
     }

@@ -115,6 +115,7 @@ Route::post('/addPost', [UserController::class, 'addPost'])->name('addPost');
 Route::post('/delete/post/{postId}', [UserController::class, 'deletePost'])->name('deletePost');
 Route::post('/photo/profile/user', [UserController::class, 'changeProfile'])->name('changeProfile');
 Route::post('/cover/profile/user', [UserController::class, 'changeCoverPhoto'])->name('changeProfile');
+Route::get('/notification', [UserController::class, 'allNotification'])->name('allNotification');
 
 
 //profile controller

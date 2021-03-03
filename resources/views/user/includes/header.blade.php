@@ -103,6 +103,9 @@
 	}
 </style>
 <body>
+	@php
+		$notifaction =App\Models\Notification::with('user','target')->where('user_id',Auth::id())->get();
+	@endphp
 <div class="theme-layout">
 	<div class="postoverlay"></div>
 	<div class="responsive-header">
@@ -216,31 +219,26 @@
 				<li><a href=""  onclick="window.location.href = '{{  url('newfeed') }}' " title="Home" data-ripple=""><i class="ti-home"></i></a></li>
 				<li>
 					<a href="#" title="Notification" data-ripple="">
+						@if($notifaction->where('read',0)->count() == 0)
+						<i class="ti-bell"></i></i></span>	
+						@else
+						<i class="ti-bell"></i><span style="color: red"><i class="fa fa-circle" aria-hidden="true" style="font-size: 5px;"></i></span>	
+						@endif
 						
-						<i class="ti-bell"></i><span style="color: red"><i class="fa fa-circle" aria-hidden="true" style="font-size: 5px;"></i></span>
 					</a>
 					<div class="dropdowns">
 						<span></span>
 						<ul class="drops-menu">
-							@foreach(auth()->user()->notification as $key => $value)
+							@foreach($notifaction as $key => $value)
 							<li>
 								<a href="notifications.html" title="">
-								
-									
-								
 									<div class="mesg-meta">
-										<h6>{{ $value->target->name }}</h6>
-										<span>{{ $value->body}}</span>
-										<i>2 min ago</i>
+										<h6><strong>{{ $value->target->name }} </strong><span>{{ $value->body}}</span></h6>
+										<i>{{ $value->created_at }}</i>
 									</div>
 								</a>
-								
 							</li>
 							@endforeach
-							
-							
-							
-							
 						</ul>
 						<a href="notifications.html" title="" class="more-mesg">view more</a>
 					</div>
