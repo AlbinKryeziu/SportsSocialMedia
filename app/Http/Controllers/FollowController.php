@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Follow;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,10 +17,14 @@ class FollowController extends Controller
                 ->create([
                     'target_id' => $user,
                 ]);
-
-            return back()->with('success', 'You are now friends with ');
-        } else {
-            return back()->with('error', 'You are already following this person');
+                $notification = Notification::create([
+                    'user_id' => $user,
+                    'target_id' =>Auth::id(),
+                    'body' => 'Follower you',
+                    'type' => 1,
+    
+                ]);
+           
         }
     }
 
@@ -52,4 +57,5 @@ class FollowController extends Controller
         }
         return redirect()->back();
     }
+   
 }

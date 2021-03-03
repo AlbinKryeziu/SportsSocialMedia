@@ -216,66 +216,31 @@
 				<li><a href=""  onclick="window.location.href = '{{  url('newfeed') }}' " title="Home" data-ripple=""><i class="ti-home"></i></a></li>
 				<li>
 					<a href="#" title="Notification" data-ripple="">
-						<i class="ti-bell"></i><span>20</span>
+						
+						<i class="ti-bell"></i><span style="color: red"><i class="fa fa-circle" aria-hidden="true" style="font-size: 5px;"></i></span>
 					</a>
 					<div class="dropdowns">
-						<span>4 New Notifications</span>
+						<span></span>
 						<ul class="drops-menu">
+							@foreach(auth()->user()->notification as $key => $value)
 							<li>
 								<a href="notifications.html" title="">
-									<img src="images/resources/thumb-1.jpg" alt="">
+								
+									
+								
 									<div class="mesg-meta">
-										<h6>sarah Loren</h6>
-										<span>Hi, how r u dear ...?</span>
+										<h6>{{ $value->target->name }}</h6>
+										<span>{{ $value->body}}</span>
 										<i>2 min ago</i>
 									</div>
 								</a>
-								<span class="tag green">New</span>
+								
 							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="images/resources/thumb-2.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Jhon doe</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag red">Reply</span>
-							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="images/resources/thumb-3.jpg" alt="">
-									<div class="mesg-meta">
-										<h6></h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag blue">Unseen</span>
-							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="images/resources/thumb-4.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Tom cruse</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag">New</span>
-							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="images/resources/thumb-5.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Amy</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag">New</span>
-							</li>
+							@endforeach
+							
+							
+							
+							
 						</ul>
 						<a href="notifications.html" title="" class="more-mesg">view more</a>
 					</div>

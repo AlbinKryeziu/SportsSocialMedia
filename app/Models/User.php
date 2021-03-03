@@ -94,6 +94,10 @@ class User extends Authenticatable
     public function profile(){
         return $this->hasOne(Profile::class,'user_id','id');
     }
+
+    public function notification(){
+        return $this->hasMany(Notification::class,'user_id','id');
+    }
     
 
 }
