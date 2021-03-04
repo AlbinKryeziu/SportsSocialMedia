@@ -93,7 +93,7 @@
                                                                     <a href="{{ url('like/post/'.$post->id) }}"><i class="fa fa-thumbs-up" aria-hidden="true"></i></a>    
                                                                 </form>
                                                                 @endif
-                                                                <ins>{{$post->like->count() }}</ins>
+                                                                <ins><button class="delete" value="{{ $post->id }}" style="background-color:white; border:none;">{{$post->like->count() }}</button></ins>
                                                             </span>
 
                                                         </li>
@@ -101,12 +101,26 @@
                                                             <span class="comment" data-toggle="tooltip" title="Comments">
                                                                 <form>
                                                                 <i class="fa fa-comments-o"></i>
-                                                                <ins>{{$post->comments->count()}}</ins> 
+                                                                <ins><button class="delete" value="{{ $post->id }}" style="background-color:white; border:none;">{{$post->comments->count()}}</button></ins> 
                                                                 </form>
                                                             </span>
                                                         </li>
                                                     </ul>
+                                                    <div id="{{ $post->id }}"  style="display:none;" class="answer_list" >
+                                                        @php $i=0; @endphp
+                                                        @foreach($post->like as $key => $like)
+                                                           <i class="fa fa-thumbs-up"><span style="padding: 5px;">{{ $like->user->name }}</span></i><br>
+                                                          @php $i++;@endphp
+                                                          @if($i ==10)
+                                                              @break
+                                                              
+                                                          @endif
+
+                                                        @endforeach
+                                                          
+                                                          </div>
                                                 </div>
+                                                
                                             </div>
                                         </div>
                                         <div class="coment-area">
@@ -345,5 +359,19 @@
         $('#deleteComment').modal('show'); 
     });
     </script> 
+<script>        
+    $(document).ready(function() {
 
+    $(".delete").click(function(event) {
+        event.preventDefault();
+        var id = $(this).val();
+        console.log(id);
+        document.getElementById(id).style.display = "block";
+    
+    });
+    
+    });
+    
+
+   </script>
 
