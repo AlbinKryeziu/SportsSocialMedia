@@ -37,9 +37,12 @@ class NewfeedController extends Controller
         if ($following) {
             $user = User::whereNotIn('id', $following)
                 ->whereNotIn('id', [Auth::id()])
-                ->where('role',1)->get();
+                ->where('role', 1)
+                ->get();
         } else {
-            $user = User::where('id', '!=', Auth::id())->where('role',1)->get();
+            $user = User::where('id', '!=', Auth::id())
+                ->where('role', 1)
+                ->get();
         }
 
         return view('user/newfeed/newfeed', [
@@ -76,12 +79,16 @@ class NewfeedController extends Controller
             'post_id' => $request->postId,
             'comment' => $request->comment,
         ]);
-        if($data){
+        $post = Post::where('id', $request->postId)->pluck('user_id');
+        if ($post = Auth::id()) {
+            return redirect()->back();
+        }
+        if ($data) {
             $notification = Notification::create([
-                'user_id' =>$request->user_id,
-                'target_id' =>Auth::id(),
-                'type'=>Notification::COMMENT,
-                'body'=>'Comment on your post',
+                'user_id' => $request->user_id,
+                'target_id' => Auth::id(),
+                'type' => Notification::COMMENT,
+                'body' => 'Comment on your post',
                 'post_id' => $request->postId,
             ]);
         }
