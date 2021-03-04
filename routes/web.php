@@ -141,6 +141,8 @@ Route::post('newfeed/comment/create', [NewfeedController::class,'storeComment'])
 Route::get('newfeed/hide/post', [NewfeedController::class,'showHidePost'])->name('showHidePost');
 Route::post('newfeed/unhide/post', [NewfeedController::class,'unhide'])->name('unhide');
 Route::post('delete/comment', [NewfeedController::class,'deleteComent']);
+Route::get('like/post/{postId}', [NewfeedController::class,'likePost']);
+Route::get('dislike/post/{postId}', [NewfeedController::class,'dislike']);
 
 //friends
 

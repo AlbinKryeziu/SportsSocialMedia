@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Follow;
 use App\Models\HidePost;
+use App\Models\LikePost;
 use App\Models\Notification;
 use App\Models\Post;
 use App\Models\PostComment;
@@ -25,14 +26,14 @@ class NewfeedController extends Controller
                 ->where('description', 'LIKE', '%' . request()->get('q') . '%')
                 ->get();
         }
-
+  
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $post = Post::with('user', 'like', 'comments')
             ->whereNotIn('id', $hidePost)
             ->orderBy('created_at', 'DESC')
             ->where('description', 'LIKE', '%' . request()->get('q') . '%')
             ->get();
-
+           
         $following = Follow::where('user_id', Auth::id())->pluck('target_id');
         if ($following) {
             $user = User::whereNotIn('id', $following)
@@ -99,7 +100,7 @@ class NewfeedController extends Controller
     public function showHidePost()
     {
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
-        $follow = Follow::where('user_id', Auth::id())->pluck('friends_id');
+        $follow = Follow::where('user_id', Auth::id())->pluck('target_id');
         $user = User::whereNotIn('id', $follow)
             ->where('id', '!=', Auth::id())
             ->inRandomOrder()
@@ -129,5 +130,33 @@ class NewfeedController extends Controller
         $commentId = $request->commentId;
         $comment = PostComment::where('id', $commentId)->delete();
         return redirect()->back();
+    }
+
+    public function likePost($postId){
+        $postLike = LikePost::create([
+            'user_id' =>Auth::id(),
+            'post_id' =>$postId,
+        ]);
+        $post =Post::where('id',$postId)->first();
+        if ($post->user_id == Auth::id()) {
+            return redirect()->back();
+        }
+        if ($postLike) {
+          
+            $notification = Notification::create([
+                'user_id' => $post->user_id,
+                'target_id' => Auth::id(),
+                'type' => Notification::COMMENT,
+                'body' => 'Like  your post',
+                'post_id' => $post->id,
+            ]);
+        }
+        return redirect()->back();
+    }
+
+    public function dislike($postId){
+        $dislike = LikePost::where('post_id',$postId)->where('user_id',Auth::id())->delete();
+        return redirect()->back();
+
     }
 }

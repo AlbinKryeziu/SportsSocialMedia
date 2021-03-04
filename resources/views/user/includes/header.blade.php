@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="{{ asset('socail/css/style.css') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/color.css') }}" />
 	<link rel="stylesheet" href="{{ asset('socail/css/responsive.css') }}" />
+
+
 </head>
 <style>
 	body {
