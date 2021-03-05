@@ -139,7 +139,7 @@
                                                         @foreach($education as $key => $education)
                                                         <li>
                                                             <div class="nearly-pepls">
-                                                                <i class="fa fa-trash"   style="float: right;padding: 2px;"></i>
+                                                                <i class="fa fa-trash educationDelete" data-educationId="{{$education->id}}"   style="float: right;padding: 2px;"></i>
                                                                 <a href="{{ url('/edit/education/'.$education->id) }}"><i  class="fa fa-pencil-square-o"  aria-hidden="true"style="float: right; padding:2px;q"></i></a>
                                                                 <div class="form-group">    
                                                                     <input type="text" id="{{ $education->id }}"  name="degree" value="{{ $education->degree}}" />
@@ -227,8 +227,8 @@
             </div>	
         </section>
     
-        <div id="editEducation" class="modal modal-danger active" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
-            <form action="{{ url('newfeed/delete/post') }}" method="POST" class="remove-record-model">
+        <div id="deleteEducation" class="modal modal-danger active" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
+            <form action="{{ url('/delete/education') }}" method="POST" class="remove-record-model">
                 @csrf
                 <div class="modal-dialog modal-confirm">
                     <div class="modal-content">
@@ -241,8 +241,7 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="educationid" id="educationId">
-                            <input type="text" class="form-control" name="degree" id="degree">
-                            <input type="text" class="form-control" name="faculty" id="faculty">
+                            
                         </div>
                         <div class="modal-footer justify-content-center">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -253,7 +252,13 @@
             </form>
         </div>
         
-        
+        <script>
+             $(document).on('click','.educationDelete',function(){
+        var userID=$(this).attr('data-educationId');
+        $('#educationId').val(userID); 
+        $('#deleteEducation').modal('show'); 
+    });
+        </script>
             @include('user/script')
         
     </body>	

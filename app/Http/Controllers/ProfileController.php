@@ -74,5 +74,14 @@ class ProfileController extends Controller
             return redirect()->back()->with('success','Data updated successfully');
         }
     }
+
+    public function deleteEducation(Request $request){
+
+        $educationId = $request->educationid;
+        $educationDelete = Education::where('id',$educationId)->where('user_id',Auth::id())->delete();
+        if($educationDelete){
+            return redirect()->back();
+        }
+    }
      
 }

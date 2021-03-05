@@ -133,6 +133,7 @@ Route::post('/change/profile', [ProfileController::class, 'ediProfile'])->name('
 Route::post('/change/education', [ProfileController::class, 'editEducation'])->name('editEducation');
 Route::get('/edit/education/{educationid}', [ProfileController::class, 'editEducationForm']);
 Route::post('/update/education', [ProfileController::class, 'updateEducation']);
+Route::post('/delete/education', [ProfileController::class, 'deleteEducation']);
 
 //new feed 
 
