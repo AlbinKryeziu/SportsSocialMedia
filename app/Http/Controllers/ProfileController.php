@@ -48,5 +48,31 @@ class ProfileController extends Controller
          return redirect()->back();
 
     }
+
+    public function editEducationForm($educationId){
+        
+        $education = Education::findOrFail($educationId);
+
+        return view('user/about/edit-education',[
+            'education' =>$education,
+        ]);
+    }
+
+    public function updateEducation(Request $request){
+        $educationId = $request->educationId;
+        $education = Education::where('id',$educationId)->where('user_id',Auth::id())->update([
+            'degree' =>$request->degree,
+            'faculty' =>$request->faculty,
+            'from' =>$request->from,
+            'to' =>$request->to,
+            'city' =>$request->city,
+            'country' =>$request->country,
+            'description' =>$request->description,
+            
+        ]);
+        if($education){
+            return redirect()->back()->with('success','Data updated successfully');
+        }
+    }
      
 }

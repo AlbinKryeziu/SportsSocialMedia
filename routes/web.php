@@ -131,6 +131,8 @@ Route::get('/notification/delete/{notifyId}', [UserController::class, 'allNotifi
 //profile controller
 Route::post('/change/profile', [ProfileController::class, 'ediProfile'])->name('changeProfile');
 Route::post('/change/education', [ProfileController::class, 'editEducation'])->name('editEducation');
+Route::get('/edit/education/{educationid}', [ProfileController::class, 'editEducationForm']);
+Route::post('/update/education', [ProfileController::class, 'updateEducation']);
 
 //new feed 
 

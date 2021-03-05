@@ -80,48 +80,51 @@
                                     <div class="central-meta">
                                         <div class="frnds">
                                             <ul class="nav nav-tabs">
-                                                <li class="nav-item"><a class="active" href="#frends" data-toggle="tab">Education</a></li>
+                                             
                                                 <li class="nav-item"><a class="" href="#frends-req" data-toggle="tab">Edit Education</a></li>
                                             </ul>
         
                                             <!-- Tab panes -->
                                             <div class="tab-content p-4">
-                                               
+                                                @if(Session::has('success'))
+                                                <p class="alert alert-info">{{ Session::get('success') }}</p>
+                                                @endif
                                                 <div class="tab-pane active fade show" id="frends">
-                                                    <form method="post" action="{{ url('/change/education') }}">
+                                                    <form method="POST" action="{{ url('/update/education') }}">
                                                         @csrf
+                                                        <input type="hidden" name="educationId" value="{{ $education->id }}">
                                                         <div class="checkbox">
                                                           <label>
-                                                            <input type="checkbox" value="Bacxhelor" name="deegre" checked="checked"><i class="check-box"></i>Bachelor
+                                                            <input type="checkbox" value="Bacxhelor" name="degree" checked="checked" value="{{ $education->deegre }}"><i class="check-box"></i>Bachelor
                                                           </label>
                                                         </div>
                                                         <div class="checkbox">
                                                           <label>
-                                                            <input type="checkbox" value="Master" name="deegre" ><i class="check-box"></i>Masters
+                                                            <input type="checkbox" value="Master" name="degree" ><i class="check-box"></i>Masters
                                                           </label>
                                                         </div>
                                                         <div class="form-group">    
-                                                          <input type="text" id="input" name="faculty"  />
+                                                          <input type="text" id="input" name="faculty" value="{{ $education->faculty }}" />
                                                           <label class="control-label" for="input">Studying at</label><i class="mtrl-select"></i>
                                                         </div>
                                                         <div class="form-group half">   
-                                                          <input type="text"   name="from"/>
+                                                          <input type="text"  name="from" value="{{ $education->from }}"/>
                                                           <label class="control-label" for="input">From</label><i class="mtrl-select"></i>
                                                         </div>
                                                         <div class="form-group half">   
-                                                          <input type="text"  name="to"/>
+                                                          <input type="text"  name="to" value="{{ $education->to }}"/>
                                                           <label class="control-label" for="input">To</label><i class="mtrl-select"></i>
                                                         </div>                                              
                                                         <div class="form-group">    
-                                                          <input type="text"   name="city"/>
+                                                          <input type="text"   name="city" value="{{ $education->city }}"/>
                                                           <label class="control-label" for="input">City</label><i class="mtrl-select"></i>
                                                         </div>
                                                         <div class="form-group">    
-                                                            <input type="text"   name="country"/>
+                                                            <input type="text"   name="country" value="{{ $education->country }}"/>
                                                             <label class="control-label" for="input">Country</label><i class="mtrl-select"></i> 
                                                         </div>
                                                         <div class="form-group">    
-                                                          <textarea rows="4" id="textarea"  name="description"></textarea>
+                                                          <textarea rows="4" id="textarea"  name="description" >{{ $education->description }}</textarea>
                                                           <label class="control-label" for="textarea">Description</label><i class="mtrl-select"></i>
                                                         </div>
                                                         <div class="submit-btns">
@@ -131,46 +134,7 @@
                                                     </form>
     
                                                 </div>
-                                                <div class="tab-pane fade" id="frends-req">
-                                                  
-                                                        
-                                                   
-                                                    <ul class="nearby-contct">
-                                                        @foreach($education as $key => $education)
-                                                        <li>
-                                                            <div class="nearly-pepls">
-                                                                <i class="fa fa-trash"   style="float: right;padding: 2px;"></i>
-                                                                <a href="{{ url('/edit/education/'.$education->id) }}"><i  class="fa fa-pencil-square-o"  aria-hidden="true"style="float: right; padding:2px;q"></i></a>
-                                                                <div class="form-group">    
-                                                                    <input type="text" id="{{ $education->id }}"  name="degree" value="{{ $education->degree}}" />
-                                                                    <label class="control-label" for="input">Deegre</label><i class="mtrl-select"></i> 
-                                                                </div>
-                                                                <div class="form-group">    
-                                                                    <input type="text"   name="country" value="{{ $education->faculty}}"/>
-                                                                    <label class="control-label" for="input">Faculty</label><i class="mtrl-select"></i> 
-                                                                </div>
-                                                                <div class="form-group">    
-                                                                    <input type="text"   name="country" value="{{ $education->city}}"/>
-                                                                    <label class="control-label" for="input">City</label><i class="mtrl-select"></i> 
-                                                                </div>
-                                                                <div class="form-group">    
-                                                                    <input type="text"   name="country" value="{{ $education->country}}"/>
-                                                                    <label class="control-label" for="input">Country</label><i class="mtrl-select"></i> 
-                                                                </div>
-                                                                <div class="form-group">    
-                                                                    <input type="text"   name="country" value="{{ $education->from}}"/>
-                                                                    <label class="control-label" for="input">From</label><i class="mtrl-select"></i> 
-                                                                </div>
-                                                                <div class="form-group">    
-                                                                    <input type="text"   name="country" value="{{ $education->to}}"/>
-                                                                    <label class="control-label" for="input">To</label><i class="mtrl-select"></i> 
-                                                                </div>
-                                                               
-                                                       
-                                                            </li>
-                                                    @endforeach
-                                                </ul>
-                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -227,31 +191,6 @@
             </div>	
         </section>
     
-        <div id="editEducation" class="modal modal-danger active" tabindex="-1" role="dialog" aria-labelledby="custom-width-modalLabel" aria-hidden="true" style="display: none;">
-            <form action="{{ url('newfeed/delete/post') }}" method="POST" class="remove-record-model">
-                @csrf
-                <div class="modal-dialog modal-confirm">
-                    <div class="modal-content">
-                        <div class="modal-header flex-column">
-                            <div class="icon-box">
-                                <i class="fa fa-times"></i>
-                            </div>
-                            <h4 class="modal-title w-100">Are you sure?</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <input type="hidden" name="educationid" id="educationId">
-                            <input type="text" class="form-control" name="degree" id="degree">
-                            <input type="text" class="form-control" name="faculty" id="faculty">
-                        </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
         
         
             @include('user/script')
