@@ -9,10 +9,7 @@
                 </div>
             </li>
         </ul>
-        <li>
-            <i class="ti-mouse-alt"></i>
-            <a href="" title="">Inbox</a>
-        </li>
+       
         <li>
             <i class="ti-user"></i>
             <a href="{{ url('/friends') }}" title="">Followers</a>
@@ -25,10 +22,7 @@
             <i class="ti-comments-smiley"></i>
             <a href="{{ url('newfeed/hide/post') }}" title="">Hidden Posts</a>
         </li>
-        <li>
-            <i class="ti-video-camera"></i>
-            <a href="" title="">Videos</a>
-        </li>
+       
         <li>
             <i class="ti-comments-smiley"></i>
             <a href="" title="">Messages</a>
