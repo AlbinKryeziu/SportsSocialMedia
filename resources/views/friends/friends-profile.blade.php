@@ -7,10 +7,23 @@
 
         <div class="add-btn">
             <span>1205 followers</span>
-            @if (Auth::User()->isFollowing($user->id)) 
-            <a href="#" title="" data-ripple="">Unfollow</a>
+            @if (!Auth::User()->isFollowing($user->id)) 
+            <form method="Post" action="{{ url('follow/'.$user->id) }}">
+                @csrf
+                <div class="btn-group mr-2 float-right" role="group" aria-label="First group"> 
+                </div>
+                <div class="btn-group mr-2 float-right" role="group" aria-label="First group">
+                  <button type="submit"  style="background-color:#088dcd ">Follow</button>
+                  
+                </div>
+            
+              </form>
             @else
-            <a href="#" title="" data-ripple="">Follow</a>
+            <form method="Post" action="{{ url('unfollow/user/all') }}">
+                @csrf
+                <input type="hidden" name="followersId" value="{{ $user->id }}">
+               <button type="submit" class="add-butn more-action float-right ">Unfollow</button>  
+              </form>
             @endif
 
         </div>
