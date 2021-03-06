@@ -59,5 +59,12 @@ class FollowController extends Controller
         }
         return redirect()->back();
     }
+   public function deleteFollowers($followerId){
+         
+    $follower =Follow::where('user_id',$followerId)->where('target_id',Auth::id())->delete();
+    if($follower){
+        return redirect()->back();
+    }
    
+   }
 }

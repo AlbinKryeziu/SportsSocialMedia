@@ -161,6 +161,7 @@ Route::get('friends/about/{userId}', [FriendController::class,'aboutFriends']);
 Route::post('follow/{user}',[FollowController::class,'follow']);
 Route::post('unfollow/{user}',[FollowController::class,'unfollow']);
 Route::post('unfollow/user/all',[FollowController::class,'unfollowFortBoth']);
+Route::post('delete/followers/{followerId}',[FollowController::class,'deleteFollowers']);
 
 Route::post('/notification/delete/{notifyId}', [NotificationController::class, 'deleteNotification']);
 Route::get('/follow/profile/{followId}/{notifyId}', [NotificationController::class, 'followProfile']);

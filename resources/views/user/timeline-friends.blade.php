@@ -87,9 +87,7 @@
                                                              
                                                             <form method="Post" action="{{ url('follow/'.$followers->followers->id) }}">
                                                               @csrf
-                                                              <div class="btn-group mr-2 float-right" role="group" aria-label="First group">
-                                                                <button type="button" style="background-color:red ">Delete</button>
-                                                                
+                                                              <div class="btn-group mr-2 float-right" role="group" aria-label="First group"> 
                                                               </div>
                                                               <div class="btn-group mr-2 float-right" role="group" aria-label="First group">
                                                                 <button type="submit"  style="background-color:#088dcd ">Follow</button>
@@ -97,6 +95,12 @@
                                                               </div>
                                                           
                                                             </form>
+                                                            <div class="btn-group mr-2 float-right" role="group" aria-label="First group">
+                                                                <form method="Post" action="{{ 'delete/followers/'.$followers->followers->id }}">
+                                                                    @csrf
+                                                                <button type="submit" style="background-color:red; border:medium none; color:white;font-size: 13px;font-weight: 500;padding: 4px 20px;border-radius: 4px;">Delete</button>
+                                                                </form>
+                                                            </div>
                                                             @else
                                                             <form method="Post" action="{{ url('unfollow/user/all') }}">
                                                                 @csrf
