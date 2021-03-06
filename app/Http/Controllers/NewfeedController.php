@@ -101,7 +101,7 @@ class NewfeedController extends Controller
     {
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $follow = Follow::where('user_id', Auth::id())->pluck('target_id');
-        $user = User::whereNotIn('id', $follow)
+        $user = User::whereNotIn('id', $follow)->where('role',1)
             ->where('id', '!=', Auth::id())
             ->inRandomOrder()
             ->get();
