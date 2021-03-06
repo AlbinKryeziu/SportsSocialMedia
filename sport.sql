@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 06, 2021 at 01:53 PM
+-- Generation Time: Mar 06, 2021 at 02:35 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.23
 
@@ -322,7 +322,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('GcSQe9zWFtuB86eAddquc9jK1A6dEMTR1gTQeGRX', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWTNJYk1tNno2N1hKaXp3UXJzZzR5R0lqbFBJcXRpMjBrWW10eUsxMyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zcG9ydHMvZm9vdGJhbGxhcGkiO319', 1615033117),
+('GcSQe9zWFtuB86eAddquc9jK1A6dEMTR1gTQeGRX', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWTNJYk1tNno2N1hKaXp3UXJzZzR5R0lqbFBJcXRpMjBrWW10eUsxMyI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDA6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9zcG9ydHMvZm9vdGJhbGxhcGkiO319', 1615036625),
 ('Gy9JX5g4mtblllu3KKxBhu1WfIETjBQR2oOcdkXF', NULL, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidlZ5eEgzUllMTklEdjJTTUdoV2dheXZtTVlHMlE4OHlDNlZwdnBuVSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjk6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9uZXdmZWVkIjt9fQ==', 1615029048);
 
 -- --------------------------------------------------------
@@ -378,7 +378,7 @@ CREATE TABLE `users` (
   `role` int(11) NOT NULL DEFAULT 0,
   `location` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sport` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `profilePath` text COLLATE utf8mb4_unicode_ci DEFAULT 'avatar.png',
+  `profilePath` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `coverPath` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
