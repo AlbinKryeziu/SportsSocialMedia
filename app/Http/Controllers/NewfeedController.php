@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Auth;
 
 class NewfeedController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         if (request()->has('q')) {

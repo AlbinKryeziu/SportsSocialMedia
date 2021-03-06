@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function deleteNotification($notifyId)
     {
         $notification = Notification::where('id', $notifyId)->delete();

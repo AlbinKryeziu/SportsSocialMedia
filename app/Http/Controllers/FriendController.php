@@ -10,6 +10,9 @@ use App\Models\Profile;
 
 class FriendController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');
+    }
     public function friendsProfile($userId){
 
         $user = User::with('post')->where('id',$userId)->get();
