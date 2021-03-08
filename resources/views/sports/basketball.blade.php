@@ -8,6 +8,7 @@
         <title>Basketball</title>
 
         @include('includes/style')
+        @include('sports/includes/style-table')
     </head>
     <body>
         @include('includes/header')
@@ -102,29 +103,105 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
 
-        {{-- <div class="container">
-            <div class="row my-4">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">Home Name</th>
-                            <th scope="col">Result</th>
-                            <th scope="col">Away Name</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            @foreach($responseBody['data'] as $value)
-                            <td>{{ $value['homeName'] }}</td>
-                            <td>{{ $value['homeScore'] }} : {{ $value['awayScore'] }}</td>
-                            <td>{{ $value['awayName'] }}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div> --}}
+            {{-- <div class="col-sm-12">
+                <div class="row my-4">
+                    <div class="main1">
+                        <div class="main2 table-responsive">
+                            <h4 class="text-center" id="league"></h4>
+
+                            <table class="table">
+                                <thead>
+                                    <td>Date</td>
+                                    <td class="name">League</td>
+                                    <td>HomeTeam</td>
+                                    <td>AwayTeam</td>
+                                    <td>Location</td>
+                                    <td>Stadium</td>
+                                </thead>
+                                <tbody>
+                                    @php $i=0; @endphp @foreach($liveScore['teams']['Match'] as $key => $value)
+
+                                    <tr class="meddium">
+                                        <td>{{Carbon\Carbon::parse($value['Date'])->format('Y-M-D H:s') }}</td>
+                                        <td>{{ $value['League'] }}</td>
+                                        <td>{{ $value['HomeTeam'] }}</td>
+                                        <td>{{ $value['AwayTeam'] }}</td>
+                                        <td>{{ $value['Location'] }}</td>
+                                        <td>{{ $value['Stadium'] }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+
+            <div class="container">
+                <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+                {{-- <div class="col-lg-3">
+                    <form method="GET" style="margin: 0px; display: flex;">
+                        <select class="form-control" name="league">
+                            <option value="" selected>Select League</option>
+                            <option value="4387">NBA</option>
+                            <option value="4331">German Bundesliga</option>
+                            <option value="4332">Italian Serie A</option>
+                            <option value="4335">Spanish La Liga</option>
+                            <option value="4675">Swiss Super League</option>
+                        </select>
+                        <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
+                    </form>
+                </div> --}}
+
+                <div class="col-sm-12">
+                    <div class="row my-4">
+                        <div class="main1">
+                            <div class="main2 table-responsive">
+                                <h4 class="text-center" id="league"></h4>
+
+                                <table class="table">
+                                    <thead>
+                                        <td>Pos.</td>
+                                        <td class="name">CLUBS</td>
+                                        <td>P</td>
+                                        <td>W</td>
+                                        <td>GL</td>
+                                        <td>GA</td>
+                                        <td>GD</td>
+                                        <td>L</td>
+                                        <td>POINTS</td>
+                                    </thead>
+                                    <tbody>
+                                        @php $i=0; @endphp @foreach($basketballPoint['table'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
+                                        <tr class="top">
+                                            @else
+                                        </tr>
+
+                                        <tr class="meddium">
+                                            @endif
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td class="name">{{ $point['name'] }}</td>
+                                            <td>{{ $point['played'] }}</td>
+                                            <td>{{ $point['win'] }}</td>
+                                            <td>{{ $point['goalsfor'] }}</td>
+                                            <td>{{ $point['goalsagainst'] }}</td>
+                                            <td>{{ $point['goalsdifference'] }}</td>
+                                            <td>{{ $point['loss'] }}</td>
+                                            <td>{{ $point['total'] }}</td>
+                                        </tr>
+
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+        
         <div class="container">
             <div class="row my-4">
                 <div class="col-12 col-md-6 p-4 text-justify">
