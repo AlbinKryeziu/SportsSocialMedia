@@ -105,7 +105,7 @@ Route::get('/evnts', function () {
     return view('events');
 });
 
-Route::get('/sports/footballapi', [SportController::class, 'football']);
+Route::get('/sports/footballapi', [SportController::class, 'soccer']);
 Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
 Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
 

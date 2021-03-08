@@ -10,11 +10,42 @@ use Illuminate\Http\Request;
 
 class SportController extends Controller
 {
-    public function football()
+    public function soccer()
     {
-        $url = Http::get('https://apiv2.apifootball.com/?action=get_events&from=2021-01-28&to=2021-01-29&country_id=135&APIkey=b1b33936167ae9986dbd0c71f2950735abd868037592a685e97d371e60bfa3f7');
-        $responseBody = json_decode($url->getBody());
-        return view('sports/football', compact('responseBody'));
+        $client = new Client();
+        if (request()->has('league')) {
+            $ekipid = request()->get('league');
+        } else {
+            $ekipid = 4328;
+        }
+
+        $url = "https://thesportsdb.p.rapidapi.com/lookuptable.php?l=$ekipid";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $point = json_decode((string) $response->getBody(), true);
+
+        $livescore = new Client();
+        $urllivescore = "https://thesportsdb.p.rapidapi.com/latestsoccer.php";
+        $headersLivescore = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+        $responseLivescore = $livescore->request('GET', $urllivescore, [
+            'headers' => $headersLivescore,
+            'verify' => false,
+        ]);
+        $liveScore = json_decode((string) $responseLivescore->getBody(), true);
+
+        return view('sports/soccer', compact('point', 'liveScore'));
     }
 
     public function basketball()
