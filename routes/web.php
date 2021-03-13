@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\CollegesController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\FriendController;
 use App\Http\Controllers\NewfeedController;
@@ -67,10 +68,6 @@ Route::get('/how-it-works', function () {
     return view('how-it-works');
 });
 
-Route::get('/sports/soccer', function () {
-    return view('sports/soccer');
-});
-
 Route::get('/sports/football', function () {
     return view('sports/football');
 });
@@ -105,7 +102,7 @@ Route::get('/evnts', function () {
     return view('events');
 });
 
-Route::get('/sports/footballapi', [SportController::class, 'soccer']);
+Route::get('/sports/soccer', [SportController::class, 'soccer']);
 Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
 Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
 
@@ -169,5 +166,10 @@ Route::get('/post/comment/{postId}/{userId}/{notifyId}', [NotificationController
 
 
 Route::get('/admin/user/all', [AdminUserController::class, 'index']);
+
+
+Route::get('/colleges', [CollegesController::class, 'colleges']);
+Route::get('/info/colleges', [CollegesController::class, 'collegesDetails']);
+Route::post('/add/colleges', [CollegesController::class, 'addCollege']);
 
 
