@@ -11,17 +11,21 @@ class CollegesController extends Controller
 {
     //
 
-    public function colleges(){
-        return view('colleges/colleges');
+    public function colleges()
+    {
+        $colleges = Colleges::get();
+        return view('colleges/colleges', [
+            'colleges' => $colleges,
+        ]);
     }
 
-    public function collegesDetails(){
-
+    public function collegesDetails()
+    {
         return view('colleges/details');
     }
 
-    public function addCollege(CollegesRequest $request){
-       
+    public function addCollege(CollegesRequest $request)
+    {
         if ($request->has('avatar')) {
             $imageName = time() . '.' . $request->avatar->extension();
             $request->avatar->move(public_path('store'), $imageName);
@@ -38,6 +42,5 @@ class CollegesController extends Controller
         $colleges->profilePath = $imageName;
         $colleges->user_id = Auth::id();
         $colleges->save();
-        
     }
 }
