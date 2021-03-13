@@ -135,8 +135,8 @@
                             </div>
                             <div class="card-desc">
                                 <h3>{{ $college->name }}</h3>
-                                <p>{{ \Illuminate\Support\Str::limit($college->description, 25)}}</p>
-                                <a href="{{ url('/info/colleges') }}" class="btn-card">Read</a>
+                                <p>{{ \Illuminate\Support\Str::limit($college->description, 30)}}</p>
+                                <a href="{{ url('/info/colleges/'.$college->id) }}" class="btn-card">Read</a>
                             </div>
                         </div>
                     </div>
@@ -144,7 +144,12 @@
                     @endforeach
                 </div>
             </div>
+
+            <div class="container p-4 float-right">
+                {{ $colleges->links() }}
+            </div>
         </section>
+
         <div id="ModalLoginForm" class="modal fade">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -185,16 +190,18 @@
                             <div class="form-group">
                                 <label class="control-label">Services</label>
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="services" value="" />
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="services"></textarea>
+                                
                                 </div>
                                 @error('services')
-                                <div class="error">{{ $message }}</div>
+                                <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Methodology</label>
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="methodology" value="" />
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="methodology"></textarea>
+                                   
                                 </div>
                                 @error('methodology')
                                 <div class="error" style="color: red;">{{ $message }}</div>
@@ -205,6 +212,20 @@
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
                             </div>
                             @error('description')
+                            <div class="error" style="color: red;">{{ $message }}</div>
+                            @enderror
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">City</label>
+                                <input type="text" class="form-control input-lg" name="city" value="" />
+                            </div>
+                            @error('city')
+                            <div class="error" style="color: red;">{{ $message }}</div>
+                            @enderror
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Country</label>
+                                <input type="text" class="form-control input-lg" name="country" value="" />
+                            </div>
+                            @error('country')
                             <div class="error" style="color: red;">{{ $message }}</div>
                             @enderror
 

@@ -8,115 +8,84 @@
         <title>About Us</title>
 
         @include('includes/style')
-        <style>
-         .firma-card{
-  background: #fff;
-  border: 1px solid;
-  border-color: #c7bdbd40;
-  margin: 1rem auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px -1px rgb(198, 207, 234);
-  margin-bottom: 1.6%;
-  overflow: hidden;
-}
-.firma-resim{
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-size: cover;
-  background-position: center;
-  transition: -webkit-transform .2s;
-  transition: transform .2s;
- 
-}
-.firmalar{
-  background: #f1f4f5c7;
+      
+<style>
+
+.about .content h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #555555;
 }
 
-@media (max-width: 768px) {
-
-  .firma-logo{
-        width: calc(33.66667% - .75rem);
-        height: 6.5rem;
-        margin: 5px .375rem;
-  }
-  .firma-resim {
-    position: relative;
-    z-index: 0;
-    height: 200px;
-  }
-  .img-padding-no{
-    padding-right: 0px;
-    padding-left: 0px;
-  }
+.about .content ul {
+  list-style: none;
+  padding: 0;
 }
 
+.about .content ul li {
+  padding-bottom: 10px;
+}
+
+.about .content ul i {
+  font-size: 20px;
+  padding-right: 2px;
+  color: #34b7a7;
+}
+
+.about .content p:last-child {
+  margin-bottom: 0;
+}
 </style>
-
     </head>
 
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/sport20.jpg');">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/sport20.jpg') }}');">
             <div class="container">
                 <h1 class="display-3 text-center white">COLLEGES</h1>
             </div>
         </div>
-        <div class="firmalar p-4">    
-            <div class="container">
+        <main id="main">
+
+            <!-- ======= About Section ======= -->
+            <section id="about" class="about p-4">
+              <div class="container" data-aos="fade-up">
+        
+                
+        
                 <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="firma-card row">
-                            <div class="col-md-5 img-padding-no">
-                                <div class="firma-resim" style=" background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg);">
-                                    
-                                    <a href="#">
-        
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="col-md-7">
-                                <div class="firma-aciklama card-body">
-                                    <h4>Ali Bulut</h4>
-                                    <ul class="yacht-info__list space-2">
-                                       
-                                            <p><strong>Description</strong>akefjkljaeiofjioajefiojaijfoiajfoijeoa;jf;oiaf</p>
-                                        
-                                        <li>
-                                            <i class="search-boat-icon fa search-captain vertical-align-mid"></i>
-                                            <span class="vertical-align-mid">Kaptanlı</span>
-                                        </li>
-                                        <li>
-                                            <i class="search-boat-icon fa search-captain vertical-align-mid"></i>
-                                            <span class="vertical-align-mid">Kaptanlı</span>
-                                        </li>
-                                        <li>
-                                            <i class="search-boat-icon fa search-captain vertical-align-mid"></i>
-                                            <span class="vertical-align-mid">Kaptanlı</span>
-                                        </li>
-                                        <li>
-                                            <i class="search-boat-icon fa search-captain vertical-align-mid"></i>
-                                            <span class="vertical-align-mid">Kaptanlı</span>
-                                        </li>
-                                    </ul>
-        
-        
-                                </div>
-                            </div>
-                        </div>
-                       
-                            </div>
-                        </div>
-        
-        
+                  <div class="col-lg-4">
+                    <img src="{{ asset('store/'.$college->profilePath) }}" class="img-fluid" alt="" style="height: 300px;object-fit:cover;">
+                  </div>
+                  <div class="col-lg-8 pt-4 pt-lg-0 content">
+                    <h3>{{ $college->name }}</h3>
+                    
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <ul>
+                            <li><i class="icofont-rounded-right"></i> <strong>Address:</strong> {{ $college->address }}</li>
+                          <li><i class="icofont-rounded-right"></i> <strong>Country:</strong> {{ $college->country }}</li>
+                          <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{ $college->city }}</li>
+                        </ul>
+                      </div>
+                      
                     </div>
-                    <div class="col-md-2"></div>
+                    <p><strong>Description:</strong>
+                     {{ $college->description }}
+                    </p>
+                    <p><strong>Methodology:</strong>
+                        {{ $college->methodology }}
+                       </p>
+                       <p><strong>Services:</strong>
+                        {{ $college->services }}
+                       </p>
+                   
+                  </div>
                 </div>
-            </div>
-            </div>
+        
+              </div>
+            </section>
+      
 
         @include('includes/footer')
     </body>

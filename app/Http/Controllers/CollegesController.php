@@ -13,15 +13,18 @@ class CollegesController extends Controller
 
     public function colleges()
     {
-        $colleges = Colleges::get();
+        $colleges = Colleges::simplePaginate(25);
         return view('colleges/colleges', [
             'colleges' => $colleges,
         ]);
     }
 
-    public function collegesDetails()
+    public function collegesDetails($collegeId)
     {
-        return view('colleges/details');
+        $college =Colleges::find($collegeId);
+        return view('colleges/details',[
+            'college' => $college,
+        ]);
     }
 
     public function addCollege(CollegesRequest $request)
@@ -40,6 +43,8 @@ class CollegesController extends Controller
         $colleges->description = $request->description;
         $colleges->methodology = $request->methodology;
         $colleges->profilePath = $imageName;
+        $colleges->city = $request->city;
+        $colleges->country = $request->country;
         $colleges->user_id = Auth::id();
         $colleges->save();
     }

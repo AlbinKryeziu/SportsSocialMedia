@@ -169,7 +169,7 @@ Route::get('/admin/user/all', [AdminUserController::class, 'index']);
 
 
 Route::get('/colleges', [CollegesController::class, 'colleges']);
-Route::get('/info/colleges', [CollegesController::class, 'collegesDetails']);
+Route::get('/info/colleges/{collegeId}', [CollegesController::class, 'collegesDetails']);
 Route::post('/add/colleges', [CollegesController::class, 'addCollege']);
 
 

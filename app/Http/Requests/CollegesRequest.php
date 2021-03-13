@@ -29,6 +29,8 @@ class CollegesRequest extends FormRequest
             'services' => 'required',
             'methodology' => 'required',
             'description' => 'required',
+            'city' => 'required',
+            'country' => 'required',
             'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
