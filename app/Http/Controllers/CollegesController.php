@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CollegesRequest;
 use App\Models\Colleges;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ class CollegesController extends Controller
         return view('colleges/details');
     }
 
-    public function addCollege(Request $request){
+    public function addCollege(CollegesRequest $request){
        
         if ($request->has('avatar')) {
             $imageName = time() . '.' . $request->avatar->extension();
