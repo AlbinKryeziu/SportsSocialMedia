@@ -66,7 +66,7 @@
           </button>
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges')}}">Colleges</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/basketballapi')}}">Coaches</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/coaches')}}">Coaches</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Users</a></button>
             
           </div>

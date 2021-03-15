@@ -114,7 +114,7 @@
 
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/sport20.jpg');">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/sport20.jpg'); height:500px;">
             <div class="container">
                 <h1 class="display-3 text-center white">COLLEGES</h1>
             </div>
@@ -171,8 +171,9 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Address</label>
+                             
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="address" value="" />
+                                    <input type="text" class="form-control input-lg" name="address"  value="" />
                                 </div>
                                 @error('address')
                                 <div class="error" style="color: red;">{{ $message }}</div>
@@ -180,8 +181,9 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label">Photo</label>
+                            
                                 <div>
-                                    <input type="file" id="avatar" name="avatar" />
+                                    <input type="file" id="avatar" name="avatar"  />
                                 </div>
                                 @error('avatar')
                                 <div class="error" style="color: red;">{{ $message }}</div>
@@ -210,24 +212,28 @@
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                @error('description')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
                             </div>
-                            @error('description')
-                            <div class="error" style="color: red;">{{ $message }}</div>
-                            @enderror
+                          
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">City</label>
                                 <input type="text" class="form-control input-lg" name="city" value="" />
+                                @error('city')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
                             </div>
-                            @error('city')
-                            <div class="error" style="color: red;">{{ $message }}</div>
-                            @enderror
+                           
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Country</label>
                                 <input type="text" class="form-control input-lg" name="country" value="" />
-                            </div>
-                            @error('country')
+                                @error('country')
                             <div class="error" style="color: red;">{{ $message }}</div>
                             @enderror
+                           
+                            </div>
+                            
 
                             <div class="form-group">
                                 <div>

@@ -14,7 +14,14 @@ class CreateCoachesTable extends Migration
     public function up()
     {
         Schema::create('coaches', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('address');
+            $table->string('city');
+            $table->string('country');
+            $table->longText('description');
+            $table->unsignedBigInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
