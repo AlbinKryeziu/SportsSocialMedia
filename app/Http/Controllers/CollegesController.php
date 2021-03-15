@@ -53,7 +53,10 @@ class CollegesController extends Controller
 
     public function coaches()
     {
-        return view('coaches/index');
+        $coaches = Coaches::simplePaginate(20);
+        return view('coaches/index', [
+            'coaches' => $coaches,
+        ]);
     }
 
     public function storeCoaches(CoachesRequest $request)
@@ -74,5 +77,13 @@ class CollegesController extends Controller
         $coaches->profile_path = $imageName;
         $coaches->user_id = Auth::id();
         $coaches->save();
+    }
+
+    public function coacheDetails($choacesId)
+    {
+        $coaches = Coaches::findOrFail($choacesId);
+        return view('coaches/details', [
+            'coaches' => $coaches,
+        ]);
     }
 }

@@ -126,22 +126,28 @@
         <section class="details-card">
             <div class="container">
                 <div class="row">
+                    @foreach($coaches as $key => $coache)
+
                     <div class="col-md-4 p-2">
                         <div class="card-content">
                             <div class="card-img">
-                                <img src="" alt="" style="height: 200px; object-fit: cover;" />
+                                <img src="{{ asset('store/'.$coache->profile_path) }}" alt="" style="height: 200px; object-fit: cover;" />
                             </div>
                             <div class="card-desc">
-                                <h3></h3>
-                                <p></p>
-                                <a href="" class="btn-card">Read</a>
+                                <h3>{{ $coache->name }}</h3>
+                                <p>{{ $coache->city }}|{{ $coache->country }}</p>
+                                <a href="{{ url('/coaches/details/'.$coache->id) }}" class="btn-card">Read</a>
                             </div>
                         </div>
                     </div>
+
+                    @endforeach
                 </div>
             </div>
 
-            <div class="container p-4 float-right"></div>
+            <div class="container p-4 float-right">
+                {{ $coaches->links() }}
+            </div>
         </section>
 
         <div id="ModalLoginForm" class="modal fade">

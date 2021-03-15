@@ -173,3 +173,5 @@ Route::get('/info/colleges/{collegeId}', [CollegesController::class, 'collegesDe
 Route::post('/add/colleges', [CollegesController::class, 'addCollege']);
 Route::get('/coaches', [CollegesController::class, 'coaches']);
 Route::post('/coaches/store', [CollegesController::class, 'storeCoaches']);
+Route::get('/coaches/details/{coachesId}', [CollegesController::class, 'coacheDetails']);
+
