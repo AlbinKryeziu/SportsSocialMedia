@@ -8,6 +8,7 @@ use App\Http\Controllers\NewfeedController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SportController;
+use App\Http\Controllers\FitnessController;
 use App\Http\Controllers\UserController;
 use App\Models\Follow;
 use App\Models\User;
@@ -174,4 +175,7 @@ Route::post('/add/colleges', [CollegesController::class, 'addCollege']);
 Route::get('/coaches', [CollegesController::class, 'coaches']);
 Route::post('/coaches/store', [CollegesController::class, 'storeCoaches']);
 Route::get('/coaches/details/{coachesId}', [CollegesController::class, 'coacheDetails']);
+
+Route::get('/healthy', [FitnessController::class, 'index']);
+
 
