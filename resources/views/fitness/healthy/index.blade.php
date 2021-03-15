@@ -92,7 +92,7 @@
                
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
-                  <img class="card-img" src="{{ asset('store/'.$healthy->profilePath) }}" alt="Bologna">
+                  <img class="card-img" src="{{ asset('store/'.$healthy->profilePath) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
                   <div class="card-img-overlay">
                     <a href="#" class="btn btn-light btn-sm">Healthy Food</a>
                   </div>
@@ -106,7 +106,7 @@
                    
                   </div>
                   <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                    <div class="views">Oct 20, 12:45PM
+                    <div class="views">{{ Carbon\Carbon::parse($healthy->created_at)->format('d F Y') }}
                     </div>
                      
                   </div>

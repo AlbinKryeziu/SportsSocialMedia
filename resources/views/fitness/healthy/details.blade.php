@@ -100,12 +100,12 @@
 
                     <hr />
 
-                    <img class="img-fluid rounded" src="{{ asset('store/'.$healthy->profilePath) }}" alt="" />
+                    <img class="img-fluid rounded" src="{{ asset('store/'.$healthy->profilePath) }}" style="width: 900px; object-fit:cover;"  alt="" />
 
                     <hr />
-
-                    <p class="lead">{{ $healthy->description }}</p>
-
+                   
+                    <p  style="padding-right: 100%;">{{ $healthy->description }}</p>
+                  
                     <blockquote class="blockquote">
                         <p class="mb-0">Social Media Sport</p>
                     </blockquote>
@@ -133,6 +133,7 @@
                 </div>
             </div>
         </div>
+        
         
 
         @include('includes/footer')
