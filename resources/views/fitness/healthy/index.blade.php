@@ -82,49 +82,141 @@
             </div>
         </div>
         <div class="container p-3">
-            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your college</a>
+            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your healthy food</a>
         </div>
 
         <div class="container" style="padding: 65px;">
             <div class="row">
+                @foreach($healthyFood as $key => $healthy)
+                    
+               
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
-                  <img class="card-img" src="{{ asset('images/health6.jpg') }}" alt="Bologna">
+                  <img class="card-img" src="{{ asset('store/'.$healthy->profilePath) }}" alt="Bologna">
                   <div class="card-img-overlay">
                     <a href="#" class="btn btn-light btn-sm">Healthy Food</a>
                   </div>
                   <div class="card-body">
-                    <h4 class="card-title">Pasta with Prosciutto</h4>
+                    <h4 class="card-title">{{ $healthy->title }}</h4>
                     <small class="text-muted cat">
-                      <i class="far fa-clock text-info"></i> 30 minutes
-                      <i class="fas fa-users text-info"></i> 4 portions
+                      <i class="far fa-clock text-info"></i>Protein : {{ $healthy->protein }}
+                      <i class="fas fa-users text-info"></i> Calcium : {{ $healthy->calcium }}
                     </small>
-                    <p class="card-text">I love quick, simple pasta dishes, and this is one of my favorite.</p>
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($healthy->description, 80)}}</p>
                    
                   </div>
                   <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
                     <div class="views">Oct 20, 12:45PM
                     </div>
-                  
-                    <div class="stats">
-                         <i class="far fa-eye"></i> 1347
-                      <i class="far fa-comment"></i> 12
-                    </div>
                      
                   </div>
                 </div>
-                <a href="#" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+                <a href="{{ url('/healthy/more/'.$healthy->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
               </div>
-              
+              @endforeach
               
            
               
             </div>
           </div>
+          <div id="ModalLoginForm" class="modal fade">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                        <h3 class="modal-title" style="text-align: center;">Add your healthy food</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form method="POST" action="{{ url('/healthy/store') }}" enctype="multipart/form-data">
+                            @csrf
 
+                            <div class="form-group">
+                                <label class="control-label">Title</label>
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="title" value="" />
+                                </div>
+                                @error('title')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Protein</label>
+                             
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="protein"  value="" />
+                                </div>
+                                @error('protein')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Photo</label>
+                            
+                                <div>
+                                    <input type="file" id="avatar" name="avatar"  />
+                                </div>
+                                @error('avatar')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Calcium</label>
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="calcium"  />
+                                
+                                </div>
+                                @error('calcium')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Carbohydrates</label>
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="carbohydrates"  />
+                                   
+                                </div>
+                                @error('carbohydrates')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                @error('description')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                          
+                            
+                            
+
+                            <div class="form-group">
+                                <div>
+                                    <div class="checkbox"></div>
+                                </div>
+                            </div>
+                            <div class="form-group float-right">
+                                <div>
+                                    <button type="submit" class="btn btn-success">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        
    
-           
-<br>
+       
+
         @include('includes/footer')
     </body>
 </html>
+@if (count($errors) > 0)
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ModalLoginForm").modal("show");
+    });
+</script>
+@endif

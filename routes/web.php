@@ -177,5 +177,8 @@ Route::post('/coaches/store', [CollegesController::class, 'storeCoaches']);
 Route::get('/coaches/details/{coachesId}', [CollegesController::class, 'coacheDetails']);
 
 Route::get('/healthy', [FitnessController::class, 'index']);
+Route::post('/healthy/store', [FitnessController::class, 'storeHealthy']);
+Route::get('/healthy/more/{healthyid}', [FitnessController::class, 'healthyDetails']);
+
 
 
