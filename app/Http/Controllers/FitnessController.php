@@ -38,9 +38,11 @@ class FitnessController extends Controller
 
     public function healthyDetails($healthyid)
     {
-        $healthy = Healthy::findOrFail($healthyid);
+         $healthy = Healthy::findOrFail($healthyid);
+         $post = Healthy::whereNotIn('id',[$healthyid])->inRandomOrder()->paginate(4);
         return view('fitness/healthy/details', [
             'healthy' => $healthy,
+            'post' => $post,
         ]);
     }
 }

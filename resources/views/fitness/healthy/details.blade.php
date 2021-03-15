@@ -10,6 +10,7 @@
         @include('includes/style')
     </head>
     <style>
+
         .card-img {
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
@@ -65,11 +66,19 @@
         a.btn-card {
             text-decoration: none;
             color: #fff;
+
+        }
+        #btn {
+            background-color: #1abc9c;
+            color: white;
+        }
+        #btn:hover {
+            background: orange;
         }
     </style>
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/health6.jpg'); height: 510px; object-fit: cover;">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/health6.jpg') }}'); height: 510px; object-fit: cover;">
             <div class="container">
                 <h1 class="display-3 text-center white">HEALTHY</h1>
             </div>
@@ -103,19 +112,28 @@
 
                     <div class="media mb-4"></div>
                 </div>
+         
 
-                <div class="col-md-4" style="bottom: -155px; padding: 40px;">
+                <div class="col-md-4 p-4">
                     <p>Related post</p>
-
+                     @foreach ($post as $post )
+                         
+                   
                     <div class="card my-4">
-                        <h5 class="card-header">Side Widget</h5>
+                       
+                       
+                        <img class="card-img" src="{{ asset('store/'.$post->profilePath) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
                         <div class="card-body">
-                            You can put anything you want inside of these side widgets. They are easy to use, and feature the new Bootstrap 4 card containers!
+                            {{ \Illuminate\Support\Str::limit($post->description, 30)}}
                         </div>
+                        <a href=""class="btn btn-light btn-sm col-12" id="btn">Read</a>
                     </div>
+
+                    @endforeach
                 </div>
             </div>
         </div>
+        
 
         @include('includes/footer')
     </body>
