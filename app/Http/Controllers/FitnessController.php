@@ -81,4 +81,9 @@ class FitnessController extends Controller
             'otherTips' => $otherTips,
         ]);
     }
+
+    public function exercises(){
+        
+        return view('fitness/exercises/index');
+    }
 }

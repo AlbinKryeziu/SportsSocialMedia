@@ -76,41 +76,44 @@
 </style>
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/tips1.jpeg'); height:510px; object-fit:cover">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/exercises.jpeg'); height:510px; object-fit:cover">
             <div class="container">
-                <h1 class="display-3 text-center white">TIPS</h1>
+                <h1 class="display-3 text-center white">EXERCISES</h1>
             </div>
         </div>
         <div class="container p-3">
-            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your tips</a>
+            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your healthy food</a>
         </div>
 
         <div class="container" style="padding: 65px;">
             <div class="row">
-                @foreach($tips as $key => $tip)
+                {{-- @foreach($healthyFood as $key => $healthy)
                     
                
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
-                  <img class="card-img" src="{{ asset('store/'.$tip->image) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
+                  <img class="card-img" src="{{ asset('store/'.$healthy->profilePath) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
                   <div class="card-img-overlay">
-                    <a href="#" class="btn btn-light btn-sm">Tips</a>
+                    <a href="#" class="btn btn-light btn-sm">Healthy Food</a>
                   </div>
                   <div class="card-body">
-                    <h4 class="card-title">{{ $tip->title }}</h4>
-                   
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($tip->description, 20)}}</p>
+                    <h4 class="card-title">{{ $healthy->title }}</h4>
+                    <small class="text-muted cat">
+                      <i class="far fa-clock text-info"></i>Protein : {{ $healthy->protein }}
+                      <i class="fas fa-users text-info"></i> Calcium : {{ $healthy->calcium }}
+                    </small>
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($healthy->description, 80)}}</p>
                    
                   </div>
                   <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                    <div class="views">{{ Carbon\Carbon::parse($tip->created_at)->format('d F Y') }}
+                    <div class="views">{{ Carbon\Carbon::parse($healthy->created_at)->format('d F Y') }}
                     </div>
                      
                   </div>
                 </div>
-                <a href="{{ url('/tips/details/'.$tip->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+                <a href="{{ url('/healthy/more/'.$healthy->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
               </div>
-              @endforeach
+              @endforeach --}}
               
            
               
@@ -120,10 +123,10 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h3 class="modal-title" style="text-align: center;">Add your tips</h3>
+                        <h3 class="modal-title" style="text-align: center;">Add your healthy food</h3>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="{{ url('/tips/add') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/healthy/store') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
@@ -135,7 +138,16 @@
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
-                          
+                            <div class="form-group">
+                                <label class="control-label">Protein</label>
+                             
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="protein"  value="" />
+                                </div>
+                                @error('protein')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
                             <div class="form-group">
                                 <label class="control-label">Photo</label>
                             
@@ -143,6 +155,26 @@
                                     <input type="file" id="avatar" name="avatar"  />
                                 </div>
                                 @error('avatar')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Calcium</label>
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="calcium"  />
+                                
+                                </div>
+                                @error('calcium')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Carbohydrates</label>
+                                <div>
+                                    <input type="text" class="form-control input-lg" name="carbohydrates"  />
+                                   
+                                </div>
+                                @error('carbohydrates')
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>

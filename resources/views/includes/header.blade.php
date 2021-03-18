@@ -82,7 +82,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/healthy')}}">Healthy</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/tips')}}">Tips</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Exercises</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/exercises')}}">Exercises</a></button>
            
           </div>
         </div>

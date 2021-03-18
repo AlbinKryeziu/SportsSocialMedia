@@ -78,7 +78,7 @@
     </style>
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/tips.jpeg') }}'); height: 510px; object-fit: cover;">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/tips1.jpeg') }}'); height: 510px; object-fit: cover;">
             <div class="container">
                 <h1 class="display-3 text-center white">Tips</h1>
             </div>
@@ -126,7 +126,7 @@
                         <div class="card-body">
                             {{ \Illuminate\Support\Str::limit($tips->description, 30)}}
                         </div>
-                        <a href=""class="btn btn-light btn-sm col-12" id="btn">Read</a>
+                        <a href="{{ url('/tips/details/'.$tips->id) }}"class="btn btn-light btn-sm col-12" id="btn">Read</a>
                     </div>
 
                     @endforeach
