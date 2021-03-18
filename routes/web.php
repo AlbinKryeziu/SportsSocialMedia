@@ -183,6 +183,6 @@ Route::get('/tips', [FitnessController::class, 'tips']);
 Route::post('/tips/add', [FitnessController::class, 'addTips']);
 Route::get('/tips/details/{tipsId}', [FitnessController::class, 'tipsDetails']);
 Route::get('/exercises', [FitnessController::class, 'exercises']);
-
-
+Route::get('/add/exercises', [FitnessController::class, 'addExercies']);
+Route::post('/add/store', [FitnessController::class, 'storeExercies']);
 

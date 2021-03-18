@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\HealthyRequest;
 use App\Http\Requests\TipRequest;
+use App\Models\Exercise;
+use App\Models\ExercisesExample;
 use App\Models\Healthy;
 use App\Models\Tips;
 use Illuminate\Http\Request;
@@ -40,22 +42,26 @@ class FitnessController extends Controller
 
     public function healthyDetails($healthyid)
     {
-         $healthy = Healthy::findOrFail($healthyid);
-         $post = Healthy::whereNotIn('id',[$healthyid])->inRandomOrder()->paginate(4);
+        $healthy = Healthy::findOrFail($healthyid);
+        $post = Healthy::whereNotIn('id', [$healthyid])
+            ->inRandomOrder()
+            ->paginate(4);
         return view('fitness/healthy/details', [
             'healthy' => $healthy,
             'post' => $post,
         ]);
     }
 
-    public function tips(){
+    public function tips()
+    {
         $tips = Tips::get();
-        return view('fitness/tips/index',[
+        return view('fitness/tips/index', [
             'tips' => $tips,
         ]);
     }
 
-    public function addTips(TipRequest $request){
+    public function addTips(TipRequest $request)
+    {
         if ($request->has('avatar')) {
             $imageName = time() . '.' . $request->avatar->extension();
             $request->avatar->move(public_path('store'), $imageName);
@@ -68,22 +74,57 @@ class FitnessController extends Controller
             'description' => $request->description,
             'user_id' => Auth::id(),
         ]);
-        if($tips){
+        if ($tips) {
             return back();
         }
     }
 
-    public function tipsDetails($tipsId){
-        $tips = Tips::where('id',$tipsId)->first();
-        $otherTips = Tips::whereNotIn('id',[$tipsId])->inRandomOrder()->paginate(4);
-        return view('fitness/tips/details',[
+    public function tipsDetails($tipsId)
+    {
+        $tips = Tips::where('id', $tipsId)->first();
+        $otherTips = Tips::whereNotIn('id', [$tipsId])
+            ->inRandomOrder()
+            ->paginate(4);
+        return view('fitness/tips/details', [
             'tips' => $tips,
             'otherTips' => $otherTips,
         ]);
     }
 
-    public function exercises(){
-        
+    public function exercises()
+    {
         return view('fitness/exercises/index');
+    }
+
+    public function addExercies()
+    {
+        return view('fitness/exercises/add');
+    }
+    public function storeExercies(Request $request)
+    {
+        $exercises = Exercise::create([
+            'user_id' => Auth::id(),
+        ]);
+        if ($exercises) {
+            if ($request->has('avatar')) {
+                foreach ($request->file('avatar') as $avatar) {
+                    $imageName = time() . '.' . $avatar->extension();
+                    $avatar->move(public_path('store'), $imageName);
+                }
+            }
+
+            for ($i = 0; $i < count($request['title']); $i++) {
+                $exercisesExample = ExercisesExample::create([
+                    'title' => $request['title'][$i],
+                    'description' => $request['description'][$i],
+                    'image' => $imageName,
+                    'exercies_id' => $exercises->id,
+                ]);
+            }
+        }
+        if($exercises && $exercisesExample){
+            return back()->with('success','Example was created successfully');
+        }
+        return back()->with('erros','Something went wrong');
     }
 }

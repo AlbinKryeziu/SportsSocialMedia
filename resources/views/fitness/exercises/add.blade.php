@@ -8,7 +8,9 @@
         <title>About Us</title>
 
         @include('includes/style')
-    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
+      
+        
 
     </head>
 <style>
@@ -76,45 +78,39 @@
 </style>
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/exercises.jpeg'); height:510px; object-fit:cover">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/exercises.jpeg') }}'); height:510px; object-fit:cover">
             <div class="container">
                 <h1 class="display-3 text-center white">EXERCISES</h1>
             </div>
         </div>
-        <div class="container p-3">
-            <a href="{{ url('/add/exercises') }}"  class="btn-card float-right">Add your exercises</a>
-        </div>
+        
+      
 
         <div class="container" style="padding: 65px;">
-            <div class="row">
-                {{-- @foreach($healthyFood as $key => $healthy)
-                    
-               
-              <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
-                <div class="card">
-                  <img class="card-img" src="{{ asset('store/'.$healthy->profilePath) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
-                  <div class="card-img-overlay">
-                    <a href="#" class="btn btn-light btn-sm">Healthy Food</a>
-                  </div>
-                  <div class="card-body">
-                    <h4 class="card-title">{{ $healthy->title }}</h4>
-                    <small class="text-muted cat">
-                      <i class="far fa-clock text-info"></i>Protein : {{ $healthy->protein }}
-                      <i class="fas fa-users text-info"></i> Calcium : {{ $healthy->calcium }}
-                    </small>
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($healthy->description, 80)}}</p>
-                   
-                  </div>
-                  <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                    <div class="views">{{ Carbon\Carbon::parse($healthy->created_at)->format('d F Y') }}
-                    </div>
-                     
-                  </div>
+            <form method="POST" action="{{ url('/add/store') }}" enctype="multipart/form-data" >
+                @csrf
+                <div class="mb-3 ">
+                  <label for="exampleInputEmail1" class="form-label">Title</label>
+                  <input type="text" class="form-control" name="title[]" aria-describedby="emailHelp">
+                
                 </div>
-                <a href="{{ url('/healthy/more/'.$healthy->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
-              </div>
-              @endforeach --}}
-              
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Description</label>
+                  <input type="text" class="form-control" name="description[]">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Image</label><br>
+                    <input type="file"  name="avatar[]">
+                  </div>
+                 
+                  <div class="field_wrapper">
+                 
+                  </div>
+                  <div class="btn-group" role="group" aria-label="Third group">
+                    <a href="javascript:void(0);" class="add_button btn btn-primary" title="Add field"><i class="fa fa-plus"></i></a>
+                  </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
            
               
             </div>
@@ -123,7 +119,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h3 class="modal-title" style="text-align: center;">Add your healthy food</h3>
+                       
                     </div>
                     <div class="modal-body">
                         <form method="POST" action="{{ url('/healthy/store') }}" enctype="multipart/form-data">
@@ -213,10 +209,44 @@
         @include('includes/footer')
     </body>
 </html>
-@if (count($errors) > 0)
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#ModalLoginForm").modal("show");
+@if(Session::has('success'))
+<script>
+    swal("Success", "{{Session::get('success')}}", "success", {
+        button: "ok",
     });
 </script>
+
 @endif
+@if(Session::has('errors'))
+<script>
+    swal("Errors", "{{Session::get('errors')}}", "errors", {
+        button: "ok",
+    });
+</script>
+
+@endif
+<script type="text/javascript">
+    $(document).ready(function(){
+        var maxField = 10; //Input fields increment limitation
+        var addButton = $('.add_button'); //Add button selector
+        var wrapper = $('.field_wrapper'); //Input field wrapper
+        var fieldHTML = '<div>  <label for="exampleFormControlTextarea1">Title</label><input type="text" name="title[]" value="" class="form-control"/><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div> <div> <label for="exampleFormControlTextarea1">Description</label><input type="text" name="description[]" value="" class="form-control"/><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div><div>  <label for="exampleFormControlTextarea1">Image</label><br/><input type="file" name="avatar[]" value="" class=""/><br><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div><br>' ; //New input field html 
+        var x = 1; //Initial field counter is 1
+        
+        //Once add button is clicked
+        $(addButton).click(function(){
+            //Check maximum number of input fields
+            if(x < maxField){ 
+                x++; //Increment field counter
+                $(wrapper).append(fieldHTML); //Add field html
+            }
+        });
+        
+        //Once remove button is clicked
+        $(wrapper).on('click', '.remove_button', function(e){
+            e.preventDefault();
+            $(this).parent('div').remove(); //Remove field html
+            x--; //Decrement field counter
+        });
+    });
+    </script>
