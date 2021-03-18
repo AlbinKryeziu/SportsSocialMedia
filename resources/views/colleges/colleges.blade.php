@@ -83,7 +83,7 @@
         </div>
 
         <div class="container p-3">
-            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your healthy food</a>
+            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your college</a>
         </div>
 
         <div class="container" style="padding: 65px;">
@@ -121,28 +121,28 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
-                        <h3 class="modal-title" style="text-align: center;">Add your healthy food</h3>
+                        <h3 class="modal-title" style="text-align: center;">Add your college</h3>
                     </div>
                     <div class="modal-body">
-                        <form method="POST" action="{{ url('/healthy/store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/add/colleges') }}" enctype="multipart/form-data">
                             @csrf
 
                             <div class="form-group">
-                                <label class="control-label">Title</label>
+                                <label class="control-label">Name</label>
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="title" value="" />
+                                    <input type="text" class="form-control input-lg" name="name" value="" />
                                 </div>
-                                @error('title')
+                                @error('name')
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Protein</label>
+                                <label class="control-label">Address</label>
                              
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="protein"  value="" />
+                                    <input type="text" class="form-control input-lg" name="address"  value="" />
                                 </div>
-                                @error('protein')
+                                @error('address')
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -157,22 +157,22 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Calcium</label>
+                                <label class="control-label">Services</label>
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="calcium"  />
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="services"></textarea>
                                 
                                 </div>
-                                @error('calcium')
+                                @error('services')
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <label class="control-label">Carbohydrates</label>
+                                <label class="control-label">Methodology</label>
                                 <div>
-                                    <input type="text" class="form-control input-lg" name="carbohydrates"  />
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="methodology"></textarea>
                                    
                                 </div>
-                                @error('carbohydrates')
+                                @error('methodology')
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
                             </div>
@@ -184,7 +184,22 @@
                                 @enderror
                             </div>
                           
-                            
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">City</label>
+                                <input type="text" class="form-control input-lg" name="city" value="" />
+                                @error('city')
+                                <div class="error" style="color: red;">{{ $message }}</div>
+                                @enderror
+                            </div>
+                           
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Country</label>
+                                <input type="text" class="form-control input-lg" name="country" value="" />
+                                @error('country')
+                            <div class="error" style="color: red;">{{ $message }}</div>
+                            @enderror
+                           
+                            </div>
                             
 
                             <div class="form-group">
@@ -204,6 +219,7 @@
             </div>
             <!-- /.modal-dialog -->
         </div>
+
         
    
        

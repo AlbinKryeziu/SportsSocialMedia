@@ -5,83 +5,45 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Coaches</title>
+        <title>Healthy</title>
 
         @include('includes/style')
-        <style>
-            @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:400,400i,700,700i");
-            section {
-                padding: 100px 0;
-            }
-            .details-card {
-            }
+    
 
-            .card-content {
-                background: #ffffff;
-                border: 4px;
-                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-            }
+    </head>
+<style>
 
-            .card-img {
-                position: relative;
-                overflow: hidden;
-                border-radius: 0;
-                z-index: 1;
-            }
 
-            .card-img img {
-                width: 100%;
-                height: auto;
-                display: block;
-            }
 
-            .card-img span {
-                position: absolute;
-                top: 15%;
-                left: 12%;
-                background: #1abc9c;
-                padding: 6px;
-                color: #fff;
-                font-size: 12px;
-                border-radius: 4px;
-                -webkit-border-radius: 4px;
-                -moz-border-radius: 4px;
-                -ms-border-radius: 4px;
-                -o-border-radius: 4px;
-                transform: translate(-50%, -50%);
-            }
-            .card-img span h4 {
-                font-size: 12px;
-                margin: 0;
-                padding: 10px 5px;
-                line-height: 0;
-            }
-            .card-desc {
-                padding: 1.25rem;
-            }
+.card-img {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
 
-            .card-desc h3 {
-                color: #000000;
-                font-weight: 600;
-                font-size: 1.5em;
-                line-height: 1.3em;
-                margin-top: 0;
-                margin-bottom: 5px;
-                padding: 0;
-            }
+.card-title {
+  margin-bottom: 0.3rem;
+}
 
-            .card-desc p {
-                color: #747373;
-                font-size: 14px;
-                font-weight: 400;
-                font-size: 1em;
-                line-height: 1.5;
-                margin: 0px;
-                margin-bottom: 20px;
-                padding: 0;
-                font-family: "Raleway", sans-serif;
+.cat {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.fa-users {
+  margin-left: 1rem;
+}
+
+.card-footer {
+  font-size: 0.8rem;
+}
+#btn{
+    background-color: #1abc9c;
+    color: white;
+}
+#btn:hover {
+                background: orange;
             }
-            .btn-card {
+.btn-card {
                 background-color: #1abc9c;
                 color: #fff;
                 box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -109,9 +71,9 @@
                 text-decoration: none;
                 color: #fff;
             }
-        </style>
-    </head>
 
+
+</style>
     <body>
         @include('includes/header')
         <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/3984.jpg'); height: 500px;">
@@ -120,37 +82,42 @@
             </div>
         </div>
 
-        <div class="container p-4">
-            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your college</a>
+        <div class="container p-3">
+            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your coaches </a>
         </div>
-        <section class="details-card">
-            <div class="container">
-                <div class="row">
-                    @foreach($coaches as $key => $coache)
 
-                    <div class="col-md-4 p-2">
-                        <div class="card-content">
-                            <div class="card-img">
-                                <img src="{{ asset('store/'.$coache->profile_path) }}" alt="" style="height: 200px; object-fit: cover;" />
-                            </div>
-                            <div class="card-desc">
-                                <h3>{{ $coache->name }}</h3>
-                                <p>{{ $coache->city }}|{{ $coache->country }}</p>
-                                <a href="{{ url('/coaches/details/'.$coache->id) }}" class="btn-card">Read</a>
-                            </div>
-                        </div>
+        <div class="container" style="padding: 65px;">
+            <div class="row">
+                @foreach($coaches as $key => $coaches)
+                    
+               
+              <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
+                <div class="card">
+                  <img class="card-img" src="{{ asset('store/'.$coaches->profile_path) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
+                  <div class="card-img-overlay">
+                    <a href="#" class="btn btn-light btn-sm">Coaches</a>
+                  </div>
+                  <div class="card-body">
+                    <h4 class="card-title">{{ $coaches->name }}</h4>
+                   
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($coaches->description, 40)}}</p>
+                   
+                  </div>
+                  <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
+                    <div class="views">{{ Carbon\Carbon::parse($coaches->created_at)->format('d F Y') }}
                     </div>
-
-                    @endforeach
+                     
+                  </div>
                 </div>
+                <a href="{{ url('/coaches/details/'.$coaches->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+              </div>
+              @endforeach
+              
+           
+              
             </div>
-
-            <div class="container p-4 float-right">
-                {{ $coaches->links() }}
-            </div>
-        </section>
-
-        <div id="ModalLoginForm" class="modal fade">
+          </div>
+          <div id="ModalLoginForm" class="modal fade">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header text-center">
@@ -230,12 +197,17 @@
             <!-- /.modal-dialog -->
         </div>
 
-        @include('includes/footer') @if (count($errors) > 0)
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#ModalLoginForm").modal("show");
-            });
-        </script>
-        @endif
+        
+   
+       
+
+        @include('includes/footer')
     </body>
 </html>
+@if (count($errors) > 0)
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ModalLoginForm").modal("show");
+    });
+</script>
+@endif
