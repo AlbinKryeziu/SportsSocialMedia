@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>About Us</title>
-
+        <title>College</title>
         @include('includes/style')
         <style>
             @import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Condensed:400,400i,700,700i");

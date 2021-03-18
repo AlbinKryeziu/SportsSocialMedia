@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>About Us</title>
+        <title>Exercises</title>
 
         @include('includes/style')
     </head>

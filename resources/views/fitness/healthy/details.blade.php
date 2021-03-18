@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>About Us</title>
+        <title>Healthy</title>
 
         @include('includes/style')
     </head>
@@ -126,7 +126,7 @@
                         <div class="card-body">
                             {{ \Illuminate\Support\Str::limit($post->description, 30)}}
                         </div>
-                        <a href=""class="btn btn-light btn-sm col-12" id="btn">Read</a>
+                        <a href="{{ url('/healthy/more/'.$post->id) }}"class="btn btn-light btn-sm col-12" id="btn">Read</a>
                     </div>
 
                     @endforeach

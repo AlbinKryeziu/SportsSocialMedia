@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ExerciseRequest;
 use App\Http\Requests\HealthyRequest;
 use App\Http\Requests\TipRequest;
 use App\Models\Exercise;
@@ -103,7 +104,7 @@ class FitnessController extends Controller
     {
         return view('fitness/exercises/add');
     }
-    public function storeExercies(Request $request)
+    public function storeExercies(ExerciseRequest $request)
     {
         $exercises = Exercise::create([
             'user_id' => Auth::id(),
