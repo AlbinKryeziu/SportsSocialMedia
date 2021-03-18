@@ -179,6 +179,9 @@ Route::get('/coaches/details/{coachesId}', [CollegesController::class, 'coacheDe
 Route::get('/healthy', [FitnessController::class, 'index']);
 Route::post('/healthy/store', [FitnessController::class, 'storeHealthy']);
 Route::get('/healthy/more/{healthyid}', [FitnessController::class, 'healthyDetails']);
+Route::get('/tips', [FitnessController::class, 'tips']);
+Route::post('/tips/add', [FitnessController::class, 'addTips']);
+Route::get('/tips/details/{tipsId}', [FitnessController::class, 'tipsDetails']);
 
 
 

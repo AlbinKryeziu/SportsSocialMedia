@@ -87,7 +87,7 @@
         <div class="container" style="padding: 45px;">
             <div class="row">
                 <div class="col-lg-8">
-                    <h1 class="mt-4">{{ $healthy->title }}</h1>
+                    <h1 class="mt-4">{{ $tips->title }}</h1>
 
                     <p class="lead">
                         by
@@ -96,15 +96,15 @@
 
                     <hr />
 
-                    <p>Posted on {{ Carbon\Carbon::parse($healthy->created_at)->format('d F Y') }}</p>
+                    <p>Posted on {{ Carbon\Carbon::parse($tips->created_at)->format('d F Y') }}</p>
 
                     <hr />
 
-                    <img class="img-fluid rounded" src="{{ asset('store/'.$healthy->profilePath) }}" style="width: 900px; object-fit:cover;"  alt="" />
+                    <img class="img-fluid rounded" src="{{ asset('store/'.$tips->image) }}" style="width: 900px; object-fit:cover;"  alt="" />
 
                     <hr />
                    
-                    <p >{{ $healthy->description }}</p>
+                    <p >{{ $tips->description }}</p>
                   
                     <blockquote class="blockquote">
                         <p class="mb-0">Social Media Sport</p>
@@ -116,15 +116,15 @@
 
                 <div class="col-md-4 p-4">
                     <p>Related post</p>
-                     @foreach ($post as $post )
+                     @foreach ($otherTips as $tips )
                          
                    
                     <div class="card my-4">
                        
                        
-                        <img class="card-img" src="{{ asset('store/'.$post->profilePath) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
+                        <img class="card-img" src="{{ asset('store/'.$tips->image) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
                         <div class="card-body">
-                            {{ \Illuminate\Support\Str::limit($post->description, 30)}}
+                            {{ \Illuminate\Support\Str::limit($tips->description, 30)}}
                         </div>
                         <a href=""class="btn btn-light btn-sm col-12" id="btn">Read</a>
                     </div>
