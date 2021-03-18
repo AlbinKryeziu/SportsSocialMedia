@@ -93,7 +93,10 @@ class FitnessController extends Controller
 
     public function exercises()
     {
-        return view('fitness/exercises/index');
+        $exercieses = Exercise::with('example')->get();
+        return view('fitness/exercises/index',[
+            'exercises' =>$exercieses
+        ]);
     }
 
     public function addExercies()
@@ -127,4 +130,17 @@ class FitnessController extends Controller
         }
         return back()->with('erros','Something went wrong');
     }
+
+    public function detailsExercises($exercisesId){
+
+        $ecersises = Exercise::with('example')->where('id',$exercisesId)->first();
+        $otherExercises = Exercise::with('example')->whereNotIn('id',[$exercisesId])->get();
+        return view('fitness/exercises/details',[
+            'exercises' => $ecersises,
+            'otherExercises' =>$otherExercises,
+        ]);
+    }
+    
+
+
 }

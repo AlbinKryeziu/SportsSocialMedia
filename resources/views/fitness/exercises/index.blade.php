@@ -87,126 +87,35 @@
 
         <div class="container" style="padding: 65px;">
             <div class="row">
-                {{-- @foreach($healthyFood as $key => $healthy)
+                @foreach($exercises as $key => $exercises)
                     
                
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
-                  <img class="card-img" src="{{ asset('store/'.$healthy->profilePath) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
+                  <img class="card-img" src="{{ asset('store/'.$exercises->example->first()->image) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
                   <div class="card-img-overlay">
-                    <a href="#" class="btn btn-light btn-sm">Healthy Food</a>
+                    <a href="#" class="btn btn-light btn-sm">Exercises</a>
                   </div>
                   <div class="card-body">
-                    <h4 class="card-title">{{ $healthy->title }}</h4>
-                    <small class="text-muted cat">
-                      <i class="far fa-clock text-info"></i>Protein : {{ $healthy->protein }}
-                      <i class="fas fa-users text-info"></i> Calcium : {{ $healthy->calcium }}
-                    </small>
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($healthy->description, 80)}}</p>
+                    <h4 class="card-title">{{ $exercises->example->first()->title }}</h4>
+                    
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($exercises->example->first()->description, 80)}}</p>
                    
                   </div>
                   <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                    <div class="views">{{ Carbon\Carbon::parse($healthy->created_at)->format('d F Y') }}
+                    <div class="views">{{ Carbon\Carbon::parse($exercises->created_at)->format('d F Y') }}
                     </div>
                      
                   </div>
                 </div>
-                <a href="{{ url('/healthy/more/'.$healthy->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+                <a href="{{ url('exercises/details/'.$exercises->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
               </div>
-              @endforeach --}}
+              @endforeach
               
            
               
             </div>
           </div>
-          <div id="ModalLoginForm" class="modal fade">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h3 class="modal-title" style="text-align: center;">Add your healthy food</h3>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" action="{{ url('/healthy/store') }}" enctype="multipart/form-data">
-                            @csrf
-
-                            <div class="form-group">
-                                <label class="control-label">Title</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="title" value="" />
-                                </div>
-                                @error('title')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Protein</label>
-                             
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="protein"  value="" />
-                                </div>
-                                @error('protein')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Photo</label>
-                            
-                                <div>
-                                    <input type="file" id="avatar" name="avatar"  />
-                                </div>
-                                @error('avatar')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Calcium</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="calcium"  />
-                                
-                                </div>
-                                @error('calcium')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Carbohydrates</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="carbohydrates"  />
-                                   
-                                </div>
-                                @error('carbohydrates')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
-                                @error('description')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                          
-                            
-                            
-
-                            <div class="form-group">
-                                <div>
-                                    <div class="checkbox"></div>
-                                </div>
-                            </div>
-                            <div class="form-group float-right">
-                                <div>
-                                    <button type="submit" class="btn btn-success">Save</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-        
    
        
 
