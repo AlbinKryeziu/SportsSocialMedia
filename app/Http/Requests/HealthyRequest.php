@@ -28,7 +28,7 @@ class HealthyRequest extends FormRequest
             'protein' => 'required',
             'calcium' => 'required',
             'carbohydrates' => 'required',
-            'description' => 'required|string|min:250',
+            'description' => 'required|string|min:150',
         ];
     }
 }

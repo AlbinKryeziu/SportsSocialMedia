@@ -132,20 +132,21 @@
 
                 <div class="col-md-4 p-4">
                     <p>Related post</p>
-                     {{-- @foreach ($post as $post )
+                     @foreach ($otherCollege as $otherCollege )
                          
                    
                     <div class="card my-4">
                        
                        
-                        <img class="card-img" src="{{ asset('store/'.$post->profilePath) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
+                        <img class="card-img" src="{{ asset('store/'.$otherCollege->profilePath) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
                         <div class="card-body">
-                            {{ \Illuminate\Support\Str::limit($post->description, 30)}}
+                            <h5 class="card-title">{{ $college->name }}</h5>
+                            {{ \Illuminate\Support\Str::limit($otherCollege->description, 30)}}
                         </div>
-                        <a href="{{ url('/healthy/more/'.$post->id) }}"class="btn btn-light btn-sm col-12" id="btn">Read</a>
+                        <a href="{{ url('/info/colleges/'.$otherCollege->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
                     </div>
 
-                    @endforeach --}}
+                    @endforeach
                 </div>
             </div>
         </div>

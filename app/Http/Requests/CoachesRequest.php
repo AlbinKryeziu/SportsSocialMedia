@@ -26,7 +26,7 @@ class CoachesRequest extends FormRequest
         return [
             'name' => 'required',
             'address' => 'required',
-            'description' => 'required',
+            'description' => 'required|min:150',
             'city' => 'required',
             'country' => 'required',
             

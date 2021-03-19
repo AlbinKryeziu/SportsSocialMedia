@@ -6,7 +6,7 @@
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Healthy</title>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous"></script>
         @include('includes/style')
     
 
@@ -178,7 +178,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Please this field must contain at least 150 characters"></textarea>
                                 @error('description')
                                 <div class="error" style="color: red;">{{ $message }}</div>
                                 @enderror
@@ -227,6 +227,14 @@
         @include('includes/footer')
     </body>
 </html>
+@if(Session::has('success'))
+<script>
+    swal("Success", "{{Session::get('success')}}", "success", {
+        button: "ok",
+    });
+</script>
+
+@endif
 @if (count($errors) > 0)
 <script type="text/javascript">
     $(document).ready(function () {

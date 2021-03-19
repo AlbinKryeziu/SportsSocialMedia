@@ -24,8 +24,8 @@ class ExerciseRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => 'required|array|min:3|max:25',
-            "description" => 'required|array|min:150',
+            "title" => 'required|array|',
+            "description" => 'required|array|',
             "avatar" => "required|array|image",
         ];
     }

@@ -5,84 +5,152 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>About Us</title>
+        <title>Healthy</title>
 
         @include('includes/style')
-      
-<style>
-
-.about .content h3 {
-  font-weight: 700;
-  font-size: 26px;
-  color: #555555;
-}
-
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
-
-.about .content ul li {
-  padding-bottom: 10px;
-}
-
-.about .content ul i {
-  font-size: 20px;
-  padding-right: 2px;
-  color: #34b7a7;
-}
-
-.about .content p:last-child {
-  margin-bottom: 0;
-}
-</style>
     </head>
+    <style>
 
+        .card-img {
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .card-title {
+            margin-bottom: 0.3rem;
+        }
+
+        .cat {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .fa-users {
+            margin-left: 1rem;
+        }
+
+        .card-footer {
+            font-size: 0.8rem;
+        }
+        #btn {
+            background-color: #1abc9c;
+            color: white;
+        }
+        #btn:hover {
+            background: orange;
+        }
+        .btn-card {
+            background-color: #1abc9c;
+            color: #fff;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            padding: 0.84rem 2.14rem;
+            font-size: 0.81rem;
+            -webkit-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            -o-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+            margin: 0;
+            border: 0;
+            -webkit-border-radius: 0.125rem;
+            border-radius: 0.125rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            white-space: normal;
+            word-wrap: break-word;
+            color: #fff;
+        }
+        .btn-card:hover {
+            background: orange;
+        }
+        a.btn-card {
+            text-decoration: none;
+            color: #fff;
+
+        }
+        #btn {
+            background-color: #1abc9c;
+            color: white;
+        }
+        #btn:hover {
+            background: orange;
+        }
+    </style>
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/3984.jpg') }}'); height: 500px;">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/college16.jpeg') }}'); height:500px;">
             <div class="container">
-                <h1 class="display-3 text-center white">COACHES</h1>
+                <h1 class="display-3 text-center white">COLLEGES</h1>
             </div>
         </div>
 
-        <main id="main">
+        <div class="container" style="padding: 45px;">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="mt-4">{{ $coaches->name }}</h1>
 
-            <!-- ======= About Section ======= -->
-            <section id="about" class="about p-4">
-              <div class="container" data-aos="fade-up">
-        
-                
-        
-                <div class="row">
-                  <div class="col-lg-4">
-                    <img src="{{ asset('store/'.$coaches->profile_path) }}" class="img-fluid" alt="" style="height: 300px;object-fit:cover;">
-                  </div>
-                  <div class="col-lg-8 pt-4 pt-lg-0 content">
-                    <h3>{{ $coaches->name }}</h3>
-                    
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <ul>
-                            <li><i class="icofont-rounded-right"></i> <strong>Address:</strong> {{ $coaches->address }}</li>
-                          <li><i class="icofont-rounded-right"></i> <strong>Country:</strong> {{ $coaches->country }}</li>
-                          <li><i class="icofont-rounded-right"></i> <strong>City:</strong> {{ $coaches->city }}</li>
-                        </ul>
-                      </div>
-                      
-                    </div>
-                    <p><strong>Description:</strong>
-                     {{ $coaches->description }}
+                    <p class="lead">
+                        by
+                        <a href="#">Liam Airght</a>
                     </p>
-                   
-                   
-                  </div>
+
+                    <hr />
+
+                    <p>Posted on {{ Carbon\Carbon::parse($coaches->created_at)->format('d F Y') }}</p>
+
+                    <hr />
+
+                    <img class="img-fluid rounded" src="{{ asset('store/'.$coaches->profile_path) }}" style="width: 900px; object-fit:cover;"  alt="" />
+
+                    <hr />
+                    <ul>
+                        <li><i class="icofont-rounded-right"></i> <strong>Address:</strong> {{ $coaches->address }}</li>
+                        <li><i class="icofont-rounded-right"></i> <strong>Country:</strong> {{ $coaches->country }}</li>
+                        <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{ $coaches->city }}</li>
+                    </ul>
+                    
+                    <p >
+                        <strong>Description:</strong>
+                        <br>{{ $coaches->description }}</p>
+                    
+                    <blockquote class="blockquote">
+                        <p class="mb-0">Social Media Sport</p>
+                    </blockquote>
+
+                    <div class="media mb-4"></div>
                 </div>
+         
+
+                <div class="col-md-4 p-4">
+                    <p>Related post</p>
+                     @foreach ($otherCoaches as $otherCoache )
+                         
+                   
+                    <div class="card my-4">
+                       
+                       
+                        <img class="card-img" src="{{ asset('store/'.$otherCoache->profile_path) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
+                        <div class="card-body">
+                            <p>{{ $otherCoache->name }}</p>
+                            {{ \Illuminate\Support\Str::limit($otherCoache->description, 30)}}
+                        </div>
+                        <a href="{{ url('/coaches/details/'.$otherCoache->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+                    </div>
+
+                    @endforeach
+                </div>
+            </div>
+        </div>
         
-              </div>
-            </section>
-      
+        
 
         @include('includes/footer')
     </body>
 </html>
+@if (count($errors) > 0)
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ModalLoginForm").modal("show");
+    });
+</script>
+@endif

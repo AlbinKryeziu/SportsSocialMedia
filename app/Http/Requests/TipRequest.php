@@ -26,7 +26,7 @@ class TipRequest extends FormRequest
         return [
             'title'=>'required',
             'avatar'=>'required|image',
-            'description'=>'required',
+            'description'=>'required|min:150',
         ];
     }
 }

@@ -88,7 +88,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Description</label>
-                    <input type="text" class="form-control" name="description[]" />
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description[]" placeholder="Please this field must contain at least 150 characters"></textarea>
+               
                     @error('description')
                     <div class="error" style="color: red;">{{ $message }}</div>
                     @enderror
@@ -127,7 +128,7 @@
         var addButton = $(".add_button"); //Add button selector
         var wrapper = $(".field_wrapper"); //Input field wrapper
         var fieldHTML =
-            '<div>  <label for="exampleFormControlTextarea1">Title</label><input type="text" name="title[]" value="" class="form-control"/><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div> <div> <label for="exampleFormControlTextarea1">Description</label><input type="text" name="description[]" value="" class="form-control"/><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div><div>  <label for="exampleFormControlTextarea1">Image</label><br/><input type="file" name="avatar[]" value="" class=""/><br><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div><br>'; //New input field html
+            '<div>  <label for="exampleFormControlTextarea1">Title</label><input type="text" name="title[]" value="" class="form-control"/><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div> <div> <label for="exampleFormControlTextarea1">Description</label>  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description[]" placeholder="Please this field must contain at least 150 characters"></textarea><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div><div>  <label for="exampleFormControlTextarea1">Image</label><br/><input type="file" name="avatar[]" value="" class=""/><br><a href="javascript:void(0);" class="remove_button"><i class="fa fa-trash"></i></a></div><br>'; //New input field html
         var x = 1; //Initial field counter is 1
 
         //Once add button is clicked

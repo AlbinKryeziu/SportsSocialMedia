@@ -39,6 +39,9 @@ class FitnessController extends Controller
         $healthyFood->description = $request->description;
         $healthyFood->user_id = Auth::id();
         $healthyFood->save();
+        if($healthyFood){
+            return back()->with('success','Health Food was created successfully');
+        }
     }
 
     public function healthyDetails($healthyid)
@@ -76,7 +79,7 @@ class FitnessController extends Controller
             'user_id' => Auth::id(),
         ]);
         if ($tips) {
-            return back();
+            return back()->with('success','Tips was created successfully');
         }
     }
 
