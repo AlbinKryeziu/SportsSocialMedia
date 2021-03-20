@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
     <title>Boxing</title>
-
+    @include('sports/includes/style-table')
     @include('includes/style')
 </head>
 
@@ -117,6 +117,55 @@
         </div>
     </div>
     <br>
+    <div class="container">
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+    <div class="col-sm-12">
+        <div class="row my-4">
+            <div class="main1">
+                <div class="main2 table-responsive">
+                    <h4 class="text-center" id="league"></h4>
+
+                    <table class="table">
+                        <thead>
+                            <td>Pos.</td>
+                            <td class="name">Id</td>
+                            <td>StrS</td>
+                            <td>StrL</td>
+                            <td>L</td>
+                            <td>G</td>
+                            <td>C</td>
+                            <td>LG</td>
+                            
+                        </thead>
+                        <tbody>
+                           
+                            @foreach($boxing['teams'] as $key => $soccer) @if( $loop->first or $loop->iteration <= 4 )
+                            <tr class="top">
+                                @else
+                            </tr>
+                            <tr class="meddium">
+                                @endif
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $soccer['idTeam'] }}</td>
+                                <td>{{ $soccer['strTeam'] }}</td>
+                                <td>{{ $soccer['intFormedYear'] }}</td>
+                                <td>{{ $soccer['strLeague'] }}</td>
+                                <td>{{ $soccer['strGender'] }}</td>
+                                <td>{{ $soccer['strCountry'] }}</td>
+                                <td>{{ $soccer['strLeague'] }}</td>
+                                
+                            
+                               
+                            </tr>
+
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row my-4">
             <div class="col-12 col-md-6 p-4 text-justify">

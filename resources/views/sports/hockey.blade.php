@@ -6,8 +6,9 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
         <title>Hockey</title>
-
+      
         @include('includes/style')
+        @include('sports/includes/style-table')
     </head>
 
     <body>
@@ -114,6 +115,126 @@
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
                         <img class="card-img-top" src="{{asset('images/sports/hockey/rochester.png')}}" onclick="window.open('https://www.amerks.com/home', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+        <div class="col-sm-12">
+
+            <div class="row my-4">
+                <div class="main1">
+                    <div class="main2 table-responsive">
+                        <h4 class="text-center" id="league"></h4>
+
+                        <table class="table">
+                            <thead>
+                                <td>Pos.</td>
+                                <td class="name" style="text-align: center">Home CLUBS</td>
+                                <td>Away CLUBS</td>
+                                <td>HC</td>
+                                <td>Ac</td>
+                                <td>D</td>
+                               
+                            </thead>
+                            <tbody>
+                               
+                                @foreach($soccer['dates'][0]['games'] as $key => $s) @if( $loop->first or $loop->iteration <= 4 )
+                                <tr class="top">
+                                    @else
+                                </tr>
+                                <tr class="meddium">
+                                    @endif
+                                   
+                                       
+                                  
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td> {{ $s['teams']['away']['team']['name'] }}</td>
+                                    <td> {{ $s['teams']['home']['team']['name'] }}</td>
+                                    
+                                    <td> {{ $s['teams']['home']['score'] }}</td>
+                                    <td> {{ $s['teams']['away']['score'] }}</td>
+                                    <td> {{ Carbon\Carbon::parse($s['gameDate'])->format('Y-m-d H:i')}}</td>
+                             
+                                 
+                                    
+                                
+                                   
+                                </tr>
+
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+        <div class="col-sm-12">
+            <form method="GET" style="margin: 0px; display: flex;">
+                <select class="form-control" name="league">
+                    <option value="" selected>Select League</option>
+                    <option value="4380">NHL</option>
+                    <option value="4419">Swedish Hockey League</option>
+                
+                    
+                </select>
+                <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
+            </form>
+            <div class="row my-4">
+                <div class="main1">
+                    <div class="main2 table-responsive">
+                        <h4 class="text-center" id="league"></h4>
+
+                        <table class="table">
+                            <thead>
+                                <td>Pos.</td>
+                                <td  style="text-align: center">CLUBS</td>
+                                <td>P</td>
+                                <td>Gf</td>
+                                <td>Ga</td>
+                                <td>Gd</td>
+                                <td>W</td>
+                                <td>D</td>
+                                <td>L</td>
+                                <td>T</td>
+                               
+                            </thead>
+                            <tbody>
+                               
+                                @foreach($soccertTable['table'] as $key => $s) @if( $loop->first or $loop->iteration <= 4 )
+                                <tr class="top">
+                                    @else
+                                </tr>
+                                <tr class="meddium">
+                                    @endif
+                                   
+                                       
+                                  
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td> {{ $s['name']}}</td>
+                                    <td> {{ $s['played']}}</td>
+                                    <td> {{ $s['goalsfor']}}</td>
+                                    <td> {{ $s['goalsagainst']}}</td>
+                                    <td> {{ $s['goalsdifference']}}</td>
+                                    <td> {{ $s['win']}}</td>
+                                    <td> {{ $s['draw']}}</td>
+                                    <td> {{ $s['loss']}}</td>
+                                    <td> {{ $s['total']}}</td>
+                             
+                                 
+                                    
+                                
+                                   
+                                </tr>
+
+                                @endforeach
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

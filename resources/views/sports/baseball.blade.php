@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
     <title>Baseball</title>
-
+ @include('sports/includes/style-table')
     @include('includes/style')
 </head>
 
@@ -107,6 +107,75 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+        <div class="col-3">
+        <form method="GET" style="margin: 0px; display: flex;">
+            <select class="form-control" name="league">
+                <option value="" selected>Select League</option>
+                <option value="4424">MLB</option>
+                <option value="4591">ippon Baseball League</option>
+                <option value="4830">Korean KBO League</option>
+            </select>
+            <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
+        </form>
+        </div>
+    <div class="col-sm-12">
+        <div class="row my-4">
+            
+            <div class="main1">
+                <div class="main2 table-responsive">
+                    <h4 class="text-center" id="league"></h4>
+
+                    <table class="table">
+                        <thead>
+                            <td>Pos.</td>
+                            <td class="name">Nl</td>
+                            <td>E</td>
+                            <td>L</td>
+                            <td>H</td>
+                            <td>A</td>
+                            <td>D</td>
+                            <td>t</td>
+                            <td>Hr</td>
+                            <td>Ar</td>
+                            
+                        </thead>
+                        <tbody>
+                           
+                            @foreach($baseball['table'] as $key => $soccer) @if( $loop->first or $loop->iteration <= 4 )
+                            <tr class="top">
+                                @else
+                            </tr>
+                            <tr class="meddium">
+                                @endif
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $soccer['name'] }}</td>
+                                <td>{{ $soccer['played'] }}</td>
+                                <td>{{ $soccer['goalsfor'] }}</td>
+                                <td>{{ $soccer['goalsagainst'] }}</td>
+                                <td>{{ $soccer['goalsdifference'] }}</td>
+                                <td>{{ $soccer['win'] }}</td>
+                                <td>{{ $soccer['draw'] }}</td>
+                                <td>{{ $soccer['loss'] }}</td>
+                                <td>{{ $soccer['total'] }}</td>
+                                
+                            
+                               
+                            </tr>
+
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
 
     <div class="container">
         <div class="row my-4">

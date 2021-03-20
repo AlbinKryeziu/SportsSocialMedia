@@ -142,19 +142,22 @@
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
-                {{-- <div class="col-lg-3">
+               
                     <form method="GET" style="margin: 0px; display: flex;">
                         <select class="form-control" name="league">
                             <option value="" selected>Select League</option>
                             <option value="4387">NBA</option>
-                            <option value="4331">German Bundesliga</option>
-                            <option value="4332">Italian Serie A</option>
-                            <option value="4335">Spanish La Liga</option>
-                            <option value="4675">Swiss Super League</option>
+                            <option value="4388">NBA G League</option>
+                            <option value="4408">Spanish Liga ACB</option>
+                            <option value="4423">French LNB</option>
+                            <option value="4431">British Basketball League</option>
+                            <option value="4475">Turkish Basketbol Super Lig</option>
+                            <option value="4478">Lithuanian LKL</option>
+                            <option value="4546">EuroCup Basketball</option>
                         </select>
                         <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
                     </form>
-                </div> --}}
+            
 
                 <div class="col-sm-12">
                     <div class="row my-4">

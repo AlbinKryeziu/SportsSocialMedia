@@ -75,9 +75,9 @@ Route::get('/how-it-works', function () {
     return view('how-it-works');
 });
 
-Route::get('/sports/football', function () {
-    return view('sports/football');
-});
+// Route::get('/sports/football', function () {
+//     return view('sports/football');
+// });
 
 Route::get('/sports/baseball', function () {
     return view('sports/baseball');
@@ -91,13 +91,13 @@ Route::get('/sports/tennis', function () {
     return view('sports/tennis');
 });
 
-Route::get('/sports/hockey', function () {
-    return view('sports/hockey');
-});
+// Route::get('/sports/hockey', function () {
+//     return view('sports/hockey');
+// });
 
-Route::get('/sports/boxing', function () {
-    return view('sports/boxing');
-});
+// Route::get('/sports/boxing', function () {
+//     return view('sports/boxing');
+// });
 
 Route::get('/sports/table-tennis', function () {
     return view('sports/table-tennis');
@@ -112,6 +112,10 @@ Route::get('/evnts', function () {
 Route::get('/sports/soccer', [SportController::class, 'soccer']);
 Route::get('/sports/basketballapi', [SportController::class, 'basketball']);
 Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
+Route::get('/sports/hockey', [SportController::class, 'hockey']);
+Route::get('/sports/boxing', [SportController::class, 'boxing']);
+Route::get('/sports/football', [SportController::class, 'football']);
+
 
 //User photo
 Route::get('/user/photo', [UserController::class, 'index'])->name('userPost');

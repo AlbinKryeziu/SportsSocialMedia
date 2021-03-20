@@ -69,7 +69,7 @@ class SportController extends Controller
             'verify' => false,
         ]);
 
-       $basketballPoint = json_decode((string) $response->getBody(), true);
+        $basketballPoint = json_decode((string) $response->getBody(), true);
 
         $livescore = new Client();
         $urllivescore = "https://thesportsdb.p.rapidapi.com/latestsoccer.php";
@@ -86,8 +86,120 @@ class SportController extends Controller
     }
     public function baseball()
     {
-        $url = Http::get('http://lookup-service-prod.mlb.com/json/named.player_teams.bam?season=%272014%27&player_id=%27493316%27');
-        $responseBody = json_decode((string) $url->getBody(), true);
-        return view('sports/baseball', compact('responseBody'));
+        $client = new Client();
+        if (request()->has('league')) {
+            $ekipid = request()->get('league');
+        } else {
+            $ekipid = 4424;
+        }
+
+        $url = "https://thesportsdb.p.rapidapi.com/lookuptable.php?l=$ekipid&s=2020";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $baseball = json_decode((string) $response->getBody(), true);
+
+        return view('sports/baseball', compact('baseball'));
+    }
+
+    public function hockey()
+    {
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/latesticehockey.php";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $soccer = json_decode((string) $response->getBody(), true);
+
+        $clientTable = new Client();
+        $client = new Client();
+        if (request()->has('league')) {
+            $ekipid = request()->get('league');
+        } else {
+            $ekipid = 4380;
+        }
+        $urltable = "https://thesportsdb.p.rapidapi.com/lookuptable.php?l=$ekipid&s=2020-2021";
+
+        $headersTable = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $responseTable = $clientTable->request('GET', $urltable, [
+            'headers' => $headersTable,
+            'verify' => false,
+        ]);
+
+        $soccertTable = json_decode((string) $responseTable->getBody(), true);
+
+        return view('sports/hockey', compact('soccer', 'soccertTable'));
+    }
+
+    public function boxing()
+    {
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/lookup_all_teams.php?id=4445";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $boxing = json_decode((string) $response->getBody(), true);
+
+        return view('sports/boxing', compact('boxing'));
+    }
+
+    public function football()
+    {
+        $livescore = new Client();
+        $urllivescore = "https://thesportsdb.p.rapidapi.com/eventspastleague.php?id=4391";
+        $headersLivescore = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+        $responseLivescore = $livescore->request('GET', $urllivescore, [
+            'headers' => $headersLivescore,
+            'verify' => false,
+        ]);
+        $footballLastEvent = json_decode((string) $responseLivescore->getBody(), true);
+
+        $nextEvent = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/eventsnextleague.php?id=4796";
+        $headerevent = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+        $response = $nextEvent->request('GET', $url, [
+            'headers' => $headerevent,
+            'verify' => false,
+        ]);
+        $nextEvent = json_decode((string) $response->getBody(), true);
+
+        return view('sports/football', compact('footballLastEvent', 'nextEvent'));
     }
 }
