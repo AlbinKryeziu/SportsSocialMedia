@@ -105,8 +105,11 @@
         </div>
         <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+           
+                
+        
 
-            {{-- <div class="col-sm-12">
+            <div class="col-sm-12">
                 <div class="row my-4">
                     <div class="main1">
                         <div class="main2 table-responsive">
@@ -114,31 +117,44 @@
 
                             <table class="table">
                                 <thead>
-                                    <td>Date</td>
-                                    <td class="name">League</td>
-                                    <td>HomeTeam</td>
-                                    <td>AwayTeam</td>
-                                    <td>Location</td>
-                                    <td>Stadium</td>
+                                    <td>Pos.</td>
+                                    <td class="name">Away Clubs</td>
+                                    <td>Home Clubs</td>
+                                    <td>D</td>
+                                    <td>AC</td>
+                                    <td>HC</td>
+                                    <td>C</td>
+                                    <td>Co</td>
+                                    
                                 </thead>
                                 <tbody>
-                                    @php $i=0; @endphp @foreach($liveScore['teams']['Match'] as $key => $value)
+                                    @php $i=0; @endphp @foreach($liveScore['games'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
+                                    <tr class="top">
+                                        @else
+                                    </tr>
 
                                     <tr class="meddium">
-                                        <td>{{Carbon\Carbon::parse($value['Date'])->format('Y-M-D H:s') }}</td>
-                                        <td>{{ $value['League'] }}</td>
-                                        <td>{{ $value['HomeTeam'] }}</td>
-                                        <td>{{ $value['AwayTeam'] }}</td>
-                                        <td>{{ $value['Location'] }}</td>
-                                        <td>{{ $value['Stadium'] }}</td>
+                                        @endif
+                                        <td>{{ $loop->iteration }}</td>
+                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['vTeam'][0]['longName'] }}</td>
+                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['hTeam'][0]['longName'] }}</td>
+                                        <td class="name">{{ Carbon\Carbon::parse($point['startTimeUTC'])->format('Y-m-d H:i') }}</td>
+                                        <td class="name">{{ $point['vTeam']['score'] }}</td>
+                                        <td class="name">{{ $point['hTeam']['score'] }}</td>
+                                        <td class="name">{{ $point['arena']['city'] }}</td>
+                                        <td class="name">{{ $point['arena']['country'] }}</td>
+                                      
+                                        
                                     </tr>
+
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-            </div> --}}
+            </div>
+        </div>
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>

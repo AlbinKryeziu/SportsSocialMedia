@@ -56,7 +56,7 @@ class SportController extends Controller
         } else {
             $ekipid = 4387;
         }
-
+      
         $url = "https://thesportsdb.p.rapidapi.com/lookuptable.php?l=$ekipid";
 
         $headers = [
@@ -72,7 +72,7 @@ class SportController extends Controller
         $basketballPoint = json_decode((string) $response->getBody(), true);
 
         $livescore = new Client();
-        $urllivescore = "https://thesportsdb.p.rapidapi.com/latestsoccer.php";
+        $urllivescore = "https://thesportsdb.p.rapidapi.com/latestbasketball.php";
         $headersLivescore = [
             'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
             'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
@@ -82,7 +82,7 @@ class SportController extends Controller
             'verify' => false,
         ]);
         $liveScore = json_decode((string) $responseLivescore->getBody(), true);
-        return view('sports/basketball', compact('basketballPoint'));
+        return view('sports/basketball', compact('basketballPoint','liveScore'));
     }
     public function baseball()
     {
