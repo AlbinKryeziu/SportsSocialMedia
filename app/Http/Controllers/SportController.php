@@ -156,7 +156,7 @@ class SportController extends Controller
     {
         $client = new Client();
 
-        $url = "https://thesportsdb.p.rapidapi.com/lookup_all_teams.php?id=4445";
+        $url = "https://thesportsdb.p.rapidapi.com/eventspastleague.php?id=4445";
 
         $headers = [
             'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
@@ -170,7 +170,23 @@ class SportController extends Controller
 
         $boxing = json_decode((string) $response->getBody(), true);
 
-        return view('sports/boxing', compact('boxing'));
+        $clientNextEvent = new Client();
+
+        $urlNextEvent = "https://thesportsdb.p.rapidapi.com/eventsnextleague.php?id=4445";
+
+        $headersNextEvent = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $responseNextEvent = $clientNextEvent->request('GET', $urlNextEvent, [
+            'headers' => $headersNextEvent,
+            'verify' => false,
+        ]);
+
+         $boxingNextEvent = json_decode((string) $responseNextEvent->getBody(), true);
+
+        return view('sports/boxing', compact('boxing','boxingNextEvent'));
     }
 
     public function football()
@@ -201,5 +217,24 @@ class SportController extends Controller
         $nextEvent = json_decode((string) $response->getBody(), true);
 
         return view('sports/football', compact('footballLastEvent', 'nextEvent'));
+    }
+
+    public function tennis(){
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/eventspastleague.php?id=4464";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $tennis = json_decode((string) $response->getBody(), true);
+        return view('sports/tennis',compact('tennis'));
     }
 }

@@ -9,6 +9,7 @@
     <title>Tennis</title>
 
     @include('includes/style')
+    @include('sports/includes/style-table')
 </head>
 
 <body>
@@ -95,6 +96,65 @@
                 </div>
             </div> 
         </div>
+    </div>
+
+    <div class="container">
+        
+        <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
+     
+     
+    <div class="col-sm-12">
+        <div class="row my-4">
+            
+            <div class="main1">
+                <div class="main2 table-responsive">
+                    <h4 class="text-center" id="league"></h4>
+
+                    <table class="table">
+                        <thead>
+                            <td>Pos.</td>
+                            <td class="name" style="text-align: center">Name</td>
+                            <td>E</td>
+                            <td>S</td>
+                            <td>L</td>
+                            <td>D</td>
+                            <td>T</td>
+                            <td>Co</td>
+                            <td>Ci</td>
+                          
+                            
+                        </thead>
+                        <tbody>
+                           
+                            @foreach($tennis['events'] as $key => $soccer) @if( $loop->first or $loop->iteration <= 4 )
+                            <tr class="top">
+                                @else
+                            </tr>
+                            <tr class="meddium">
+                                @endif
+                                <td>{{ $loop->iteration }}</td>
+                                <td>{{ $soccer['strEvent'] }}</td>
+                                <td>{{ $soccer['strSport'] }}</td>
+                                <td>{{ $soccer['strLeague'] }}</td>
+                                <td>{{ $soccer['strSeason'] }}</td>
+                                <td>{{ $soccer['dateEvent'] }}</td>
+                                <td>{{ $soccer['strTime'] }}</td>
+                                <td>{{ $soccer['strCountry'] }}</td>
+                                <td>{{ $soccer['strCity'] }}</td>
+                              
+                                
+                            
+                               
+                            </tr>
+
+                            @endforeach
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <div class="container">
         <div class="row my-4">
@@ -202,6 +262,8 @@
             </div>
         </div>
     </div>
+
+  
 
     <div class="container p-4">
         <h1 class="display-4">Popular Championships</h1>

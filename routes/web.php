@@ -87,9 +87,9 @@ Route::get('/sports/basketball', function () {
     return view('sports/basketball');
 });
 
-Route::get('/sports/tennis', function () {
-    return view('sports/tennis');
-});
+// Route::get('/sports/tennis', function () {
+//     return view('sports/tennis');
+// });
 
 // Route::get('/sports/hockey', function () {
 //     return view('sports/hockey');
@@ -115,6 +115,7 @@ Route::get('/sports/baseballapi', [SportController::class, 'baseball']);
 Route::get('/sports/hockey', [SportController::class, 'hockey']);
 Route::get('/sports/boxing', [SportController::class, 'boxing']);
 Route::get('/sports/football', [SportController::class, 'football']);
+Route::get('/sports/tennis', [SportController::class, 'tennis']);
 
 
 //User photo

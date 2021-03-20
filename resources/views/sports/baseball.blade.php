@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
     <title>Baseball</title>
- @include('sports/includes/style-table')
+ 
     @include('includes/style')
+    @include('sports/includes/style-table')
 </head>
 
 <body>
@@ -110,7 +111,7 @@
     <div class="container">
         
         <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
-        <div class="col-3">
+       
         <form method="GET" style="margin: 0px; display: flex;">
             <select class="form-control" name="league">
                 <option value="" selected>Select League</option>
@@ -120,7 +121,7 @@
             </select>
             <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
         </form>
-        </div>
+     
     <div class="col-sm-12">
         <div class="row my-4">
             
@@ -131,7 +132,7 @@
                     <table class="table">
                         <thead>
                             <td>Pos.</td>
-                            <td class="name">Nl</td>
+                            <td class="name" style="text-align: center">Clubs</td>
                             <td>E</td>
                             <td>L</td>
                             <td>H</td>

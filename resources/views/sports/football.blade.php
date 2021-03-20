@@ -110,66 +110,6 @@
         <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
         <div class="col-sm-12">
-            {{-- <form method="GET" style="margin: 0px; display: flex;">
-                <select class="form-control" name="league">
-                    <option value="" selected>Select League</option>
-                    <option value="4809">American Football</option>
-                    <option value="4796">Austrian Erste Liga</option>
-                    
-                </select>
-                <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
-            </form> --}}
-            {{-- <div class="row my-4">
-                <div class="main1">
-                    <div class="main2 table-responsive">
-                        <h4 class="text-center" id="league"></h4>
-    
-                        <table class="table">
-                            <thead>
-                                <td>Pos.</td>
-                                <td class="name">Nl</td>
-                                <td>E</td>
-                                <td>L</td>
-                                <td>H</td>
-                                <td>A</td>
-                                <td>D</td>
-                                <td>t</td>
-                                <td>Hr</td>
-                                <td>Ar</td>
-                                
-                            </thead>
-                            <tbody>
-                               
-                                @foreach($nextEvent['events'] as $key => $soccer) @if( $loop->first or $loop->iteration <= 4 )
-                                <tr class="top">
-                                    @else
-                                </tr>
-                                <tr class="meddium">
-                                    @endif
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $soccer['strSport'] }}</td>
-                                    <td>{{ $soccer['strFilename'] }}</td>
-                                    <td>{{ $soccer['strLeague'] }}</td>
-                                    <td>{{ $soccer['strHomeTeam'] }}</td>
-                                    <td>{{ $soccer['strAwayTeam'] }}</td>
-                                    <td>{{ $soccer['dateEvent'] }}</td>
-                                    <td>{{ $soccer['strTime'] }}</td>
-                                    <td>{{ $soccer['intHomeScore'] }}</td>
-                                    <td>{{ $soccer['intAwayScore'] }}</td>
-                                    
-                                
-                                   
-                                </tr>
-    
-                                @endforeach
-                                
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-   --}}
             
         <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
@@ -182,7 +122,7 @@
                         <table class="table">
                             <thead>
                                 <td>Pos.</td>
-                                <td class="name">Nl</td>
+                                <td class="name">Leagues</td>
                                 <td>E</td>
                                 <td>L</td>
                                 <td>H</td>
@@ -224,6 +164,9 @@
                 </div>
             </div>
         </div>
+        </div>
+        </div>
+    </div>
     
    
        
