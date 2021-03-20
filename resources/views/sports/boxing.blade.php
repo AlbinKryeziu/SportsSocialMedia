@@ -155,13 +155,13 @@
                     <table class="table">
                         <thead>
                             <td>Pos.</td>
-                            <td class="name">Id</td>
-                            <td>StrS</td>
-                            <td>StrL</td>
+                            <td class="name" style="text-align: center">Name</td>
+                            <td>Y</td>
                             <td>L</td>
-                            <td>G</td>
-                            <td>C</td>
-                            <td>LG</td>
+                            <td>D</td>
+                            <td>H</td>
+                            <td>CI</td>
+                            <td>Co</td>
                             
                         </thead>
                         <tbody>
@@ -209,13 +209,13 @@
                     <table class="table">
                         <thead>
                             <td>Pos.</td>
-                            <td class="name">Id</td>
-                            <td>StrS</td>
-                            <td>StrL</td>
+                            <td class="name" style="text-align: center">Name</td>
+                            <td>Y</td>
                             <td>L</td>
-                            <td>G</td>
-                            <td>C</td>
-                            <td>LG</td>
+                            <td>D</td>
+                            <td>H</td>
+                            <td>CI</td>
+                            <td>Co</td>
                             
                         </thead>
                         <tbody>
