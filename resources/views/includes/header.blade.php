@@ -58,7 +58,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <div class="dropdown">
           <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -86,7 +86,7 @@
            
           </div>
         </div>
-      </li>
+      </li> --}}
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN</a>
       </li>

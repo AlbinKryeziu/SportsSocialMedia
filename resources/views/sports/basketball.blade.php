@@ -119,7 +119,7 @@
                                 <thead>
                                     <td>Pos.</td>
                                     <td class="name">Away Clubs</td>
-                                    <td>Home Clubs</td>
+                                    <td style="text-align: left">Home Clubs</td>
                                     <td>D</td>
                                     <td>AC</td>
                                     <td>HC</td>
