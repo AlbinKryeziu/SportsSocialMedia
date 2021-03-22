@@ -251,4 +251,12 @@ class SportController extends Controller
     public function rugby(){
         return view('sports/rugby');
     }
+    public function cycling(){
+        return view('sports/cycling');
+    }
+    public function motorSport(){
+
+        return view('sports/motorSport');
+    }
+
 }

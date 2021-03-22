@@ -42,8 +42,8 @@
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/handball')}}">Handball</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/netball')}}">Netball</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/rugby')}}">Rugby</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/tennis')}}">Cycling</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/hockey')}}">MotorSport</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/cycling')}}">Cycling</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/motorsport')}}">MotorSport</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/boxing')}}">Golf</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/table-tennis')}}">Snooker</a></button>
           </div>
