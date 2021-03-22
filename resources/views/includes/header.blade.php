@@ -38,6 +38,14 @@
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/hockey')}}">Hockey</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/boxing')}}">Boxing</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/table-tennis')}}">Table Tennis</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/volleyball')}}">Volleyball</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/handball')}}">Handball</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/netball')}}">Netball</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/soccer')}}">Rugby</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/tennis')}}">Cycling</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/hockey')}}">MotorSport</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/boxing')}}">Golf</a></button>
+            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/table-tennis')}}">Snooker</a></button>
           </div>
         </div>
       </li>

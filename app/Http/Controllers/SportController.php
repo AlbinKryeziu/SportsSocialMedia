@@ -237,4 +237,15 @@ class SportController extends Controller
         $tennis = json_decode((string) $response->getBody(), true);
         return view('sports/tennis',compact('tennis'));
     }
+
+    public function volleyball(){
+        return view('sports/volleyball');
+    }
+
+    public function handball(){
+        return view('sports/handball');
+    }
+    public function netball(){
+        return view('sports/netball');
+    }
 }

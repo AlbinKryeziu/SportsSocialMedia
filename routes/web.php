@@ -116,6 +116,10 @@ Route::get('/sports/hockey', [SportController::class, 'hockey']);
 Route::get('/sports/boxing', [SportController::class, 'boxing']);
 Route::get('/sports/football', [SportController::class, 'football']);
 Route::get('/sports/tennis', [SportController::class, 'tennis']);
+Route::get('/sports/volleyball', [SportController::class, 'volleyball']);
+Route::get('/sports/handball', [SportController::class, 'handball']);
+Route::get('/sports/netball', [SportController::class, 'netball']);
+
 
 
 //User photo
