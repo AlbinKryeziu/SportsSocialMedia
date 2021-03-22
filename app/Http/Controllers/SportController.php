@@ -248,4 +248,7 @@ class SportController extends Controller
     public function netball(){
         return view('sports/netball');
     }
+    public function rugby(){
+        return view('sports/rugby');
+    }
 }
