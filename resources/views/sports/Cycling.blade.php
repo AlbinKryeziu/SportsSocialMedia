@@ -20,108 +20,39 @@
         </div>
         <br>
         <div class="container">
-            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top  Basketball Leagues</h3>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Country Ranking 2021</h3>
 
             <hr class="mt-2 mb-8" />
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/turk.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/cycling/belgium.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/spanish.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/cycling/france.jpeg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/euro.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/cycling/italy.png')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/nba.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/cycling/nethland.jpeg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
             </div>
         </div>
         <br/>
-        <div class="container">
-            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Basketball Teams</h3>
-            <hr class="mt-2 mb-8" />
-            <div class="row">
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/lakers.jpg')}}" onclick="window.open('https://lakersnation.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/toronto.jpg')}}" onclick="window.open('https://www.nba.com/raptors/interstitial-2', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/clip.jpg')}}" onclick="window.open('https://www.nba.com/clippers/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/boston.png')}}" onclick="window.open('https://www.celticsblog.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/miami.png')}}" onclick="window.open('https://www.themiamiheatstore.com/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/mil.png')}}" onclick="window.open('https://www.nba.com/bucks/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/huston.png')}}" onclick="window.open('https://www.nba.com/rockets/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/denver.png')}}" onclick="window.open('https://www.nba.com/nuggets/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/utah.png')}}" onclick="window.open('https://www.nba.com/jazz/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/thunder.png')}}" onclick="window.open('https://www.nba.com/thunder/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-            </div>
-        </div>
-   
+       
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
                
-                    <form method="GET" style="margin: 0px; display: flex;">
-                        <select class="form-control" name="league">
-                            <option value="" selected>Select League</option>
-                            <option value="4387">NBA</option>
-                            <option value="4388">NBA G League</option>
-                            <option value="4408">Spanish Liga ACB</option>
-                            <option value="4423">French LNB</option>
-                            <option value="4431">British Basketball League</option>
-                            <option value="4475">Turkish Basketbol Super Lig</option>
-                            <option value="4478">Lithuanian LKL</option>
-                            <option value="4546">EuroCup Basketball</option>
-                        </select>
-                        <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
-                    </form>
+                  
             
                   @if($cycling)
                       
@@ -286,38 +217,17 @@ Australians also place strongly in the sport at the UCI World Championships, Oly
             <h1 class="display-4">Popular Championships</h1>
             <div class="row p-4 shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center mt-4">
                 <div class="col-3">
-                    <img src="{{asset('images/sports/volleyball/world.jpeg')}}" alt="" width="100%" />
+                    <img src="{{asset('images/sports/cycling/uci.png')}}" alt="" width="100%" />
                 </div>
                 <div class="col-9">
-                    <h2>FIVB World Cup</h2>
+                    <h2>UCI World Championships</h2>
                     <p>
-                        Men’s as well as women’s volleyball teams participate in the FIVB World Cup. The FIVB Volleyball Men’s World Cup is an international competition that was introduced to the sport of volleyball in 1965. At first, 
-                        the tournament was held the year after the Olympic Games. It’s interesting to know that no tournament was played in 1973. However, in 1991 the decision was made to hold the competition the year prior to the Olympic Games.
+                        The UCI world championships are annual competitions promoted by the Union Cycliste Internationale (UCI) to determine world champion cyclists. They are held in several different styles of racing, in a different country each year. Championship winners wear a white jersey with coloured bands around the chest for the following year. The similarity to the colours of a rainbow gives them the colloquial name
                     </p>
                 </div>
             </div>
-            <div class="row p-4 shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center mt-4">
-                <div class="col-3">
-                    <img src="{{asset('images/sports/volleyball/champions.png')}}" alt="" width="100%" />
-                </div>
-                <div class="col-9">
-                    <h2>FIVB World Grand Champions Cup</h2>
-                    <p>
-                        The FIVB World Grand Champions Cup is another international competition for men’s and women’s volleyball teams. The tournament was first played in 1993. Today, the competition takes place every four years. The men’s volleyball team from Brazil was the most successful winner. It managed to win 5 titles. The women’s volleyball team from this country won 2 titles. Japan is the only country that always hosts the tournament.
-                    </p>
-                </div>
-            </div>
-            <div class="row p-4 shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center mt-4">
-                <div class="col-3">
-                    <img src="{{asset('images/sports/volleyball/american.jpeg')}}" alt="" width="100%" />
-                </div>
-                <div class="col-9">
-                    <h2>Pan American Cup</h2>
-                    <p>
-                        The Men’s Pan American Volleyball Cup is a tournament that has been introduced by NORCECA. Initially, the competition was meant for the teams from the North, Central America and the Carribean only. However, in 2010 CSV teams were invited as well. The women’s volleyball teams have their own tournament known as the Women’s Pan American Volleyball Cup.
-                    </p>
-                </div>
-            </div>
+           
+           
         </div>
         @include('includes/footer')
     </body>
