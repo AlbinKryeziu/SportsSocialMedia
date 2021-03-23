@@ -249,23 +249,116 @@ class SportController extends Controller
         return view('sports/netball');
     }
     public function rugby(){
-        return view('sports/rugby');
+        $livescore = new Client();
+        $urllivescore = "https://thesportsdb.p.rapidapi.com/lookuptable.php?l=4550&s=2020-2021";
+        $headersLivescore = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+        $responseLivescore = $livescore->request('GET', $urllivescore, [
+            'headers' => $headersLivescore,
+            'verify' => false,
+        ]);
+        $rugbytable = json_decode((string) $responseLivescore->getBody(), true);
+
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/eventsnextleague.php?id=4722";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $events = json_decode((string) $response->getBody(), true);
+       
+       
+        return view('sports/rugby',compact('rugbytable','events'));
     }
     public function cycling(){
-        return view('sports/cycling');
+      
+
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/eventsnextleague.php?id=4465";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $cycling = json_decode((string) $response->getBody(), true);
+        return view('sports/cycling',compact('cycling'));
     }
     public function motorSport(){
+        $client = new Client();
 
-        return view('sports/motorSport');
+        $url = "https://thesportsdb.p.rapidapi.com/eventsnextleague.php?id=4370";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $motorSport = json_decode((string) $response->getBody(), true);
+
+        return view('sports/motorSport',compact('motorSport'));
     }
 
     public function golf(){
+        $client = new Client();
 
-        return view('sports/golf');
+        $url = "https://thesportsdb.p.rapidapi.com/eventsnextleague.php?id=4370";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $golf = json_decode((string) $response->getBody(), true);
+        return view('sports/golf',compact('golf'));
     }
 
     public function snooker(){
-        return view('sports/snooker');
+       
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/eventspastleague.php?id=4555";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $snooker = json_decode((string) $response->getBody(), true);
+
+        
+        return view('sports/snooker',compact('snooker'));
     }
 
 }

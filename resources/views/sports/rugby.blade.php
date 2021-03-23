@@ -103,7 +103,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="container">
+        <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
            
                 
@@ -118,17 +118,17 @@
                             <table class="table">
                                 <thead>
                                     <td>Pos.</td>
-                                    <td class="name">Away Clubs</td>
-                                    <td style="text-align: left">Home Clubs</td>
-                                    <td>D</td>
-                                    <td>AC</td>
-                                    <td>HC</td>
-                                    <td>C</td>
-                                    <td>Co</td>
+                                    <td class="name">Clubs</td>
+                                    <td style="text-align: left">S</td>
+                                    <td>M</td>
+                                    <td>S</td>
+                                    <td>HT</td>
+                                    <td>HA</td>
+                                    <td>T</td>
                                     
                                 </thead>
                                 <tbody>
-                                    @php $i=0; @endphp @foreach($liveScore['games'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
+                                    @php $i=0; @endphp @foreach($events['events'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
                                     <tr class="top">
                                         @else
                                     </tr>
@@ -136,13 +136,14 @@
                                     <tr class="meddium">
                                         @endif
                                         <td>{{ $loop->iteration }}</td>
-                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['vTeam'][0]['longName'] }}</td>
-                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['hTeam'][0]['longName'] }}</td>
-                                        <td class="name">{{ Carbon\Carbon::parse($point['startTimeUTC'])->format('Y-m-d H:i') }}</td>
-                                        <td class="name">{{ $point['vTeam']['score'] }}</td>
-                                        <td class="name">{{ $point['hTeam']['score'] }}</td>
-                                        <td class="name">{{ $point['arena']['city'] }}</td>
-                                        <td class="name">{{ $point['arena']['country'] }}</td>
+                                        <td class="name">{{ $point['strEvent'] }}</td>
+                                        <td class="name">{{ $point['strSport'] }}</td>
+                                        <td class="name">{{ $point['strEvent'] }}</td>
+                                        <td class="name">{{ $point['strSeason'] }}</td>
+                                        <td class="name">{{ $point['strHomeTeam'] }}</td>
+                                        <td class="name">{{ $point['strAwayTeam'] }}</td>
+                                        <td class="name">{{ $point['strTimestamp'] }}</td>
+                                      
                                       
                                         
                                     </tr>
@@ -158,23 +159,6 @@
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
-               
-                    <form method="GET" style="margin: 0px; display: flex;">
-                        <select class="form-control" name="league">
-                            <option value="" selected>Select League</option>
-                            <option value="4387">NBA</option>
-                            <option value="4388">NBA G League</option>
-                            <option value="4408">Spanish Liga ACB</option>
-                            <option value="4423">French LNB</option>
-                            <option value="4431">British Basketball League</option>
-                            <option value="4475">Turkish Basketbol Super Lig</option>
-                            <option value="4478">Lithuanian LKL</option>
-                            <option value="4546">EuroCup Basketball</option>
-                        </select>
-                        <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
-                    </form>
-            
-
                 <div class="col-sm-12">
                     <div class="row my-4">
                         <div class="main1">
@@ -194,7 +178,7 @@
                                         <td>POINTS</td>
                                     </thead>
                                     <tbody>
-                                        @php $i=0; @endphp @foreach($basketballPoint['table'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
+                                        @php $i=0; @endphp @foreach($rugbytable['table'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
                                         <tr class="top">
                                             @else
                                         </tr>
@@ -220,7 +204,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div> 
 
         
         <div class="container">

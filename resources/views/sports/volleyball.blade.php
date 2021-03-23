@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="icon" href="{{ asset('images/logo/final-logo.png') }}">
-        <title>Basketball</title>
+        <title>Volleyball</title>
 
         @include('includes/style')
         @include('sports/includes/style-table')
@@ -47,7 +47,7 @@
             </div>
         </div>
         <br/>
-        <div class="container">
+        {{-- <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top Basketball Teams</h3>
             <hr class="mt-2 mb-8" />
             <div class="row">
@@ -102,7 +102,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         {{-- <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
            

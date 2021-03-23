@@ -103,58 +103,7 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="container">
-            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
-           
-                
-        
-
-            <div class="col-sm-12">
-                <div class="row my-4">
-                    <div class="main1">
-                        <div class="main2 table-responsive">
-                            <h4 class="text-center" id="league"></h4>
-
-                            <table class="table">
-                                <thead>
-                                    <td>Pos.</td>
-                                    <td class="name">Away Clubs</td>
-                                    <td style="text-align: left">Home Clubs</td>
-                                    <td>D</td>
-                                    <td>AC</td>
-                                    <td>HC</td>
-                                    <td>C</td>
-                                    <td>Co</td>
-                                    
-                                </thead>
-                                <tbody>
-                                    @php $i=0; @endphp @foreach($liveScore['games'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
-                                    <tr class="top">
-                                        @else
-                                    </tr>
-
-                                    <tr class="meddium">
-                                        @endif
-                                        <td>{{ $loop->iteration }}</td>
-                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['vTeam'][0]['longName'] }}</td>
-                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['hTeam'][0]['longName'] }}</td>
-                                        <td class="name">{{ Carbon\Carbon::parse($point['startTimeUTC'])->format('Y-m-d H:i') }}</td>
-                                        <td class="name">{{ $point['vTeam']['score'] }}</td>
-                                        <td class="name">{{ $point['hTeam']['score'] }}</td>
-                                        <td class="name">{{ $point['arena']['city'] }}</td>
-                                        <td class="name">{{ $point['arena']['country'] }}</td>
-                                      
-                                        
-                                    </tr>
-
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
@@ -174,7 +123,9 @@
                         <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
                     </form>
             
-
+                  @if($cycling)
+                      
+               
                 <div class="col-sm-12">
                     <div class="row my-4">
                         <div class="main1">
@@ -184,17 +135,18 @@
                                 <table class="table">
                                     <thead>
                                         <td>Pos.</td>
-                                        <td class="name">CLUBS</td>
-                                        <td>P</td>
-                                        <td>W</td>
-                                        <td>GL</td>
-                                        <td>GA</td>
-                                        <td>GD</td>
-                                        <td>L</td>
-                                        <td>POINTS</td>
+                                        <td class="name">Event</td>
+                                        <td>ST</td>
+                                        <td>S</td>
+                                        <td>C</td>
+                                        <td>Y</td>
+                                        <td>C</td>
+                                        <td>D</td>
+                                        <td>H</td>
+                                        
                                     </thead>
                                     <tbody>
-                                        @php $i=0; @endphp @foreach($basketballPoint['table'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
+                                        @php $i=0; @endphp @foreach($cycling['events'] as $key => $point) @if( $loop->first or $loop->iteration <= 4 )
                                         <tr class="top">
                                             @else
                                         </tr>
@@ -202,14 +154,15 @@
                                         <tr class="meddium">
                                             @endif
                                             <td>{{ $loop->iteration }}</td>
-                                            <td class="name">{{ $point['name'] }}</td>
-                                            <td>{{ $point['played'] }}</td>
-                                            <td>{{ $point['win'] }}</td>
-                                            <td>{{ $point['goalsfor'] }}</td>
-                                            <td>{{ $point['goalsagainst'] }}</td>
-                                            <td>{{ $point['goalsdifference'] }}</td>
-                                            <td>{{ $point['loss'] }}</td>
-                                            <td>{{ $point['total'] }}</td>
+                                            <td class="name">{{ $point['strEvent'] }}</td>
+                                            <td>{{ $point['strFilename'] }}</td>
+                                            <td>{{ $point['strSport'] }}</td>
+                                            <td>{{ $point['strLeague'] }}</td>
+                                            <td>{{ $point['strSeason'] }}</td>
+                                            <td>{{ $point['strCountry'] }}</td>
+                                            <td>{{ $point['dateEvent'] }}</td>
+                                            <td>{{ $point['strTime'] }}</td>
+                                            
                                         </tr>
 
                                         @endforeach
@@ -220,8 +173,8 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
-
+        </div> 
+        @endif
         
         <div class="container">
             <div class="row my-4">
