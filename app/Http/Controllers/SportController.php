@@ -264,4 +264,8 @@ class SportController extends Controller
         return view('sports/golf');
     }
 
+    public function snooker(){
+        return view('sports/snooker');
+    }
+
 }
