@@ -122,6 +122,7 @@ Route::get('/sports/netball', [SportController::class, 'netball']);
 Route::get('/sports/rugby', [SportController::class, 'rugby']);
 Route::get('/sports/cycling', [SportController::class, 'cycling']);
 Route::get('/sports/motorsport', [SportController::class, 'motorSport']);
+Route::get('/sports/golf', [SportController::class, 'golf']);
 
 
 
