@@ -64,6 +64,8 @@
           </div>
         </div>
       </li>
+      @if(Auth::check())
+     
       <li class="nav-item">
         <div class="dropdown">
           <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
@@ -73,7 +75,7 @@
           <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges')}}">Colleges</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/coaches')}}">Coaches</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Users</a></button>
+            {{-- <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Users</a></button> --}}
             
           </div>
         </div>
@@ -93,6 +95,8 @@
           </div>
         </div>
       </li>
+         
+      @endif
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN</a>
       </li>

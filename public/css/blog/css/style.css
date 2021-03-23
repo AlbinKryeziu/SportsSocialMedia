@@ -107,56 +107,13 @@ h6 {
     background: #FF6F61;
 }
 
-button.btn {
-    color: #ffffff;
-    background: #000000;
-    border: 1px solid #000000;
-}
 
-button.btn:hover {
-    color: #ffffff;
-    background: #FF6F61;
-    border-color: #FF6F61;
-}
 
 
 /**********************************/
 /*********** Top Bar CSS **********/
 /**********************************/
-.top-bar {
-    padding: 2px 0;
-    background: #000000;
-}
 
-.top-bar .tb-contact p {
-    display: inline-block;
-    margin: 0;
-    color: #FF6F61;
-    font-size: 14px;
-}
-
-.top-bar .tb-contact p i {
-    margin-right: 6px;
-}
-
-.top-bar .tb-contact p:first-child {
-    margin-right: 15px;
-}
-
-.top-bar .tb-menu {
-    font-size: 0;
-    text-align: right;
-}
-
-.top-bar .tb-menu a {
-    color: #FF6F61;
-    font-size: 14px;
-    margin: 0 8px;
-}
-
-.top-bar .tb-menu a:hover {
-    color: #ffffff;
-}
 
 .top-bar .tb-menu a:last-child {
     margin-right: 0;

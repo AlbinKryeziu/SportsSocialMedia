@@ -131,7 +131,7 @@
                         
                         Following World War I, European countries organised Grand Prix races over closed courses. In the United States, dirt track racing became popular.
                         
-                        After World War II, the Grand Prix circuit became more formally organised. In the United States, stock car racing and drag racing became firmly established.[4]
+                        After World War II, the Grand Prix circuit became more formally organised. In the United States, stock car racing and drag racing became firmly established.[
                         
                         Motorsports ultimately became divided by types of motor vehicles into racing events, and their appropriate organisations.
                     </p>
