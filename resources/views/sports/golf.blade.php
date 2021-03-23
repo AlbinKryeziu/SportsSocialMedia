@@ -20,28 +20,32 @@
         </div>
         <br>
         <div class="container">
-            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">Statistically Ranking the World's Top  Basketball Leagues</h3>
+            <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0">The  Greatest Golf Courses</h3>
 
             <hr class="mt-2 mb-8" />
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/turk.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/golf/royal.jpeg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" style="object-fit: cover" />
+                        <a href="#" class="btn btn-light btn-sm">Royal County Down G.C.</a>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/spanish.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/golf/august.jpeg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        <a href="#" class="btn btn-light btn-sm">Augusta National (Ga.) G.C</a>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/euro.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/golf/pine.jpeg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <a href="#" class="btn btn-light btn-sm">Pine Valley (N.J.) G.C</a>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/nba.jpg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('/images/sports/golf/cypress.jpeg')}}" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
+                        <a href="#" class="btn btn-light btn-sm">Cypress Point Clu</a>
                     </div>
                 </div>
             </div>
