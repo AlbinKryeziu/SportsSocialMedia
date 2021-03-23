@@ -117,32 +117,6 @@
         </div>
     </div>
     <br>
-   
-    <div class="container">
-        <div class="row my-4">
-            <div class="col-12 col-md-6 p-4 text-justify">
-                <p>Boxing is a combat sport in which two people, usually wearing protective gloves and other protective
-                    equipment such as hand wraps and mouthguards, throw punches at each other for a predetermined amount
-                    of time in a boxing ring.</p>
-            </div>
-
-            <div class="col-12 col-md-6 p-4 text-justify">
-                <p>Amateur boxing is both an Olympic and Commonwealth Games sport and is a standard fixture in most
-                    international games—it also has its own World Championships. Boxing is overseen by a referee over a
-                    series of one-to-three-minute intervals called rounds.</p>
-            </div>
-
-            <div class="col-12 p-4 text-justify">
-                <p>A winner can be resolved before the completion of the rounds when a referee deems an opponent
-                    incapable of continuing, disqualification of an opponent, or resignation of an opponent. When the
-                    fight reaches the end of its final round with both opponents still standing, the judges' scorecards
-                    determine the victor. In the event that both fighters gain equal scores from the judges,
-                    professional bouts are considered a draw. In Olympic boxing, because a winner must be declared,
-                    judges award the contest to one fighter on technical criteria.</p>
-            </div>
-        </div>
-    </div>
-    <br>
     @if(!$boxingNextEvent)
     <div class="container">
         <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
@@ -196,7 +170,6 @@
        </div>
     </div>
     @endif
-    
     <br>
     <div class="container">
         <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
@@ -250,6 +223,32 @@
     </div>
     </div>
 </div>
+   
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-12 col-md-6 p-4 text-justify">
+                <p>Boxing is a combat sport in which two people, usually wearing protective gloves and other protective
+                    equipment such as hand wraps and mouthguards, throw punches at each other for a predetermined amount
+                    of time in a boxing ring.</p>
+            </div>
+
+            <div class="col-12 col-md-6 p-4 text-justify">
+                <p>Amateur boxing is both an Olympic and Commonwealth Games sport and is a standard fixture in most
+                    international games—it also has its own World Championships. Boxing is overseen by a referee over a
+                    series of one-to-three-minute intervals called rounds.</p>
+            </div>
+
+            <div class="col-12 p-4 text-justify">
+                <p>A winner can be resolved before the completion of the rounds when a referee deems an opponent
+                    incapable of continuing, disqualification of an opponent, or resignation of an opponent. When the
+                    fight reaches the end of its final round with both opponents still standing, the judges' scorecards
+                    determine the victor. In the event that both fighters gain equal scores from the judges,
+                    professional bouts are considered a draw. In Olympic boxing, because a winner must be declared,
+                    judges award the contest to one fighter on technical criteria.</p>
+            </div>
+        </div>
+    </div>
+ 
    
     
 
