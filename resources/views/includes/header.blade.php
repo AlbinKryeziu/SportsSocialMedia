@@ -76,7 +76,7 @@
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges')}}">Colleges</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/coaches')}}">Coaches</a></button>
             {{-- <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Users</a></button> --}}
-            
+           
           </div>
         </div>
       </li>
@@ -95,7 +95,9 @@
           </div>
         </div>
       </li>
-         
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url('newfeed')}}">Social Media</a>
+      </li>
       @endif
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN</a>

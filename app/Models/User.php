@@ -72,11 +72,6 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Role::class, 'users_roles');
     }
-
-    public function hasRole($role)
-    {        
-        return $result = $this->role[0]->slug == $role;;
-    }
     
     public static function getUsersByRole($role)
     {
@@ -85,11 +80,11 @@ class User extends Authenticatable
     
     public function isAdmin() {
 
-        return $this->hasRole('admin'); 
+        return $this->role()->where('id', 1);
     }
     public function isUser() {
 
-        return $this->hasRole('user'); 
+        return $this->role()->where('id', 2);
     }
 
    public function post(){
