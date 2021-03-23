@@ -175,6 +175,7 @@
                 </div>
             </div>
         </div>
+        @if(!$liveScore)
         <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
 
@@ -211,6 +212,7 @@
                     </div>
                 </div>
             </div>
+            @endif
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>

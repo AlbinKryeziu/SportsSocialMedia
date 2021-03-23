@@ -137,7 +137,7 @@
                                         @endif
                                         <td>{{ $loop->iteration }}</td>
                                         <td class="name">{{ $point['watch']['broadcast']['broadcasters']['vTeam'][0]['longName'] }}</td>
-                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['hTeam'][0]['longName'] }}</td>
+                                        <td class="name">{{ $point['watch']['broadcast']['broadcasters']['vTeam'][0]['shortName'] }}</td>
                                         <td class="name">{{ Carbon\Carbon::parse($point['startTimeUTC'])->format('Y-m-d H:i') }}</td>
                                         <td class="name">{{ $point['vTeam']['score'] }}</td>
                                         <td class="name">{{ $point['hTeam']['score'] }}</td>

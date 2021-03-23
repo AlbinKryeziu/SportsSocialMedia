@@ -143,7 +143,7 @@
         </div>
     </div>
     <br>
-    @if($boxingNextEvent)
+    @if(!$boxingNextEvent)
     <div class="container">
         <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
        <div class="col-sm-12">

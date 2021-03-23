@@ -38,14 +38,12 @@
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/hockey')}}">Hockey</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/boxing')}}">Boxing</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/table-tennis')}}">Table Tennis</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/volleyball')}}">Volleyball</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/handball')}}">Handball</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/netball')}}">Netball</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/rugby')}}">Rugby</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/cycling')}}">Cycling</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/motorsport')}}">MotorSport</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/golf')}}">Golf</a></button>
             <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/snooker')}}">Snooker</a></button>
+        
           </div>
         </div>
       </li>
@@ -66,7 +64,7 @@
           </div>
         </div>
       </li>
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <div class="dropdown">
           <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
@@ -94,7 +92,7 @@
            
           </div>
         </div>
-      </li> --}}
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="{{ url('/dashboard')}}">LOG IN</a>
       </li>

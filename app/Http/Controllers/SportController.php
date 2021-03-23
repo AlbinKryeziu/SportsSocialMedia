@@ -361,4 +361,23 @@ class SportController extends Controller
         return view('sports/snooker',compact('snooker'));
     }
 
+    public function darts(){
+        $client = new Client();
+
+        $url = "https://thesportsdb.p.rapidapi.com/eventspastleague.php?id=4554";
+
+        $headers = [
+            'X-RapidAPI-Key' => 'b2fe0a1c71mshd793bd83f6fda64p17305ajsna2276b1c9cee',
+            'x-rapidapi-host' => 'thesportsdb.p.rapidapi.com',
+        ];
+
+        $response = $client->request('GET', $url, [
+            'headers' => $headers,
+            'verify' => false,
+        ]);
+
+        $darts = json_decode((string) $response->getBody(), true);
+        return view('sports/darts',compact('darts'));
+    }
+
 }
