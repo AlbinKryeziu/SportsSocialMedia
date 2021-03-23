@@ -68,12 +68,29 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function isAdmin(){
-         return Auth::user()->role == 1;
+    public function role()
+    {
+        return $this->belongsToMany(Role::class, 'users_roles');
     }
-    public function isUser(){
-        return Auth::user()->role == 0;
-   }
+
+    public function hasRole($role)
+    {        
+        return $result = $this->role[0]->slug == $role;;
+    }
+    
+    public static function getUsersByRole($role)
+    {
+        return User::all()->filter->hasRole($role)->values();;
+    }
+    
+    public function isAdmin() {
+
+        return $this->hasRole('admin'); 
+    }
+    public function isUser() {
+
+        return $this->hasRole('user'); 
+    }
 
    public function post(){
        return $this->hasMany(Post::class);
