@@ -193,7 +193,7 @@
 
             <div class="container">
                 <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
-                <div class="col-lg-3">
+                
                     <form method="GET" style="margin: 0px; display: flex;">
                         <select class="form-control" name="league">
                             <option value="" selected>Select League</option>
@@ -205,7 +205,7 @@
                         </select>
                         <button type="submit" class="btn-sm" style="background-color: #6c757d; color: white; border: none;">Filter</button>
                     </form>
-                </div>
+                
 
                 <div class="col-sm-12">
                     <div class="row my-4">
