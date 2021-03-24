@@ -29,22 +29,22 @@
             <div class="row">
                 <div class="col-sm-3 text-center">
                     <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/serie.jpg')}}" alt="Card image cap" width="500" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/nfl.jpeg')}}" alt="Card image cap" width="500" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/Premier.jpg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/cfl.jpeg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/laliga.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/afl.jpeg')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="width: 16rem;">
-                        <img class="card-img-top" src="{{asset('images/bundesliga.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/aus.png')}}" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
             </div>
@@ -56,54 +56,46 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/bc.png')}}" onclick="window.open('https://fcbayern.com/en', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/baltimore.png')}}"  alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/liverpol.png')}}" onclick="window.open('https://www.liverpoolfc.com/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/logo5.jpeg')}}"  alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/mc.png')}}" onclick="window.open('https://www.mancity.com/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/huston.jpeg')}}"  alt="Card image cap" style="height:auto;width:200px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/psg.png')}}" onclick="window.open('https://en.psg.fr/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/t.png')}}"  alt="Card image cap" style="height:auto;width:160px;margin:7px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3 mb-2">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/real.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/new.png')}}" onclick="window.open('https://www.realmadrid.com/en', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/juventus.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/b.png')}}" onclick="window.open('https://www.juventus.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/dortmund3.png')}}" onclick="window.open('https://www.bvb.de/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/los.png')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/fbc.jpg')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
+                        <img class="card-img-top" src="{{asset('images/sports/football/at.png')}}" onclick="window.open('https://www.fcbarcelona.com/en/', '_blank')" alt="Card image cap" style="height:auto;width:160px;margin:10px;padding:5px" alt="Card image cap" />
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="card" style="height:160px; widh:auto; margin:5px;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/atlc3.png')}}" onclick="window.open('https://en.atleticodemadrid.com/', '_blank')" alt="Card image cap" style="height:auto;width:240px;margin:10px;padding:5px" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="height:160px; widh:auto; margin:5px; display:flex;justify-content:center;align-content:center;align-items:center;">
-                        <img class="card-img-top" src="{{asset('images/sports/football/chelsea1.png')}}" onclick="window.open('https://www.chelseafc.com/en', '_blank')" alt="Card image cap" style="height:auto;width:170px;margin:10px;padding:5px;" alt="Card image cap" />
-                    </div>
-                </div>
+             
+                
             </div>
         </div>
        
