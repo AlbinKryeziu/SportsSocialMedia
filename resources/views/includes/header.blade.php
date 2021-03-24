@@ -1,4 +1,22 @@
 <header>
+  <style>.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top:-6px;
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+} 
+</style>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <img src="{{ asset('images/logo/final-logo.png') }}" alt="" width="60px">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,6 +65,7 @@
           </div>
         </div>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link" href=""> </a>
       </li>
@@ -65,21 +84,34 @@
         </div>
       </li>
       @if(Auth::check())
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> COLLEGES </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="{{ url('/coaches')}}">Coaches</a></li>
+            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle">Colleges</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ url('/colleges')}}">Colleges</a></li>
+                    {{-- <li><a class="dropdown-item" href="{{ url('/football/colleges') }}">Football College</a></li> --}}
+                    <li><a class="dropdown-item" href="#">Soccer College</a></li>
+                    <li><a class="dropdown-item" href="#">BasketBall College</a></li>
+                    {{-- <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Submenu 1</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                            <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
+                        </ul>
+                    </li> --}}
+                    {{-- <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Submenu 2</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Subsubmenu2</a></li>
+                            <li><a class="dropdown-item" href="#">Subsubmenu2</a></li>
+                        </ul>
+                    </li> --}}
+                </ul>
+            </li>
+        </ul>
+    </li>
      
-      <li class="nav-item">
-        <div class="dropdown">
-          <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            COLLEGES
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges')}}">Colleges</a></button>
-            <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/coaches')}}">Coaches</a></button>
-            {{-- <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/sports/baseballapi')}}">Users</a></button> --}}
-           
-          </div>
-        </div>
-      </li>
+   
    
       <li class="nav-item">
         <div class="dropdown">

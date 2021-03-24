@@ -96,4 +96,8 @@ class CollegesController extends Controller
             'otherCoaches' => $otherCoaches,
         ]);
     }
+
+    public function footballColege(){
+        return view('colleges/football');
+    }
 }
