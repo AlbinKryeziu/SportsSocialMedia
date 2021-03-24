@@ -77,7 +77,7 @@
 </style>
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/health6.jpg'); height:510px; object-fit:cover">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('images/leo.jpeg'); height:610px; object-fit:cover">
             <div class="container">
                 <h1 class="display-3 text-center white">HEALTHY</h1>
             </div>
