@@ -104,16 +104,8 @@
                     <img class="card-img-top" src="{{asset('images/sports/table-tennis/malong.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Ma_Long','_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/fan..jpeg')}}" onclick="window.open('https://www.stigasports.com/eu/fan-zhendong', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/table-tennis/quandri.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Quadri_Aruna', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                </div>
-            </div>
+          
+            
         </div>
     </div>
     <br>

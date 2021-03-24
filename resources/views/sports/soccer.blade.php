@@ -149,30 +149,7 @@
                     </div>
                 </div>
 
-                <div class="col-sm-3">
-                    <div class="card" style="height: 160px; widh: auto; margin: 5px;">
-                        <img
-                            class="card-img-top"
-                            src="{{asset('images/sports/football/atlc3.png')}}"
-                            onclick="window.open('https://en.atleticodemadrid.com/', '_blank')"
-                            alt="Card image cap"
-                            style="height: auto; width: 240px; margin: 10px; padding: 5px;"
-                            alt="Card image cap"
-                        />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="height: 160px; widh: auto; margin: 5px; display: flex; justify-content: center; align-content: center; align-items: center;">
-                        <img
-                            class="card-img-top"
-                            src="{{asset('images/sports/football/chelsea1.png')}}"
-                            onclick="window.open('https://www.chelseafc.com/en', '_blank')"
-                            alt="Card image cap"
-                            style="height: auto; width: 170px; margin: 10px; padding: 5px;"
-                            alt="Card image cap"
-                        />
-                    </div>
-                </div>
+                
             </div>
         </div>
         @if(!$liveScore)

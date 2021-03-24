@@ -96,16 +96,7 @@
                     <img class="card-img-top" src="{{asset('images/sports/baseball/chicago.png')}}" onclick="window.open('https://www.mlb.com/whitesox', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/baseball/cubs.png')}}" onclick="window.open('https://www.mlb.com/cubs', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/baseball/miami.jpg')}}" onclick="window.open('https://www.mlb.com/marlins', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                </div>
-            </div>
+            
         </div>
     </div>
     <div class="container">

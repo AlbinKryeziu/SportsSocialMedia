@@ -104,16 +104,8 @@
                     <img class="card-img-top" src="{{asset('images/sports/boxing/manny.jpeg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Manny_Pacquiao '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                 </div>
             </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/boxing/juan.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Juan_Francisco_Estrada', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="card" style="width: 18rem;">
-                    <img class="card-img-top" src="{{asset('images/sports/boxing/josh.jpg')}}" onclick="window.open('https://en.wikipedia.org/wiki/Josh_Taylor_(boxer)', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                </div>
-            </div>
+           
+            
         </div>
     </div>
     <br>

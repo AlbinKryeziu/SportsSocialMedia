@@ -4,9 +4,9 @@
     .main2 {
         width: 65vw;
         margin: auto;
-        background-color: #202020;
+        
         color: white;
-        padding: 0.5vw
+        
     }
     
     .flag {

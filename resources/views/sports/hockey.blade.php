@@ -107,16 +107,8 @@
                         <img class="card-img-top" src="{{asset('images/sports/hockey/gulls.jpg')}}" onclick="window.open('https://www.sandiegogulls.com/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/hockey/chic.png')}}" onclick="window.open('https://www.chicagowolves.com/', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/hockey/rochester.png')}}" onclick="window.open('https://www.amerks.com/home', '_blank')" alt="Card image cap" width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
+                
+                
             </div>
         </div>
         

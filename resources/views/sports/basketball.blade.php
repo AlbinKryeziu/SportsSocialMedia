@@ -91,17 +91,7 @@
                         <img class="card-img-top" src="{{asset('images/sports/basketball/denver.png')}}" onclick="window.open('https://www.nba.com/nuggets/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
                     </div>
                 </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/utah.png')}}" onclick="window.open('https://www.nba.com/jazz/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{asset('images/sports/basketball/thunder.png')}}" onclick="window.open('https://www.nba.com/thunder/', '_blank')" alt="Card image cap"  width="200" height="200" alt="Card image cap" />
-                    </div>
-                </div>
-            </div>
+               
         </div>
         <div class="container">
             <h3 class="font-weight-light text-center text-lg-left mt-2 mb-0 p-4"></h3>
