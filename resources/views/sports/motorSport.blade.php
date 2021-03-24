@@ -218,15 +218,27 @@
             <h1 class="display-4">Popular Championships</h1>
             <div class="row p-4 shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center mt-4">
                 <div class="col-3">
-                    <img src="{{asset('images/sports/motorsport/logo8-1.jpeg')}}" alt="" width="100%" />
+                    <img src="{{asset('images/sports/motorsport/formul1.png')}}" alt="" width="100%" />
                 </div>
                 <div class="col-9">
-                    <h2>Formula 4</h2>
+                    <h2>Formula 1</h2>
                     <p>
-                        Launched in 2014, FIA Formula 4 has been created to offer young racing drivers around the world the opportunity to take the first step from karting into the world of single-seater racing.
-                        Designed to be a globally recognised yet affordable step between Karting and the FIA Formula Regional Championship certified by FIA, Formula 4 certified by FIA allows drivers to compare themselves to the best young talent, not only in their own country, but across other championships around the world. 
+                        Formula One is the highest class of international auto racing for single-seater formula racing cars sanctioned by the Fédération Internationale de l'Automobile. 
                     </p>
                 </div>
+                
+            </div>
+            <div class="row p-4 shadow p-3 mb-5 bg-white rounded align-items-center justify-content-center mt-4">
+                <div class="col-3">
+                    <img src="{{asset('images/sports/motorsport/imgrally.jpeg')}}" alt="" width="100%" />
+                </div>
+                <div class="col-9">
+                    <h2>World Rally Championship</h2>
+                    <p>
+                        The World Rally Championship is the highest level of global competition in the motorsport discipline of rallying, governed and organised by the FIA. There are separate championships for drivers, co-drivers and manufacturers, with a new teams championship added in 2021. 
+                    </p>
+                </div>
+                
             </div>
             
         </div>
