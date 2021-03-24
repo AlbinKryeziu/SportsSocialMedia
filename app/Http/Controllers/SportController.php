@@ -298,7 +298,7 @@ class SportController extends Controller
         ]);
 
         $cycling = json_decode((string) $response->getBody(), true);
-        return view('sports/cycling',compact('cycling'));
+        return view('sports/Cycling',compact('cycling'));
     }
     public function motorSport(){
         $client = new Client();
