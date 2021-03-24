@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 24, 2021 at 10:52 AM
+-- Generation Time: Mar 24, 2021 at 10:55 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.3.23
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `coaches`
 --
 
+DROP TABLE IF EXISTS `coaches`;
 CREATE TABLE `coaches` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -54,6 +55,7 @@ INSERT INTO `coaches` (`id`, `name`, `address`, `city`, `country`, `description`
 -- Table structure for table `colleges`
 --
 
+DROP TABLE IF EXISTS `colleges`;
 CREATE TABLE `colleges` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -83,6 +85,7 @@ INSERT INTO `colleges` (`id`, `name`, `address`, `services`, `description`, `met
 -- Table structure for table `education`
 --
 
+DROP TABLE IF EXISTS `education`;
 CREATE TABLE `education` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `degree` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -103,6 +106,7 @@ CREATE TABLE `education` (
 -- Table structure for table `exercises`
 --
 
+DROP TABLE IF EXISTS `exercises`;
 CREATE TABLE `exercises` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -124,6 +128,7 @@ INSERT INTO `exercises` (`id`, `user_id`, `created_at`, `updated_at`) VALUES
 -- Table structure for table `exercises_examples`
 --
 
+DROP TABLE IF EXISTS `exercises_examples`;
 CREATE TABLE `exercises_examples` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -150,6 +155,7 @@ INSERT INTO `exercises_examples` (`id`, `title`, `image`, `description`, `exerci
 -- Table structure for table `failed_jobs`
 --
 
+DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -166,6 +172,7 @@ CREATE TABLE `failed_jobs` (
 -- Table structure for table `follows`
 --
 
+DROP TABLE IF EXISTS `follows`;
 CREATE TABLE `follows` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -187,6 +194,7 @@ INSERT INTO `follows` (`id`, `user_id`, `target_id`, `created_at`, `updated_at`)
 -- Table structure for table `healthies`
 --
 
+DROP TABLE IF EXISTS `healthies`;
 CREATE TABLE `healthies` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -214,6 +222,7 @@ INSERT INTO `healthies` (`id`, `title`, `protein`, `calcium`, `profilePath`, `ca
 -- Table structure for table `hide_posts`
 --
 
+DROP TABLE IF EXISTS `hide_posts`;
 CREATE TABLE `hide_posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -228,6 +237,7 @@ CREATE TABLE `hide_posts` (
 -- Table structure for table `like_posts`
 --
 
+DROP TABLE IF EXISTS `like_posts`;
 CREATE TABLE `like_posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -254,6 +264,7 @@ INSERT INTO `like_posts` (`id`, `user_id`, `post_id`, `created_at`, `updated_at`
 -- Table structure for table `migrations`
 --
 
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -298,6 +309,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Table structure for table `notifications`
 --
 
+DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE `notifications` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `body` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -325,6 +337,7 @@ INSERT INTO `notifications` (`id`, `body`, `type`, `user_id`, `target_id`, `crea
 -- Table structure for table `password_resets`
 --
 
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -337,6 +350,7 @@ CREATE TABLE `password_resets` (
 -- Table structure for table `personal_access_tokens`
 --
 
+DROP TABLE IF EXISTS `personal_access_tokens`;
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `tokenable_type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -355,6 +369,7 @@ CREATE TABLE `personal_access_tokens` (
 -- Table structure for table `posts`
 --
 
+DROP TABLE IF EXISTS `posts`;
 CREATE TABLE `posts` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -383,6 +398,7 @@ INSERT INTO `posts` (`id`, `description`, `pathPhotos`, `user_id`, `created_at`,
 -- Table structure for table `post_comments`
 --
 
+DROP TABLE IF EXISTS `post_comments`;
 CREATE TABLE `post_comments` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -406,6 +422,7 @@ INSERT INTO `post_comments` (`id`, `user_id`, `post_id`, `created_at`, `updated_
 -- Table structure for table `profiles`
 --
 
+DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE `profiles` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `first_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -435,6 +452,7 @@ INSERT INTO `profiles` (`id`, `first_name`, `last_name`, `country`, `city`, `abo
 -- Table structure for table `roles`
 --
 
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -457,6 +475,7 @@ INSERT INTO `roles` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
 -- Table structure for table `sessions`
 --
 
+DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE `sessions` (
   `id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) UNSIGNED DEFAULT NULL,
@@ -471,7 +490,7 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('r8diBZpaYFjGQwlnohoWqcLAdYsj7Yiv0ptWkJgB', 9, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiSUhWZHBtaWFsdFlsM09kdVdsZHVMQXRXSVNrYTFaTjZpVU84T2VZbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo5O3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkYjV4Y1FBVmpiQ1R3SHBYZEpzMjNMZUF5Mmx6RGpjSXZJLndwUHBNOHd5a1JCbUwwQjBxNTYiO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJGI1eGNRQVZqYkNUd0hwWGRKczIzTGVBeTJsekRqY0l2SS53cFBwTTh3eWtSQm1MMEIwcTU2Ijt9', 1616579496);
+('r8diBZpaYFjGQwlnohoWqcLAdYsj7Yiv0ptWkJgB', 9, '127.0.0.1', 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36', 'YTo3OntzOjY6Il90b2tlbiI7czo0MDoiSUhWZHBtaWFsdFlsM09kdVdsZHVMQXRXSVNrYTFaTjZpVU84T2VZbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fXM6MzoidXJsIjthOjA6e31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aTo5O3M6MTc6InBhc3N3b3JkX2hhc2hfd2ViIjtzOjYwOiIkMnkkMTAkYjV4Y1FBVmpiQ1R3SHBYZEpzMjNMZUF5Mmx6RGpjSXZJLndwUHBNOHd5a1JCbUwwQjBxNTYiO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEwJGI1eGNRQVZqYkNUd0hwWGRKczIzTGVBeTJsekRqY0l2SS53cFBwTTh3eWtSQm1MMEIwcTU2Ijt9', 1616579590);
 
 -- --------------------------------------------------------
 
@@ -479,6 +498,7 @@ INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, 
 -- Table structure for table `social_links`
 --
 
+DROP TABLE IF EXISTS `social_links`;
 CREATE TABLE `social_links` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -491,6 +511,7 @@ CREATE TABLE `social_links` (
 -- Table structure for table `social_media`
 --
 
+DROP TABLE IF EXISTS `social_media`;
 CREATE TABLE `social_media` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `facebook` text COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -507,6 +528,7 @@ CREATE TABLE `social_media` (
 -- Table structure for table `tips`
 --
 
+DROP TABLE IF EXISTS `tips`;
 CREATE TABLE `tips` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -531,6 +553,7 @@ INSERT INTO `tips` (`id`, `title`, `image`, `description`, `user_id`, `created_a
 -- Table structure for table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -566,6 +589,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 -- Table structure for table `users_roles`
 --
 
+DROP TABLE IF EXISTS `users_roles`;
 CREATE TABLE `users_roles` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `role_id` int(10) UNSIGNED NOT NULL
@@ -585,6 +609,7 @@ INSERT INTO `users_roles` (`user_id`, `role_id`) VALUES
 -- Table structure for table `user_photos`
 --
 
+DROP TABLE IF EXISTS `user_photos`;
 CREATE TABLE `user_photos` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `profile_photo_path` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -599,6 +624,7 @@ CREATE TABLE `user_photos` (
 -- Table structure for table `works`
 --
 
+DROP TABLE IF EXISTS `works`;
 CREATE TABLE `works` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `company` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
