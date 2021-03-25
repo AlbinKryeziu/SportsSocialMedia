@@ -33,7 +33,9 @@
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/about-us')}}">ABOUT US</a>
               </li>
-
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/contact')}}">CONTACT US</a>
+              </li>
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/blog')}}">BLOG</a>
               </li>
@@ -73,7 +75,7 @@
                           COLLEGES
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/blog')}}">Information</a></button>
+                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/information/colleges')}}">Information</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/ads')}}">Colleges</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/football/colleges')}}">Football College</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges/soccer')}}">Soccer College</a></button>

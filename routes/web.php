@@ -160,6 +160,7 @@ Route::get('/post/comment/{postId}/{userId}/{notifyId}', [NotificationController
 Route::get('/admin/user/all', [AdminUserController::class, 'index']);
 
 Route::get('/colleges', [CollegesController::class, 'colleges']);
+Route::get('/information/colleges', [CollegesController::class, 'information']);
 Route::get('/info/colleges/{collegeId}', [CollegesController::class, 'collegesDetails']);
 Route::post('/add/colleges', [CollegesController::class, 'addCollege']);
 Route::get('/coaches', [CollegesController::class, 'coaches']);
