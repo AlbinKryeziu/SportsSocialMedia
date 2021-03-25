@@ -168,6 +168,7 @@ Route::get('/coaches/details/{coachesId}', [CollegesController::class, 'coacheDe
 Route::get('/football/colleges', [CollegesController::class, 'footballColege']);
 Route::get('/colleges/basketball', [CollegesController::class, 'basketballCollge']);
 Route::get('/colleges/soccer', [CollegesController::class, 'soccerCollege']);
+Route::get('/colleges/America', [CollegesController::class, 'bestCollegesAmerican']);
 
 Route::get('/healthy', [FitnessController::class, 'index']);
 Route::post('/healthy/store', [FitnessController::class, 'storeHealthy']);

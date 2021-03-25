@@ -106,4 +106,7 @@ class CollegesController extends Controller
     public function soccerCollege(){
       return view('colleges/soccer');
     }
+    public function bestCollegesAmerican(){
+        return view('colleges/bestCollegeAmerican');
+    }
 }
