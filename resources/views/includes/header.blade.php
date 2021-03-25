@@ -93,7 +93,7 @@
                     <li><a class="dropdown-item" href="{{ url('/colleges')}}">Colleges</a></li>
                     <li><a class="dropdown-item" href="{{ url('/football/colleges') }}">Football College</a></li>
                     <li><a class="dropdown-item" href="#">Soccer College</a></li>
-                    <li><a class="dropdown-item" href="#">BasketBall College</a></li>
+                    <li><a class="dropdown-item" href="{{ url('/collges/basketball') }}">BasketBall College</a></li>
                     {{-- <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Submenu 1</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Subsubmenu1</a></li>
