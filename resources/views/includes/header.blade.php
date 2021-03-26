@@ -76,7 +76,7 @@
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/information/colleges')}}">Information</a></button>
-                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/ads')}}">Colleges</a></button>
+                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges')}}">Colleges</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/football/colleges')}}">Football College</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges/soccer')}}">Soccer College</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges/basketball')}}">BasketBall College</a></button>

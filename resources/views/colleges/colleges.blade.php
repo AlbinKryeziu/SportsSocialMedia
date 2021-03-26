@@ -81,9 +81,23 @@
                 <h1 class="display-3 text-center white">COLLEGES</h1>
             </div>
         </div>
-
-        <div class="container p-3">
-            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your college</a>
+        <div class="container-fluid bg-light ">
+            <div class="row align-items-center justify-content-center">
+                           
+                                <div class="col-md-5 pt-3 ">
+                                    <form action="">
+                                   <div class="form-group ">
+                                    <input type="text" class="search-query form-control" placeholder="Search" />
+                                </form>
+                                   </div>
+                                </div>
+                           
+                              
+                                
+                                <div class="col-md-2">
+                                    <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your college</a>
+                                </div>
+                            </div>
         </div>
 
         <div class="container" style="padding: 65px;">
