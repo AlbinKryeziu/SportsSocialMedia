@@ -95,6 +95,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('healthy/food') }}">Healthy foods</a></li>
                             <li><a class="dropdown-item" href="{{ url('healthy/diet') }}">Healthy Diet</a></li>
+                            <li><a class="dropdown-item" href="{{ url('healthy/women') }}">Healthy Women</a></li>
                         </ul>
                     </li>
             

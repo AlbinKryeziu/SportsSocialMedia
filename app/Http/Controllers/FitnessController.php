@@ -151,5 +151,8 @@ class FitnessController extends Controller
    public function healthyDiet(){
     return view('fitness/healthy/diet');
 }
+public function healthyWomen(){
+    return view('fitness/healthy/women');
+}
 
 }

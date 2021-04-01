@@ -184,3 +184,4 @@ Route::post('/add/store', [FitnessController::class, 'storeExercies']);
 Route::get('exercises/details/{exercisesId}', [FitnessController::class, 'detailsExercises']);
 Route::get('healthy/food', [FitnessController::class, 'healthyFood']);
 Route::get('healthy/diet', [FitnessController::class, 'healthyDiet']);
+Route::get('healthy/women', [FitnessController::class, 'healthyWomen']);
