@@ -94,7 +94,7 @@
                         <a class="dropdown-item dropdown-toggle" href="{{ url('/healthy')}}" type="button">Healthy</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('healthy/food') }}">Healthy foods</a></li>
-                            <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                            <li><a class="dropdown-item" href="{{ url('healthy/diet') }}">Healthy Diet</a></li>
                         </ul>
                     </li>
             
