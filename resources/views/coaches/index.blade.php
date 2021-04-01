@@ -81,17 +81,15 @@
                 <h1 class="display-3 text-center white">COACHES</h1>
             </div>
         </div>
-
+      @auth
         <div class="container p-3">
-            <a href="" data-toggle="modal" data-target="#ModalLoginForm" class="btn-card float-right">Add your coaches </a>
+            <a href="{{ url('/add/form/') }}"  class="btn-card float-right">Create New Post</a>
         </div>
-
+     @endauth 
         <div class="container" style="padding: 65px;">
             <div class="row">
-                @foreach($coaches as $key => $coaches)
-                    
-               
-              <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
+         @foreach($coaches as $key => $coaches)
+                 <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
                   <img class="card-img" src="{{ asset('store/'.$coaches->profile_path) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
                   <div class="card-img-overlay">
@@ -99,108 +97,18 @@
                   </div>
                   <div class="card-body">
                     <h4 class="card-title">{{ $coaches->name }}</h4>
-                   
                     <p class="card-text">{{ \Illuminate\Support\Str::limit($coaches->description, 40)}}</p>
-                   
                   </div>
                   <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
                     <div class="views">{{ Carbon\Carbon::parse($coaches->created_at)->format('d F Y') }}
                     </div>
-                     
                   </div>
                 </div>
                 <a href="{{ url('/coaches/details/'.$coaches->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
               </div>
-              @endforeach
-              
-           
-              
+         @endforeach 
             </div>
           </div>
-          <div id="ModalLoginForm" class="modal fade">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header text-center">
-                        <h3 class="modal-title" style="text-align: center;">Add your coaches</h3>
-                    </div>
-                    <div class="modal-body">
-                        <form method="POST" action="{{ url('/coaches/store') }}" enctype="multipart/form-data">
-                            @csrf
-                            <div class="form-group">
-                                <label class="control-label">Name</label>
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="name" value="" />
-                                </div>
-                                @error('name')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label">Photo</label>
-
-                                <div>
-                                    <input type="file" id="avatar" name="avatar" />
-                                </div>
-                                @error('avatar')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description" placeholder="Please this field must contain at least 150 characters"></textarea>
-                                @error('description')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label">Address</label>
-
-                                <div>
-                                    <input type="text" class="form-control input-lg" name="address" value="" />
-                                </div>
-                                @error('address')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">City</label>
-                                <input type="text" class="form-control input-lg" name="city" value="" />
-                                @error('city')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Country</label>
-                                <input type="text" class="form-control input-lg" name="country" value="" />
-                                @error('country')
-                                <div class="error" style="color: red;">{{ $message }}</div>
-                                @enderror
-                            </div>
-
-                            <div class="form-group">
-                                <div>
-                                    <div class="checkbox"></div>
-                                </div>
-                            </div>
-                            <div class="form-group float-right">
-                                <div>
-                                    <button type="submit" class="btn btn-success">Save</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-            </div>
-            <!-- /.modal-dialog -->
-        </div>
-
-        
-   
-       
-
         @include('includes/footer')
     </body>
 </html>

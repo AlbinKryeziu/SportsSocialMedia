@@ -14,8 +14,11 @@ class Colleges extends Model
         'address',
         'services',
         'description',
-        'methodology',
         'profilePath',
         'user_id',
+        'type',
     ];
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

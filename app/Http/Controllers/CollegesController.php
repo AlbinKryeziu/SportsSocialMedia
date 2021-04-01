@@ -15,7 +15,10 @@ class CollegesController extends Controller
 
     public function colleges()
     {
-        $colleges = Colleges::simplePaginate(25);
+        $colleges = Colleges::simplePaginate(15);
+        if (request()->has('q')) {
+            $colleges = Colleges::where('description', 'LIKE', '%' . request()->get('q') . '%')->orWhere('name', 'LIKE', '%' . request()->get('q') . '%')->simplePaginate(15);
+        }
         return view('colleges/colleges', [
             'colleges' => $colleges,
         ]);
@@ -30,7 +33,9 @@ class CollegesController extends Controller
             'otherCollege' => $otherCollege,
         ]);
     }
-
+     public function collegeFrom(){
+         return view('colleges/add');
+     }
     public function addCollege(CollegesRequest $request)
     {
         if ($request->has('avatar')) {
@@ -45,10 +50,7 @@ class CollegesController extends Controller
         $colleges->address = $request->address;
         $colleges->services = $request->services;
         $colleges->description = $request->description;
-        $colleges->methodology = $request->methodology;
         $colleges->profilePath = $imageName;
-        $colleges->city = $request->city;
-        $colleges->country = $request->country;
         $colleges->user_id = Auth::id();
         $colleges->save();
         if($colleges){
@@ -112,4 +114,5 @@ class CollegesController extends Controller
     public function bestCollegesAmerican(){
         return view('colleges/bestCollegeAmerican');
     }
+    
 }
