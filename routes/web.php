@@ -182,3 +182,4 @@ Route::get('/exercises', [FitnessController::class, 'exercises']);
 Route::get('/add/exercises', [FitnessController::class, 'addExercies']);
 Route::post('/add/store', [FitnessController::class, 'storeExercies']);
 Route::get('exercises/details/{exercisesId}', [FitnessController::class, 'detailsExercises']);
+Route::get('healthy/food', [FitnessController::class, 'healthyFood']);

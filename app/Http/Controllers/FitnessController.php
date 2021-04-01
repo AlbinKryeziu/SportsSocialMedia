@@ -145,6 +145,8 @@ class FitnessController extends Controller
         ]);
     }
     
-
+   public function healthyFood(){
+       return view('fitness/healthy/food');
+   }
 
 }

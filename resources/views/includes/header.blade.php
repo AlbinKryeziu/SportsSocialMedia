@@ -74,7 +74,7 @@
                       <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgba(0, 0, 0, 0.5);">
                           COLLEGES
                       </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/information/colleges')}}">Information</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/colleges')}}">Colleges</a></button>
                           <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/football/colleges')}}">Football College</a></button>
@@ -84,21 +84,38 @@
                       </div>
                   </div>
               </li>
-              <li class="nav-item">
-                  <div class="dropdown">
-                      <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgba(0, 0, 0, 0.5);">
-                          FITNESS
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/healthy')}}">Healthy</a></button>
-                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/tips')}}">Tips</a></button>
-                          <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('/exercises')}}">Exercises</a></button>
-                      </div>
-                  </div>
-              </li>
+             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle btn" type="button"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    FITNESS
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="{{ url('/healthy')}}" type="button">Healthy</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url('healthy/food') }}">Healthy foods</a></li>
+                            <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                        </ul>
+                    </li>
+            
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item dropdown-toggle" href="{{ url('/exercises')}}" type="button">Exercises</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
+                            <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+            
+                          
+                        </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="{{ url('/tips')}}" type="button">Tips</a></li>
+                </ul>
+            </li>
+            
+              
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/how-it-works')}}">HOW IT WORKS</a>
               </li>
+             
           </ul>
           <span class="navbar-text">
               <ul class="navbar-nav mr-auto">

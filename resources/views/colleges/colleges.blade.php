@@ -108,13 +108,16 @@
             <div class="card mb-4">
               <img class="card-img-top" src="{{  asset('store/'.$college->profilePath)  }}" alt="Card image cap">
               <div class="card-body">
-                <h2 class="card-title">{{ $college->name }}</h2>
-                <p class="card-text">{{ \Illuminate\Support\Str::limit($college->description, 200)}}</p>
+                <div class="card-img-overlay">
+                  <a href="#" class="btn btn-light btn-sm">{{ $college->type }}</a>
+                </div>
+                <h2 class="card-title p-2">{{ $college->name }}</h2>
+                <p class="card-text p-2">{{ \Illuminate\Support\Str::limit($college->description, 200)}}</p>
               
               </div>
               <div class="card-footer text-muted">
                {{ \Carbon\Carbon::parse($college->created_at)->format('M d Y ') }}
-                <a href="">{{ $college->user->name }}</a>
+                <a href="{{ url('friends/profile/'.$college->user->id) }}">{{ $college->user->name }}</a>
                 <a href="{{ url('/info/colleges/'.$college->id) }}" class="btn-card btn float-right ">Read More →</a>
               </div>
             </div> 

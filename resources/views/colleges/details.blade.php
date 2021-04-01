@@ -91,7 +91,7 @@
 
                     <p class="lead">
                         by
-                        <a href="#">Liam Airght</a>
+                        <a href="{{ url('friends/profile/'.$college->user->id) }}">{{ $college->user->name }}</a>
                     </p>
 
                     <hr />
@@ -105,18 +105,13 @@
                     <hr />
                     <ul>
                         <li><i class="icofont-rounded-right"></i> <strong>Address:</strong> {{ $college->address }}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>Country:</strong> {{ $college->country }}</li>
-                        <li><i class="icofont-rounded-right"></i> <strong>City:</strong>{{ $college->city }}</li>
+                      
                     </ul>
                     
                     <p >
                         <strong>Description:</strong>
                         <br>{{ $college->description }}</p>
-                    <p>
-                        <strong>Methodology:</strong>
-                        <br>
-                        {{ $college->methodology }}
-                    </p>
+                   
                     <p>
                         <strong>Services:</strong>
                         <br>

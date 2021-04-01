@@ -17,7 +17,9 @@ class CollegesController extends Controller
     {
         $colleges = Colleges::simplePaginate(15);
         if (request()->has('q')) {
-            $colleges = Colleges::where('description', 'LIKE', '%' . request()->get('q') . '%')->orWhere('name', 'LIKE', '%' . request()->get('q') . '%')->simplePaginate(15);
+            $colleges = Colleges::where('description', 'LIKE', '%' . request()->get('q') . '%')
+                ->orWhere('name', 'LIKE', '%' . request()->get('q') . '%')
+                ->simplePaginate(15);
         }
         return view('colleges/colleges', [
             'colleges' => $colleges,
@@ -27,15 +29,18 @@ class CollegesController extends Controller
     public function collegesDetails($collegeId)
     {
         $college = Colleges::find($collegeId);
-        $otherCollege = Colleges::whereNotIn('id',[$collegeId])->inRandomOrder()->simplePaginate(4);
+        $otherCollege = Colleges::whereNotIn('id', [$collegeId])
+            ->inRandomOrder()
+            ->simplePaginate(4);
         return view('colleges/details', [
             'college' => $college,
             'otherCollege' => $otherCollege,
         ]);
     }
-     public function collegeFrom(){
-         return view('colleges/add');
-     }
+    public function collegeFrom()
+    {
+        return view('colleges/add');
+    }
     public function addCollege(CollegesRequest $request)
     {
         if ($request->has('avatar')) {
@@ -53,8 +58,8 @@ class CollegesController extends Controller
         $colleges->profilePath = $imageName;
         $colleges->user_id = Auth::id();
         $colleges->save();
-        if($colleges){
-            return back()->with('success','College was created successfully');
+        if ($colleges) {
+            return back()->with('success', 'College was created successfully');
         }
     }
 
@@ -84,35 +89,41 @@ class CollegesController extends Controller
         $coaches->profile_path = $imageName;
         $coaches->user_id = Auth::id();
         $coaches->save();
-        if($coaches){
-            return back()->with('success','Coaches was created successfully');
+        if ($coaches) {
+            return back()->with('success', 'Coaches was created successfully');
         }
     }
 
     public function coacheDetails($choacesId)
     {
         $coaches = Coaches::findOrFail($choacesId);
-        $otherCoaches = Coaches::whereNotIn('id',[$choacesId])->inRandomOrder()->simplePaginate(4);
+        $otherCoaches = Coaches::whereNotIn('id', [$choacesId])
+            ->inRandomOrder()
+            ->simplePaginate(4);
         return view('coaches/details', [
             'coaches' => $coaches,
             'otherCoaches' => $otherCoaches,
         ]);
     }
-    public function information(){
+    public function information()
+    {
         return view('colleges/information');
     }
 
-    public function footballColege(){
+    public function footballColege()
+    {
         return view('colleges/football');
     }
-    public function basketballCollge(){
+    public function basketballCollge()
+    {
         return view('colleges/basketball');
     }
-    public function soccerCollege(){
-      return view('colleges/soccer');
+    public function soccerCollege()
+    {
+        return view('colleges/soccer');
     }
-    public function bestCollegesAmerican(){
+    public function bestCollegesAmerican()
+    {
         return view('colleges/bestCollegeAmerican');
     }
-    
 }
