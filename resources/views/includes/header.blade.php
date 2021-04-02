@@ -33,9 +33,7 @@
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/about-us')}}">ABOUT US</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('/contact')}}">CONTACT US</a>
-              </li>
+
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/blog')}}">BLOG</a>
               </li>
@@ -106,7 +104,7 @@
                         <a class="dropdown-item dropdown-toggle" href="{{ url('/exercises')}}" type="button">Exercises</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('exercises/gym/men') }}">Gym Men</a></li>
-                            <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
+                            <li><a class="dropdown-item" href="{{ url('exercises/gym/women') }}">Gym Women</a></li>
             
                           
                         </ul>
@@ -118,6 +116,9 @@
               
               <li class="nav-item">
                   <a class="nav-link" href="{{ url('/how-it-works')}}">HOW IT WORKS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url('/contact')}}">CONTACT US</a>
               </li>
              
           </ul>

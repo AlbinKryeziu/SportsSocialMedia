@@ -21,7 +21,7 @@
         <div class="container" style="padding: 85px;">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="mt-4">The 15 Most Important Gym Routines for Men</h1>
+                    <h1 class="mt-4">The  Most Important Gym Routines for Men</h1>
 
                     <hr />
 

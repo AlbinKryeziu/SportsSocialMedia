@@ -188,4 +188,5 @@ Route::get('healthy/women', [FitnessController::class, 'healthyWomen']);
 Route::get('healthy/men', [FitnessController::class, 'healthyMen']);
 Route::get('healthy/life', [FitnessController::class, 'healthyLife']);
 Route::get('exercises/gym/men', [FitnessController::class, 'gymMen']);
+Route::get('exercises/gym/women', [FitnessController::class, 'gymWomen']);
 

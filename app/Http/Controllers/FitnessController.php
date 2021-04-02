@@ -173,4 +173,8 @@ class FitnessController extends Controller
     {
         return view('fitness/exercises/gym_men');
     }
+    public function gymWomen()
+    {
+        return view('fitness/exercises/women');
+    }
 }
