@@ -123,7 +123,7 @@
               <div class="card-footer text-muted">
                {{ \Carbon\Carbon::parse($college->created_at)->format('M d Y ') }}
                 <a href="{{ url('friends/profile/'.$college->user->id) }}">{{ $college->user->name }}</a>
-                <a href="{{ url('/info/colleges/'.$college->id) }}" class="btn-card btn float-right ">Read More →</a>
+                <a href="{{ url('/info/colleges/'.$college->id) }}" class=" float-right " style="color: black">Read More →</a>
               </div>
             </div> 
             @endforeach
