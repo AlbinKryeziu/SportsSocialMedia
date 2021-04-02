@@ -12,7 +12,7 @@
 
     <body>
         @include('includes/header')
-        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/other/frut.jpeg') }}'); height: 510px; object-fit: cover;">
+        <div class="container-fluid p-0 banner d-flex align-items-center justify-content-center" style="background-image: url('{{ asset('images/other/diet10.jpeg') }}'); height: 510px; object-fit: cover;">
             <div class="container">
                 <h1 class="display-3 text-center white">HEALTHY DIET</h1>
             </div>
