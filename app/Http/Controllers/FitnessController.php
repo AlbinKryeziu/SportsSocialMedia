@@ -169,4 +169,8 @@ class FitnessController extends Controller
     {
         return view('fitness/healthy/life');
     }
+    public function gymMen()
+    {
+        return view('fitness/exercises/gym_men');
+    }
 }

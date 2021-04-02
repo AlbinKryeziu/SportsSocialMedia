@@ -105,7 +105,7 @@
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="{{ url('/exercises')}}" type="button">Exercises</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Subsubmenu action</a></li>
+                            <li><a class="dropdown-item" href="{{ url('exercises/gym/men') }}">Gym Men</a></li>
                             <li><a class="dropdown-item" href="#">Another subsubmenu action</a></li>
             
                           
