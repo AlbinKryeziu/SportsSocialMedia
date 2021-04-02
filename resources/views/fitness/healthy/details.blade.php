@@ -10,7 +10,6 @@
         @include('includes/style')
     </head>
     <style>
-
         .card-img {
             border-bottom-left-radius: 0px;
             border-bottom-right-radius: 0px;
@@ -66,7 +65,6 @@
         a.btn-card {
             text-decoration: none;
             color: #fff;
-
         }
         #btn {
             background-color: #1abc9c;
@@ -100,41 +98,35 @@
 
                     <hr />
 
-                    <img class="img-fluid rounded" src="{{ asset('store/'.$healthy->profilePath) }}" style="width: 900px; object-fit:cover;"  alt="" />
+                    <img class="img-fluid rounded" src="{{ asset('store/'.$healthy->profilePath) }}" style="width: 900px; object-fit: cover;" alt="" />
 
                     <hr />
-                   
-                    <p >{{ $healthy->description }}</p>
-                  
+
+                    <p>{{ $healthy->description }}</p>
+
                     <blockquote class="blockquote">
                         <p class="mb-0">Social Media Sport</p>
                     </blockquote>
 
                     <div class="media mb-4"></div>
                 </div>
-         
 
                 <div class="col-md-4 p-4">
                     <p>Related post</p>
-                     @foreach ($post as $post )
-                         
-                   
+                    @foreach ($post as $post )
+
                     <div class="card my-4">
-                       
-                       
-                        <img class="card-img" src="{{ asset('store/'.$post->profilePath) }}" alt="Bologna" style="width: 310px; height:130px; object-fit:cover">
+                        <img class="card-img" src="{{ asset('store/'.$post->profilePath) }}" alt="Bologna" style="width: 310px; height: 130px; object-fit: cover;" />
                         <div class="card-body">
                             {{ \Illuminate\Support\Str::limit($post->description, 30)}}
                         </div>
-                        <a href="{{ url('/healthy/more/'.$post->id) }}"class="btn btn-light btn-sm col-12" id="btn">Read</a>
+                        <a href="{{ url('/healthy/more/'.$post->id) }}" class="btn btn-light btn-sm col-12" id="btn">Read</a>
                     </div>
 
                     @endforeach
                 </div>
             </div>
         </div>
-        
-        
 
         @include('includes/footer')
     </body>

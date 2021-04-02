@@ -90,12 +90,14 @@
                     FITNESS
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{{ url('/tips')}}" type="button">Tips</a></li>
                     <li class="dropdown-submenu">
                         <a class="dropdown-item dropdown-toggle" href="{{ url('/healthy')}}" type="button">Healthy</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('healthy/food') }}">Healthy foods</a></li>
                             <li><a class="dropdown-item" href="{{ url('healthy/diet') }}">Healthy Diet</a></li>
                             <li><a class="dropdown-item" href="{{ url('healthy/women') }}">Healthy Women</a></li>
+                            <li><a class="dropdown-item" href="{{ url('healthy/men') }}">Healthy Men</a></li>
                         </ul>
                     </li>
             
@@ -108,7 +110,7 @@
                           
                         </ul>
                     </li>
-                    <li><a class="dropdown-item" href="{{ url('/tips')}}" type="button">Tips</a></li>
+                    
                 </ul>
             </li>
             

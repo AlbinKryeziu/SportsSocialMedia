@@ -106,14 +106,19 @@
           <div class="col-md-8">
             @foreach($colleges as $key => $college)
             <div class="card mb-4">
+              @if(substr ($college->profilePath, -2) == "qt")
+              <div id="video-player"> 
+                <video width="100%" controls> 
+                    <source src="{{  asset('store/'.$college->profilePath)  }}" type="video/mp4"> 
+                      Your browser does not support the video tag. 
+                 </video> 
+              </div> 
+              @else 
               <img class="card-img-top" src="{{  asset('store/'.$college->profilePath)  }}" alt="Card image cap">
+              @endif
               <div class="card-body">
-                <div class="card-img-overlay">
-                  <a href="#" class="btn btn-light btn-sm">{{ $college->type }}</a>
-                </div>
-                <h2 class="card-title p-2">{{ $college->name }}</h2>
-                <p class="card-text p-2">{{ \Illuminate\Support\Str::limit($college->description, 200)}}</p>
-              
+                <h2 class="card-title">{{ $college->name }}</h2>
+                <p class="card-text">{{ \Illuminate\Support\Str::limit($college->description, 200)}}</p>
               </div>
               <div class="card-footer text-muted">
                {{ \Carbon\Carbon::parse($college->created_at)->format('M d Y ') }}
@@ -124,17 +129,6 @@
             @endforeach
           </div>
           <div class="col-md-4">
-            {{-- <div class="card my-4">
-              <h5 class="card-header">Search</h5>
-              <div class="card-body">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Go!</button>
-                  </span>
-                </div>
-              </div>
-            </div> --}}
             <div class="card my-3">
               <h5 class="card-header">Categories</h5>
               <div class="card-body">
@@ -158,6 +152,11 @@
         </div>
       </div>
     </div>
+  </div>
+
+     
+  
+    
   
         
     @include('includes/footer')

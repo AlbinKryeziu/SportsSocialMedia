@@ -39,8 +39,8 @@ class FitnessController extends Controller
         $healthyFood->description = $request->description;
         $healthyFood->user_id = Auth::id();
         $healthyFood->save();
-        if($healthyFood){
-            return back()->with('success','Health Food was created successfully');
+        if ($healthyFood) {
+            return back()->with('success', 'Health Food was created successfully');
         }
     }
 
@@ -79,7 +79,7 @@ class FitnessController extends Controller
             'user_id' => Auth::id(),
         ]);
         if ($tips) {
-            return back()->with('success','Tips was created successfully');
+            return back()->with('success', 'Tips was created successfully');
         }
     }
 
@@ -98,8 +98,8 @@ class FitnessController extends Controller
     public function exercises()
     {
         $exercieses = Exercise::with('example')->get();
-        return view('fitness/exercises/index',[
-            'exercises' =>$exercieses
+        return view('fitness/exercises/index', [
+            'exercises' => $exercieses,
         ]);
     }
 
@@ -129,30 +129,40 @@ class FitnessController extends Controller
                 ]);
             }
         }
-        if($exercises && $exercisesExample){
-            return back()->with('success','Example was created successfully');
+        if ($exercises && $exercisesExample) {
+            return back()->with('success', 'Example was created successfully');
         }
-        return back()->with('erros','Something went wrong');
+        return back()->with('erros', 'Something went wrong');
     }
 
-    public function detailsExercises($exercisesId){
-
-        $ecersises = Exercise::with('example')->where('id',$exercisesId)->first();
-        $otherExercises = Exercise::with('example')->whereNotIn('id',[$exercisesId])->get();
-        return view('fitness/exercises/details',[
+    public function detailsExercises($exercisesId)
+    {
+        $ecersises = Exercise::with('example')
+            ->where('id', $exercisesId)
+            ->first();
+        $otherExercises = Exercise::with('example')
+            ->whereNotIn('id', [$exercisesId])
+            ->get();
+        return view('fitness/exercises/details', [
             'exercises' => $ecersises,
-            'otherExercises' =>$otherExercises,
+            'otherExercises' => $otherExercises,
         ]);
     }
-    
-   public function healthyFood(){
-       return view('fitness/healthy/food');
-   }
-   public function healthyDiet(){
-    return view('fitness/healthy/diet');
-}
-public function healthyWomen(){
-    return view('fitness/healthy/women');
-}
 
+    public function healthyFood()
+    {
+        return view('fitness/healthy/food');
+    }
+    public function healthyDiet()
+    {
+        return view('fitness/healthy/diet');
+    }
+    public function healthyWomen()
+    {
+        return view('fitness/healthy/women');
+    }
+    public function healthyMen()
+    {
+        return view('fitness/healthy/men');
+    }
 }
