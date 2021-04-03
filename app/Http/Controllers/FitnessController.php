@@ -193,4 +193,8 @@ class FitnessController extends Controller
     {
         return view('freestyle/surf');
     }
+    public function ice()
+    {
+        return view('freestyle/ice');
+    }
 }

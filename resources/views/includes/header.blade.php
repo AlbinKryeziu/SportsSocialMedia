@@ -121,7 +121,7 @@
                     <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
                         <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('freestyle/sports/skateboarding')}}">Skateboarding</a></button>
                         <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('freestyle/sports/surf')}}"> Big Wave Surfing </a></button>
-                   
+                        <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('freestyle/sports/ice')}}">Ice Climbing </a></button>
                     </div>
                 </div>
             </li>
