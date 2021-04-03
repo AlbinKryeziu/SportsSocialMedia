@@ -189,4 +189,8 @@ class FitnessController extends Controller
     {
         return view('freestyle/skateboarding');
     }
+    public function surf()
+    {
+        return view('freestyle/surf');
+    }
 }

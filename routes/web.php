@@ -192,4 +192,4 @@ Route::get('exercises/gym/women', [FitnessController::class, 'gymWomen']);
 Route::get('exercises/healthy', [FitnessController::class, 'exercisesHealthy']);
 Route::get('exercises/footbollers', [FitnessController::class, 'exerciseFootboller']);
 Route::get('freestyle/sports/skateboarding', [FitnessController::class, 'skateBoarding']);
-
+Route::get('freestyle/sports/surf', [FitnessController::class, 'surf']);
