@@ -105,12 +105,24 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{{ url('exercises/gym/men') }}">Gym Men</a></li>
                             <li><a class="dropdown-item" href="{{ url('exercises/gym/women') }}">Gym Women</a></li>
+                            <li><a class="dropdown-item" href="{{ url('exercises/healthy') }}">Healthy Exercises</a></li>
+                            <li><a class="dropdown-item" href="{{ url('exercises/footbollers') }}">Footballers Exercises</a></li>
             
                           
                         </ul>
                     </li>
                     
                 </ul>
+            </li> <li class="nav-item">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: rgba(0, 0, 0, 0.5);">
+                    FREESTYLE SPORTS
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2" >
+                        <button class="dropdown-item" type="button"><a class="nav-link" href="{{ url('freestyle/sports/skateboarding')}}">Skateboarding</a></button>
+                   
+                    </div>
+                </div>
             </li>
             
               

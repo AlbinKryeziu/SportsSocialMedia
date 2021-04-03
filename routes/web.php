@@ -189,4 +189,7 @@ Route::get('healthy/men', [FitnessController::class, 'healthyMen']);
 Route::get('healthy/life', [FitnessController::class, 'healthyLife']);
 Route::get('exercises/gym/men', [FitnessController::class, 'gymMen']);
 Route::get('exercises/gym/women', [FitnessController::class, 'gymWomen']);
+Route::get('exercises/healthy', [FitnessController::class, 'exercisesHealthy']);
+Route::get('exercises/footbollers', [FitnessController::class, 'exerciseFootboller']);
+Route::get('freestyle/sports/skateboarding', [FitnessController::class, 'skateBoarding']);
 

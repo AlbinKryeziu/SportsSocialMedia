@@ -177,4 +177,16 @@ class FitnessController extends Controller
     {
         return view('fitness/exercises/women');
     }
+    public function exercisesHealthy()
+    {
+        return view('fitness/exercises/exercises_healthy');
+    }
+    public function exerciseFootboller()
+    {
+        return view('fitness/exercises/footboller');
+    }
+    public function skateBoarding()
+    {
+        return view('freestyle/skateboarding');
+    }
 }
