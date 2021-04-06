@@ -198,3 +198,6 @@ Route::get('exercises/footbollers', [FitnessController::class, 'exerciseFootboll
 Route::get('freestyle/sports/skateboarding', [FitnessController::class, 'skateBoarding']);
 Route::get('freestyle/sports/surf', [FitnessController::class, 'surf']);
 Route::get('freestyle/sports/ice', [FitnessController::class, 'ice']);
+Route::get('tips/edit/{tipsId}', [FitnessController::class, 'edit']);
+Route::post('tips/update/{tipsId}', [FitnessController::class, 'update']);
+Route::post('tips/delete/{tipsId}', [FitnessController::class, 'delete']);

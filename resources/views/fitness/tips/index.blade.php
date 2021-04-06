@@ -11,7 +11,7 @@
     
 
     </head>
-<style>
+ <style>
 
 
 
@@ -98,39 +98,53 @@
         </div>
         @endauth
         </div>
-       
-
-        <div class="container" style="padding: 65px;">
+       <br>
+       <br>
+        <div class="container">
             <div class="row">
+              <div class="col-md-8">
                 @foreach($tips as $key => $tip)
-                    
-               
-              <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
-                <div class="card">
-                  <img class="card-img" src="{{ asset('store/'.$tip->image) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
-                  <div class="card-img-overlay">
-                    <a href="#" class="btn btn-light btn-sm">Tips</a>
-                  </div>
+                <div class="card mb-4">
+                  
+                  @if(substr ($tip->image, -2) == "qt")
+                  <div id="video-player"> 
+                    <video width="100%" controls> 
+                        <source src="{{  asset('store/'.$tip->image)  }}" type="video/mp4"> 
+                          
+                     </video> 
+                  </div> 
+                  @else 
+                  <img class="card-img-top" src="{{  asset('store/'.$tip->image)  }}" alt="Card image cap">
+                  @endif
                   <div class="card-body">
-                    <h4 class="card-title">{{ $tip->title }}</h4>
+                    <h3 class="card-title">{{ $tip->title }}</h3>
+                    <br>
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($tip->description, 200)}}</p>
                    
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($tip->description, 20)}}</p>
-                   
-                  </div>
-                  <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                    <div class="views">{{ Carbon\Carbon::parse($tip->created_at)->format('d F Y') }}
+                    <div class="btn-group float-right" role="group" aria-label="Third group">
+                      <form action="{{ url('tips/delete/'.$tip->id) }}" method="POST">
+                        @csrf
+                      <button type="submit" class="float-right " style="background: none; border:none;"><i class="fa fa-trash" style="color: red"></i></button>
+                    </form>
+                      <a href="{{ url('tips/edit/'.$tip->id) }}" type="submit"><i class="fa fa-pencil float: right;" style="color: black"></i></a>
                     </div>
-                     
+                   
+                    
                   </div>
-                </div>
-                <a href="{{ url('/tips/details/'.$tip->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+                  <div class="card-footer text-muted">
+                   {{ \Carbon\Carbon::parse($tip->created_at)->format('M d Y ') }}
+                    {{-- <a href="{{ url('friends/profile/'.$tip->user->id) }}">{{ $college->user->name }}</a> --}}
+                    <a href="{{ url('/tips/details/'.$tip->id) }}" class=" float-right " style="color: black">Read More →</a>
+                  </div>
+                </div> 
+                @endforeach
               </div>
-              @endforeach
-              
-           
-              
+             
             </div>
           </div>
+        </div>
+      </div>
+    
           <div id="ModalLoginForm" class="modal fade">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">

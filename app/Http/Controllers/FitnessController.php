@@ -197,4 +197,26 @@ class FitnessController extends Controller
     {
         return view('freestyle/ice');
     }
+    public function edit($tipId){
+        $tip = Tips::where('id',$tipId)->first();
+        return view('fitness/tips/edit',[
+            'tip' =>$tip,
+        ]);
+    }
+    public function update(Request $request ,$tipId){
+
+        $tip = Tips::where('id',$tipId)->update([
+            'title'=>$request->title,
+            'description'=>$request->description,
+        ]);
+        if ($tip) {
+            return back()->with('success', 'Tip was updated successfully');
+        }
+    }
+    public function delete($tipId){
+        $tip = Tips::where('id',$tipId)->delete();
+        if ($tip) {
+            return back()->with('success', 'Tip was deleted successfully');
+        }
+    }
 }
