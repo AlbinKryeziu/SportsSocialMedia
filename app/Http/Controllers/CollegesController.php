@@ -126,4 +126,31 @@ class CollegesController extends Controller
     {
         return view('colleges/bestCollegeAmerican');
     }
+    public function edit($collegeId)
+    {
+        $college = Colleges::where('id', $collegeId)->first();
+        return view('colleges/edit', [
+            'college' => $college,
+        ]);
+    }
+    public function update(Request $request, $collegeId)
+    {
+        $college = Colleges::where('id', $collegeId)->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'services' => $request->services,
+            'description' => $request->description,
+        ]);
+        if ($college) {
+            return back()->with('success', 'Coaches was updated successfully');
+        }
+    }
+
+    public function deleteCollege($collegeId)
+    {
+        $college = Colleges::where('id', $collegeId)->delete();
+        if ($college) {
+            return back();
+        }
+    }
 }

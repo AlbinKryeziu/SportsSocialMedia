@@ -81,15 +81,26 @@
                 <h1 class="display-3 text-center white">EXERCISES</h1>
             </div>
         </div>
-        <div class="container p-3">
+        <div class="container-fluid bg-light ">
+          <div class="row align-items-center justify-content-center">
+  
+              <div class="col-md-5 pt-3 ">
+                  <form>
+                      <div class="form-group ">
+                          <input type="text" class="search-query form-control" name="q" placeholder="Search" />
+                  </form>
+              </div>
+          </div>
+          @auth
+          <div class="col-md-2">
             <a href="{{ url('/add/exercises') }}"  class="btn-card float-right">Add your exercises</a>
-        </div>
-
+          </div>
+      </div>
+      @endauth
+      </div>
         <div class="container" style="padding: 65px;">
             <div class="row">
                 @foreach($exercises as $key => $exercises)
-                    
-               
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
                   <img class="card-img" src="{{ asset('store/'.$exercises->example->first()->image) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">

@@ -12,29 +12,7 @@
 
 </head>
 <style>
-    .card-img {
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;
-    }
-
-    .card-title {
-        margin-bottom: 0.3rem;
-    }
-
-    .cat {
-        display: inline-block;
-        margin-bottom: 1rem;
-    }
-
-    .fa-users {
-        margin-left: 1rem;
-    }
-
-    .card-footer {
-        font-size: 0.8rem;
-    }
-
-    #btn {
+        #btn {
         background-color: #1abc9c;
         color: white;
     }
@@ -101,16 +79,17 @@
     </div>
     <br>
     <br>
-    <div class="container p-4">
+    <div class="container">
         <div class="row">
           <div class="col-md-8">
             @foreach($colleges as $key => $college)
             <div class="card mb-4">
+              
               @if(substr ($college->profilePath, -2) == "qt")
               <div id="video-player"> 
                 <video width="100%" controls> 
                     <source src="{{  asset('store/'.$college->profilePath)  }}" type="video/mp4"> 
-                      Your browser does not support the video tag. 
+                      
                  </video> 
               </div> 
               @else 
@@ -119,6 +98,16 @@
               <div class="card-body">
                 <h2 class="card-title">{{ $college->name }}</h2>
                 <p class="card-text">{{ \Illuminate\Support\Str::limit($college->description, 200)}}</p>
+               
+                <div class="btn-group float-right" role="group" aria-label="Third group">
+                  <form action="{{ url('/colleges/delete/'.$college->id) }}" method="POST">
+                    @csrf
+                  <button type="submit" class="float-right " style="background: none; border:none;"><i class="fa fa-trash" style="color: red"></i></button>
+                </form>
+                  <a href="{{ url('/colleges/edit/'.$college->id) }}" type="submit"><i class="fa fa-pencil float: right;" style="color: black"></i></a>
+                </div>
+               
+                
               </div>
               <div class="card-footer text-muted">
                {{ \Carbon\Carbon::parse($college->created_at)->format('M d Y ') }}
@@ -128,27 +117,7 @@
             </div> 
             @endforeach
           </div>
-          <div class="col-md-4">
-            <div class="card my-3">
-              <h5 class="card-header">Categories</h5>
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <ul class="list-unstyled mb-0">
-                      <li>
-                        <a href="#">College</a>
-                      </li>
-                      <li>
-                        <a href="#">Coaches</a>
-                      </li>
-                      <li>
-                        <a href="#">Student</a>
-                      </li>
-                    </ul>
-                  </div>
-              </div>
-            </div>
-          </div> 
+         
         </div>
       </div>
     </div>
