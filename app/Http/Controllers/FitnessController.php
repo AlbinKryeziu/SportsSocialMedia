@@ -17,6 +17,11 @@ class FitnessController extends Controller
     public function index()
     {
         $healthyFood = Healthy::get();
+        if (request()->has('q')) {
+            $healthyFood = Healthy::where('description', 'LIKE', '%' . request()->get('q') . '%')
+                ->orWhere('title', 'LIKE', '%' . request()->get('q') . '%')
+                ->simplePaginate(15);
+        }
         return view('fitness/healthy/index', [
             'healthyFood' => $healthyFood,
         ]);
@@ -59,6 +64,11 @@ class FitnessController extends Controller
     public function tips()
     {
         $tips = Tips::get();
+        if (request()->has('q')) {
+            $tips = Tips::where('description', 'LIKE', '%' . request()->get('q') . '%')
+                ->orWhere('title', 'LIKE', '%' . request()->get('q') . '%')
+                ->simplePaginate(15);
+        }
         return view('fitness/tips/index', [
             'tips' => $tips,
         ]);
@@ -98,6 +108,11 @@ class FitnessController extends Controller
     public function exercises()
     {
         $exercieses = Exercise::with('example')->get();
+        if (request()->has('q')) {
+            $exercieses = Exercise::whereHas('example', function ($q) {
+                $q->where('title', 'LIKE', '%' . request()->get('q') . '%');
+            });
+        }
         return view('fitness/exercises/index', [
             'exercises' => $exercieses,
         ]);
@@ -197,24 +212,26 @@ class FitnessController extends Controller
     {
         return view('freestyle/ice');
     }
-    public function edit($tipId){
-        $tip = Tips::where('id',$tipId)->first();
-        return view('fitness/tips/edit',[
-            'tip' =>$tip,
+    public function edit($tipId)
+    {
+        $tip = Tips::where('id', $tipId)->first();
+        return view('fitness/tips/edit', [
+            'tip' => $tip,
         ]);
     }
-    public function update(Request $request ,$tipId){
-
-        $tip = Tips::where('id',$tipId)->update([
-            'title'=>$request->title,
-            'description'=>$request->description,
+    public function update(Request $request, $tipId)
+    {
+        $tip = Tips::where('id', $tipId)->update([
+            'title' => $request->title,
+            'description' => $request->description,
         ]);
         if ($tip) {
             return back()->with('success', 'Tip was updated successfully');
         }
     }
-    public function delete($tipId){
-        $tip = Tips::where('id',$tipId)->delete();
+    public function delete($tipId)
+    {
+        $tip = Tips::where('id', $tipId)->delete();
         if ($tip) {
             return back()->with('success', 'Tip was deleted successfully');
         }

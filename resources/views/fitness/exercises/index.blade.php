@@ -100,26 +100,26 @@
       </div>
         <div class="container" style="padding: 65px;">
             <div class="row">
-                @foreach($exercises as $key => $exercises)
+                @foreach($exercises as $key => $exercise)
               <div class="col-12 col-sm-8 col-md-6 col-lg-4 p-3">
                 <div class="card">
-                  <img class="card-img" src="{{ asset('store/'.$exercises->example->first()->image) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
+                  <img class="card-img" src="{{ asset('store/'.$exercise->example->first()->image) }}" alt="Bologna" style="height: 150px; obejct-fit:cover">
                   <div class="card-img-overlay">
                     <a href="#" class="btn btn-light btn-sm">Exercises</a>
                   </div>
                   <div class="card-body">
-                    <h4 class="card-title">{{ $exercises->example->first()->title }}</h4>
+                    <h4 class="card-title">{{ $exercise->example->first()->title }}</h4>
                     
-                    <p class="card-text">{{ \Illuminate\Support\Str::limit($exercises->example->first()->description, 80)}}</p>
+                    <p class="card-text">{{ \Illuminate\Support\Str::limit($exercise->example->first()->description, 80)}}</p>
                    
                   </div>
                   <div class="card-footer text-muted d-flex justify-content-between bg-transparent border-top-0">
-                    <div class="views">{{ Carbon\Carbon::parse($exercises->created_at)->format('d F Y') }}
+                    <div class="views">{{ Carbon\Carbon::parse($exercise->created_at)->format('d F Y') }}
                     </div>
                      
                   </div>
                 </div>
-                <a href="{{ url('exercises/details/'.$exercises->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
+                <a href="{{ url('exercises/details/'.$exercise->id) }}" class="btn btn-light btn-sm col-12 " id="btn">Read</a>
               </div>
               @endforeach
               
