@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdsController;
 use App\Http\Controllers\CollegesController;
 use App\Http\Controllers\FollowController;
 use App\Http\Controllers\FriendController;
@@ -201,3 +202,5 @@ Route::get('freestyle/sports/ice', [FitnessController::class, 'ice']);
 Route::get('tips/edit/{tipsId}', [FitnessController::class, 'edit']);
 Route::post('tips/update/{tipsId}', [FitnessController::class, 'update']);
 Route::post('tips/delete/{tipsId}', [FitnessController::class, 'delete']);
+
+Route::post('ads/add', [AdsController::class, 'store']);

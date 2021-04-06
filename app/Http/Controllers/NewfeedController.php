@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Auth;
 
 class NewfeedController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         if (request()->has('q')) {
@@ -30,14 +31,14 @@ class NewfeedController extends Controller
                 ->where('description', 'LIKE', '%' . request()->get('q') . '%')
                 ->get();
         }
-  
+
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $post = Post::with('user', 'like', 'comments')
             ->whereNotIn('id', $hidePost)
             ->orderBy('created_at', 'DESC')
             ->where('description', 'LIKE', '%' . request()->get('q') . '%')
             ->get();
-           
+
         $following = Follow::where('user_id', Auth::id())->pluck('target_id');
         if ($following) {
             $user = User::whereNotIn('id', $following)
@@ -105,7 +106,8 @@ class NewfeedController extends Controller
     {
         $hidePost = HidePost::where('user_id', Auth::id())->get('post_id');
         $follow = Follow::where('user_id', Auth::id())->pluck('target_id');
-        $user = User::whereNotIn('id', $follow)->where('role',1)
+        $user = User::whereNotIn('id', $follow)
+            ->where('role', 1)
             ->where('id', '!=', Auth::id())
             ->inRandomOrder()
             ->get();
@@ -136,17 +138,17 @@ class NewfeedController extends Controller
         return redirect()->back();
     }
 
-    public function likePost($postId){
+    public function likePost($postId)
+    {
         $postLike = LikePost::create([
-            'user_id' =>Auth::id(),
-            'post_id' =>$postId,
+            'user_id' => Auth::id(),
+            'post_id' => $postId,
         ]);
-        $post =Post::where('id',$postId)->first();
+        $post = Post::where('id', $postId)->first();
         if ($post->user_id == Auth::id()) {
             return redirect()->back();
         }
         if ($postLike) {
-          
             $notification = Notification::create([
                 'user_id' => $post->user_id,
                 'target_id' => Auth::id(),
@@ -158,9 +160,11 @@ class NewfeedController extends Controller
         return redirect()->back();
     }
 
-    public function dislike($postId){
-        $dislike = LikePost::where('post_id',$postId)->where('user_id',Auth::id())->delete();
+    public function dislike($postId)
+    {
+        $dislike = LikePost::where('post_id', $postId)
+            ->where('user_id', Auth::id())
+            ->delete();
         return redirect()->back();
-
     }
 }
